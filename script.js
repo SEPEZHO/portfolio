@@ -2,8 +2,8 @@
 var number = 1; // Номер слайда (первый не учитывается, тк он стоит при загрузке)
 var j = 0; // Предыдущий слайд
 var timer; // переменная для таймера
-var animateTime = 3000; // Время анимации прокрутки
-var timeOut = 10000; // timeOut > animateTime Всегда! (время между слайдами в простое)
+var animateTime = 4000; // Время анимации прокрутки
+var timeOut = 2000; // timeOut > animateTime Всегда! (время между слайдами в простое)
 
 function slider() {
   //Обновление слайдера после полной прокрутки
@@ -38,6 +38,8 @@ function slider() {
     },
     //Функция при запуске анимации
     start: function () {
+      // Очистка таймера
+      clearTimeout(timer);
       // По факту нужна только для того, чтобы не сломать слайдер во время анимации,
       // Уберает онклик после запуска анимации.
       $('#slider').prop('onclick', null).off('click');
@@ -46,8 +48,10 @@ function slider() {
   //Вывод в консоль просто так :)
   console.log('cklick');
   // Очистка и запуск таймера при появлении нового слайда
-  clearTimeout(timer);
-  timer = setTimeout(slider, timeOut);
+  console.log(timer);
+  timer = setTimeout(slider, timeOut+animateTime);
+  console.log(timer);
+
 }
 // Функция, которая запускается в HTML`e, при загрузке страницы:
 function begin() {

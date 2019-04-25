@@ -53,7 +53,7 @@ p {
   width: 25%;
   background: black;
   box-sizing: padding-box;
-  height: 15vh;
+  /* height: 15vh; */
   border-radius: 10px;
   opacity: 0;
   color: white;
@@ -97,7 +97,7 @@ header{
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 15pt;
+  font-size: 2em;
 }
 
 main {
