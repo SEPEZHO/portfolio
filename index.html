@@ -1,0 +1,74 @@
+
+<!--Begin 22.04.2019-->
+<!--End __.__.__-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio</title>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script type="text/javascript" src="script.js">
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="begin(), animate()">
+  <header>
+
+    <div id="slider">
+      <div id="slide1" class='slide'>1</div>
+      <div id="slide2" class='slide'>2</div>
+      <div id="slide3" class='slide'>3</div>
+      <div id="slide4" class='slide'>4</div>
+    </div>
+
+    <div id="title">space</div>
+    <div id="me">Vlad Bliznyuk</div>
+  </header>
+  <main>
+    <script>
+      $(window).scroll(function() {
+        if ($(this).scrollTop() >= $("header").height()) {
+          realAnimateTop();
+        }
+      })
+    </script>
+
+    <main>
+      <div class='blockA blocks' id='number1'>
+        Some text.
+
+      </div>
+      <div class='blockB blocks' id='number2'>
+        Some text.
+        Some text.
+
+
+      </div>
+      <div class='blockC blocks' id='number3'>
+        Some text.
+        Some text.
+        Some text.
+
+      </div>
+      <div class='blockA blocks lineTwo' id='number4'>
+        Some text.
+
+      </div>
+      <div class='blockB blocks lineTwo' id='number5'>
+        Some text.
+        Some text.
+
+      </div>
+      <div class='blockC blocks lineTwo' id='number6'>
+        Some text.
+        Some text.
+        Some text.
+
+      </div>
+
+    </main>
+</body>
+
+</html>
