@@ -1,3 +1,5 @@
+// Slider ==========================>
+
 //Задаем глобальные переменные
 var number = 1; // Номер слайда (первый не учитывается, тк он стоит при загрузке)
 var j = 0; // Предыдущий слайд
@@ -48,10 +50,7 @@ function slider() {
   //Вывод в консоль просто так :)
   console.log('cklick');
   // Очистка и запуск таймера при появлении нового слайда
-  console.log(timer);
-  timer = setTimeout(slider, timeOut+animateTime);
-  console.log(timer);
-
+  timer = setTimeout(slider, timeOut + animateTime);
 }
 // Функция, которая запускается в HTML`e, при загрузке страницы:
 function begin() {
@@ -64,8 +63,7 @@ function begin() {
 }
 
 
-
-// =============================>
+// Blocks Animate=============================>
 var leftOld;
 var leftOldPlus;
 var mas = ['7.5%', '37.5%', '67.5%'];
@@ -113,24 +111,41 @@ function animateLow() {
 }
 
 function realAnimateTop() {
-  var b = 3;
-  for (var i = 3; i < 6; i++) {
-    b++;
-    var element = '#number' + b;
-    $(element).animate({
-      top: '25%',
-      opacity: 1
-    }, b * 600);
-  }
   var a = 0;
   for (var i = 0; i < 3; i++) {
     a++;
     var element = '#number' + a;
     $(element).animate({
-      top: '5%',
+      top: '3%',
       opacity: 1
     }, a * 600 * 3);
   }
 }
 
-window.onload = animate;
+function realAnimateTopSec() {
+  var b = 3;
+  for (var i = 3; i < 6; i++) {
+    b++;
+    var element = '#number' + b;
+    $(element).animate({
+      top: '21%',
+      opacity: 1
+    }, b * 600);
+  }
+}
+
+function blocksLoad() {
+
+$(window).scroll(function() {
+  if ($(this).scrollTop() >= $("#me").offset().top) {
+     realAnimateTop();
+  }
+})
+
+$(window).scroll(function() {
+  if ($(this).scrollTop() >= $("#number1").offset().top + $("#number1").innerHeight()*0.75 ) {
+    realAnimateTopSec();
+  }
+})
+}
+// ===========================>

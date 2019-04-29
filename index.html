@@ -10,61 +10,59 @@
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script type="text/javascript" src="script.js">
   </script>
-  <script src="https://sourse.xakplant.ru/lib/stickjaw/0.3.0/stickjaw.min.js">
-  
-  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="begin(), animate()">
+<body onload="begin(), animate(), blocksLoad()">
   <header>
 
     <div id="slider">
-      <div id="slide1" class='slide'>1</div>
-      <div id="slide2" class='slide'>2</div>
-      <div id="slide3" class='slide'>3</div>
-      <div id="slide4" class='slide'>4</div>
+      <div id="slide1" class='slide'>
+        <div class="title" >space</div>
+      </div>
+      <div id="slide2" class='slide'>
+        <div class="title">space</div>
+      </div>
+      <div id="slide3" class='slide'>
+        <div class="title">space</div>
+      </div>
+      <div id="slide4" class='slide'>
+        <div class="title">space</div>
+      </div>
     </div>
 
-    <div id="title">space</div>
-    <div id="me">Vlad Bliznyuk</div>
+    <div id="me">By Vlad Bliznyuk</div>
   </header>
   <main>
-    <script>
-      $(window).scroll(function() {
-        if ($(this).scrollTop() >= $("header").height()) {
-          realAnimateTop();
-        }
-      })
-    </script>
 
     <main>
-      <div data-proportion-h="2" class='blockA blocks' id='number1'>
+      <div class='blockA blocks' id='number1'>
         Some text.
 
       </div>
-      <div data-proportion-h="2" class='blockB blocks' id='number2' >
+      <div class='blockB blocks' id='number2' >
         Some text.
         Some text.
 
 
       </div>
-      <div data-proportion-h="2" class='blockC blocks' id='number3'>
+      <div class='blockC blocks' id='number3'>
         Some text.
-        Some text.
-        Some text.
-
-      </div>
-      <div data-proportion-h="2" class='blockA blocks lineTwo' id='number4'>
-        Some text.
-
-      </div>
-      <div data-proportion-h="2" class='blockB blocks lineTwo' id='number5'>
         Some text.
         Some text.
 
       </div>
-      <div data-proportion-h="4" class='blockC blocks lineTwo' id='number6'>
+
+      <div class='blockA blocks lineTwo' id='number4'>
+        Some text.
+
+      </div>
+      <div class='blockB blocks lineTwo' id='number5'>
+        Some text.
+        Some text.
+
+      </div>
+      <div class='blockC blocks lineTwo' id='number6'>
         Some text.
         Some text.
         Some text.
