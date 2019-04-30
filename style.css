@@ -91,6 +91,14 @@ p {
   height: 5%;
   background: url(img/spase.jpg) no-repeat center fixed;
   background-size: cover;
+  color: white;
+  font-size: 3vw;
+  text-align: center;
+}
+#TextInLine-First{
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%)
 }
 .description{
   border-bottom-left-radius: 10px;
