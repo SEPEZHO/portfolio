@@ -103,9 +103,10 @@ function animateLow() {
     $(element).css({
       left: mas[left]
     })
-    console.log(arr[c]);
-    console.log(mas[left]);
-    console.log(i);
+
+    // console.log(arr[c]);
+    // console.log(mas[left]);
+    // console.log(i);
 
   }
 }
@@ -118,15 +119,16 @@ function realAnimateTop() {
     $(element).animate({
       top: '3%',
       opacity: 1
-    }, a * 600 * 3);
+    }, (a + 3) * 600);
   }
 }
+
 
 function realAnimateTopSec() {
   var b = 3;
   for (var i = 3; i < 6; i++) {
     b++;
-    var element = '#number' + b;
+    element = '#number' + b;
     $(element).animate({
       top: '21%',
       opacity: 1
@@ -136,16 +138,34 @@ function realAnimateTopSec() {
 
 function blocksLoad() {
 
-$(window).scroll(function() {
-  if ($(this).scrollTop() >= $("#me").offset().top) {
-     realAnimateTop();
-  }
-})
+  $(window).scroll(function () {
+    if ($(this).scrollTop() >= $("#me").offset().top) {
+      realAnimateTop();
+    }
+  })
 
-$(window).scroll(function() {
-  if ($(this).scrollTop() >= $("#number1").offset().top + $("#number1").innerHeight()*0.75 ) {
-    realAnimateTopSec();
-  }
-})
+  $(window).scroll(function () {
+    if ($(this).scrollTop() >= $("#number1").offset().top + $("#number1").innerHeight() * 0.75) {
+      realAnimateTopSec();
+    }
+  })
 }
 // ===========================>
+function animateDescription() {
+  $('#number1').mouseover(function () {
+    for (var i = 3; i <= 6; i++) {
+      var elemBottom = '#number' + i;
+      if ($('#number1').offset().left == $(elemBottom).offset().left) {
+        var j = i;
+      }
+    }
+    var elemBottomQ = '#number' + j;
+    console.log(elemBottomQ);
+    $(elemBottomQ).animate({
+      top: '30%',
+      opacity: 0.8
+    }, {duration: j * 600, complete: function () {
+      console.log('asdasd');
+    }})
+  });
+}
