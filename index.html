@@ -12,25 +12,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="begin(), animate(), blocksLoad(), animateDescription()">
+<body onload="begin(), animate(), blocksLoad()">
   <header>
 
     <div id="slider">
       <div id="slide1" class='slide'>
-        <div class="title">space</div>
       </div>
       <div id="slide2" class='slide'>
-        <div class="title">space</div>
       </div>
       <div id="slide3" class='slide'>
-        <div class="title">space</div>
       </div>
       <div id="slide4" class='slide'>
-        <div class="title">space</div>
       </div>
     </div>
-
-    <div id="me">By Vlad Bliznyuk</div>
+    <span id="title">Title</span>
+    <span id="me"><a href="https://vk.com/vlad_ascetic">Bliznyuk Vlad</a></span>
   </header>
   <main>
     <div class='blockA blocks' id='number1'>
@@ -41,7 +37,8 @@
         Numb 1
       </div>
     </div>
-    <div class="lineOneDescrib">
+    <div class="lineOneDescrib" id='descriptionNumber1'>
+      description number 1
 
     </div>
     <div class='blockB blocks' id='number2'>
@@ -52,8 +49,11 @@
         Numb 2
       </div>
 
-
     </div>
+    <div class="lineOneDescrib" id='descriptionNumber2'>
+      description number 2
+    </div>
+
     <div class='blockC blocks' id='number3'>
       <div class="image">
 
@@ -61,6 +61,10 @@
       <div class="description">
         Numb 3
       </div>
+    </div>
+    <div class="lineOneDescrib" id='descriptionNumber3'>
+      description number 3
+
     </div>
 
     <div class='blockA blocks lineTwo' id='number4'>
@@ -71,6 +75,7 @@
         Numb 4
       </div>
     </div>
+
     <div class='blockB blocks lineTwo' id='number5'>
       <div class="image">
 

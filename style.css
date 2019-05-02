@@ -55,11 +55,22 @@ p {
   width: 25%;
   background: black;
   height: 15%;
-  border-radius: 10px;
+  border-radius: 2.5%;
   opacity: 0;
   top: 12%;
 }
+.lineOneDescrib{
+  position: absolute;
+  width: 25%;
+  background: black;
+  border-radius: 2.5%;
+  top: 18.5%;
+  height: 0%;
+  color: white;
+  overflow: hidden;
+  font-size: 2vw;
 
+}
 .blockA {
   left: 7.5%;
 }
@@ -77,8 +88,8 @@ p {
 }
 
 .image {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 2.5%;
+  border-top-right-radius: 2.5%;
   position: absolute;
   background: grey;
   /* background: url(img/planet.jpg) no-repeat center;
@@ -107,8 +118,8 @@ p {
 }
 
 .description {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 2.5%;
+  border-bottom-right-radius: 2.5%;
   position: absolute;
   background: white;
   width: 100%;
@@ -124,23 +135,28 @@ header {
   padding-bottom: 57%;
 }
 
-.title {
-  position: fixed;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -100%);
-  font-size: 8vw;
-}
-
-#me {
+#title {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -100%);
+  font-size: 8vw;
   color: white;
-  font-size: 2em;
 }
 
+#me {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  color: white;
+  font-size: 2vw;
+}
+a{
+  text-decoration: none;
+  color: white;
+  font-size: 2vw;
+}
 main {
   position: relative;
   background: white;

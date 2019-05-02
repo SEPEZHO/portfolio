@@ -4,8 +4,8 @@
 var number = 1; // Номер слайда (первый не учитывается, тк он стоит при загрузке)
 var j = 0; // Предыдущий слайд
 var timer; // переменная для таймера
-var animateTime = 4000; // Время анимации прокрутки
-var timeOut = 2000; // timeOut > animateTime Всегда! (время между слайдами в простое)
+var animateTime = 3000; // Время анимации прокрутки
+var timeOut = 15000; // timeOut > animateTime Всегда! (время между слайдами в простое)
 
 function slider() {
   //Обновление слайдера после полной прокрутки
@@ -32,6 +32,7 @@ function slider() {
     // Функция ПОСЛЕ выполнения
     complete: function () {
       // Задаем положение '-100%'
+      $('#slide' + j).stop([true]);
       $('#slide' + j).css({
         left: '-100%',
       });
@@ -50,7 +51,7 @@ function slider() {
   //Вывод в консоль просто так :)
   console.log('cklick');
   // Очистка и запуск таймера при появлении нового слайда
-  timer = setTimeout(slider, timeOut + animateTime);
+  timer = setTimeout(slider, timeOut);
 }
 // Функция, которая запускается в HTML`e, при загрузке страницы:
 function begin() {
@@ -79,8 +80,13 @@ function animate() {
   for (var i = 0; i < 3; i++) {
     a++;
     var element = '#number' + a;
+    var descriptionNumber = '#descriptionNumber' + a;
+
     left = arr[i];
     $(element).css({
+      left: mas[left]
+    })
+    $(descriptionNumber).css({
       left: mas[left]
     })
   }
@@ -103,11 +109,6 @@ function animateLow() {
     $(element).css({
       left: mas[left]
     })
-
-    // console.log(arr[c]);
-    // console.log(mas[left]);
-    // console.log(i);
-
   }
 }
 
@@ -119,7 +120,7 @@ function realAnimateTop() {
     $(element).animate({
       top: '3%',
       opacity: 1
-    }, (a + 3) * 600);
+    }, {duration: (a + 3) * 200, complete: function(){animateDescription()}});
   }
 }
 
@@ -132,7 +133,7 @@ function realAnimateTopSec() {
     $(element).animate({
       top: '21%',
       opacity: 1
-    }, b * 600);
+    }, b * 200);
   }
 }
 
@@ -151,21 +152,82 @@ function blocksLoad() {
   })
 }
 // ===========================>
+
+var numberForAnimateDescription;
+var numberForAnimateDescriptionBlock;
+
 function animateDescription() {
   $('#number1').mouseover(function () {
-    for (var i = 3; i <= 6; i++) {
-      var elemBottom = '#number' + i;
-      if ($('#number1').offset().left == $(elemBottom).offset().left) {
-        var j = i;
-      }
+    numberForAnimateDescription = '#number1';
+    numberForAnimateDescriptionBlock = '#descriptionNumber1';
+    animateDesciptionBegin();
+  })
+  $('#number1').mouseout(function () {
+    numberForAnimateDescription = '#number1';
+    numberForAnimateDescriptionBlock = '#descriptionNumber1';
+
+    animateDesciptionEnd();
+  })
+  $('#number2').mouseover(function () {
+    numberForAnimateDescription = '#number2';
+    numberForAnimateDescriptionBlock = '#descriptionNumber2';
+
+    animateDesciptionBegin();
+  })
+  $('#number2').mouseout(function () {
+    numberForAnimateDescription = '#number2';
+    numberForAnimateDescriptionBlock = '#descriptionNumber2';
+
+    animateDesciptionEnd();
+  })
+  $('#number3').mouseover(function () {
+    numberForAnimateDescription = '#number3';
+    numberForAnimateDescriptionBlock = '#descriptionNumber3';
+
+    animateDesciptionBegin();
+  })
+  $('#number3').mouseout(function () {
+    numberForAnimateDescription = '#number3';
+    numberForAnimateDescriptionBlock = '#descriptionNumber3';
+
+    animateDesciptionEnd();
+  })
+}
+
+function animateDesciptionBegin() {
+
+  $(numberForAnimateDescriptionBlock).stop([true]);
+  $(numberForAnimateDescriptionBlock).animate({
+    height: '11%',
+  },400)
+
+  for (var i = 4; i <= 6; i++) {
+    var elemBottom = '#number' + i;
+    if ($(numberForAnimateDescription).offset().left == $(elemBottom).offset().left) {
+      $(elemBottom).stop([true]);
+      $(elemBottom).animate({
+        top: '30%',
+        opacity: 0.8
+      }, 400)
     }
-    var elemBottomQ = '#number' + j;
-    console.log(elemBottomQ);
-    $(elemBottomQ).animate({
-      top: '30%',
-      opacity: 0.8
-    }, {duration: j * 600, complete: function () {
-      console.log('asdasd');
-    }})
-  });
+  }
+}
+
+function animateDesciptionEnd() {
+
+  $(numberForAnimateDescriptionBlock).stop([true]);
+  $(numberForAnimateDescriptionBlock).animate({
+    height: '0%',
+  },400)
+
+  for (var i = 4; i <= 6; i++) {
+    var elemBottom = '#number' + i;
+    if ($(numberForAnimateDescription).offset().left == $(elemBottom).offset().left) {
+      $(elemBottom).stop([true]);
+      $(elemBottom).animate({
+        top: '21%',
+        opacity: 1
+      }, 400)
+    }
+  }
 }
