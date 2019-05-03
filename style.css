@@ -59,18 +59,7 @@ p {
   opacity: 0;
   top: 12%;
 }
-.lineOneDescrib{
-  position: absolute;
-  width: 25%;
-  background: black;
-  border-radius: 2.5%;
-  top: 18.5%;
-  height: 0%;
-  color: white;
-  overflow: hidden;
-  font-size: 2vw;
 
-}
 .blockA {
   left: 7.5%;
 }
@@ -85,19 +74,23 @@ p {
 
 .lineTwo {
   top: 30%;
+  border-top-left-radius: 2.5;
+  border-top-right-radius: 2.5;
+  z-index: 1;
 }
 
 .image {
-  border-top-left-radius: 2.5%;
-  border-top-right-radius: 2.5%;
+  border-top-left-radius: 3.2%;
+  border-top-right-radius: 3.2%;
   position: absolute;
   background: grey;
   /* background: url(img/planet.jpg) no-repeat center;
   background-size: 100% 100%; */
   width: 100%;
   height: 63%;
-  top: 2%;
 }
+
+
 
 #line-firstOnPage {
   position: absolute;
@@ -118,15 +111,41 @@ p {
 }
 
 .description {
+  position: absolute;
+  background: black;
+  width: 100%;
+  top: 65%;
+  height: 35%;
+  font-size: 2vw;
+  color: white;
+  border-bottom-left-radius: 8%;
+  border-bottom-right-radius: 8%;
+}
+
+.lineOneDescrib {
   border-bottom-left-radius: 2.5%;
   border-bottom-right-radius: 2.5%;
   position: absolute;
-  background: white;
-  width: 100%;
-  top: 65%;
-  height: 33%;
+  width: 25%;
+  background: black;
+  top: 18%;
+  height: 0%;
+  color: white;
+  overflow: hidden;
   font-size: 2vw;
-  color: black;
+}
+
+.lineSecDescrib {
+  border-bottom-left-radius: 2.5%;
+  border-bottom-right-radius: 2.5%;
+  position: absolute;
+  width: 25%;
+  background: black;
+  top: 35%;
+  height: 0%;
+  color: white;
+  overflow: hidden;
+  font-size: 2vw;
 }
 
 header {
@@ -152,11 +171,13 @@ header {
   color: white;
   font-size: 2vw;
 }
-a{
+
+a {
   text-decoration: none;
   color: white;
   font-size: 2vw;
 }
+
 main {
   position: relative;
   background: white;

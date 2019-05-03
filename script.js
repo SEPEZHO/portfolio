@@ -105,10 +105,19 @@ function animateLow() {
   for (var i = 3; i < 6; i++) {
     b++;
     var element = '#number' + b;
+    var descripNum = '#descriptionNumber' + b
     left = arr[i - 3];
     $(element).css({
       left: mas[left]
     })
+    $(descripNum).css({
+      left: mas[left]
+    })
+    if (mas[left] == '37.5%') {
+      $(element).css({
+        zIndex: 0
+      })
+    }
   }
 }
 
@@ -120,7 +129,12 @@ function realAnimateTop() {
     $(element).animate({
       top: '3%',
       opacity: 1
-    }, {duration: (a + 3) * 200, complete: function(){animateDescription()}});
+    }, {
+      duration: (a + 3) * 200,
+      complete: function () {
+        animateDescription()
+      }
+    });
   }
 }
 
@@ -131,7 +145,7 @@ function realAnimateTopSec() {
     b++;
     element = '#number' + b;
     $(element).animate({
-      top: '21%',
+      top: '20%',
       opacity: 1
     }, b * 200);
   }
@@ -157,40 +171,76 @@ var numberForAnimateDescription;
 var numberForAnimateDescriptionBlock;
 
 function animateDescription() {
-  $('#number1').mouseover(function () {
-    numberForAnimateDescription = '#number1';
+  $('.descripNum1').mouseover(function () {
+    numberForAnimateDescription = '.descripNum1';
     numberForAnimateDescriptionBlock = '#descriptionNumber1';
     animateDesciptionBegin();
   })
-  $('#number1').mouseout(function () {
-    numberForAnimateDescription = '#number1';
+  $('.descripNum1').mouseout(function () {
+    numberForAnimateDescription = '.descripNum1';
     numberForAnimateDescriptionBlock = '#descriptionNumber1';
 
     animateDesciptionEnd();
   })
-  $('#number2').mouseover(function () {
-    numberForAnimateDescription = '#number2';
+  $('.descripNum2').mouseover(function () {
+    numberForAnimateDescription = '.descripNum2';
     numberForAnimateDescriptionBlock = '#descriptionNumber2';
 
     animateDesciptionBegin();
   })
-  $('#number2').mouseout(function () {
-    numberForAnimateDescription = '#number2';
+  $('.descripNum2').mouseout(function () {
+    numberForAnimateDescription = '.descripNum2';
     numberForAnimateDescriptionBlock = '#descriptionNumber2';
 
     animateDesciptionEnd();
   })
-  $('#number3').mouseover(function () {
-    numberForAnimateDescription = '#number3';
+  $('.descripNum3').mouseover(function () {
+    numberForAnimateDescription = '.descripNum3';
     numberForAnimateDescriptionBlock = '#descriptionNumber3';
 
     animateDesciptionBegin();
   })
-  $('#number3').mouseout(function () {
-    numberForAnimateDescription = '#number3';
+  $('.descripNum3').mouseout(function () {
+    numberForAnimateDescription = '.descripNum3';
     numberForAnimateDescriptionBlock = '#descriptionNumber3';
 
     animateDesciptionEnd();
+  })
+
+  $('.descripNum4').mouseover(function () {
+    numberForAnimateDescription = 'describNumb4';
+    numberForAnimateDescriptionBlock = '#descriptionNumber4';
+    animateDesciptionBeginSec();
+  })
+  $('.descripNum4').mouseout(function () {
+    numberForAnimateDescription = 'describNumb4';
+    numberForAnimateDescriptionBlock = '#descriptionNumber4';
+
+    animateDesciptionEndSec();
+  })
+  $('.descripNum5').mouseover(function () {
+    numberForAnimateDescription = 'describNumb5';
+    numberForAnimateDescriptionBlock = '#descriptionNumber5';
+
+    animateDesciptionBeginSec();
+  })
+  $('.descripNum5').mouseout(function () {
+    numberForAnimateDescription = 'describNumb5';
+    numberForAnimateDescriptionBlock = '#descriptionNumber5';
+
+    animateDesciptionEndSec();
+  })
+  $('.descripNum6').mouseover(function () {
+    numberForAnimateDescription = 'describNumb6';
+    numberForAnimateDescriptionBlock = '#descriptionNumber6';
+
+    animateDesciptionBeginSec();
+  })
+  $('.descripNum6').mouseout(function () {
+    numberForAnimateDescription = 'describNumb6';
+    numberForAnimateDescriptionBlock = '#descriptionNumber6';
+
+    animateDesciptionEndSec();
   })
 }
 
@@ -198,8 +248,8 @@ function animateDesciptionBegin() {
 
   $(numberForAnimateDescriptionBlock).stop([true]);
   $(numberForAnimateDescriptionBlock).animate({
-    height: '11%',
-  },400)
+    height: '11.5%',
+  }, 400)
 
   for (var i = 4; i <= 6; i++) {
     var elemBottom = '#number' + i;
@@ -207,10 +257,14 @@ function animateDesciptionBegin() {
       $(elemBottom).stop([true]);
       $(elemBottom).animate({
         top: '30%',
-        opacity: 0.8
       }, 400)
     }
   }
+  $(numberForAnimateDescriptionBlock + 'A').stop([true])
+  $(numberForAnimateDescriptionBlock + 'A').animate({
+    borderBottomLeftRadius: '0%',
+    borderBottomRightRadius: '0%'
+  }, 400)
 }
 
 function animateDesciptionEnd() {
@@ -218,16 +272,57 @@ function animateDesciptionEnd() {
   $(numberForAnimateDescriptionBlock).stop([true]);
   $(numberForAnimateDescriptionBlock).animate({
     height: '0%',
-  },400)
+  }, 400)
 
   for (var i = 4; i <= 6; i++) {
     var elemBottom = '#number' + i;
     if ($(numberForAnimateDescription).offset().left == $(elemBottom).offset().left) {
       $(elemBottom).stop([true]);
       $(elemBottom).animate({
-        top: '21%',
+        top: '20%',
         opacity: 1
       }, 400)
     }
   }
+  $(numberForAnimateDescriptionBlock+ 'A').stop([true])
+  $(numberForAnimateDescriptionBlock+ 'A').animate({
+    borderBottomLeftRadius: '8%',
+    borderBottomRightRadius: '8%'
+  }, 400)
+
+}
+
+function animateDesciptionBeginSec() {
+
+  $(numberForAnimateDescriptionBlock).stop([true]);
+  $(numberForAnimateDescriptionBlock).animate({
+    height: '11.5%',
+  }, 400)
+  $('#line-firstOnPage').stop([true])
+  $('#line-firstOnPage').animate({
+    top: '47%',
+  }, 400)
+  $('#lineTwo' + numberForAnimateDescription).stop([true])
+  $('#lineTwo' + numberForAnimateDescription).animate({
+    borderBottomLeftRadius: '0%',
+    borderBottomRightRadius: '0%'
+  }, 400)
+}
+
+function animateDesciptionEndSec() {
+
+  $(numberForAnimateDescriptionBlock).stop([true]);
+  $(numberForAnimateDescriptionBlock).animate({
+    height: '0%',
+  }, 400)
+
+  $('#lineTwo' + numberForAnimateDescription).stop([true])
+  $('#lineTwo' + numberForAnimateDescription).animate({
+    borderBottomLeftRadius: '8%',
+    borderBottomRightRadius: '8%'
+  }, 400)
+
+  $('#line-firstOnPage').animate({
+    top: '40%',
+  }, 400)
 }
