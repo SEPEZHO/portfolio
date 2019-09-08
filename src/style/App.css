@@ -4,19 +4,15 @@
   font-size: 0.7vw;
   transition: .3s;
 }
-.site{
-  position: absolute;
-  left: 20vw;
 
+.app{
   display: grid;
-
   grid-template-areas:
   "head"
   "main"
   "foot";
 
-  grid-template-rows: 1fr 5fr 1fr;
-  grid-template-columns: 60vw;
+  grid-template-rows: 100vh 300vh 50vh;
   
   color: white;
 }

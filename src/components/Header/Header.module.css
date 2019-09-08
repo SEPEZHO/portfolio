@@ -1,0 +1,22 @@
+.Title_header{
+  grid-area: head;
+}
+.header video {
+  position: fixed;
+  width: 100%;
+}
+.header{
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+.name{
+  position: absolute;
+  right: 10vw;
+  bottom: 25vh;
+}
+.subs{
+  position: absolute;
+  left: 10vw;
+  top: 25vh;
+}
