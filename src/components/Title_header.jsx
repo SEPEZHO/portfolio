@@ -1,12 +1,13 @@
 import React from 'react';
 
+import s from '../style/Header.module.css';
 const Title_header = () => {
   return (
    	<div className='Title_header'>
-  		<div className='Title_header_name'>
+  		<div className={s.name}>
    			Created by: Vladislav Bliznyuk.
   		</div>
-  		<div className='Title_header_subs'>
+  		<div className={s.subs}>
   			YouTube: 0
   		</div>
   	</div>

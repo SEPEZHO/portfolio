@@ -1,0 +1,22 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-size: 0.7vw;
+  transition: .3s;
+}
+.site{
+  position: absolute;
+  left: 20vw;
+
+  display: grid;
+
+  grid-template-areas:
+  "head"
+  "main"
+  "foot";
+
+  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-columns: 60vw;
+  
+  color: white;
+}

@@ -1,0 +1,16 @@
+.header{
+  grid-area: head;
+}
+.header video {
+  width: 100%;
+}
+.name{
+  position: absolute;
+  right: 6vw;
+  top: 44vh;
+}
+.subs{
+  position: absolute;
+  left: 10vw;
+  top: 20vh;
+}
