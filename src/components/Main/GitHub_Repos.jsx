@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './Main.module.css';
+import s from './Table.module.css';
 
 const username = 'Sepezho';
 
@@ -21,14 +21,17 @@ class GitHub extends React.Component {
     .then(data => {
       // мапим данные нужным нам способом
       const body = data.map(repo => {
-        return <li key={repo.id}>
-        	Name: <a href={repo.html_url}>{repo.name}</a> 
-        	/ language: {repo.language} 
-        	/ Create: {repo.created_at.substring(0,10)} 
-        	/ Last update: {repo.updated_at.substring(0,10)} 
-        	/ Size (Kb): {repo.size} 
-        </li>;
-      });
+        return( 
+      <div className={s.Reposit}>
+  
+        	<div className={`${s.name} ${s.block}`}><a href={repo.html_url}>{repo.name}</a></div>
+          <div className={`${s.descrip} ${s.block}`}>{repo.description}</div>
+        	<div className={`${s.language} ${s.block}`}>{repo.language}</div>
+        	<div className={`${s.create} ${s.block}`}>{repo.created_at.substring(0,10)}</div>
+        	<div className={`${s.update} ${s.block}`}>{repo.updated_at.substring(0,10)}</div>
+        	<div className={`${s.size} ${s.block}`}>{repo.size}</div>
+        </div>
+      )});
       console.log(data)
       // присваиваем новое значение переменной `body`
       this.setState({ body });
@@ -40,12 +43,17 @@ class GitHub extends React.Component {
 
   render() {
     return (
-    <div className={s.Reposit}>
-      <h3>List of repositories:</h3>
-      <ul>
-        {this.state.body}
-      </ul>
-    </div>
+     <div className={s.RepAll}> 
+      <div className={s.Top}>
+          <div className={`${s.name} ${s.block}`}>Name</div>
+          <div className={`${s.descrip} ${s.block}`}>Description</div>
+          <div className={`${s.language} ${s.block}`}>Language</div>
+          <div className={`${s.create} ${s.block}`}>Create</div>
+          <div className={`${s.update} ${s.block}`}>Last update</div>
+          <div className={`${s.size} ${s.block}`}>Size (Kb)</div>
+      </div>
+      {this.state.body}
+      </div>
   )}
 }
 

@@ -1,0 +1,35 @@
+.RepAll>*{
+	color: black;
+}
+.Reposit{
+  display: grid;
+  grid-template-areas:
+  "name descrip language create update size";
+  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 3vh;
+}
+.Top{
+  display: grid;
+  grid-template-areas:
+  "name descrip language create update size";
+  grid-template-rows: 5vh;
+  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
+}
+.name{
+grid-area: name;
+}
+.descrip{
+grid-area: descrip;
+}
+.language{ 
+grid-area: language;
+}
+.create{
+grid-area: create;
+}
+.update{
+grid-area: update;
+}
+.size{
+grid-area: size;
+}
