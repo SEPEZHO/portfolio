@@ -1,6 +1,28 @@
 .RepAll>*{
 	color: black;
 }
+hr{
+	position: relative;	
+	left: 10%;
+	width: 80%;
+	border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+a{
+	text-decoration: none;
+	color: #0000FF;
+}
+a:hover{
+	color: #A400FF;
+	text-decoration: underline;
+	
+}
+.RepAll{
+	padding: 1.5vw;
+	border: 1px solid black;
+	border-radius: 0.3vw; 
+}
 .Reposit{
   display: grid;
   grid-template-areas:

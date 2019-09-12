@@ -22,16 +22,18 @@ class GitHub extends React.Component {
       // мапим данные нужным нам способом
       const body = data.map(repo => {
         return( 
-      <div className={s.Reposit}>
-  
-        	<div className={`${s.name} ${s.block}`}><a href={repo.html_url}>{repo.name}</a></div>
-          <div className={`${s.descrip} ${s.block}`}>{repo.description}</div>
-        	<div className={`${s.language} ${s.block}`}>{repo.language}</div>
-        	<div className={`${s.create} ${s.block}`}>{repo.created_at.substring(0,10)}</div>
-        	<div className={`${s.update} ${s.block}`}>{repo.updated_at.substring(0,10)}</div>
-        	<div className={`${s.size} ${s.block}`}>{repo.size}</div>
-        </div>
-      )});
+          <div>
+              <div className={s.Reposit}>
+        	       <div className={`${s.name} ${s.block}`}><a href={repo.html_url}>{repo.name}</a></div>
+                 <div className={`${s.descrip} ${s.block}`}>{repo.description}</div>
+        	       <div className={`${s.language} ${s.block}`}>{repo.language}</div>
+        	       <div className={`${s.create} ${s.block}`}>{repo.created_at.substring(0,10)}</div>
+        	       <div className={`${s.update} ${s.block}`}>{repo.updated_at.substring(0,10)}</div>
+        	       <div className={`${s.size} ${s.block}`}>{repo.size}</div>
+              </div>
+              <hr/>
+          </div>
+        )});
       console.log(data)
       // присваиваем новое значение переменной `body`
       this.setState({ body });
