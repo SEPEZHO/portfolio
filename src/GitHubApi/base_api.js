@@ -1,30 +1,40 @@
-const mysql = require('mysql');
-const https = require('https');
+const mysql = require('mysql')
+const https = require('https')
 
-console.log('-----------------------------------------------------');
+// console.log('-----------------------------------------------------');
 
-// connect ot mysql data
-const con = mysql.createConnection({
+// request to gitHub options
+const optionsHttp = {
+    host: 'api.github.com',
+    path: '/users/sepezho/repos',
+    method: 'GET',
+    headers: { 'user-agent': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)' }
+}
+
+// connect ot mysql data for PC
+const optionsMysql = {
     host: "localhost",
     user: "root",
     password: "",
     database: 'guthub_proj'
-});
-
-// request to gitHub options
-const options = {
-    host: 'api.github.com',
-    path: '/users/sepezho/repos',
-    method: 'GET',
-    headers: { 'user-agent': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)' },
 }
 
-let bodyOld = '';
+// connect ot mysql data for noteBook
+// const optionsMysql = {
+//     host: "localhost",
+//     user: "root",
+//     password: "",
+//     database: 'guthub_proj'
+// }
+
+const pool = mysql.createPool(optionsMysql)
+
+let bodyOld = ''
 
 const sendReq = () => {
 
     // send request to gitHub
-    const request = https.request(options, res => {
+    const request = https.request(optionsHttp, res => {
 
         // get all request data from git and put it in 'body'
         let body = '';
@@ -34,19 +44,18 @@ const sendReq = () => {
 
         // if we have new data ( != data from DB )
         if (bodyOld != JSON.stringify(body)) {
-            // bodyOld = JSON.stringify(body);
+            bodyOld = JSON.stringify(body);
             // connect to mysql
-            con.connect(err => {
+            pool.getConnection(function(err, con) {
                 if (err) {
                     console.log('Error ' + err)
                 } else {
 
                     // dell all old data in DB
-                    let sql = "DELETE FROM info";
-                    con.query(sql, (err, result) => {
+                    con.query("DELETE FROM `info`", err => {
                         err ? console.log('Error ' + err) :
                             console.log("All old data was deleted.");
-                    })
+                    });
 
                     // parce data and put in DB
                     res.on('end', () => {
@@ -64,14 +73,11 @@ const sendReq = () => {
                     })
                 }
             })
-            // con.end();
-        }else{
+        } else {
             console.log('It alreadey update.');
-            request.end();
             return;
         }
     })
-
     // check err
     request.on('error', e => {
         console.error('Error is: ' + e);
@@ -81,4 +87,4 @@ const sendReq = () => {
 }
 
 // setInterval every 10 minutes
-setInterval(sendReq, 600);
+setInterval(sendReq, 600000);

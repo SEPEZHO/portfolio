@@ -2,8 +2,6 @@ import React from 'react';
 
 import s from './Table.module.css';
 
-const username = 'Sepezho';
-
 class GitHub extends React.Component {
   constructor(props) {
     super(props);
@@ -14,22 +12,31 @@ class GitHub extends React.Component {
 
   componentDidMount() {
     // выполняем запрос на получение данных
-    fetch(`http://api.github.com/users/${username}/repos`, {
-      method: 'GET',
+    fetch('/', {
+      method: 'POST',
+      body: JSON.stringify({
+        user: {
+            name: "John",
+            email: "john@example.com"
+        }
+      })
     })
     .then(response => response.json())
     .then(data => {
+      // console.log(data);
       // мапим данные нужным нам способом
       const body = data.map(repo => {
         return( 
           <div>
               <div className={s.Reposit}>
+                {/*
         	       <div className={`${s.name} ${s.block}`}><a href={repo.html_url}>{repo.name}</a></div>
                  <div className={`${s.descrip} ${s.block}`}>{repo.description}</div>
         	       <div className={`${s.language} ${s.block}`}>{repo.language}</div>
         	       <div className={`${s.create} ${s.block}`}>{repo.created_at.substring(0,10)}</div>
         	       <div className={`${s.update} ${s.block}`}>{repo.updated_at.substring(0,10)}</div>
-        	       <div className={`${s.size} ${s.block}`}>{repo.size}</div>
+        	       <div className={`${s.size} ${s.block}`}>{repo.size}</div> */}
+                }
               </div>
               <hr/>
           </div>
