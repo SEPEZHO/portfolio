@@ -12,18 +12,22 @@ class GitHub extends React.Component {
 
   componentDidMount() {
     // выполняем запрос на получение данных
-    fetch('/', {
-      method: 'POST',
-      body: JSON.stringify({
+  fetch('/req', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
         user: {
             name: "John",
             email: "john@example.com"
         }
       })
     })
-    .then(response => response.json())
+    .then(response => {return response.json()})
     .then(data => {
-      // console.log(data);
+      console.log(data);
+
       // мапим данные нужным нам способом
       const body = data.map(repo => {
         return( 
