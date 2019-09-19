@@ -1,18 +1,31 @@
+const mysql = require('mysql')
 const express = require('express')
 const app = express()
 const port = 3001
 
+const optionsMysql = {
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: 'guthub_proj'
+};
+const pool = mysql.createPool(optionsMysql);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.post('/req', function(req, res){
-    const name = req.body.user.name;
-    res.send(req.body)
-    console.log(req.body);
-});
+app.post('/req', function(req, res) {
 
-app.get('/', function(req, res) {
-  res.send('Hello world!');
+    pool.getConnection((err, con) => {
+        if (err) console.log('Err: ' + err); // not connected!
+
+        // Use the connection
+        con.query('SELECT * FROM `info`', (error, results) => {
+            if (error) console.log('Err: ' + error); // not connected!
+            con.release();
+            res.send(results);
+        });
+    });
 });
 
 app.listen(port, (err) => {

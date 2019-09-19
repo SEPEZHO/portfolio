@@ -1,8 +1,6 @@
 const mysql = require('mysql')
 const https = require('https')
 
-// console.log('-----------------------------------------------------');
-
 // request to gitHub options
 const optionsHttp = {
     host: 'api.github.com',
@@ -18,14 +16,6 @@ const optionsMysql = {
     password: "",
     database: 'guthub_proj'
 }
-
-// connect ot mysql data for noteBook
-// const optionsMysql = {
-//     host: "localhost",
-//     user: "root",
-//     password: "",
-//     database: 'guthub_proj'
-// }
 
 const pool = mysql.createPool(optionsMysql)
 
@@ -45,8 +35,9 @@ const sendReq = () => {
         // if we have new data ( != data from DB )
         if (bodyOld != JSON.stringify(body)) {
             bodyOld = JSON.stringify(body);
+
             // connect to mysql
-            pool.getConnection(function(err, con) {
+            pool.getConnection((err, con) => {
                 if (err) {
                     console.log('Error ' + err)
                 } else {
@@ -78,11 +69,11 @@ const sendReq = () => {
             return;
         }
     })
+
     // check err
     request.on('error', e => {
         console.error('Error is: ' + e);
     });
-
     request.end();
 }
 

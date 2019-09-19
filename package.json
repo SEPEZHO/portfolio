@@ -16,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "node src/GitHubApi/responseInfo.js"
+    "server": "concurrently \"node src/GitHubApi/responseInfo.js\" \"node src/GitHubApi/base_api.js\""
   },
   "eslintConfig": {
     "extends": "react-app"
