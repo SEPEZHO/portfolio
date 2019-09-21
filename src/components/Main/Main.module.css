@@ -68,3 +68,22 @@
 .proj_1 .text{
 	font-size: 1vw;
 }
+.about{
+	width: 100vw;
+	height: 50vh;
+	left: 0;
+	background: black;
+	margin-top: 20vh; 
+	margin-bottom: 25vh; 
+}
+.about > div{
+	top: 50%;
+	transform: translate(0, -50%);
+	letter-spacing: 2px;
+	line-height: 200%;
+	font-size: 0.9vw;
+	position: absolute;
+	width: 60vw;
+	left: 20vw;
+	text-align: justify;
+}

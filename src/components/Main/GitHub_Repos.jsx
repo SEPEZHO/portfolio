@@ -20,9 +20,8 @@ class GitHub extends React.Component {
             })
             .then(response => { return response.json() })
             .then(data => {
-                console.log(data);
-
                 // мапим данные нужным нам способом
+            console.log(data);
                 const body = data.map(repo => {
                     return (
                       <div>
