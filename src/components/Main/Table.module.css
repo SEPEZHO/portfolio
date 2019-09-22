@@ -1,59 +1,124 @@
-.RepAll>*{
-	color: black;
+.RepAll>* {
+    color: black;
 }
-hr{
-	position: relative;	
-	left: 10%;
-	width: 80%;
-	border: 0;
+
+hr {
+    position: relative;
+    left: 10%;
+
+    width: 80%;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+
+    border: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .75), rgba(0, 0, 0, 0));
 }
-a{
-	text-decoration: none;
-	color: #0000FF;
+
+.Reposit a {
+    text-decoration: none;
+
+    color: #00f;
 }
-a:hover{
-	color: #A400FF;
-	text-decoration: underline;
-	
+
+.Reposit a:hover {
+    text-decoration: underline;
+
+    color: #a400ff;
 }
-.RepAll{
-	position: absolute;
-	padding: 1.5vw;
-	left: 18.5vw;
-	border: 1px solid black;
-	border-radius: 0.3vw; 
+
+.RepAll {
+    position: absolute;
+    left: 18.5vw;
+
+    padding: 1.5vw;
+
+    border: 1px solid black;
+    border-radius: .3vw;
 }
-.Reposit{
-  display: grid;
-  grid-template-areas:
-  "name descrip language create update size";
-  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 3vh;
+
+.Reposit {
+    display: -ms-grid;
+    display: grid;
+
+    grid-template-areas: 'name descrip language create update size';
+    -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 3vh;
+    grid-template-rows: 3vh;
 }
-.Top{
-  display: grid;
-  grid-template-areas:
-  "name descrip language create update size";
-  grid-template-rows: 5vh;
-  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
+
+.Top {
+    display: -ms-grid;
+    display: grid;
+
+    grid-template-areas: 'name descrip language create update size';
+    -ms-grid-rows: 5vh;
+    grid-template-rows: 5vh;
+    -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
 }
-.name{
-grid-area: name;
+
+.name {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: name;
 }
-.descrip{
-grid-area: descrip;
+
+.Top>.name {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
 }
-.language{ 
-grid-area: language;
+
+.descrip {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: descrip;
 }
-.create{
-grid-area: create;
+
+.Top>.descrip {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
 }
-.update{
-grid-area: update;
+
+.language {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: language;
 }
-.size{
-grid-area: size;
+
+.Top>.language {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+}
+
+.create {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    grid-area: create;
+}
+
+.Top>.create {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+}
+
+.update {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+    grid-area: update;
+}
+
+.Top>.update {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+}
+
+.size {
+    -ms-grid-row: 1;
+    -ms-grid-column: 6;
+    grid-area: size;
+}
+
+.Top>.size {
+    -ms-grid-row: 1;
+    -ms-grid-column: 6;
 }

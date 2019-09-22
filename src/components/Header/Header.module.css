@@ -1,22 +1,41 @@
-.Title_header{
-  grid-area: head;
+.header {
+    position: relative;
+    z-index: -1;
+
+    height: 100vh;
+
+    color: white;
 }
-.header video {
-  position: fixed;
-  width: 100%;
+
+.header img {
+    position: fixed;
+    left: 50%;
+
+    width: 100vw;
+    height: auto;
+
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
 }
-.header{
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
+@media screen and (max-width: 177.777vh) {
+    .header img {
+        width: auto;
+        height: 100vh;
+    }
 }
-.name{
-  position: absolute;
-  right: 10vw;
-  bottom: 25vh;
+.name {
+    font-size: 1.25rem;
+    position: absolute;
+    width: 25vw;
+    right: 10vw;
+    bottom: 25vh;
 }
-.subs{
-  position: absolute;
-  left: 10vw;
-  top: 25vh;
+.name p{
+    font-size: 1.5rem;
+}
+
+.subs {
+    position: absolute;
+    top: 25vh;
+    left: 10vw;
 }

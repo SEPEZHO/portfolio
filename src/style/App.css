@@ -1,18 +1,8 @@
-*{
-  padding: 0;
-  margin: 0;
-  font-size: 0.7vw;
-  transition: .3s;
-}
+* {
+    font-size: .7vw;
 
-.app{
-  display: grid;
-  grid-template-areas:
-  "head"
-  "main"
-  "foot";
+    margin: 0;
+    padding: 0;
 
-  grid-template-rows: 100vh 300vh 50vh;
-  
-  color: white;
+    transition: .3s;
 }

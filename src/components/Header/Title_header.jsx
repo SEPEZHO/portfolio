@@ -5,7 +5,8 @@ const Title_header = () => {
   return (
    	<div className='Title_header'>
   		<div className={s.name}>
-   			Created by: Vladislav Bliznyuk.
+   			<p>Vladislav Bliznyuk</p>
+        Программирование - мое хобби, пишу сайтики о всяком (в основном веб-приложения (в основном игры)). Сижу на самообучении и балдею.
   		</div>
   		<div className={s.subs}>
   			YouTube: 0

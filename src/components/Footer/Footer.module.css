@@ -1,4 +1,8 @@
-.footer{
-  grid-area: foot;
-  background: blue;
+.footer {
+    position: relative;
+
+    height: 50vh;
+
+    color: white;
+    background: black;
 }
