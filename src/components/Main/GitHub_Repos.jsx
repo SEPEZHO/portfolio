@@ -27,7 +27,7 @@ class GitHub extends React.Component {
                       <div>
                         <div className={s.Reposit}>
                 
-                          <div className={`${s.name} ${s.block}`}><a href={repo.html_url}>{repo.name}</a></div>
+                          <div className={`${s.name} ${s.block}`}><a href={repo.url}>{repo.name}</a></div>
                           <div className={`${s.descrip} ${s.block}`}>{repo.description}</div>
                           <div className={`${s.language} ${s.block}`}>{repo.language}</div>
                           <div className={`${s.create} ${s.block}`}>{repo.create_at.substring(0,10)}</div>

@@ -138,3 +138,11 @@
     transform: translate(0, -50%);
     text-align: justify;
 }
+
+@media screen and (max-width: 177.777vh) {
+    .about>div {
+        width: 90vw;
+        left: 5vw;
+        font-size: 1.8vw;
+    }
+}
