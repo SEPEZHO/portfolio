@@ -143,6 +143,36 @@
     .about>div {
         width: 90vw;
         left: 5vw;
-        font-size: 1.8vw;
+        font-size: 3.5rem;
     }
+    .projects {
+    grid-template-areas:
+    'main'
+    'sec' 
+    'terd';
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 90vw;
+    left: 5vw;
+    grid-gap: 5vw;
+
+}
+    .projects video {
+    border-radius: 2vw;
+}
+ .text {
+    left: 15%;
+    font-size: 3.5rem
+}
+.textDesc{
+        bottom: 15%;
+    font-size: 3.5rem
+}
+.proj_1 .textDesc {
+    font-size: 3.5rem
+}
+
+.proj_1 .text {
+    font-size: 3.5rem
+}
 }

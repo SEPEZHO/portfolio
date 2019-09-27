@@ -26,7 +26,7 @@ hr {
 }
 
 .RepAll {
-    position: absolute;
+    position: relative;
     left: 18.5vw;
 
     padding: 1.5vw;
@@ -121,4 +121,27 @@ hr {
 .Top>.size {
     -ms-grid-row: 1;
     -ms-grid-column: 6;
+}
+
+
+@media screen and (max-width: 177.777vh) {
+.RepAll {
+    position: relative;
+    top: 10vh;
+    width: 90vw;
+    left: 3vw;
+    border-radius: 2vw;
+}
+.Reposit>* {
+    font-size: 3.25rem;
+}
+.Reposit{
+    min-height: 7vh;
+}
+.name>* {
+    font-size: 3.25rem;
+}
+.Top>* {
+    font-size: 3.25rem;
+}
 }
