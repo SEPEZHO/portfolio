@@ -25,6 +25,7 @@ class GitHub extends React.Component {
                 const body = data.map(repo => {
                     return (
                       <div>
+                      <hr/>
                         <div className={s.Reposit}>
                 
                           <div className={`${s.name} ${s.block}`}><a href={repo.url}>{repo.name}</a></div>
@@ -35,7 +36,6 @@ class GitHub extends React.Component {
                           <div className={`${s.size} ${s.block}`}>{repo.size}</div>
                 
                       </div>
-                      <hr/>
                     </div>
                     )
                 });

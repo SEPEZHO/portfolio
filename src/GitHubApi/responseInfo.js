@@ -1,15 +1,7 @@
-const mysql = require('mysql')
 const express = require('express')
 const app = express()
 const port = 3001
-
-const optionsMysql = {
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: 'guthub_proj'
-};
-const pool = mysql.createPool(optionsMysql);
+const pool = require('./mysql_con.js').pool;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

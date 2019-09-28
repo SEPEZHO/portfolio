@@ -1,5 +1,5 @@
-const mysql = require('mysql')
 const https = require('https')
+const pool = require('./mysql_con.js').pool;
 
 // request to gitHub options
 const optionsHttp = {
@@ -8,16 +8,6 @@ const optionsHttp = {
     method: 'GET',
     headers: { 'user-agent': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)' }
 }
-
-// connect ot mysql data for PC
-const optionsMysql = {
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: 'guthub_proj'
-}
-
-const pool = mysql.createPool(optionsMysql)
 
 let bodyOld = ''
 

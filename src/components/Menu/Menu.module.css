@@ -1,0 +1,53 @@
+.Menu{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 5vh;
+	z-index: 2;
+	background-color: white;
+}
+.Menu a{
+	position: absolute;
+	text-decoration: none;
+	color: black;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.Menu>*{
+	position: absolute;
+	width: 10%;
+	height: 100%;
+	overflow: hidden;
+}
+.Menu>* div{
+	position: absolute;
+	bottom: -15%;
+	height: 15%;
+	width: 100%;
+	background: black;
+}
+.Menu>*:hover div{
+	bottom: 0;
+}
+.Contact{
+	left: 10%;
+}
+.Main{
+	right: 10%;
+}
+.Projects{
+	right: 20%;
+}
+@media screen and (max-width: 177.777vh) {
+	.Menu>*{
+		width: 20%;
+	}
+	.Menu a{
+		font-size: 3.25rem;
+	}	
+	.Projects{
+		right: 30%;
+	}
+}

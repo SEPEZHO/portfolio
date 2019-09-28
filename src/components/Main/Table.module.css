@@ -28,13 +28,12 @@ hr {
 .RepAll {
     position: relative;
     left: 18.5vw;
-
+    min-height: 7rem;
     padding: 1.5vw;
 
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     border-radius: .3vw;
 }
-
 .Reposit {
     display: -ms-grid;
     display: grid;
