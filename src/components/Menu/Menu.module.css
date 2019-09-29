@@ -30,6 +30,9 @@
 .Menu>*:hover div{
 	bottom: 0;
 }
+.Menu>*:hover{
+	background: rgba(255,255,255,0.2);
+}
 .Contact{
 	left: 10%;
 }

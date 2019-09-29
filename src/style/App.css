@@ -1,5 +1,10 @@
+@font-face{
+	font-family: 'font';
+	src: url('../static/17789.ttf');
+}
 * {
-    font-size: .7vw;
+	font-family: 'font';
+    /*font-size: 1em;*/
 
     margin: 0;
     padding: 0;
@@ -7,3 +12,7 @@
     transition: .3s;
 }
 
+
+h1{
+	font-size: 3.25rem;
+}

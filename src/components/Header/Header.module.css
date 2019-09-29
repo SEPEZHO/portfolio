@@ -19,11 +19,13 @@
 }
 
 .name {
-    font-size: 1.25rem;
+    font-size: 2.5rem;
     position: absolute;
-    width: 25vw;
-    right: 10vw;
-    bottom: 25vh;
+    width: 50vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: justify;
 }
 .name p{
     font-size: 1.5em;
@@ -41,8 +43,8 @@
         height: 100vh;
     }
     .name{
-        font-size: 3.25rem;
-        width: 50vw;
+        font-size: 4.25rem;
+        width: 75vw;
     }
     .subs {
         font-size: 3.25rem;

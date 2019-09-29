@@ -5,7 +5,7 @@ const Title_header = () => {
   return (
    	<div className='Title_header'>
   		<div className={s.name}>
-   			<p>Vladislav Bliznyuk</p>
+   			<h1>Vladislav Bliznyuk</h1>
         Программирование - мое хобби, пишу сайтики о всяком (в основном веб-приложения (в основном игры)). Сижу на самообучении и балдею.
   		</div>
   		<div className={s.subs}>
