@@ -1,7 +1,7 @@
 import React from 'react';
-import Clicker from '../../Static/Images/Clicker.png';
-import Life from '../../Static/Images/Life.png';
-import ShortWay from '../../Static/Images/ShortWay.png';
+import Clicker from '../../Static/Images/Projects/Clicker.png';
+import Life from '../../Static/Images/Projects/Life.png';
+import ShortWay from '../../Static/Images/Projects/ShortWay.png';
 
 import s from './Main.module.css';
 // type='video/mp4' autoPlay loop muted

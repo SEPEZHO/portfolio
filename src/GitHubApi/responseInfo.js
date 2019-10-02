@@ -25,6 +25,6 @@ app.listen(port, (err) => {
         return console.log('something bad happened', err)
     }
     console.log('\n-------------------------------------------');
-    console.log(`\nAPI server is listening on ${port}`)
-    console.log('\n-------------------------------------------\n');
+    console.log(`API server is listening on ${port}`)
+    console.log('-------------------------------------------\n');
 })

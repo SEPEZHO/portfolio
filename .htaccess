@@ -1,7 +1,0 @@
-# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
-PassengerAppRoot "/home/s50962/public_html/sepezho.ru"
-PassengerBaseURI "/"
-PassengerNodejs "/home/s50962/nodevenv/public_html/sepezho.ru/10/bin/node"
-PassengerAppType node
-PassengerStartupFile ./src/index.js
-# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END

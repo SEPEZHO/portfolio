@@ -1,0 +1,84 @@
+
+.About {
+    left: 0;
+
+    width: 100%;
+    height: 90vh;
+    margin-bottom: 25vh;
+
+    color: white;
+    background: black;
+
+    grid-column-gap: 0;
+}
+.About>h1{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+.About>div{
+    font-size: 1.25em;
+    line-height: 200%;
+
+    position: relative;
+    left: 10vw;
+    width: 80vw;
+
+    text-align: justify;
+}
+.MeText{
+    top: 20%;
+}
+.SepezhoTitle{
+    position: absolute;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%);
+
+}
+.Sepezho{
+    position: relative;
+    width: 100%;
+    height: 49%;
+    bottom: 0;
+}
+.Sepezho img{
+    position: absolute;
+    height: 10vh;
+    top: 75%;
+}
+.Left{
+    left: 25%;
+}
+.Rigth{
+    right: 25%;
+}
+.Center{
+    left: 50%;
+    transform: translate(-55%);
+}
+.LeftText, .CenterText, .RigthText{
+    width: 10vw;
+    position: absolute;
+    top: 45vh;
+    font-size: 1em;
+    line-height: 100%;
+
+}
+.LeftText{
+    left: 15%;
+}
+.CenterText{
+    left: 50%;
+    transform: translate(-45%);
+}
+.RigthText{
+    right: 10%;
+}
+@media screen and (max-width: 177.777vh) {
+    .About>div {
+        width: 90vw;
+        left: 5vw;
+        font-size: 3.5rem;
+    }
+}
