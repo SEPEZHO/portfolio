@@ -1,4 +1,4 @@
-.main {
+.Main {
     position: relative;
 
     height: 500vh;
@@ -6,14 +6,14 @@
     background: white;
 }
 
-.main>* {
+.Main>* {
     position: relative;
     left: 7.5vw;
 
     width: 85vw;
 }
 
-.projects {
+.Projects {
     display: -ms-grid;
     display: grid;
 
@@ -23,52 +23,53 @@
     grid-template-rows: 1fr 1fr 1fr;
     -ms-grid-columns: 2fr 1% .992fr;
     grid-template-columns: 2fr .992fr;
-    grid-column-gap: 1%;
+    grid-gap: 0.5%;
     height: 100vh;
 }
 
-.projects>* {
+.Projects>* {
     position: relative;
     overflow: hidden;
 }
 
-.proj_1 {
+.Proj1 {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     -ms-grid-column: 1;
     grid-area: main;
 }
 
-.proj_2 {
+.Proj2 {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
     grid-area: sec;
 }
 
-.proj_3 {
+.Proj3 {
     -ms-grid-row: 2;
     -ms-grid-column: 3;
     grid-area: terd;
 }
 
-.projects img {
+.Projects img {
     width: 100%;
     height: 100%;
     border-radius: .3vw;
-
-}
-
-.projects div:hover .proj_video {
-    -webkit-filter: blur(.05vw) brightness(60%);
     filter: blur(.05vw) brightness(60%);
+
+}
+.Projects div:hover .ProjImg {
+    -webkit-filter: blur(0) brightness(100%);
+    filter: blur(0) brightness(100%);
 }
 
-.projects div:hover .text {
+.Projects div:hover .Text {
     left: 15%;
 }
 
-.text {
+.Text {
     font-size: .8vw;
+    background: rgba(0, 0, 0, 0.6);
 
     position: absolute;
     z-index: 1;
@@ -80,18 +81,19 @@
     transform: translate(0, -50%);
 }
 
-.projects div:hover .textDesc {
+.Projects div:hover .TextDesc {
     bottom: 15%;
 }
 
-.projects a {
+.Projects a {
     text-decoration: none;
-
     color: white;
 }
 
-.textDesc {
+.TextDesc {
     font-size: .7vw;
+    background: rgba(0, 0, 0, 0.6);
+
 
     position: absolute;
     z-index: 1;
@@ -103,16 +105,19 @@
     transform: translate(-50%);
     text-align: center;
 }
-
-.proj_1 .textDesc {
+.Proj2 span{
+    color: black;
+    background: rgba(255, 255, 255, 0.8);
+}
+.Proj1 .textDesc {
     font-size: .8vw;
 }
 
-.proj_1 .text {
+.Proj1 .text {
     font-size: 1vw;
 }
 
-.about {
+.About {
     left: 0;
 
     width: 100%;
@@ -124,12 +129,12 @@
 
     grid-column-gap: 0;
 }
-.about>h1{
+.About>h1{
     position: absolute;
     top: 10%;
     left: 10%;
 }
-.about>div {
+.About>div {
     font-size: 1.25em;
     line-height: 200%;
 
@@ -143,12 +148,12 @@
 }
 
 @media screen and (max-width: 177.777vh) {
-    .about>div {
+    .About>div {
         width: 90vw;
         left: 5vw;
         font-size: 3.5rem;
     }
-    .projects {
+    .Projects {
     grid-template-areas:
     'main'
     'sec' 
@@ -160,22 +165,22 @@
     grid-gap: 5vw;
 
 }
-    .projects video {
+    .Projects video {
     border-radius: 2vw;
 }
- .text {
+ .Text {
     left: 15%;
     font-size: 3.5rem
 }
-.textDesc{
+.TextDesc{
         bottom: 15%;
     font-size: 3.5rem
 }
-.proj_1 .textDesc {
+.Proj1 .TextDesc {
     font-size: 3.5rem
 }
 
-.proj_1 .text {
+.Proj1 .Text {
     font-size: 3.5rem
 }
 }

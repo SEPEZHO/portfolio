@@ -28,12 +28,12 @@ class GitHub extends React.Component {
                       <hr/>
                         <div className={s.Reposit}>
                 
-                          <div className={`${s.name} ${s.block}`}><a href={repo.url}>{repo.name}</a></div>
-                          <div className={`${s.descrip} ${s.block}`}>{repo.description}</div>
-                          <div className={`${s.language} ${s.block}`}>{repo.language}</div>
-                          <div className={`${s.create} ${s.block}`}>{repo.create_at.substring(0,10)}</div>
-                          <div className={`${s.update} ${s.block}`}>{repo.last_update.substring(0,10)}</div>
-                          <div className={`${s.size} ${s.block}`}>{repo.size}</div>
+                          <div className={`${s.Name} ${s.Block}`}><a href={repo.Url}>{repo.Name}</a></div>
+                          <div className={`${s.Descrip} ${s.Block}`}>{repo.Description}</div>
+                          <div className={`${s.Language} ${s.Block}`}>{repo.Language}</div>
+                          <div className={`${s.Create} ${s.Block}`}>{repo.CreateAt.substring(0,10)}</div>
+                          <div className={`${s.Update} ${s.Block}`}>{repo.LastUpdate.substring(0,10)}</div>
+                          <div className={`${s.Size} ${s.Block}`}>{repo.Size}</div>
                 
                       </div>
                     </div>
@@ -50,12 +50,12 @@ class GitHub extends React.Component {
         return (
             <div className={s.RepAll}> 
       <div className={s.Top}>
-          <div className={`${s.name} ${s.block}`}>Name</div>
-          <div className={`${s.descrip} ${s.block}`}>Description</div>
-          <div className={`${s.language} ${s.block}`}>Language</div>
-          <div className={`${s.create} ${s.block}`}>Create</div>
-          <div className={`${s.update} ${s.block}`}>Last update</div>
-          <div className={`${s.size} ${s.block}`}>Size (Kb)</div>
+          <div className={`${s.Name} ${s.Block}`}>Name</div>
+          <div className={`${s.Descrip} ${s.Block}`}>Description</div>
+          <div className={`${s.Language} ${s.Block}`}>Language</div>
+          <div className={`${s.Create} ${s.Block}`}>Create</div>
+          <div className={`${s.Update} ${s.Block}`}>Last update</div>
+          <div className={`${s.Size} ${s.Block}`}>Size (Kb)</div>
       </div>
       {this.state.body}
       </div>

@@ -1,5 +1,5 @@
 const https = require('https')
-const pool = require('./mysql_con.js').pool;
+const pool = require('./MysqlCon.js').pool;
 
 // request to gitHub options
 const optionsHttp = {
@@ -42,7 +42,7 @@ const sendReq = () => {
                     res.on('end', () => {
                         body = JSON.parse(body);
                         body.forEach(repo => {
-                            let sql = "INSERT INTO info (name, url, description, language, create_at, last_update, size) VALUES ('" +
+                            let sql = "INSERT INTO info (Name, Url, Description, Language, CreateAt, LastUpdate, Size) VALUES ('" +
                                 repo.name + "', '" + repo.html_url + "', '" + repo.description + "', '" + repo.language + "', '" +
                                 repo.created_at.substring(0, 10) + "', '" + repo.updated_at.substring(0, 10) + "', '" + repo.size + "')";
 

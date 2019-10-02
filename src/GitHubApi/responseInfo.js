@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3001
-const pool = require('./mysql_con.js').pool;
+const pool = require('./MysqlCon.js').pool;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -24,7 +24,7 @@ app.listen(port, (err) => {
     if (err) {
         return console.log('something bad happened', err)
     }
-    console.log('-------------------------------------------');
-    console.log(`API server is listening on ${port}`)
-    console.log('-------------------------------------------');
+    console.log('\n-------------------------------------------');
+    console.log(`\nAPI server is listening on ${port}`)
+    console.log('\n-------------------------------------------\n');
 })

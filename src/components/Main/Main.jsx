@@ -1,16 +1,16 @@
 import React from 'react';
-import Main_projects from './Main_projects.jsx';
-import GitHub from './GitHub_Repos.jsx';
-import Main_about from './About.jsx';
+import MainProjects from './MainProjects.jsx';
+import GitHub from './GitHubRepos.jsx';
+import MainAbout from './About.jsx';
 
 import s from './Main.module.css';
 
 
 const Main = () => {
   return (
-    <div className ={s.main}>
-    	<Main_about />
-    	<Main_projects />
+    <div className ={s.Main}>
+    	<MainAbout />
+    	<MainProjects />
     	<GitHub />
     </div>
   );

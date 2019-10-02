@@ -53,68 +53,68 @@ hr {
     grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
 }
 
-.name {
+.Name {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: name;
 }
 
-.Top>.name {
+.Top>.Name {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
 }
 
-.descrip {
+.Descrip {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: descrip;
 }
 
-.Top>.descrip {
+.Top>.Descrip {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
 }
 
-.language {
+.Language {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
     grid-area: language;
 }
 
-.Top>.language {
+.Top>.Language {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
 }
 
-.create {
+.Create {
     -ms-grid-row: 1;
     -ms-grid-column: 4;
     grid-area: create;
 }
 
-.Top>.create {
+.Top>.Create {
     -ms-grid-row: 1;
     -ms-grid-column: 4;
 }
 
-.update {
+.Update {
     -ms-grid-row: 1;
     -ms-grid-column: 5;
     grid-area: update;
 }
 
-.Top>.update {
+.Top>.Update {
     -ms-grid-row: 1;
     -ms-grid-column: 5;
 }
 
-.size {
+.Size {
     -ms-grid-row: 1;
     -ms-grid-column: 6;
     grid-area: size;
 }
 
-.Top>.size {
+.Top>.Size {
     -ms-grid-row: 1;
     -ms-grid-column: 6;
 }
@@ -134,7 +134,7 @@ hr {
 .Reposit{
     min-height: 7vh;
 }
-.name>* {
+.Name>* {
     font-size: 3.25rem;
 }
 .Top>* {

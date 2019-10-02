@@ -1,6 +1,10 @@
 @font-face{
 	font-family: 'font';
-	src: url('../static/17789.ttf');
+	src: url('../Static/Fonts/All.ttf');
+}
+@font-face{
+	font-family: 'h';
+	src: url('../Static/Fonts/H1.ttf');
 }
 * {
 	font-family: 'font';
@@ -12,7 +16,13 @@
     transition: .3s;
 }
 
-
 h1{
+	font-family: 'h';
 	font-size: 3.25rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 0.2vw;
+    padding-left: 10px;
+    padding-top: 10px;
+    color: black;
+	letter-spacing: 1rem;
 }
