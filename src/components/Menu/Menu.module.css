@@ -42,6 +42,14 @@
 .Projects{
 	right: 20%;
 }
+.ToTop{
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	width: 3vw;
+	margin: 1.5vw;
+	z-index: 2;
+}
 @media screen and (max-width: 177.777vh) {
 	.Menu>*{
 		width: 20%;
