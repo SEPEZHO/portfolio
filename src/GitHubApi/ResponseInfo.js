@@ -1,6 +1,6 @@
-const express = require('express')
-const app = express()
-const port = 3001
+const express = require('express');
+const app = express();
+const port = 3001;
 const pool = require('./MysqlCon.js').pool;
 
 app.use(express.urlencoded({ extended: true }));

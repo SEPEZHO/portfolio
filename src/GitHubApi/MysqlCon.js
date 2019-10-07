@@ -3,8 +3,8 @@ const mysql = require('mysql')
 const optionsMysql = {
     host: "localhost",
     user: "root",
-    password: "",
-    database: 'GitHubProj'
+    password: "password",
+    database: "gitHubProj"
 }
 
 const pool = mysql.createPool(optionsMysql)
