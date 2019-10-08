@@ -13,10 +13,7 @@ class Footer extends React.Component {
 
     Like = () => {
         fetch('/Likes', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            method: 'POST'
         })
     }
     render() {
