@@ -1,8 +1,14 @@
 const fs = require('fs')
+const srcToFile = './src/Likes/NumLikes.txt';
 
 const ReadFile = () => {
-    let data = fs.readFileSync('a.txt');
-    console.log('U liked '+data+' times');
+    let number = fs.readFileSync(srcToFile);
+    fs.truncate(srcToFile, ()=>{
+    	number++;
+    	fs.writeFile(srcToFile, number, () => {
+		    console.log('U liked '+number+' times');
+		}); 	
+    });
 }
 
 const GetCon = (app) => {

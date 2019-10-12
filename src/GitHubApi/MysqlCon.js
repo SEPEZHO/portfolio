@@ -3,7 +3,7 @@ const mysql = require('mysql')
 const optionsMysql = {
     host: "localhost",
     user: "root",
-    password: "password",
+    password: "123",
     database: "gitHubProj"
 }
 
