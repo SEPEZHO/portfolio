@@ -5,17 +5,16 @@ const ReadFile = () => {
     let number = fs.readFileSync(srcToFile);
     fs.truncate(srcToFile, ()=>{
     	number++;
-    	fs.writeFile(srcToFile, number, ()=>{console.log("LIKE")});
+    	fs.writeFile(srcToFile, number, ()=>{});
     });
 }
 
 const GetCon = (app) => {
-    app.post('/Likes', function(req, res) {
+    app.post('/likes', function(req, res) {
         ReadFile();    
     })
 
-    app.post('/Likes/Num', function(req, res) {
-    	console.log('start')
+    app.post('/likes/num', function(req, res) {
     	let number = fs.readFileSync(srcToFile);
 		res.send(number);
     })
