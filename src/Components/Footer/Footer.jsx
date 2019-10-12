@@ -3,12 +3,9 @@ import React from 'react';
 import s from './Footer.module.css';
 
 class Footer extends React.Component {
-
     constructor() {
         super();
-        this.state = {
-            Likes: 0
-        };
+        this.state = {};
     }
 
     Like = () => {
@@ -16,6 +13,20 @@ class Footer extends React.Component {
             method: 'POST'
         })
     }
+
+    componentDidMount() {
+        fetch('/Likes/Num', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => { return response.json() })
+            .then(data => {
+                this.setState({ Likes: data })
+            })
+    }
+
     render() {
         return (
             <div>
@@ -24,7 +35,7 @@ class Footer extends React.Component {
                       <div className={s.Main}><a href='/'>Main</a></div>
                       <div className={s.Contact}><a href='/Contact'>Contact</a></div>
                     </div>
-                    <div className={s.LikeBtn} onClick={this.Like}><span>LikeBtn</span></div>
+                    <div className={s.LikeBtn} onClick={this.Like}><span>{this.state.Likes}</span></div>
                   </div>
             </div>
         )
