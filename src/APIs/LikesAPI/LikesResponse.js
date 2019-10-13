@@ -1,5 +1,5 @@
 const fs = require('fs')
-const srcToFile = './src/Likes/NumLikes.txt';
+const srcToFile = './src/APIs/LikesAPI/NumLikes.txt';
 
 const ReadFile = () => {
     let number = fs.readFileSync(srcToFile);
