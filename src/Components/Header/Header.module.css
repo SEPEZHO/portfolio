@@ -7,7 +7,7 @@
     color: white;
 }
 
-.Header img {
+.Header > img {
     position: fixed;
     left: 50%;
 
@@ -42,8 +42,32 @@
     left: 10vw;
 }
 
+.SideBar img {
+    position: relative;
+    width: 1.5vw;
+    height: 1.5vw;
+    padding: 20%;
+}
+
+.SideBar img :hover{
+    filter: brightness(0.6) blur(1px);
+    background: black;
+}
+
+.SideBar {
+    position: absolute;
+    top: 50%;
+    left: 2vw;
+
+    width: 1.5vw;
+    height: auto;
+
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
 @media screen and (max-width: 177.777vh) {
-    .Header img {
+    .Header > img {
         width: auto;
         height: 100vh;
     }
