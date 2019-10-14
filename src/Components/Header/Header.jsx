@@ -8,8 +8,8 @@ import s from './Header.module.css';
 const Header = () => {
   return (
     <div className={s.Header}>
-    	<img alt='' src={HeaderImg}/>
     	<SideBar />
+    	<img alt='' src={HeaderImg}/>
     	<TitleHeader />
     </div>
   );

@@ -36,12 +36,6 @@
     font-size: 1.5em;
 }
 
-.Subs {
-    position: absolute;
-    top: 25vh;
-    left: 10vw;
-}
-
 .SideBar img {
     position: relative;
     width: 1.5vw;
@@ -76,9 +70,5 @@
         font-size: 4.25rem;
 
         width: 75vw;
-    }
-
-    .Subs {
-        font-size: 3.25rem;
     }
 }

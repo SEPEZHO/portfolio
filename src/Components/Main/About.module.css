@@ -19,7 +19,7 @@
 
 .About>div {
     font-size: 1.25em;
-    line-height: 200%;
+    line-height: 150%;
 
     position: relative;
     left: 10vw;
@@ -30,7 +30,7 @@
 }
 
 .MeText {
-    top: 20%;
+    top: 25%;
 }
 
 .SepezhoTitle {
@@ -52,7 +52,7 @@
 
 .Sepezho img {
     position: absolute;
-    top: 75%;
+    top: 85%;
 
     height: 10vh;
 }
@@ -79,7 +79,7 @@
     line-height: 100%;
 
     position: absolute;
-    top: 45vh;
+    top: 50vh;
 
     width: 10vw;
 }
