@@ -17,18 +17,20 @@
     display: -ms-grid;
     display: grid;
 
+    height: 100vh;
+
     grid-template-areas: 'main sec'
         'main terd';
-    -ms-grid-rows: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr .5% 1fr .5% 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     -ms-grid-columns: 2fr 1% .992fr;
     grid-template-columns: 2fr .992fr;
-    grid-gap: 0.5%;
-    height: 100vh;
+    grid-gap: .5%;
 }
 
 .Projects>* {
     position: relative;
+
     overflow: hidden;
 }
 
@@ -54,10 +56,13 @@
 .Projects img {
     width: 100%;
     height: 100%;
-    border-radius: .3vw;
-    filter: blur(.05vw) brightness(60%);
 
+    border-radius: .3vw;
+
+    -webkit-filter: blur(.05vw) brightness(60%);
+    filter: blur(.05vw) brightness(60%);
 }
+
 .Projects div:hover .ProjImg {
     -webkit-filter: blur(0) brightness(100%);
     filter: blur(0) brightness(100%);
@@ -77,20 +82,25 @@
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
 }
-.Text, .TextDesc{
-    border-radius: 0.1vw;
-    padding: 2px;
-    background: rgba(0, 0, 0, 0.6);
+
+.Text,
+.TextDesc {
     position: absolute;
     z-index: 1;
 
+    padding: 2px;
+
+    border-radius: .1vw;
+    background: rgba(0, 0, 0, .6);
 }
+
 .Projects div:hover .TextDesc {
     bottom: 15%;
 }
 
 .Projects a {
     text-decoration: none;
+
     color: white;
 }
 
@@ -105,10 +115,12 @@
     transform: translate(-50%);
     text-align: center;
 }
-.Proj2 span{
+
+.Proj2 span {
     color: black;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, .8);
 }
+
 .Proj1 .textDesc {
     font-size: .8vw;
 }
@@ -118,35 +130,44 @@
 }
 
 @media screen and (max-width: 177.777vh) {
-
     .Projects {
-    grid-template-areas:
-    'main'
-    'sec' 
-    'terd';
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    width: 90vw;
-    left: 5vw;
-    grid-gap: 5vw;
+        left: 5vw;
 
-}
+        width: 90vw;
+
+        grid-template-areas: 'main'
+            'sec'
+            'terd';
+        -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 5vw;
+    }
+
     .Projects video {
-    border-radius: 2vw;
-}
- .Text {
-    left: 15%;
-    font-size: 3.5rem
-}
-.TextDesc{
-        bottom: 15%;
-    font-size: 3.5rem
-}
-.Proj1 .TextDesc {
-    font-size: 3.5rem
-}
+        border-radius: 2vw;
+    }
 
-.Proj1 .Text {
-    font-size: 3.5rem
-}
+    .Text {
+        font-size: 3.5rem;
+        ;
+
+        left: 15%;
+    }
+
+    .TextDesc {
+        font-size: 3.5rem;
+        ;
+
+        bottom: 15%;
+    }
+
+    .Proj1 .TextDesc {
+        font-size: 3.5rem;
+    }
+
+    .Proj1 .Text {
+        font-size: 3.5rem;
+    }
 }

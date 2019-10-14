@@ -28,9 +28,11 @@ hr {
 .RepAll {
     position: relative;
     left: 6vw;
+
     min-height: 7rem;
     padding: 1.5vw;
 }
+
 .Reposit {
     display: -ms-grid;
     display: grid;
@@ -121,23 +123,29 @@ hr {
 
 
 @media screen and (max-width: 177.777vh) {
-.RepAll {
-    position: relative;
-    top: 10vh;
-    width: 90vw;
-    left: 3vw;
-    border-radius: 2vw;
-}
-.Reposit>* {
-    font-size: 3.25rem;
-}
-.Reposit{
-    min-height: 7vh;
-}
-.Name>* {
-    font-size: 3.25rem;
-}
-.Top>* {
-    font-size: 3.25rem;
-}
+    .RepAll {
+        position: relative;
+        top: 10vh;
+        left: 3vw;
+
+        width: 90vw;
+
+        border-radius: 2vw;
+    }
+
+    .Reposit>* {
+        font-size: 3.25rem;
+    }
+
+    .Reposit {
+        min-height: 7vh;
+    }
+
+    .Name>* {
+        font-size: 3.25rem;
+    }
+
+    .Top>* {
+        font-size: 3.25rem;
+    }
 }

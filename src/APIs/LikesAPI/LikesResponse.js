@@ -10,13 +10,13 @@ const ReadFile = () => {
 }
 
 const GetCon = (app) => {
-    app.post('/likes', function(req, res) {
-        ReadFile();    
+    app.post('/likes/num', function(req, res) {
+        let number = fs.readFileSync(srcToFile);
+        res.send(number);
     })
 
-    app.post('/likes/num', function(req, res) {
-    	let number = fs.readFileSync(srcToFile);
-		res.send(number);
+    app.post('/likes', function(req, res) {
+        ReadFile();    
     })
 }
 
