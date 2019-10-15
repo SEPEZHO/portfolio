@@ -1,7 +1,7 @@
 import React from 'react';
-import HeaderImg from '../../Static/Images/Me.jpg';
+import HeaderImg from '../../../Static/Images/Me.jpg';
 import TitleHeader from './TitleHeader.jsx';
-import SideBar from '../Footer/SideBar.js';
+import SideBar from '../../Footer/SideBar.jsx';
 
 import s from './Header.module.css';
 
