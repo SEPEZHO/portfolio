@@ -1,37 +1,42 @@
 .Main {
     position: relative;
 
-    height: 270vh;
+    height: 300vh;
 
     background: white;
 }
 
 .Main>* {
     position: relative;
-    left: 7.5vw;
+    left: 10vw;
 
-    width: 85vw;
+    width: 80vw;
 }
 
 .Projects {
     display: -ms-grid;
     display: grid;
-
-    height: 100vh;
-
+    width: 75vw;
+    position: relative;
+    left: 12.5vw;
     grid-template-areas: 'main sec'
-        'main terd';
-    -ms-grid-rows: 1fr .5% 1fr .5% 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    -ms-grid-columns: 2fr 1% .992fr;
-    grid-template-columns: 2fr .992fr;
-    grid-gap: .5%;
+        'port terd';
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1%;
+    grid-row-gap: 2%;
 }
 
 .Projects>* {
     position: relative;
-
+    
+    box-shadow: 0 0 0.25vw black;
+    border-radius: .3vw;
+    
     overflow: hidden;
+}
+
+.Proj {
+    grid-area: port;
 }
 
 .Proj1 {
@@ -56,11 +61,10 @@
 .Projects img {
     width: 100%;
     height: 100%;
-
     border-radius: .3vw;
 
-    -webkit-filter: blur(.05vw) brightness(60%);
-    filter: blur(.05vw) brightness(60%);
+    -webkit-filter: blur(.075vw) brightness(50%);
+    filter: blur(.075vw) brightness(50%);
 }
 
 .Projects div:hover .ProjImg {

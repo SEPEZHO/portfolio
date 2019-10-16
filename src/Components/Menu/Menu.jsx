@@ -8,7 +8,8 @@ class Menu extends React.Component {
     super();
     this.state = {
       background: 'none',
-      display: 'none'
+      display: 'none',
+      boxShadow: 'none'
 
     };
   }
@@ -19,12 +20,16 @@ class Menu extends React.Component {
         console.log();
       	 this.setState({
       		background: 'white',
-          display: 'block'
+          display: 'block',
+          boxShadow: '0 0 0.5vw black'
+
      	 })
   		}else{
   			this.setState({
       		background: 'none',
-          display: 'none'
+          display: 'none',
+          boxShadow: 'none'
+
      	 })
   		}
     });
@@ -35,7 +40,7 @@ class Menu extends React.Component {
   render() {
     return (
       <div>
-	      <div style={{ background: this.state.background }} className ={s.Menu}>
+	      <div style={{ background: this.state.background, boxShadow: this.state.boxShadow }} className ={s.Menu}>
     	 	  <div className={s.Contact}><div></div><a href='/Contact'>Contact</a></div>
     		  <div className={s.Main}><div></div><a href='/'>Main</a></div>
     		  <div className={s.Projects}><div></div><a href='/Projects'>Projects</a></div>

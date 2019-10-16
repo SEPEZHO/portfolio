@@ -11,12 +11,48 @@
 	transform: translate(-50%,-50%);
 	width: 30vw;
 	height: 70vh;
-	background: green;
+	border-radius: .3vw; 
+	box-shadow: 0 0 0.5vw black;
 
 }
 .FormArea{
 	position: absolute;
 	top:50%;
 	left:50%;
-	transform: translate(-50%,-50%);	
+	width: 50%;
+	transform: translate(-50%,-50%);
+
+}
+.FormArea textarea{
+	resize: none;
+	height: 7em;
+}
+.FormArea input, textarea{
+	outline: none;
+	border: 1px solid black;
+	width: 90%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 5%; 
+	padding-right: 5%; 
+	margin-bottom: 5%; 
+	margin-top: 2.5%; 
+	border-radius: .2vw;
+}
+.FormArea input[type=submit]{
+	width: 5vw;
+	background: white;
+	color: black;
+	border: 1px solid black;
+}
+.FormArea input[type=submit]:hover{
+	background: black;
+	color: white;
+}
+
+.FormArea input:hover, textarea:hover{
+	box-shadow: 0 0 0.5vw black;
+}
+.FormArea input:focus, textarea:focus{
+	box-shadow: 0 0 0.25vw black;
 }

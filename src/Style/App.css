@@ -33,3 +33,6 @@ h1 {
     border-radius: .2vw;
     background: rgba(255, 255, 255, .8);
 }
+/*h1:hover{
+    box-shadow: 0 0 0.35vw white !important;
+}*/

@@ -9,7 +9,7 @@
 
 .Menu {
     position: absolute;
-    right: 25%;
+    left: 38%;
     bottom: 5vh;
 }
 
@@ -42,7 +42,7 @@
 .LikeBtn {
     position: absolute;
     bottom: 1vh;
-    left: 20%;
+    left: 15vw;
 
     width: 6vw;
     height: 4vh;
@@ -106,21 +106,31 @@
 .Text div{
     position: absolute;
     top: 17vh;
-    left: 20vw;
+    left: 15vw;
 }
 
 .Text h1{
     position: absolute;
-    left: 20vw;
+    left: 15vw;
     top: 10vh;
     font-size: 2.5em;
 }
 
 .Comments{
-    background: gray;
-    right: 12.9vw;
+    box-shadow: 0 0 0.5vw white;
+    border-radius: .3vw; 
+    right: 15vw;
     position: absolute;
     top: 0;
     width: 30vw;
     height: 43vh;
+}
+
+.Comments h1{
+    font-size: 2em;
+}
+.SideBarPic{
+    position: absolute;
+    top: -13%;
+    left: -70%;
 }

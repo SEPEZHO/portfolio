@@ -7,10 +7,12 @@ import SrcStackOverflow from '../../Static/Images/Icons/StackOverflow.png'
 import SrcYouTube from '../../Static/Images/Icons/YouTube.png'
 import SrcVk from '../../Static/Images/Icons/Vk.png'
 import SrcMail from '../../Static/Images/Icons/Mail.png'
+import SideBarPic from '../../Static/Images/SideBar.png'
 
 const SideBar = () => {
     return (
         <div className={s.SideBar}>
+            <img src={SideBarPic} className={s.SideBarPic} alt=''/>
         	<a href='https://github.com/SEPEZHO'><img src={SrcGithub} alt=''/></a>
         	<a href='https://stackoverflow.com/users/12073046/sepezho'><img src={SrcStackOverflow} alt=''/></a>
         	<a href='https://www.youtube.com/channel/UC4nIyTlfA6DKuF_xKtefutQ/featured?view_as=subscriber'><img src={SrcYouTube} alt=''/></a>

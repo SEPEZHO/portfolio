@@ -1,6 +1,13 @@
-.RepAll>* {
+
+.RepAll{
+
+    position: relative;
     color: black;
-}
+    left: 8.5vw !important;
+    top: 15vw;
+        border-radius: .2vw;
+        box-shadow: 0 0 0.5vw black;
+ }
 
 hr {
     position: relative;
