@@ -2,7 +2,8 @@
     position: relative;
 
     height: 50vh;
-
+        box-shadow: 0 0 0.5vw black;
+    
     color: white;
     background: black;
 }

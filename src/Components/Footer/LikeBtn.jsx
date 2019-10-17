@@ -22,9 +22,9 @@ class LikeBtn extends React.Component {
                 Likes: Likes,
                 isLiked: true
             })
-        }else{
+        } else {
             this.setState({
-                
+
             })
         }
     }
@@ -38,7 +38,7 @@ class LikeBtn extends React.Component {
             })
             .then(response => { return response.json() })
             .then(data => {
-                this.setState({ Likes: data })
+                this.setState({ Likes: data.likes })
             })
     }
 

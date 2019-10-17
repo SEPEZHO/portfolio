@@ -1,23 +1,38 @@
-const fs = require('fs')
-const srcToFile = './src/APIs/LikesAPI/NumLikes.txt';
-
-const ReadFile = () => {
-    let number = fs.readFileSync(srcToFile);
-    fs.truncate(srcToFile, ()=>{
-    	number++;
-    	fs.writeFile(srcToFile, number, ()=>{});
-    });
-}
+const pool = require('../MysqlCon.js').pool;
 
 const GetCon = (app) => {
-    app.post('/likes/num', function(req, res) {
-        let number = fs.readFileSync(srcToFile);
-        res.send(number);
+    app.post('/likes/num', (req, res) => {
+        pool.getConnection((err, con) => {
+            if (err) {
+                console.log('Error ' + err)
+            } else {
+                con.query("SELECT `AUTO_INCREMENT` FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME   = 'Likes'", (error, results) => {
+                    if (error) {
+                        console.log('Error ' + error)
+                    } else {
+                        let incriment = results[0].AUTO_INCREMENT;
+                        res.send({ 'likes': incriment });
+                    }
+                });
+            }
+        })
     })
 
-    app.post('/likes', function(req, res) {
-        ReadFile();    
+    app.post('/likes', (req, res) => {
+        pool.getConnection((err, con) => {
+            if (err) {
+                console.log('Error ' + err)
+            } else {
+                let ip = req.connection.remoteAddress;
+                con.query("SELECT * FROM Likes WHERE Ip = '" + ip + "'", (error, results, fields) => {
+                    if (error) {
+                        console.log('Error ' + error)
+                    } else if (results.length == 0) {
+                        con.query("INSERT INTO Likes (Likes, Ip) VALUES (NULL, '" + ip + "')");
+                    }
+                });
+            }
+        })
     })
 }
-
 module.exports = GetCon;

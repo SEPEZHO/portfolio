@@ -1,5 +1,5 @@
 const https = require('https')
-const pool = require('./MysqlCon.js').pool;
+const pool = require('../MysqlCon.js').pool;
 
 // request to gitHub options
 const optionsHttp = {

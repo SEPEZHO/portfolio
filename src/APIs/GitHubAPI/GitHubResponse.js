@@ -1,4 +1,4 @@
-const pool = require('./MysqlCon.js').pool;
+const pool = require('../MysqlCon.js').pool;
 
 const GetCon = (app) => {
 app.post('/req', function(req, res) {
