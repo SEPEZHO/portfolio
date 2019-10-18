@@ -1,7 +1,6 @@
 .Header {
     position: relative;
     z-index: -1;
-
     height: 100vh;
 
     color: white;
@@ -10,10 +9,8 @@
 .Header > img {
     position: fixed;
     left: 50%;
-
     width: 100vw;
     height: auto;
-
     -webkit-transform: translate(-50%);
     transform: translate(-50%);
 }
@@ -34,41 +31,4 @@
 
 .Name p {
     font-size: 1.5em;
-}
-
-.SideBar img {
-    position: relative;
-    width: 1.5vw;
-    height: 1.5vw;
-    padding: 20%;
-}
-
-.SideBar img :hover{
-    filter: brightness(0.6) blur(1px);
-    background: black;
-}
-
-.SideBar {
-    position: absolute;
-    top: 50%;
-    left: 2vw;
-
-    width: 1.5vw;
-    height: auto;
-
-    -webkit-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-}
-
-@media screen and (max-width: 177.777vh) {
-    .Header > img {
-        width: auto;
-        height: 100vh;
-    }
-
-    .Name {
-        font-size: 4.25rem;
-
-        width: 75vw;
-    }
 }

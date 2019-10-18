@@ -78,7 +78,6 @@
 
 .SideBar a>img {
     position: relative;
-
     width: 1.5vw;
     height: 1.5vw;
     padding: 20%;
@@ -93,10 +92,9 @@
 
 .SideBar {
     position: absolute;
+
     top: 50%;
     left: 2vw; 
-    z-index: 1;
-
     width: 1.5vw;
     height: auto;
 
