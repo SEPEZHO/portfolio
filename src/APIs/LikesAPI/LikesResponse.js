@@ -10,10 +10,22 @@ const GetCon = (app) => {
                     if (error) {
                         console.log('Error ' + error)
                     } else {
+                        let ip = req.connection.remoteAddress
                         let incriment = results[0].AUTO_INCREMENT;
-                        res.send({ 'likes': incriment });
+                        incriment--;
+                        con.query("SELECT * FROM Likes WHERE Ip = '" + ip + "'", (errorB, resultsB) => {
+                            if (errorB) {
+                                console.log('Error ' + error)
+                            } else {
+                                let IsLiked = (resultsB.length == 0) ? false: true
+                                res.send({
+                                    'Likes': incriment,
+                                    'IsLiked': IsLiked,
+                                })
+                            }
+                        })
                     }
-                });
+                })
             }
         })
     })
@@ -23,14 +35,14 @@ const GetCon = (app) => {
             if (err) {
                 console.log('Error ' + err)
             } else {
-                let ip = req.connection.remoteAddress;
+                let ip = req.connection.remoteAddress
                 con.query("SELECT * FROM Likes WHERE Ip = '" + ip + "'", (error, results, fields) => {
                     if (error) {
                         console.log('Error ' + error)
                     } else if (results.length == 0) {
-                        con.query("INSERT INTO Likes (Likes, Ip) VALUES (NULL, '" + ip + "')");
+                        con.query("INSERT INTO Likes (Likes, Ip) VALUES (NULL, '" + ip + "')")
                     }
-                });
+                })
             }
         })
     })
