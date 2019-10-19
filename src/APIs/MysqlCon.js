@@ -4,7 +4,7 @@ const optionsMysql = {
     host: "localhost",
     user: "root",
     password: "123",
-    database: "gitHubProj"
+    database: "DataBase"
 }
 
 const pool = mysql.createPool(optionsMysql)

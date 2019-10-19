@@ -13,6 +13,7 @@ import './Style/App.css';
 const App = () => {
     return (
       <div className='App' >
+      
       <Menu />
       
       <div className='Content'>
@@ -22,11 +23,12 @@ const App = () => {
       			<Route exact path='/' component={MainPageRender}/>
       			<Route paht='/Contact' component={ContactPageRender}/>
 
-	  		</Switch>
- 		</BrowserRouter>
-	  </div>
+	  		   </Switch>
+ 		     </BrowserRouter>
+	     </div>
 
       <Footer />
+      
     </div>
     );
 }

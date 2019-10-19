@@ -33,7 +33,7 @@ const sendReq = () => {
                 } else {
 
                     // dell all old data in DB
-                    con.query("DELETE FROM `info`", err => {
+                    con.query("DELETE FROM Info", err => {
                         err ? console.log('Error ' + err) :
                             console.log("All old data was deleted.");
                     });
@@ -42,7 +42,7 @@ const sendReq = () => {
                     res.on('end', () => {
                         body = JSON.parse(body);
                         body.forEach(repo => {
-                            let sql = "INSERT INTO info (Name, Url, Description, Language, CreateAt, LastUpdate, Size) VALUES ('" +
+                            let sql = "INSERT INTO Info (Name, Url, Description, Language, CreateAt, LastUpdate, Size) VALUES ('" +
                                 repo.name + "', '" + repo.html_url + "', '" + repo.description + "', '" + repo.language + "', '" +
                                 repo.created_at.substring(0, 10) + "', '" + repo.updated_at.substring(0, 10) + "', '" + repo.size + "')";
 
