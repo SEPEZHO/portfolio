@@ -5,9 +5,9 @@ import s from './Footer.module.css';
 const DownMenu = () => {
     return (
         <div className={s.Menu}>
-                      <div className={s.Main}><a href='/'>Main</a></div>
-                      <div className={s.Contact}><a href='/Contact'>Contact</a></div>
-                    </div>
+                      <a href='/'><div className={s.Main}><span>Main</span></div></a>
+                      <a href='/Contact'><div className={s.Contact}><span>Contact</span></div></a>
+        </div>
     )
 }
 

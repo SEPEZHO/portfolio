@@ -64,9 +64,9 @@ class Menu extends React.Component {
         return (
             <div>
           <div style = {(this.state.location === '/') ? this.state.StyleForMenu : this.state.StyleForMenuForContact} className ={s.Menu}>
-          <div className={s.Contact}><div></div><a href='/Contact'>Contact</a></div>
-          <div className={s.Main}><div></div><a href='/'>Main</a></div>
-          <div className={s.Projects}><div></div><a href='/Projects'>Projects</a></div>
+          <a href='/Contact'><div className={s.Contact}><div></div><span>Contact</span></div></a>
+          <a href='/'><div className={s.Main}><div></div><span>Main</span></div></a>
+          <a href='/Projects'><div className={s.Projects}><div></div><span>Projects</span></div></a>
           <img alt='' src={ToTop} className={s.ToTop} onClick={this.ToTop} style={(this.state.location === '/') ? this.state.StyleForToTop: {display: 'none'}}/>
         </div>
         </div>

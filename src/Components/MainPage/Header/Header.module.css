@@ -2,8 +2,6 @@
     position: relative;
     z-index: -1;
     height: 100vh;
-
-    color: white;
 }
 
 .Header > img {
@@ -23,7 +21,7 @@
     left: 50%;
 
     width: 50vw;
-
+    color: white;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: justify;

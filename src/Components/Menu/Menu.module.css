@@ -8,7 +8,7 @@
     height: 5vh;
 }
 
-.Menu a {
+.Menu span {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -20,7 +20,7 @@
     color: black;
 }
 
-.Menu>* {
+.Menu>a>* {
     position: absolute;
 
     overflow: hidden;
@@ -29,7 +29,7 @@
     height: 100%;
 }
 
-.Menu>* div {
+.Menu>*>div>div {
     position: absolute;
     bottom: -7%;
 
@@ -43,7 +43,7 @@
     bottom: 0;
 }
 
-.Menu>*:hover {
+.Menu>*:hover >div{
     background: rgba(255, 255, 255, .15);
 }
 

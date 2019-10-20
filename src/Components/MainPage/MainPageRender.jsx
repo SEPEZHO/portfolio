@@ -1,14 +1,16 @@
 import React from 'react';
 
 import SideBar from '../Footer/SideBar.jsx';
-import Header from './Header/Header.jsx';
+import HeaderImg from './Header/HeaderImg.jsx';
 import Main from './Main/Main.jsx';
+import TitleHeader from './Header/TitleHeader.jsx';
 
 const MainPageRender = () => {
   return (
     <div >
+    	<TitleHeader />
     	<SideBar />
-    	<Header />
+    	<HeaderImg />
     	<Main />
     </div>
   );
