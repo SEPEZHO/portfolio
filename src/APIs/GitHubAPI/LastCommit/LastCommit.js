@@ -1,10 +1,14 @@
 const https = require('https')
 const pool = require('../../MysqlCon.js').pool;
 
+
+// https://api.github.com/repos/SEPEZHO/Portfolio/commits
+
+
 // request to gitHub options
 const optionsHttp = {
     host: 'api.github.com',
-    path: '/users/sepezho/repos/:owner/:repo/commits',
+    path: '/repos/SEPEZHO/Portfolio/commits',
     method: 'GET',
     headers: { 'user-agent': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)' }
 }
@@ -20,41 +24,41 @@ const sendReq = () => {
         let body = '';
         res.on('data', chunk => {
             body += chunk;
-        });
-        console.log('data: ' + body);
-
+        })
+        
         // if we have new data ( != data from DB )
-        if (bodyOld = JSON.stringify(body)) {
+        if (bodyOld != JSON.stringify(body)) {
             bodyOld = JSON.stringify(body);
+            console.log('Chunk: ' + body.commit)
+            console.log('Body is: ' + body);
+            // connect to mysql
+            pool.getConnection((err, con) => {
+                if (err) {
+                    console.log('Error ' + err)
+                } else {
 
-            // // connect to mysql
-            // pool.getConnection((err, con) => {
-            //     if (err) {
-            //         console.log('Error ' + err)
-            //     } else {
+                    // dell all old data in DB
+                    con.query("DELETE FROM `info`", err => {
+                        err ? console.log('Error ' + err) :
+                            console.log("All old data was deleted.");
+                    });
 
-            //         // dell all old data in DB
-            //         con.query("DELETE FROM `info`", err => {
-            //             err ? console.log('Error ' + err) :
-            //                 console.log("All old data was deleted.");
-            //         });
+                    // parce data and put in DB
+                    res.on('end', () => {
+                        body = JSON.parse(body);
+                        body.forEach(repo => {
+                            let sql = "INSERT INTO info (Name, Url, Description, Language, CreateAt, LastUpdate, Size) VALUES ('" +
+                                repo.name + "', '" + repo.html_url + "', '" + repo.description + "', '" + repo.language + "', '" +
+                                repo.created_at.substring(0, 10) + "', '" + repo.updated_at.substring(0, 10) + "', '" + repo.size + "')";
 
-            //         // parce data and put in DB
-            //         res.on('end', () => {
-            //             body = JSON.parse(body);
-            //             body.forEach(repo => {
-            //                 let sql = "INSERT INTO info (Name, Url, Description, Language, CreateAt, LastUpdate, Size) VALUES ('" +
-            //                     repo.name + "', '" + repo.html_url + "', '" + repo.description + "', '" + repo.language + "', '" +
-            //                     repo.created_at.substring(0, 10) + "', '" + repo.updated_at.substring(0, 10) + "', '" + repo.size + "')";
-
-            //                 con.query(sql, (err, result) => {
-            //                     err ? console.log('Error ' + err) :
-            //                         console.log("One new record.");
-            //                 })
-            //             })
-            //         })
-            //     }
-            // })
+                            con.query(sql, (err, result) => {
+                                err ? console.log('Error ' + err) :
+                                    console.log("One new record.");
+                            })
+                        })
+                    })
+                }
+            })
         } else {
             console.log('It alreadey update.');
             return;
