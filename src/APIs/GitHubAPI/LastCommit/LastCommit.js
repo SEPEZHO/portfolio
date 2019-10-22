@@ -1,22 +1,31 @@
 const https = require('https')
-const pool = require('../../MysqlCon.js').pool;
-
-
-// https://api.github.com/repos/SEPEZHO/Portfolio/commits
-
-
-// request to gitHub options
-const optionsHttp = {
-    host: 'api.github.com',
-    path: '/repos/SEPEZHO/Portfolio/commits',
-    method: 'GET',
-    headers: { 'user-agent': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)' }
-}
+const pool = require('../../MysqlCon.js').pool
 
 let bodyOld = ''
+let Proj = ''
+
+pool.getConnection((err, con) => {
+    if (err) {
+        console.log('Error ' + err)
+    } else {
+        con.query("SELECT Name FROM `Info` where LastUpdate=(SELECT MAX(LastUpdate) from Info);", (err, result) => {
+            if (err) {
+                console.log('Error ' + err)
+            } else {
+                Proj = result[0].Name
+            }
+        })
+    }
+})
 
 const sendReq = () => {
-
+    // request to gitHub options
+    const optionsHttp = {
+        host: 'api.github.com',
+        path: '/repos/sepezho/' + Proj + '/commits',
+        method: 'GET',
+        headers: { 'user-agent': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)' }
+    }
     // send request to gitHub
     const request = https.request(optionsHttp, res => {
 
@@ -25,12 +34,11 @@ const sendReq = () => {
         res.on('data', chunk => {
             body += chunk;
         })
-        
+
         // if we have new data ( != data from DB )
         if (bodyOld != JSON.stringify(body)) {
             bodyOld = JSON.stringify(body);
-            console.log('Chunk: ' + body.commit)
-            console.log('Body is: ' + body);
+
             // connect to mysql
             pool.getConnection((err, con) => {
                 if (err) {
@@ -38,7 +46,7 @@ const sendReq = () => {
                 } else {
 
                     // dell all old data in DB
-                    con.query("DELETE FROM `info`", err => {
+                    con.query("DELETE FROM Commits", err => {
                         err ? console.log('Error ' + err) :
                             console.log("All old data was deleted.");
                     });
@@ -47,9 +55,8 @@ const sendReq = () => {
                     res.on('end', () => {
                         body = JSON.parse(body);
                         body.forEach(repo => {
-                            let sql = "INSERT INTO info (Name, Url, Description, Language, CreateAt, LastUpdate, Size) VALUES ('" +
-                                repo.name + "', '" + repo.html_url + "', '" + repo.description + "', '" + repo.language + "', '" +
-                                repo.created_at.substring(0, 10) + "', '" + repo.updated_at.substring(0, 10) + "', '" + repo.size + "')";
+                            let sql = "INSERT INTO Commits (Project, Message, Date, UrlProj, UrlCommit) VALUES ('" + Proj + "', '" + repo.commit.message + "', '" + repo.commit.author.date.substring(0, 10) + ' ' + repo.commit.author.date.substring(11).slice(0, -1) + "', 'https://github.com/SEPEZHO/" + Proj + "', '" +
+                                repo.html_url + "')";
 
                             con.query(sql, (err, result) => {
                                 err ? console.log('Error ' + err) :
@@ -73,4 +80,4 @@ const sendReq = () => {
 }
 
 // setInterval every 10 minutes
-setInterval(sendReq, 6000);
+setInterval(sendReq, 600000);

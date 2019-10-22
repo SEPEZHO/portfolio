@@ -44,7 +44,7 @@ const sendReq = () => {
                         body.forEach(repo => {
                             let sql = "INSERT INTO Info (Name, Url, Description, Language, CreateAt, LastUpdate, Size) VALUES ('" +
                                 repo.name + "', '" + repo.html_url + "', '" + repo.description + "', '" + repo.language + "', '" +
-                                repo.created_at.substring(0, 10) + "', '" + repo.updated_at.substring(0, 10) + "', '" + repo.size + "')";
+                                repo.created_at.substring(0, 10)+' '+ repo.created_at.substring(11).slice(0, -1) + "', '" + repo.updated_at.substring(0, 10) +' '+repo.updated_at.substring(11).slice(0, -1) +"', '" + repo.size + "')";
 
                             con.query(sql, (err, result) => {
                                 err ? console.log('Error ' + err) :

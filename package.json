@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "concurrently \"node src/APIs/ServerAPI.js\" \"node src/APIs/GitHubAPI/BaseApi.js\""
+    "server": "concurrently \"node src/APIs/ServerAPI.js\" \"node src/APIs/GitHubAPI/BaseApi.js\" \"node src/APIs/GitHubAPI/LastCommit/LastCommit.js\""
   },
   "eslintConfig": {
     "extends": "react-app"
