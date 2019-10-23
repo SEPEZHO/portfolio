@@ -5,6 +5,7 @@ import Menu from './Components/Menu/Menu.jsx';
 
 import MainPageRender from './Components/MainPage/MainPageRender.jsx';
 import ContactPageRender from './Components/ContactPage/ContactPageRender.jsx';
+import Projects from './Components/Projects/Projects.jsx';
 
 import Footer from './Components/Footer/Footer.jsx';
 
@@ -21,7 +22,8 @@ const App = () => {
       		<Switch>
  
       			<Route exact path='/' component={MainPageRender}/>
-      			<Route paht='/Contact' component={ContactPageRender}/>
+      			<Route path='/Contact' component={ContactPageRender}/>
+            <Route path='/Projects' component={Projects}/>
 
 	  		   </Switch>
  		     </BrowserRouter>

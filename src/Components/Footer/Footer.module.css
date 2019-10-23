@@ -80,12 +80,13 @@
     position: relative;
     width: 1.5vw;
     height: 1.5vw;
+    /*filter: brightness(0.6) blur(1px);*/
     padding: 20%;
 }
 
 .SideBar a>img:hover{
-    filter: brightness(0.6) blur(1px);
-    width: 1.6vw;
+    filter: invert(100%);
+    /*width: 1.6vw;*/
     /*height: 1.7vw;*/
     left: 0.2vw;
 }
@@ -118,7 +119,7 @@
 .Comments{
     box-shadow: 0 0 0.5vw white;
     border-radius: .3vw; 
-    right: 15vw;
+    right: 10vw;
     position: absolute;
     top: 0;
     width: 30vw;

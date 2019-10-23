@@ -1,0 +1,122 @@
+.Projects {
+    position: relative;
+    width: 80%;
+    height: 200vh;
+    left: 10vw
+}
+.Text {
+    position: absolute;
+    background: black;
+    width: 125%;
+    left: -10vw;
+    height: 75vh;
+    box-shadow: 0 0 0.5vw black;
+    bottom: 0;
+    color: white;
+}
+.Text > span{
+	position: absolute;
+	width: 80%;
+	left: 10%;
+}
+.ProjectsTable {
+    position: relative;
+    top: 10vh;
+    width: 100%;
+    height: 105vh;
+    box-shadow: 0 0 0.5vw black;
+}
+hr {
+    position: relative;
+
+    width: 80%;
+    height: 1px;
+
+    border: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .75), rgba(0, 0, 0, 0));
+}
+
+.Reposit a {
+    text-decoration: none;
+
+    color: #00f;
+}
+
+.Reposit a:hover {
+    text-decoration: underline;
+
+    color: #a400ff;
+}
+
+.RepAll {
+    position: relative;
+    width: 100%;
+    min-height: 7rem;
+    padding: 1.5vw;
+}
+
+.Reposit {
+    display: -ms-grid;
+    display: grid;
+
+    grid-template-areas: 'Name Message Date Time  ';
+    -ms-grid-columns: 0.5fr 5fr 1fr 1fr;
+    grid-template-columns: 0.5fr 5fr 1fr 1fr;
+    -ms-grid-rows: 3vh;
+    grid-template-rows: 3vh;
+}
+
+.Top {
+    display: -ms-grid;
+    display: grid;
+
+    grid-template-areas: ' Name Message Date Time  ';
+    -ms-grid-rows: 5vh;
+    grid-template-rows: 5vh;
+    -ms-grid-columns: 0.5fr 5fr 1fr 1fr;
+    grid-template-columns: 0.5fr 5fr 1fr 1fr;
+}
+
+.Project {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: Name;
+}
+
+.Top>.Name {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+.Message {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: Message;
+}
+
+.Top>.Message {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+}
+
+.Date {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: Date;
+}
+
+.Top>.Date {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+}
+
+.Time {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    grid-area: Time;
+}
+
+.Top>.Time {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+}

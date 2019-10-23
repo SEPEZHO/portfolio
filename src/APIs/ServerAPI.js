@@ -4,12 +4,14 @@ const port = 3001;
 
 const LikesFunc = require('./LikesAPI/LikesResponse.js');
 const GitHubResponse = require('./GitHubAPI/GitHubResponse.js');
+const LastCommitResponse = require('./GitHubAPI/LastCommit/LastCommitResponse.js');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 GitHubResponse(app);
 LikesFunc(app);
+LastCommitResponse(app);
 
 app.listen(port, (err) => {
     if (err) {

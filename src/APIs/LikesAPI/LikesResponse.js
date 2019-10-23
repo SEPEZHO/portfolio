@@ -1,7 +1,7 @@
 const pool = require('../MysqlCon.js').pool;
 
 const GetCon = (app) => {
-    app.post('/likes/num', (req, res) => {
+    app.post('/API/likes/num', (req, res) => {
         pool.getConnection((err, con) => {
             if (err) {
                 console.log('Error ' + err)
@@ -30,7 +30,7 @@ const GetCon = (app) => {
         })
     })
 
-    app.post('/likes', (req, res) => {
+    app.post('/API/likes', (req, res) => {
         pool.getConnection((err, con) => {
             if (err) {
                 console.log('Error ' + err)

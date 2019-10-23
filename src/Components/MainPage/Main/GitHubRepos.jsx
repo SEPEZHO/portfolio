@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './Table.module.css';
+import s from './GitHubRepos.module.css';
 
 class GitHub extends React.Component {
     constructor(props) {
