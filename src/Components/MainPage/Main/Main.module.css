@@ -12,7 +12,25 @@
 
     width: 80vw;
 }
-
+.Table{
+    position: relative;
+    top: 15vh;
+}
+.Table img{
+    position: relative;
+    left: 50%;
+    top: 15vh;
+    width: 2.5vw;
+    transform: translate(-50%);
+}
+.Table>h1, .Main>h1{
+   filter: invert(100%);
+   width: 26%;
+}
+.Main>h1{
+    position: relative;
+    top: -10vh;
+}
 .Projects {
     display: -ms-grid;
     display: grid;

@@ -1,15 +1,14 @@
 import React from 'react';
 
 import ProjectsTable from './ProjectsTable.jsx'
+import ProjectsText from './ProjectsText.jsx'
 import s from './Projects.module.css'
 
 const Projects = () => {
   return (
     <div className={s.Projects}>
-    	<ProjectsTable />
-    	<div className={s.Text}>
-    		<span>AAAAAAAAAAAAAAAAAAAAA its a projects</span>
-    	</div>
+    	<ProjectsTable times='100'/>
+		<ProjectsText/>
     </div>
   );
 }

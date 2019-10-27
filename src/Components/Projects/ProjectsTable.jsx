@@ -5,12 +5,13 @@ import s from './Projects.module.css'
 class ProjectsTable extends React.Component {
     constructor() {
         super();
-        this.state = {
+        this.state = {}
 
-        }
     }
 
     componentDidMount() {
+        var i = 0;
+
         fetch('/API/Commits', {
                 method: 'POST',
                 headers: {
@@ -19,11 +20,15 @@ class ProjectsTable extends React.Component {
             })
             .then(response => { return response.json() })
             .then(data => {
+
+
                 // мапим данные нужным нам способом
                 const body = data.map(repo => {
-                    return (
-                        <div key={repo.Name}>
-                      <hr/>
+                    if (i < this.props.times) {
+                        i++;
+                        return (
+                            <div key={repo.Date}>
+                            <hr/>
                         <div className={s.Reposit}>
                 
                           <div className={s.Project}><a href={repo.UrlProj}>{repo.Project}</a></div>
@@ -33,10 +38,12 @@ class ProjectsTable extends React.Component {
                 
                       </div>
                     </div>
-                    )
+                        )
+                    }
                 });
                 // присваиваем новое значение переменной `body`
                 this.setState({ body });
+
             })
             .catch(error => {
                 console.log(error);

@@ -39,7 +39,7 @@ class LikeBtn extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/likes/num', {
+        fetch('/API/likes/num', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
