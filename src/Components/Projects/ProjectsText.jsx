@@ -1,11 +1,15 @@
 import React from 'react';
 
+import ProjectsRepos from './ProjectsRepos.jsx'
 import s from './Projects.module.css'
 
 const Text = () => {
   return (
     <div className={s.Text}>
-    	<span>TEXT</span>
+    <div className={s.ProjectsReposMain}>
+			<h1>Repositories</h1>
+			<ProjectsRepos />
+    </div>
     </div>
   );
 }

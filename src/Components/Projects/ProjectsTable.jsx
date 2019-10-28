@@ -20,8 +20,6 @@ class ProjectsTable extends React.Component {
             })
             .then(response => { return response.json() })
             .then(data => {
-
-
                 // мапим данные нужным нам способом
                 const body = data.map(repo => {
                     if (i < this.props.times) {
@@ -39,6 +37,8 @@ class ProjectsTable extends React.Component {
                       </div>
                     </div>
                         )
+                    }else{
+                      return false;
                     }
                 });
                 // присваиваем новое значение переменной `body`

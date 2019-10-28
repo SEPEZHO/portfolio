@@ -12,6 +12,10 @@
 
     width: 80vw;
 }
+.ProjectsTableMain{
+    position: relative;
+    top: 8vh;
+}
 .Table{
     position: relative;
     top: 15vh;
@@ -22,6 +26,9 @@
     top: 15vh;
     width: 2.5vw;
     transform: translate(-50%);
+}
+.Table img:hover{
+    transform: translate(-50%,25%);
 }
 .Table>h1, .Main>h1{
    filter: invert(100%);
@@ -84,6 +91,7 @@
     -webkit-filter: blur(.075vw) brightness(50%);
     filter: blur(.075vw) brightness(50%);
 }
+
 
 .Projects div:hover .ProjImg {
     -webkit-filter: blur(0) brightness(100%);
@@ -150,6 +158,8 @@
 .Proj1 .text {
     font-size: 1vw;
 }
+
+
 
 @media screen and (max-width: 177.777vh) {
     .Projects {

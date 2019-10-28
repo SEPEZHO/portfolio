@@ -1,27 +1,21 @@
 .Projects {
     position: relative;
     width: 80%;
-    height: 200vh;
+    height: 215vh;
     left: 10vw
 }
-.Text {
-    position: absolute;
-    background: black;
-    width: 125%;
-    left: -10vw;
-    height: 75vh;
-    box-shadow: 0 0 0.5vw black;
-    bottom: 0;
-    color: white;
-}
-.Text > span{
-	position: absolute;
-	width: 80%;
-	left: 10%;
-}
-.ProjectsTable {
+.ProjectsTableMain{
     position: relative;
-    top: 10vh;
+    top: 20vh;
+}
+.ProjectsTableMain h1{
+    position: absolute;
+    top: -10vh;
+    filter: invert(1); 
+}
+
+.ProjectsTable {
+
     width: 80vw;
     box-shadow: 0 0 0.5vw black;
     border-radius: .2vw; 
@@ -37,13 +31,13 @@ hr {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .75), rgba(0, 0, 0, 0));
 }
 
-.Reposit a {
+.Reposit a{
     text-decoration: none;
 
     color: black;
 }
 
-.Reposit a:hover {
+.Reposit a:hover, .RepositProjects a:hover{
     text-decoration: underline;
     color: #8D41D6;
 }
@@ -59,7 +53,7 @@ hr {
     display: -ms-grid;
     display: grid;
 
-    grid-template-areas: 'Name Message Date Time  ';
+    grid-template-areas: 'Project Message Date Time  ';
     -ms-grid-columns: 0.5fr 5fr 1fr 1fr;
     grid-template-columns: 0.5fr 5fr 1fr 1fr;
     -ms-grid-rows: 3vh;
@@ -70,53 +64,127 @@ hr {
     display: -ms-grid;
     display: grid;
 
-    grid-template-areas: ' Name Message Date Time  ';
+    grid-template-areas: ' Project Message Date Time  ';
     -ms-grid-rows: 5vh;
     grid-template-rows: 5vh;
     -ms-grid-columns: 0.5fr 5fr 1fr 1fr;
     grid-template-columns: 0.5fr 5fr 1fr 1fr;
 }
 
-.Project {
+.Project, .Top>.Project {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
-    grid-area: Name;
+    grid-area: Project;
 }
 
-.Top>.Name {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-}
-
-.Message {
+.Message, .Top>.Message {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: Message;
 }
 
-.Top>.Message {
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-}
-
-.Date {
+.Date, .Top>.Date{
     -ms-grid-row: 1;
     -ms-grid-column: 3;
     grid-area: Date;
 }
 
-.Top>.Date {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-}
-
-.Time {
+.Time, .Top>.Time {
     -ms-grid-row: 1;
     -ms-grid-column: 4;
     grid-area: Time;
 }
 
-.Top>.Time {
+.Text {
+    position: absolute;
+    background: black;
+    width: 125%;
+    bottom: 0;
+    left: -10vw;
+    height: 75vh;
+    box-shadow: 0 0 0.5vw black;
+    color: white;
+}
+
+.ProjectsReposMain{
+    position: absolute;
+    width: 80%;
+    left: 10%;
+}
+.ProjectsReposMain h1{
+    position: absolute;
+    top: 10vh;
+}
+.ProjectsRepos {
+    position: relative;
+    width: 100%;
+    min-height: 7rem;
+    padding: 1.5vw;
+    top: 25vh;
+    box-shadow: 0 0 0.5vw white;
+    border-radius: .2vw; 
+}
+
+.ProjectsRepos hr {
+    filter: invert(1);
+}
+.RepositProjects {
+    display: -ms-grid;
+    display: grid;
+
+    grid-template-areas: 'name descrip language create update size';
+    -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 3vh;
+    grid-template-rows: 3vh;
+}
+
+.TopProjects {
+    display: -ms-grid;
+    display: grid;
+
+    grid-template-areas: 'name descrip language create update size';
+    -ms-grid-rows: 5vh;
+    grid-template-rows: 5vh;
+    -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
+}
+.RepositProjects a{
+    text-decoration: none;
+
+    color: white;
+}
+.Name, .TopProjects>.Name  {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: name;
+}
+
+.Descrip, .TopProjects>.Descrip {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: descrip;
+}
+.Language, .TopProjects>.Language {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: language;
+}
+
+.Create, .TopProjects>.Create{
     -ms-grid-row: 1;
     -ms-grid-column: 4;
+    grid-area: create;
+}
+
+.Update, .TopProjects>.Update {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+    grid-area: update;
+}
+
+.Size, .TopProjects>.Size {
+    -ms-grid-row: 1;
+    -ms-grid-column: 6;
+    grid-area: size;
 }
