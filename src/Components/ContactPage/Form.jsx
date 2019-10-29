@@ -31,7 +31,6 @@ class FormArea extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log('Data: ' + JSON.stringify(this.state));
     event.preventDefault();
   }
 

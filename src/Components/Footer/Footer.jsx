@@ -5,7 +5,7 @@ import LikeBtn from './LikeBtn.jsx'
 import DownMenu from './DownMenu.jsx'
 import SideBar from './SideBar.jsx'
 import Text from './Text.jsx'
-import Comments from './Comments.jsx'
+import Comments from './CommentSystem/CommentSystem.jsx'
 
 const Footer = () => {
         return (

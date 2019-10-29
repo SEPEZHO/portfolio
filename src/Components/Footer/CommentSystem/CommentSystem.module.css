@@ -1,0 +1,52 @@
+.Comments{
+    box-shadow: 0 0 0.5vw white;
+    border-radius: .3vw; 
+    right: 10vw;
+    position: absolute;
+    top: 8%;
+    width: 30vw;
+    height: 43vh;
+}
+
+.Comments h1{
+	position: absolute;
+	margin: 1%;
+    font-size: 1.75em;
+}
+.Comments form{
+	position: absolute;
+	margin: 1%;
+	bottom: 0;
+	width: 100%;
+}
+.InputText{
+	outline: none;
+	border: none;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	padding-left: 1.75%; 
+	padding-right: 1.75%; 
+	border-radius: .2vw;
+	width: 79%;
+}
+.InputText:hover{
+	box-shadow: 0 0 0.75vw white;
+}
+.InputText:focus{
+	box-shadow: 0 0 0.5vw white;
+}
+.InputSubmit{
+	width: 15.5%;
+	background: black;
+	color: white;
+	border: 1px solid white;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	padding-left: 1.75%; 
+	padding-right: 1.75%; 
+	border-radius: .2vw;
+}
+.InputSubmit:hover{
+	background: white;
+	color: black;
+}
