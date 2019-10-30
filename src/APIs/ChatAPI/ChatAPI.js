@@ -1,6 +1,6 @@
 const pool = require('../MysqlCon.js').pool;
 
-const GetCon = (app) => {
+const Chat = (app) => {
 app.post('/API/Chat', function(req, res) {
 
 	let date = new Date();
@@ -10,9 +10,9 @@ app.post('/API/Chat', function(req, res) {
 	dateAll = dateAll + ' ' + time;
 
     pool.getConnection((err, con) => {
-        con.query("INSERT INTO Comment (Id, Date, Message) VALUES (NULL, '"+ dateAll +"', '"+ req.body.val +"')");
+        con.query("INSERT INTO Comment (Id, Date, Message, Name) VALUES (NULL, '"+ dateAll +"', '"+ req.body.valMessage +"', '"+ req.body.valName+"')");
     });
 });
 }
 
-module.exports = GetCon;
+module.exports = Chat;

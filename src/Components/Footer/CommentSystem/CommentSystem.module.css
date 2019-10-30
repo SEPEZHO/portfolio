@@ -1,25 +1,24 @@
 .Comments{
     box-shadow: 0 0 0.5vw white;
-    border-radius: .3vw; 
     right: 10vw;
     position: absolute;
-    top: 8%;
     width: 30vw;
-    height: 43vh;
+    height: 100%;
 }
 
 .Comments h1{
 	position: absolute;
+	left: -40%;
 	margin: 1%;
     font-size: 1.75em;
 }
-.Comments form{
+.FormAreaMessage, .FormAreaName{
 	position: absolute;
 	margin: 1%;
-	bottom: 0;
+	top: 0;
 	width: 100%;
 }
-.InputText{
+.InputMessage, .InputName{
 	outline: none;
 	border: none;
 	padding-top: 0.5%;
@@ -27,16 +26,17 @@
 	padding-left: 1.75%; 
 	padding-right: 1.75%; 
 	border-radius: .2vw;
-	width: 79%;
+	margin-right: 0.2vw;
+	width: 23.7vw;
 }
-.InputText:hover{
+.InputMessage:hover, .InputName:hover{
 	box-shadow: 0 0 0.75vw white;
 }
-.InputText:focus{
+.InputMessage:focus, .InputName:focus{
 	box-shadow: 0 0 0.5vw white;
 }
-.InputSubmit{
-	width: 15.5%;
+.InputSubmitMessage, .InputSubmitName{
+	width: 4.65vw;
 	background: black;
 	color: white;
 	border: 1px solid white;
@@ -46,7 +46,57 @@
 	padding-right: 1.75%; 
 	border-radius: .2vw;
 }
-.InputSubmit:hover{
+.InputSubmitMessage:hover{
 	background: white;
 	color: black;
+}
+.FormAreaName{
+	width: 18vw;
+}
+.InputName{
+	width: 11.85vw;
+}
+
+.Catch{
+	position: absolute;
+	top: 15%;
+	width: 100%;
+	height: 85%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.Message{
+	width: 100%;
+	height: auto;
+	margin: 0.1vw;
+	/*background: green;*/
+	height: auto;
+	top: 0;
+	position: relative;
+}
+.Message hr{
+	position: relative;
+	filter: invert(1);
+	width: 150%;
+	left: -25%;
+}
+.Name{
+	position: relative;
+	left: 0;
+	top: 0;
+	word-wrap: break-word;
+	border-radius: .1vw;
+    background: rgba(255, 255, 255, .3);
+}
+.Date{
+	position: absolute;
+	right: 1vw;
+	transform: translate(0,-100%);
+}
+.MessageText{
+	position: relative;	
+	border-radius: .1vw;
+	word-wrap: break-word;
+	padding: .5vw;
 }

@@ -6,6 +6,7 @@ const LikesFunc = require('./LikesAPI/LikesResponse.js');
 const GitHubResponse = require('./GitHubAPI/GitHubResponse.js');
 const LastCommitResponse = require('./GitHubAPI/LastCommit/LastCommitResponse.js');
 const ChatAPI = require('./ChatAPI/ChatAPI.js');
+const ChatAPIRes = require('./ChatAPI/ChatAPIRes.js');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -13,6 +14,7 @@ app.use(express.json());
 GitHubResponse(app);
 LikesFunc(app);
 LastCommitResponse(app);
+ChatAPIRes(app);
 ChatAPI(app);
 
 app.listen(port, (err) => {
