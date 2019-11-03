@@ -16,7 +16,7 @@ const Main = () => {
     	<div className={s.Table}>
     		<h1>Last Activites</h1>
     		<div className={s.ProjectsTableMain}>
-                <ProjectsTable  times='10'/>
+                <ProjectsTable  times='5'/>
     		</div>
             <a href='/Projects'>
     			<img className={s.ViewMore} src={ViewMore} alt='#' />

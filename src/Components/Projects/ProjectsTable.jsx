@@ -2,6 +2,7 @@ import React from 'react';
 
 import s from './Projects.module.css'
 
+          var c = 0;
 class ProjectsTable extends React.Component {
     constructor() {
         super();
@@ -10,13 +11,20 @@ class ProjectsTable extends React.Component {
     }
 
     componentDidMount() {
-        var i = 0;
+       this.fun();
+    }
+    componentDidUpdate() {
+        this.fun();
+        console.log('Update');
+    }
+    
+    fun = () => {
+          var i = 0;
+c++
+        console.log(c);
 
         fetch('/API/Commits', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
             })
             .then(response => { return response.json() })
             .then(data => {
@@ -49,6 +57,7 @@ class ProjectsTable extends React.Component {
                 console.log(error);
             })
     }
+
     render() {
         return (
             <div className={s.ProjectsTable}>

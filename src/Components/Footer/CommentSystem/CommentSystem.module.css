@@ -1,5 +1,6 @@
 .Comments{
     box-shadow: 0 0 0.5vw white;
+    border-radius: .3vw;
     right: 10vw;
     position: absolute;
     width: 30vw;
@@ -11,6 +12,11 @@
 	left: -40%;
 	margin: 1%;
     font-size: 1.75em;
+}
+.Comments img {
+	position: absolute;
+	left: -31%;
+	top: 10%;
 }
 .FormAreaMessage, .FormAreaName{
 	position: absolute;

@@ -9,15 +9,15 @@ import Projects from './Components/Projects/Projects.jsx';
 
 import Footer from './Components/Footer/Footer.jsx';
 
-import './Style/App.css';
+import s from './Style/App.css';
 
 const App = () => {
     return (
-      <div className='App' >
+      <div className={s.App}>
       
       <Menu />
       
-      <div className='Content'>
+      <div className={s.Content}>
       	<BrowserRouter>
       		<Switch>
  

@@ -1,7 +1,6 @@
 .Projects {
     position: relative;
     width: 80%;
-    height: 215vh;
     left: 10vw
 }
 .ProjectsTableMain{
@@ -13,9 +12,19 @@
     top: -10vh;
     filter: invert(1); 
 }
+.ProjectsTableMain img{
+    position: relative;
+    left: 50%;
+    top: 5vh;
+    width: 2.5vw;
+    transform: translate(-50%);
+}
+.ProjectsTableMain img:hover{
+    transform: translate(-50%, 25%);
+}
 
 .ProjectsTable {
-
+    position: relative;
     width: 80vw;
     box-shadow: 0 0 0.5vw black;
     border-radius: .2vw; 
@@ -56,8 +65,10 @@ hr {
     grid-template-areas: 'Project Message Date Time  ';
     -ms-grid-columns: 0.5fr 5fr 1fr 1fr;
     grid-template-columns: 0.5fr 5fr 1fr 1fr;
-    -ms-grid-rows: 3vh;
-    grid-template-rows: 3vh;
+    /*-ms-grid-rows: 3vh;*/
+    /*grid-template-rows: 3vh;*/
+    padding-top: .75vh; 
+    padding-bottom: .75vh; 
 }
 
 .Top {
@@ -96,10 +107,10 @@ hr {
 }
 
 .Text {
-    position: absolute;
+    position: relative;
     background: black;
     width: 125%;
-    bottom: 0;
+    top: 30vh;
     left: -10vw;
     height: 75vh;
     box-shadow: 0 0 0.5vw black;
@@ -107,7 +118,7 @@ hr {
 }
 
 .ProjectsReposMain{
-    position: absolute;
+    position: relative;
     width: 80%;
     left: 10%;
 }

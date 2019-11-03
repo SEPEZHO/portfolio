@@ -17,7 +17,7 @@ const SideBar = () => {
         	<a href='https://stackoverflow.com/users/12073046/sepezho'><img src={SrcStackOverflow} alt=''/></a>
         	<a href='https://www.youtube.com/channel/UC4nIyTlfA6DKuF_xKtefutQ/featured?view_as=subscriber'><img src={SrcYouTube} alt=''/></a>
         	<a href='https://vk.com/vlad_ascetic'><img src={SrcVk} alt=''/></a>
-        	<a href='/'><img src={SrcMail} alt=''/></a>
+        	<a href='/Contact'><img src={SrcMail} alt=''/></a>
         </div>
     )
 }

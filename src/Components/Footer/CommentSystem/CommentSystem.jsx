@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Catch from './CommentCatch.jsx'
+import ForComments from '../../../Static/Images/ForComments.png'
 import s from './CommentSystem.module.css';
 
 class Comments extends React.Component {
@@ -64,6 +65,7 @@ class Comments extends React.Component {
         return (
             <div className={s.Comments}>
                 <h1>Comments</h1>
+                <img src={ForComments} alt="#" />
                 <div className={s.FormAreaName} style = {this.state.nameStyle}>
                         <input className={s.InputName} type="text" value={this.state.valName} placeholder="Name" onChange={this.handleChangeName}/>
                         <button onClick={this.handleSubmitName} className={s.InputSubmitName}>Send</button>

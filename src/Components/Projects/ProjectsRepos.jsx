@@ -14,9 +14,6 @@ class ProjectsRepos extends React.Component {
         // выполняем запрос на получение данных
         fetch('/API/Ropsitories', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
             })
             .then(response => { return response.json() })
             .then(data => {
