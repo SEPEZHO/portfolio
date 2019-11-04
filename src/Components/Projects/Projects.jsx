@@ -24,7 +24,7 @@ class Projects extends React.Component {
         	this.tableOpen = !this.tableOpen;
         	let styleForImg = {
     			transform: 'translate(-50%, 50%) rotate(180deg)',
-    			'transform-origin': '50% 50%'
+    			'transformOrigin': '50% 50%'
 			}
         	this.setState ({
             	renderTimes: 100,
@@ -34,7 +34,7 @@ class Projects extends React.Component {
         	this.tableOpen = !this.tableOpen;
         	let styleForImg = {
     			transform: 'translate(-50%, 25%) rotate(0deg)',
-    			'transform-origin': '50% 50%'
+    			'transformOrigin': '50% 50%'
 			}
         	this.setState ({
             	renderTimes: 10,

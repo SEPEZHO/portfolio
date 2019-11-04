@@ -3,8 +3,9 @@ module.exports = function(app) {
 //   app.use(
 //     '/API',
 //     proxy({
-//       target: 'http://localhost:5000',
-//       changeOrigin: false
+//       target: 'http://[::1]:5000',
+//       secure: false,
+//       changeOrigin: true
 //     })
 //   );
 // };

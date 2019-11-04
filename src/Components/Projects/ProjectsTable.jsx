@@ -13,9 +13,16 @@ class ProjectsTable extends React.Component {
     componentDidMount() {
        this.fun();
     }
-    componentDidUpdate() {
-        this.fun();
-        console.log('Update');
+    componentDidChange() {
+        if(this.props !== this.state.oldProps){
+          this.setState({oldProps: this.props});
+          this.fun();
+          console.log(this.props)
+          console.log('Update');
+        }else{
+          console.log('Update not');
+          return;
+        }
     }
     
     fun = () => {
