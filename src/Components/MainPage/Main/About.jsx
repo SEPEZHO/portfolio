@@ -3,7 +3,7 @@ import Left from '../../../Static/Images/Arrows/Left.png';
 import Center from '../../../Static/Images/Arrows/Center.png';
 import Rigth from '../../../Static/Images/Arrows/Rigth.png';
 
-import s from './About.module.css';
+import s from './Main.module.sass';
 
 const MainAbout = () => {
     return (

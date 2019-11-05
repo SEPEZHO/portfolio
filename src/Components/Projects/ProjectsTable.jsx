@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './Projects.module.css'
+import s from './Projects.module.sass'
 
           var c = 0;
 class ProjectsTable extends React.Component {

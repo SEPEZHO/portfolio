@@ -2,7 +2,7 @@ import React from 'react';
 
 import Catch from './CommentCatch.jsx'
 import ForComments from '../../../Static/Images/ForComments.png'
-import s from './CommentSystem.module.css';
+import s from './CommentSystem.module.sass';
 
 class Comments extends React.Component {
     constructor(props) {

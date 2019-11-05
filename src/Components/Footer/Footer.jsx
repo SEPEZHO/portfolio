@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './Footer.module.css';
+import s from './Footer.module.sass';
 import LikeBtn from './LikeBtn.jsx'
 import DownMenu from './DownMenu.jsx'
 import SideBar from './SideBar.jsx'

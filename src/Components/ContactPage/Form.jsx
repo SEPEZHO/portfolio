@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './ContactPage.module.css'
+import s from './ContactPage.module.sass'
 
 class FormArea extends React.Component {
   constructor(props) {

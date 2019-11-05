@@ -4,7 +4,7 @@ import ProjectsTable from '../../Projects/ProjectsTable.jsx'
 import MainAbout from './About.jsx';
 import ViewMore from '../../../Static/Images/Icons/ViewMore.png';
 
-import s from './Main.module.css';
+import s from './Main.module.sass';
 
 
 const Main = () => {

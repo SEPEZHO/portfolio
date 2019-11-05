@@ -9,7 +9,7 @@ import Projects from './Components/Projects/Projects.jsx';
 
 import Footer from './Components/Footer/Footer.jsx';
 
-import s from './Style/App.css';
+import s from './Style/App.sass';
 
 const App = () => {
     return (

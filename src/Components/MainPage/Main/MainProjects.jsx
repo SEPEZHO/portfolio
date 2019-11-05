@@ -5,7 +5,7 @@ import Clicker from '../../../Static/Images/Projects/Clicker.png';
 import Life from '../../../Static/Images/Projects/Life.png';
 import ShortWay from '../../../Static/Images/Projects/ShortWay.png';
 
-import s from './Main.module.css';
+import s from './Main.module.sass';
 
 const MainProjects = () => {
 

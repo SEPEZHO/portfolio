@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ProjectsRepos from './ProjectsRepos.jsx'
-import s from './Projects.module.css'
+import s from './Projects.module.sass'
 
 const Text = () => {
   return (

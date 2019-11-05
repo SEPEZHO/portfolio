@@ -1,0 +1,176 @@
+.Projects
+  position: relative
+  width: 80%
+  left: 10vw
+
+.ProjectsTableMain
+  position: relative
+  top: 20vh
+
+  h1
+    position: absolute
+    top: -10vh
+    filter: invert(1)
+
+  img
+    position: relative
+    left: 50%
+    top: 5vh
+    width: 2.5vw
+    transform: translate(-50%)
+
+    &:hover
+      transform: translate(-50%, 25%)
+
+.ProjectsTable
+  position: relative
+  width: 80vw
+  box-shadow: 0 0 0.5vw black
+  border-radius: .2vw
+
+hr
+  position: relative
+  width: 80%
+  height: 1px
+  left: 10%
+  border: 0
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
+
+.Reposit a
+  text-decoration: none
+  color: black
+
+  &:hover
+    text-decoration: underline
+    color: #8D41D6
+
+.RepositProjects a:hover
+  text-decoration: underline
+  color: #8D41D6
+
+.RepAll
+  position: relative
+  width: 100%
+  min-height: 7rem
+  padding: 1.5vw
+
+.Reposit
+  display: -ms-grid
+  display: grid
+  grid-template-areas: 'Project Message Date Time  '
+  -ms-grid-columns: 0.5fr 5fr 1fr 1fr
+  grid-template-columns: 0.5fr 5fr 1fr 1fr
+  padding-top: .75vh
+  padding-bottom: .75vh
+
+.Top
+  display: -ms-grid
+  display: grid
+  grid-template-areas: ' Project Message Date Time  '
+  -ms-grid-rows: 5vh
+  grid-template-rows: 5vh
+  -ms-grid-columns: 0.5fr 5fr 1fr 1fr
+  grid-template-columns: 0.5fr 5fr 1fr 1fr
+
+.Project, .Top > .Project
+  -ms-grid-row: 1
+  -ms-grid-column: 1
+  grid-area: Project
+
+.Message, .Top > .Message
+  -ms-grid-row: 1
+  -ms-grid-column: 2
+  grid-area: Message
+
+.Date, .Top > .Date
+  -ms-grid-row: 1
+  -ms-grid-column: 3
+  grid-area: Date
+
+.Time, .Top > .Time
+  -ms-grid-row: 1
+  -ms-grid-column: 4
+  grid-area: Time
+
+.Text
+  position: relative
+  background: black
+  width: 125%
+  top: 30vh
+  left: -10vw
+  height: 75vh
+  box-shadow: 0 0 0.5vw black
+  color: white
+
+.ProjectsReposMain
+  position: relative
+  width: 80%
+  left: 10%
+
+  h1
+    position: absolute
+    top: 10vh
+
+.ProjectsRepos
+  position: relative
+  width: 100%
+  min-height: 7rem
+  padding: 1.5vw
+  top: 25vh
+  box-shadow: 0 0 0.5vw white
+  border-radius: .2vw
+
+  hr
+    filter: invert(1)
+
+.RepositProjects
+  display: -ms-grid
+  display: grid
+  grid-template-areas: 'name descrip language create update size'
+  -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 1fr
+  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr
+  -ms-grid-rows: 3vh
+  grid-template-rows: 3vh
+
+.TopProjects
+  display: -ms-grid
+  display: grid
+  grid-template-areas: 'name descrip language create update size'
+  -ms-grid-rows: 5vh
+  grid-template-rows: 5vh
+  -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 1fr
+  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr
+
+.RepositProjects a
+  text-decoration: none
+  color: white
+
+.Name, .TopProjects > .Name
+  -ms-grid-row: 1
+  -ms-grid-column: 1
+  grid-area: name
+
+.Descrip, .TopProjects > .Descrip
+  -ms-grid-row: 1
+  -ms-grid-column: 2
+  grid-area: descrip
+
+.Language, .TopProjects > .Language
+  -ms-grid-row: 1
+  -ms-grid-column: 3
+  grid-area: language
+
+.Create, .TopProjects > .Create
+  -ms-grid-row: 1
+  -ms-grid-column: 4
+  grid-area: create
+
+.Update, .TopProjects > .Update
+  -ms-grid-row: 1
+  -ms-grid-column: 5
+  grid-area: update
+
+.Size, .TopProjects > .Size
+  -ms-grid-row: 1
+  -ms-grid-column: 6
+  grid-area: size

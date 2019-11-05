@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './Footer.module.css';
+import s from './Footer.module.sass';
 
 const Text = () => {
         return (

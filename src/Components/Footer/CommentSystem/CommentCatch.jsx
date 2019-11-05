@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './CommentSystem.module.css';
+import s from './CommentSystem.module.sass';
 
 class Catch extends React.Component {
     constructor(props) {

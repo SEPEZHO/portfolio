@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './Projects.module.css';
+import s from './Projects.module.sass';
 
 class ProjectsRepos extends React.Component {
     constructor(props) {

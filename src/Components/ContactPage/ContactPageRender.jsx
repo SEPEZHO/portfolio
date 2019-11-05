@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Form from './Form.jsx'
-import s from './ContactPage.module.css'
+import s from './ContactPage.module.sass'
 
 
 const ContactPage = () => {

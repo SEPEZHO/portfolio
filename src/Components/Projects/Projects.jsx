@@ -4,7 +4,7 @@ import ProjectsTable from './ProjectsTable.jsx'
 import ProjectsText from './ProjectsText.jsx'
 import ViewMore from '../../Static/Images/Icons/ViewMore.png';
 
-import s from './Projects.module.css'
+import s from './Projects.module.sass'
 
 class Projects extends React.Component {
 	constructor() {

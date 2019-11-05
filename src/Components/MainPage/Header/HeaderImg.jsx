@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderImg from '../../../Static/Images/Me.jpg';
 
-import s from './Header.module.css';
+import s from './Header.module.sass';
 
 const Header = () => {
   return (

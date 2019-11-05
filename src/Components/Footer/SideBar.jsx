@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './Footer.module.css';
+import s from './Footer.module.sass';
 
 import SrcGithub from '../../Static/Images/Icons/GitHub.png'
 import SrcStackOverflow from '../../Static/Images/Icons/StackOverflow.png'
