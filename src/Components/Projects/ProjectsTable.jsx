@@ -29,9 +29,11 @@ class ProjectsTable extends React.Component {
           var i = 0;
 c++
         console.log(c);
-
         fetch('/API/Commits', {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             })
             .then(response => { return response.json() })
             .then(data => {

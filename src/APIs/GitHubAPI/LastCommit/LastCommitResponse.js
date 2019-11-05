@@ -4,8 +4,8 @@ const LastCommitResponse = (app) => {
 app.post('/API/Commits', function(req, res) {
     pool.getConnection((err, con) => {
         con.query('SELECT * FROM Commits', (error, results) => {
-            // console.log(results);
-            res.send(JSON.stringify(results));
+            res.send(results);
+            // res.send(JSON.stringify(results));
         });
     });
 });
