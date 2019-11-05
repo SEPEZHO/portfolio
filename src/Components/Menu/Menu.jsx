@@ -10,11 +10,11 @@ class Menu extends React.Component {
         super();
         let StyleForMenu = {
             background: 'none',
-            boxShadow: '0 0 0.5vw black'
+            boxShadow: '0 0 10px black'
         }
         let StyleForMenuForContact = {
             background: 'white',
-            boxShadow: '0 0 0.5vw black'
+            boxShadow: '0 0 10px black'
         }
         let StyleForToTop = {
             display: 'none'
@@ -35,7 +35,7 @@ class Menu extends React.Component {
                     },
                     StyleForMenu: {
                         background: 'white',
-                        boxShadow: '0 0 0.5vw black'
+                        boxShadow: '0 0 10px black'
                     }
                 })
             } else {
@@ -45,7 +45,7 @@ class Menu extends React.Component {
                     },
                     StyleForMenu: {
                         background: 'none',
-                        boxShadow: '0 0 0.5vw black'
+                        boxShadow: '0 0 10px black'
                     }
                 })
             }
@@ -63,13 +63,15 @@ class Menu extends React.Component {
     render() {
         return (
             <div>
-          <div style = {(this.state.location === '/') ? this.state.StyleForMenu : this.state.StyleForMenuForContact} className ={s.Menu}>
-          <a href='/Contact'><div className={s.Contact}><div></div><span>Contact</span></div></a>
-          <a href='/'><div className={s.Main}><div></div><span>Main</span></div></a>
-          <a href='/Projects'><div className={s.Projects}><div></div><span>Projects</span></div></a>
-          <img alt='' src={ToTop} className={s.ToTop} onClick={this.ToTop} style={(this.state.location === '/') ? this.state.StyleForToTop: {display: 'none'}}/>
-        </div>
-        </div>
+                <div style = {(this.state.location === '/') ? this.state.StyleForMenu : this.state.StyleForMenuForContact} className ={s.Menu}>
+                    <div className={s.MenuMax}>
+                        <a href='/Contact'><div className={s.Contact}><div></div><span>Contact</span></div></a>
+                        <a href='/'><div className={s.Main}><div></div><span>Main</span></div></a>
+                        <a href='/Projects'><div className={s.Projects}><div></div><span>Projects</span></div></a>
+                    </div>
+                    <img alt='' src={ToTop} className={s.ToTop} onClick={this.ToTop} style={(this.state.location === '/') ? this.state.StyleForToTop: {display: 'none'}}/>
+                </div>
+            </div>
         );
     }
 }

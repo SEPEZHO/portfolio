@@ -1,66 +1,57 @@
+// COMMENTS BLOCK
 .Comments
-  box-shadow: 0 0 0.5vw white
-  border-radius: .3vw
-  right: 10vw
+  box-shadow: 0 0 10px white
+  border-radius: 5px
+  right: 0
   position: absolute
-  width: 30vw
+  width: 50%
   height: 100%
 
-  h1
-    position: absolute
-    left: -40%
-    margin: 1%
-    font-size: 1.75em
-
-  img
-    position: absolute
-    left: -31%
-    top: 10%
-
+// FORMS STYLE
 .FormAreaMessage, .FormAreaName
   position: absolute
   margin: 1%
-  top: 0
   width: 100%
 
 .InputMessage, .InputName
   outline: none
   border: none
-  padding-top: 0.5%
-  padding-bottom: 0.5%
-  padding-left: 1.75%
-  padding-right: 1.75%
-  border-radius: .2vw
-  margin-right: 0.2vw
-  width: 23.7vw
+  padding-top: 4px
+  padding-bottom: 4px
+  padding-left: 12px
+  padding-right: 12px
+  border-radius: 5px
+  margin-right: 5px
+  width: 455.04px
 
 .InputMessage:hover, .InputName:hover
-  box-shadow: 0 0 0.75vw white
+  box-shadow: 0 0 15px white
 
 .InputMessage:focus, .InputName:focus
-  box-shadow: 0 0 0.5vw white
+  box-shadow: 0 0 10px white
 
 .InputSubmitMessage, .InputSubmitName
-  width: 4.65vw
+  width: 89.28px
   background: black
   color: white
   border: 1px solid white
-  padding-top: 0.5%
-  padding-bottom: 0.5%
-  padding-left: 1.75%
-  padding-right: 1.75%
-  border-radius: .2vw
+  padding-top: 4px
+  padding-bottom: 4px
+  padding-left: 12px
+  padding-right: 12px
+  border-radius: 5px
 
-.InputSubmitMessage:hover
+.InputSubmitMessage:hover, .InputSubmitName:hover
   background: white
   color: black
 
 .FormAreaName
-  width: 18vw
+  width: 350px
 
 .InputName
-  width: 11.85vw
+  width: 227.52px
 
+// MESSAGE BLOCK
 .Catch
   position: absolute
   top: 15%
@@ -69,35 +60,36 @@
   overflow-y: scroll
   overflow-x: hidden
 
+// MESSAGE
 .Message
   width: 100%
   height: auto
-  margin: 0.1vw
-  height: auto
-  top: 0
+  // margin: 2px
   position: relative
 
   hr
     position: relative
     filter: invert(1)
-    width: 150%
-    left: -25%
-
+    width: 100%
+    left: 0;
 .Name
-  position: relative
-  left: 0
-  top: 0
-  word-wrap: break-word
-  border-radius: .1vw
+  width: 100%
+  padding: 2px
+  // word-wrap: break-word
   background: rgba(255, 255, 255, 0.3)
-
+  
+  >
+    span
+      position: relative
+      left: 10px
+    
 .Date
   position: absolute
-  right: 1vw
+  right: 20px
   transform: translate(0, -100%)
 
 .MessageText
   position: relative
-  border-radius: .1vw
+  border-radius: 2.5px
   word-wrap: break-word
-  padding: .5vw
+  padding: 10px

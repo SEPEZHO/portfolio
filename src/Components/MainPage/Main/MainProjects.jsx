@@ -11,11 +11,12 @@ const MainProjects = () => {
 
     return (
         <div className={s.Projects}>
+        <h1>Good Projects</h1>
         
         <div className={s.Proj}>
       <a href='https://github.com/SEPEZHO/Portfolio'>
-      <span className={s.Text}>Portfolio</span>
-      <span className={s.TextDesc}>Btw its this site project. I create my own portfolio about my projects.</span>
+      <span className={s.Text} style={{'filter': 'invert(1)'}}>Portfolio</span>
+      <span className={s.TextDesc} style={{'filter': 'invert(1)'}}>Btw its this site project. I create my own portfolio about my projects.</span>
         <img alt='' src={Portfolio} className={s.ProjImg} />
 </a>    
     </div>
@@ -30,8 +31,8 @@ const MainProjects = () => {
 
 <div className={s.Proj2}>
       <a href='https://github.com/SEPEZHO/Game-OF-life'>
-      <span className={s.Text}>Game-OF-life</span>
-      <span className={s.TextDesc}>Thats game of life on canvas. My first programm on JS.</span>
+      <span className={s.Text} style={{'filter': 'invert(1)'}}>Game-OF-life</span>
+      <span className={s.TextDesc} style={{'filter': 'invert(1)'}}>Thats game of life on canvas. My first programm on JS.</span>
         <img alt='' src={Life} className={s.ProjImg}/>
 </a>    
     </div>

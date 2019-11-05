@@ -8,8 +8,8 @@ import s from './Main.module.sass';
 const MainAbout = () => {
     return (
       <div className={s.About}>
-        <h1>О себе</h1>
         <div className={s.MeText}>
+        <h1 className={s.AboutMeTitle}>О себе</h1>
         Я школьник десятого класса. Моим хобби является веб-программирование. Оно появилось у меня на курсах по программированию, но вскоре я "перерос" эти курсы и меня перестала интересовать та программа (она была легкой для меня). 
           Учитывая цену этих курсов, на которые я не доходил всего год до получения "корочки", я решил уйти в самообучение. С тех пор (почти год) каждый день (по 2-7 часов) пишу сайты для себя, тем самым учась. Все прошлое лето я потратил на свой проект-кликер, который был для меня чем-то вроде: "а что если я выложусь на полную".  Процесс создания его для меня был исполинским трудом. Сейчас я занимаюсь написанием своего портфолио, параллельно пытаясь собрать материал для старта канала на ютуб, чтобы вести подобие дневника своих проектов.
         </div>
@@ -18,6 +18,8 @@ const MainAbout = () => {
               <img alt="" src={Left} className={s.Left}/>
               <div className={s.LeftText}>
               Frontend:
+              <br />
+              <br />
               <ul>
                 <li>node js;</li>
                 <li>react;</li>
@@ -29,6 +31,8 @@ const MainAbout = () => {
               <img alt="" src={Center} className={s.Center}/>
               <div className={s.CenterText}>
               Backend:
+              <br />
+              <br />
               <ul>
                 <li>websocets+https(wss);</li>
                 <li>php;</li>
@@ -41,6 +45,8 @@ const MainAbout = () => {
               <img alt="" src={Rigth} className={s.Rigth}/>
                 <div className={s.RigthText}>
                 Other:
+              <br />
+              <br />
                 <ul>
                   <li>Arduino;</li>
                   <li>Собрал пк в 12 лет;</li>

@@ -11,8 +11,8 @@ const Main = () => {
   return (
     <div className ={s.Main}>
     	<MainAbout />
-        <h1>Good Projects</h1>
     	<MainProjects />
+
     	<div className={s.Table}>
     		<h1>Last Activites</h1>
     		<div className={s.ProjectsTableMain}>
@@ -22,6 +22,7 @@ const Main = () => {
     			<img className={s.ViewMore} src={ViewMore} alt='#' />
     		</a>
     	</div>
+        
     </div>
   );
 }

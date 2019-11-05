@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Catch from './CommentCatch.jsx'
-import ForComments from '../../../Static/Images/ForComments.png'
 import s from './CommentSystem.module.sass';
 
 class Comments extends React.Component {
@@ -12,7 +11,7 @@ class Comments extends React.Component {
             valName: '',
             nameStyle: {
                 opacity: 0,
-                bottom: 0,
+                top: 0,
             }
         };
         this.handleChangeMessage = this.handleChangeMessage.bind(this);
@@ -54,7 +53,7 @@ class Comments extends React.Component {
             this.setState({
                 nameStyle: {
                     opacity: 0,
-                    bottom: 0,
+                    top: 0,
                 }
             });
         } else {
@@ -64,8 +63,6 @@ class Comments extends React.Component {
     render() {
         return (
             <div className={s.Comments}>
-                <h1>Comments</h1>
-                <img src={ForComments} alt="#" />
                 <div className={s.FormAreaName} style = {this.state.nameStyle}>
                         <input className={s.InputName} type="text" value={this.state.valName} placeholder="Name" onChange={this.handleChangeName}/>
                         <button onClick={this.handleSubmitName} className={s.InputSubmitName}>Send</button>

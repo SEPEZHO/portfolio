@@ -5,11 +5,17 @@ import HeaderImg from './Header/HeaderImg.jsx';
 import Main from './Main/Main.jsx';
 import TitleHeader from './Header/TitleHeader.jsx';
 
+import s from './Header/Header.module.sass';
+
 const MainPageRender = () => {
   return (
     <div >
-    	<TitleHeader />
-    	<SideBar />
+    	<div className={s.HeaderAll}>
+	    	<TitleHeader />
+    		<div className={s.SideBar}>
+    			<SideBar />
+    		</div>
+    	</div>
     	<HeaderImg />
     	<Main />
     </div>

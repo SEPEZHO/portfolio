@@ -5,22 +5,33 @@
 
   > img
     position: fixed
-    left: 50%
-    width: 100vw
-    height: auto
-    -webkit-transform: translate(-50%)
-    transform: translate(-50%)
+    margin: auto
+    width: 100%
 
 .Name
-  font-size: 2.5rem
+  font-size: 2rem
+  position: absolute
+  width: 100%
+  max-width: 800px
+  color: white
+  text-align: justify
+  position: absolute
+  top: 50%
+  right: 0
+  transform: translate(0,-50%)
+
+  h1
+    letter-spacing: 31px
+
+.SideBar
+  position: absolute
+  top: 50%
+  left: 0
+
+.HeaderAll
   position: absolute
   top: 50%
   left: 50%
-  width: 50vw
-  color: white
-  -webkit-transform: translate(-50%, -50%)
+  width: 100%
+  max-width: 1200px
   transform: translate(-50%, -50%)
-  text-align: justify
-
-  p
-    font-size: 1.5em
