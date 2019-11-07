@@ -1,32 +1,38 @@
-.Projects
-  position: relative
-  width: 80%
-  left: 10vw
+@mixin center
+  left: 50%
+  transform: translate(-50%)
+
+@mixin width
+  width: 100%
+  max-width: 1200px
+
+// PROJECTS TABLE "ACTIVITES"
 
 .ProjectsTableMain
   position: relative
-  top: 20vh
+  top: 25vh
+  @include center
+  @include width
 
   h1
     position: absolute
-    top: -10vh
+    top: -15vh
     filter: invert(1)
 
   img
     position: relative
-    left: 50%
     top: 5vh
-    width: 2.5vw
-    transform: translate(-50%)
+    width: 40px
+    @include center
+    
 
     &:hover
       transform: translate(-50%, 25%)
 
 .ProjectsTable
   position: relative
-  width: 80vw
-  box-shadow: 0 0 0.5vw black
-  border-radius: .2vw
+  box-shadow: 0 0 10px black
+  border-radius: 5px
 
 hr
   position: relative
@@ -51,8 +57,7 @@ hr
 .RepAll
   position: relative
   width: 100%
-  min-height: 7rem
-  padding: 1.5vw
+  padding: 30px
 
 .Reposit
   display: -ms-grid
@@ -60,15 +65,14 @@ hr
   grid-template-areas: 'Project Message Date Time  '
   -ms-grid-columns: 0.5fr 5fr 1fr 1fr
   grid-template-columns: 0.5fr 5fr 1fr 1fr
-  padding-top: .75vh
-  padding-bottom: .75vh
+  padding-top: 8px
+  padding-bottom: 8px
 
 .Top
+  padding-bottom: 32px
   display: -ms-grid
   display: grid
   grid-template-areas: ' Project Message Date Time  '
-  -ms-grid-rows: 5vh
-  grid-template-rows: 5vh
   -ms-grid-columns: 0.5fr 5fr 1fr 1fr
   grid-template-columns: 0.5fr 5fr 1fr 1fr
 
@@ -92,54 +96,52 @@ hr
   -ms-grid-column: 4
   grid-area: Time
 
+// REPOSITORIES TABLE BLOCK
+
 .Text
   position: relative
   background: black
-  width: 125%
-  top: 30vh
-  left: -10vw
-  height: 75vh
-  box-shadow: 0 0 0.5vw black
+  top: 35vh
+  width: 100%
+  box-shadow: 0 0 10px black
   color: white
-  margin-bottom: 25vh
-  
 
 .ProjectsReposMain
+  padding-top: 20vh
+  padding-bottom: 50vh
   position: relative
-  width: 80%
-  left: 10%
+  @include width
+  @include center
 
   h1
     position: absolute
-    top: 10vh
+    top: 5vh
 
 .ProjectsRepos
   position: relative
-  width: 100%
-  min-height: 7rem
-  padding: 1.5vw
-  top: 25vh
-  box-shadow: 0 0 0.5vw white
-  border-radius: .2vw
+  width: 1140px
+  box-shadow: 0 0 10px white
+  border-radius: 5px
+  padding: 30px
 
   hr
     filter: invert(1)
 
 .RepositProjects
+  padding-top: 8px
+  padding-bottom: 8px
   display: -ms-grid
   display: grid
   grid-template-areas: 'name descrip language create update size'
   -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 1fr
   grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr
-  -ms-grid-rows: 3vh
-  grid-template-rows: 3vh
+
 
 .TopProjects
+  padding-bottom: 30px
   display: -ms-grid
   display: grid
   grid-template-areas: 'name descrip language create update size'
-  -ms-grid-rows: 5vh
-  grid-template-rows: 5vh
   -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 1fr
   grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr
 

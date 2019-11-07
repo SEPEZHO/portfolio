@@ -1,63 +1,67 @@
+
+// MAIN CONTACT 
+
 .ContactPage
   position: relative
   width: 100%
+  max-width: 1200px
   height: 110vh
+  margin: auto
 
   > h1
     position: absolute
     top: 10vh
-    left: 20vw
     filter: invert(100%)
-    width: 26%
+
+// FORM
 
 .Form
   position: absolute
-  top: 50%
+  top: 22%
   left: 50%
-  transform: translate(-50%, -50%)
-  width: 30vw
+  transform: translate(-50%)
+  width: 600px
   height: 70vh
-  border-radius: .3vw
-  box-shadow: 0 0 0.5vw black
+  border-radius: 5px
+  box-shadow: 0 0 10px black
 
 .FormArea
   position: absolute
   top: 50%
   left: 50%
-  width: 50%
   transform: translate(-50%, -50%)
-
-  textarea
-    resize: none
-    height: 7em
 
   input
     outline: none
     border: 1px solid black
-    width: 90%
-    padding-top: 2%
-    padding-bottom: 2%
-    padding-left: 5%
-    padding-right: 5%
-    margin-bottom: 5%
+    width: 300px
+    padding-top: 4px
+    padding-bottom: 4px
+    padding-left: 12px
+    padding-right: 12px
+    border-radius: 5px
+    margin-bottom: 7%
     margin-top: 2.5%
-    border-radius: .2vw
 
 textarea
+  resize: none
+  width: 300px
+  height: 120px
   outline: none
   border: 1px solid black
-  width: 90%
-  padding-top: 2%
-  padding-bottom: 2%
-  padding-left: 5%
-  padding-right: 5%
+  padding-top: 4px
+  padding-bottom: 4px
+  padding-left: 12px
+  padding-right: 12px
+  border-radius: 5px
   margin-bottom: 5%
   margin-top: 2.5%
-  border-radius: .2vw
 
 .FormArea input
   &[type=submit]
-    width: 5vw
+    position: relative
+    top: 3vh
+    width: 100%
     background: white
     color: black
     border: 1px solid black
@@ -67,10 +71,10 @@ textarea
       color: white
 
   &:hover
-    box-shadow: 0 0 0.5vw black
+    box-shadow: 0 0 10px black
 
 textarea:hover
-  box-shadow: 0 0 0.5vw black
+  box-shadow: 0 0 10px black
 
 .FormArea input:focus, textarea:focus
-  box-shadow: 0 0 0.25vw black
+  box-shadow: 0 0 5px black

@@ -2,33 +2,23 @@ import React from 'react';
 
 import s from './Projects.module.sass'
 
-          var c = 0;
 class ProjectsTable extends React.Component {
     constructor() {
         super();
-        this.state = {}
-
+        this.state = {
+          body: <p style={{'padding': '20px'}}>Loading...</p>
+        }
     }
 
     componentDidMount() {
-       this.fun();
+      this.fun()
     }
-    componentDidChange() {
-        if(this.props !== this.state.oldProps){
-          this.setState({oldProps: this.props});
-          this.fun();
-          console.log(this.props)
-          console.log('Update');
-        }else{
-          console.log('Update not');
-          return;
-        }
+    componentWillReceiveProps() {
+      this.fun();
     }
-    
+
     fun = () => {
-          var i = 0;
-c++
-        console.log(c);
+        let i = 0;
         fetch('/API/Commits', {
                 method: 'POST',
                 headers: {
@@ -37,49 +27,43 @@ c++
             })
             .then(response => { return response.json() })
             .then(data => {
-                // мапим данные нужным нам способом
                 const body = data.map(repo => {
                     if (i < this.props.times) {
                         i++;
                         return (
                             <div key={repo.Date}>
-                            <hr/>
-                        <div className={s.Reposit}>
-                
-                          <div className={s.Project}><a href={repo.UrlProj}>{repo.Project}</a></div>
-                          <div className={s.Message}><a href={repo.UrlCommit}>{repo.Message}</a></div>
-                          <div className={s.Date}>{repo.Date.substring(0,10)}</div>
-                          <div className={s.Time}>{repo.Date.substring(11).slice(0,-5)}</div>
-                
-                      </div>
-                    </div>
+                              <hr/>
+                              <div className={s.Reposit}>
+                                <div className={s.Project}><a href={repo.UrlProj}>{repo.Project}</a></div>
+                                <div className={s.Message}><a href={repo.UrlCommit}>{repo.Message}</a></div>
+                                <div className={s.Date}>{repo.Date.substring(0,10)}</div>
+                                <div className={s.Time}>{repo.Date.substring(11).slice(0,-5)}</div>
+                              </div>
+                            </div>
                         )
-                    }else{
-                      return false;
+                    } else {
+                        return false;
                     }
                 });
-                // присваиваем новое значение переменной `body`
-                this.setState({ body });
-
+              this.setState({ body });
             })
             .catch(error => {
                 console.log(error);
             })
     }
-
     render() {
         return (
             <div className={s.ProjectsTable}>
-            <div className={s.RepAll}> 
-      <div className={s.Top}>
-          <div className={s.Project}>Project</div>
-          <div className={s.Message}>Message</div>
-          <div className={s.Date}>Date</div>
-          <div className={s.Time}>Time</div>
-      </div>
-      {this.state.body}
-      </div>
-        </div>
+              <div className={s.RepAll}> 
+                <div className={s.Top}>
+                  <div className={s.Project}>Project</div>
+                  <div className={s.Message}>Message</div>
+                  <div className={s.Date}>Date</div>
+                  <div className={s.Time}>Time</div>
+                </div>
+                {this.state.body}
+              </div>
+            </div>
         )
     }
 }

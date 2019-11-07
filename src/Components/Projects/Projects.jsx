@@ -7,7 +7,8 @@ import ViewMore from '../../Static/Images/Icons/ViewMore.png';
 import s from './Projects.module.sass'
 
 class Projects extends React.Component {
-	constructor() {
+	
+    constructor() {
         super();
         let styleForImg = {
 
@@ -19,9 +20,9 @@ class Projects extends React.Component {
         }
         this.handleButtonClick = this.handleButtonClick.bind(this);
     }
+
 	handleButtonClick = () => {
-        if (this.tableOpen){
-        	this.tableOpen = !this.tableOpen;
+        if (!this.tableOpen){
         	let styleForImg = {
     			transform: 'translate(-50%, 50%) rotate(180deg)',
     			'transformOrigin': '50% 50%'
@@ -31,7 +32,6 @@ class Projects extends React.Component {
             	styleForImg: styleForImg
         	})
         }else{
-        	this.tableOpen = !this.tableOpen;
         	let styleForImg = {
     			transform: 'translate(-50%, 25%) rotate(0deg)',
     			'transformOrigin': '50% 50%'
@@ -41,12 +41,13 @@ class Projects extends React.Component {
             	styleForImg: styleForImg
         	})
         }
+        this.tableOpen = !this.tableOpen;
 	}
   	render() {
   		return (
     		<div className={s.Projects}>
     			<div className={s.ProjectsTableMain}>
-        			<h1>Activites </h1>
+        			<h1>Activites</h1>
     				<ProjectsTable times={this.state.renderTimes}/>
    					<img className={s.ViewMore} src={ViewMore} style={this.state.styleForImg} alt='#' onClick={this.handleButtonClick}/>
     			</div>

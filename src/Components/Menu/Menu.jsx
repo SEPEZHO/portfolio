@@ -1,5 +1,4 @@
 import React from 'react';
-// import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import ToTop from '../../Static/Images/ToTop.png';
 
@@ -16,11 +15,7 @@ class Menu extends React.Component {
             background: 'white',
             boxShadow: '0 0 10px black'
         }
-        let StyleForToTop = {
-            display: 'none'
-        }
         this.state = {
-            StyleForToTop: StyleForToTop,
             StyleForMenu: StyleForMenu,
             StyleForMenuForContact: StyleForMenuForContact,
         }
@@ -30,9 +25,6 @@ class Menu extends React.Component {
         window.addEventListener('scroll', () => {
             if (window.scrollY > (document.documentElement.clientHeight) * 0.2) {
                 this.setState({
-                    StyleForToTop: {
-                        display: 'block'
-                    },
                     StyleForMenu: {
                         background: 'white',
                         boxShadow: '0 0 10px black'
@@ -40,9 +32,6 @@ class Menu extends React.Component {
                 })
             } else {
                 this.setState({
-                    StyleForToTop: {
-                        display: 'none',
-                    },
                     StyleForMenu: {
                         background: 'none',
                         boxShadow: '0 0 10px black'
@@ -56,10 +45,6 @@ class Menu extends React.Component {
         })
     }
 
-    ToTop = () => {
-        window.scrollTo(window.scrollTo, 0);
-    }
-
     render() {
         return (
             <div>
@@ -69,7 +54,6 @@ class Menu extends React.Component {
                         <a href='/'><div className={s.Main}><div></div><span>Main</span></div></a>
                         <a href='/Projects'><div className={s.Projects}><div></div><span>Projects</span></div></a>
                     </div>
-                    <img alt='' src={ToTop} className={s.ToTop} onClick={this.ToTop} style={(this.state.location === '/') ? this.state.StyleForToTop: {display: 'none'}}/>
                 </div>
             </div>
         );
