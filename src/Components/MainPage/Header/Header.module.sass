@@ -1,3 +1,29 @@
+@mixin size($size)
+  
+  @if $size == XXL
+    @media screen and (min-width: 1700px)
+      @content
+  
+  @else if $size == XL
+    @media screen and (min-width: 1300px)
+      @content
+  
+  @else if $size == L
+    @media screen and (min-width: 992px)
+      @content
+
+  @else if $size == M
+    @media screen and (min-width: 768px)
+      @content
+  
+  @else if $size == S
+    @media screen and (min-width: 600px)
+      @content
+  
+  @else if $size == XS
+    @media screen and (max-width: 600px)
+      @content
+
 .Header
   position: relative
   z-index: -1
@@ -6,27 +32,74 @@
   > img
     position: fixed
     margin: auto
-    width: 100%
+    height: 100%
+    width: auto
+    left: 50%
+    -webkit-transform: translate(-50%)
+    transform: translate(-50%)
+    
+    @media screen and (min-width: 1670px)
+      width: 100%
+      height: auto
+
 
 .Name
   font-size: 2rem
   position: absolute
   width: 100%
-  max-width: 800px
   color: white
   text-align: justify
   position: absolute
   top: 50%
   right: 0
   transform: translate(0,-50%)
+  right: 40px
+
+  @include size(XS)
+    max-width: 500px
+    left: 50%
+    transform: translate(-50%,-50%)
+  
+  @include size(S)
+    max-width: 450px
+
+  @include size(M)
+    max-width: 600px 
+  
+  @include size(L)
+    max-width: 800px
+ 
+  @include size(XL)
+    right: 0
 
   h1
-    letter-spacing: 31px
+    @include size(XS)
+      letter-spacing: 12px
+
+    @include size(S)
+      letter-spacing: 9.5px
+    
+    @include size(M)
+      letter-spacing: 15px
+
+    @include size(L)
+      letter-spacing: 25px
+
+    @include size(XL)
+      letter-spacing: 31px
 
 .SideBar
   position: absolute
   top: 50%
-  left: 0
+  left: 40px
+
+  @include size(XS)
+    top: 300px
+    left: 50%
+    transform: translate(-50%)  
+ 
+  @include size(XL)
+    right: 0
 
 .HeaderAll
   position: absolute

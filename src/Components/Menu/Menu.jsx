@@ -1,7 +1,5 @@
 import React from 'react';
 
-import ToTop from '../../Static/Images/ToTop.png';
-
 import s from './Menu.module.sass';
 
 class Menu extends React.Component {
