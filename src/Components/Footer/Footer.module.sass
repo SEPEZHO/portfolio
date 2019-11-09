@@ -1,12 +1,43 @@
+@mixin size($size)
+  
+  @if $size == XL
+    @media screen and (min-width: 1300px)
+      @content
+  
+  @else if $size == M
+    @media screen and (min-width: 768px)
+      @content
+   
+  @else if $size == S
+    @media screen and (min-width: 600px)
+      @content
+
+  @else if $size == XS
+    @media screen and (max-width: 600px)
+      @content
+
+@mixin center
+  left: 50%
+  transform: translate(-50%)
+
 // FOOTER BACK 100vw
+
 .FooterMain
   position: relative
-  height: 50vh
-  box-shadow: 0 0 0.5vw black
+  box-shadow: 0 0 10px black
   color: white
   background: black
   width: 100%
+  @include size(XS)
+    height: 1400px
 
+  @include size(S)
+    height: 1400px
+
+  @include size(XL)
+    height: 600px
+
+  
 // FOOTER FRONT 1200px
 .Footer
   position: relative
@@ -19,9 +50,22 @@
 
 .Menu
   position: absolute
-  bottom: 4vh
-  width: 40%
-
+  bottom: 50px
+  
+  @include size(XS)
+    width: 400px
+    @include center
+  
+  @include size(S)
+    width: 500px
+    @include center
+  
+  @include size(XL)
+    top: auto
+    left: 0
+    transform: translate(0)
+    width: 560px
+  
   span
     position: absolute
     top: 50%
@@ -33,9 +77,12 @@
 
 .MenuDiv, .LikeBtn
   position: absolute
-  width: 100px
-  height: 4vh
+  width: 125px
+  height: 40px
   background: rgba(255, 255, 255, 0.2)
+  
+  @include size(XS)
+    width: 100px
 
 .MenuDiv:hover, .LikeBtn:hover
   background: rgba(255, 255, 255, 0.4)
@@ -51,17 +98,24 @@
 
 .LikeMess
   position: absolute
-  bottom: 2vh
-  right: -12%
+  bottom: 20px
   box-shadow: 0 0 10px white
   border-radius: 5px
   padding: 3px
+  
+  @include size(XS)
+    right: -50px
+  
+  @include size(S)
+    right: -50px
+  
+  @include size(XL)
+    right: 0
 
 // SIDEBAR
 
 .SideBar
   position: absolute
-  top: 50%
   transform: translate(0, -50%)
   width: 28px
 
@@ -71,10 +125,21 @@
     margin: 20%
 
     &:hover
-      filter: invert(100%)
+      filter: invert(1)
       left: 3.84px
 
+.Footer > .SideBar
+  @include size(XS)
+    top: 200px
+    left: 30px
   
+  @include size(S)
+    top: 200px
+    left: 10%
+  
+  @include size(XL)
+    top: 50%
+    left: 0
 
 .SideBarPic
   position: absolute
@@ -86,11 +151,40 @@
 .Text
   div
     position: absolute
-    top: 17vh
-    left: 10vw
-
+    top: 170px
+    
+    @include size(XS)
+      right: 30px
+  
+    @include size(S)
+      right: 10%
+    
+    @include size(XL)
+      transform: translate(0)
+      left: 120px 
   h1
     position: absolute
-    left: 5vw
-    top: 10vh
-    font-size: 2.5em
+
+    
+    @include size(XS)
+      font-size: 1.5em
+      top: 50px
+      width: 400px
+      right: 30px
+  
+    @include size(S)
+      font-size: 1.5em
+      top: 50px
+      width: 400px
+      right: 30px
+
+    @include size(M)
+      top: 100px
+      font-size: 2.5em
+      width: 500px
+      right: 10%
+
+    @include size(XL)
+      width: 500px
+      transform: translate(0)
+      left: 75px 

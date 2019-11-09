@@ -30,7 +30,7 @@ class Comments extends React.Component {
             this.setState({
                 nameStyle: {
                     opacity: 1,
-                    top: '7%',
+                    top: '42px',
                 }
             })
         } else {
