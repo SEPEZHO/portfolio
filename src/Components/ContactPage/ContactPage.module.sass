@@ -1,29 +1,53 @@
+@mixin size($size)
+  @if $size == XL
+    @media screen and (min-width: 1300px)
+      @content
+  
+  @else if $size == S
+    @media screen and (min-width: 600px)
+      @content
+
+  @else if $size == XS
+    @media screen and (max-width: 600px)
+      @content
 
 // MAIN CONTACT 
 
 .ContactPage
   position: relative
-  width: 100%
+  width: 80%
   max-width: 1200px
-  height: 110vh
+  height: 1300px
   margin: auto
 
   > h1
     position: absolute
-    top: 10vh
-    filter: invert(100%)
+    top: 120px 
+    width: 400px
+    filter: invert(1)
+    @include size(XS)
+      left: 50%
+      transform: translate(-50%)
 
 // FORM
 
 .Form
   position: absolute
-  top: 22%
+  top: 250px
   left: 50%
   transform: translate(-50%)
-  width: 600px
-  height: 70vh
+  height: 900px
   border-radius: 5px
   box-shadow: 0 0 10px black
+
+  @include size(XS)
+    width: 400px
+  
+  @include size(S)
+    width: 550px
+
+  @include size(XL)
+    width: 700px
 
 .FormArea
   position: absolute
@@ -40,8 +64,8 @@
     padding-left: 12px
     padding-right: 12px
     border-radius: 5px
-    margin-bottom: 7%
-    margin-top: 2.5%
+    margin-bottom: 30px
+    margin-top: 5px
 
 textarea
   resize: none
@@ -54,14 +78,14 @@ textarea
   padding-left: 12px
   padding-right: 12px
   border-radius: 5px
-  margin-bottom: 5%
-  margin-top: 2.5%
+  margin-bottom: 30px
+  margin-top: 5px
 
 .FormArea input
   &[type=submit]
     position: relative
     top: 3vh
-    width: 100%
+    width: 324px
     background: white
     color: black
     border: 1px solid black

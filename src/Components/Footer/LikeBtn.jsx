@@ -7,7 +7,7 @@ class LikeBtn extends React.Component {
         super();
         this.state = {
             isLiked: false,
-            opacity: 1
+            opacity: 0
 
         };
     }

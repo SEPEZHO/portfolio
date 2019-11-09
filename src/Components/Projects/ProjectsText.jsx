@@ -8,8 +8,8 @@ const Text = () => {
     <div className={s.Text}>
     	<div className={s.ProjectsReposMain}>
 				<h1>Repositories</h1>
-				<ProjectsRepos />
     	</div>
+		<ProjectsRepos />
     </div>
   );
 }

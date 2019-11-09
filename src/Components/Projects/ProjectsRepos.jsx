@@ -6,7 +6,7 @@ class ProjectsRepos extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            body: <p style={{'padding': '20px'}}>Loading...</p>
+            body: <p style={{'padding': '40px'}}>Loading...</p>
         };
     }
 
