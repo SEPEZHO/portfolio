@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 5000;
+const port = 7777;
 
 const LikesFunc = require('./LikesAPI/LikesResponse.js');
 const GitHubResponse = require('./GitHubAPI/GitHubResponse.js');

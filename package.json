@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.17.1",
+    "https": "^1.0.0",
     "concurrently": "^4.1.2",
-    "fs": "0.0.1-security",
-    "http-proxy": "^1.18.0",
-    "http-proxy-middleware": "^0.20.0",
     "mysql": "^2.17.1",
     "node-sass": "^4.13.0",
     "react": "^16.9.0",
@@ -20,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "concurrently \"node src/APIs/ServerAPI.js\" \"node src/APIs/GitHubAPI/BaseApi.js\" \"node src/APIs/GitHubAPI/LastCommit/LastCommit.js\""
+    "server": "concurrently \"node APIs/ServerAPI.js\" \"node APIs/GitHubAPI/BaseApi.js\" \"node APIs/GitHubAPI/LastCommit/LastCommit.js\""
   },
   "eslintConfig": {
     "extends": "react-app"
