@@ -117,12 +117,26 @@
 .SideBar
   position: absolute
   transform: translate(0, -50%)
-  width: 28px
+  @include size(XS)
+    width: 35px
+
+  @include size(S)
+    width: 30px
+  
+  @include size(XL)
+    width: 28px
 
   a > img
     position: relative
-    width: 28px
     margin: 20%
+    @include size(XS)
+      width: 35px
+
+    @include size(S)
+      width: 30px
+    
+    @include size(XL)
+      width: 28px
 
     &:hover
       filter: invert(1)
@@ -143,8 +157,20 @@
 
 .SideBarPic
   position: absolute
-  top: -13%
-  left: -70%
+
+  @include size(XS)
+    width: 100px
+    height: 320px
+    top: -32px
+    left: -25px
+
+  @include size(S)
+    top: -25px
+    left: -20px
+  
+  @include size(XL)
+    top: -28px
+    left: -22px
 
 // TEXT WITH TITLE 
 
@@ -165,22 +191,21 @@
   h1
     position: absolute
 
-    
     @include size(XS)
-      font-size: 1.5em
       top: 50px
       width: 400px
       right: 30px
+      font-size: 35px
   
     @include size(S)
-      font-size: 1.5em
       top: 50px
+      font-size: 35px
       width: 400px
       right: 30px
-
+    
     @include size(M)
       top: 100px
-      font-size: 2.5em
+      font-size: 40px
       width: 500px
       right: 10%
 

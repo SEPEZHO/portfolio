@@ -43,16 +43,16 @@
   background: white
   
   @include size(XS)
-    height: 4400px
+    height: 4600px
   
   @include size(S)
-    height: 4250px
+    height: 4450px
 
   @include size(M)
-    height: 4000px
+    height: 4200px
   
   @include size(L)
-    height: 3700px
+    height: 4000px
 
   @include size(XL)
     height: 3100px
@@ -104,11 +104,19 @@
 .AboutMeTitle
   position: absolute
   top: -125px
-  font-size: 3.25rem
-  line-height: 100%
   
 .MeText
   top: 200px
+  span
+    @include size(XS)
+      font-size: 25px
+
+    @include size(S)
+      font-size: 22px
+
+    @include size(XL)
+      font-size: 20px
+
 
 .SepezhoTitle
   @include center
@@ -164,10 +172,10 @@
 .Rigth
 
   @include size(XS)
-    right: 0%
+    right: 5%
 
   @include size(S)
-    right: 0%
+    right: 5%
 
   @include size(M)
     right: 10%
@@ -238,12 +246,6 @@
 
   @include size(S)
     right: 0%
-  
-  @include size(M)
-    right: 0%
-
-  @include size(L)
-    right: 0%
 
   @include size(XL)
     right: 10%
@@ -274,18 +276,18 @@
   display: grid
   grid-column-gap: 1%
   grid-row-gap: 2%
-  margin-bot100px: 8vh
+  margin-bottom: 100px
 
 
   @include size(XS)
     width: 90%
-    max-width: 500px
+    max-width: 600px
     grid-template-areas: 'main''sec''port''terd'
     grid-template-columns: 1fr
 
   @include size(S)
     width: 90%
-    max-width: 600px
+    max-width: 700px
     grid-template-areas: 'main''sec''port''terd'
     grid-template-columns: 1fr
 
@@ -348,7 +350,6 @@
 
 
 .Text
-  font-size: 1em
   top: 50%
   -webkit-transform: translate(0, -50%)
   transform: translate(0, -50%)
@@ -359,12 +360,15 @@
   background: rgba(0, 0, 0, 0.6)
 
   @include size(XS)
+    font-size: 22px
     left: 15%
   
   @include size(S)
+    font-size: 20px
     left: 15%
 
   @include size(XL)
+    font-size: 14px
     left: -150px
 
 .TextDesc
@@ -373,19 +377,22 @@
   padding: 2px
   border-radius: 3px
   background: rgba(0, 0, 0, 0.6)
-  font-size: .85em
   left: 50%
   transition: .5s
   -webkit-transform: translate(-50%)
   transform: translate(-50%)
   text-align: center
+
   @include size(XS)
+    font-size: 20px
     bottom: 15%
   
   @include size(S)
+    font-size: 18px
     bottom: 15%
 
   @include size(XL)
+    font-size: 12px
     bottom: -100%
 
   // TABLE LAST ACTIVITES
