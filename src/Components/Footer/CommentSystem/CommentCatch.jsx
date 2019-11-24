@@ -10,7 +10,7 @@ class Catch extends React.Component {
             }
        }
        componentDidMount(){
-        fetch('https://sepezho.ru:7777/API/Chat/Res', {
+        fetch('API/Chat/Res', {
                 method: 'POST',
             })
             .then(response => { return response.json() })

@@ -11,7 +11,7 @@ class ProjectsRepos extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://sepezho.ru:7777/API/Repositories', {
+        fetch('API/Repositories', {
                 method: 'POST',
             })
             .then(response => { return response.json() })

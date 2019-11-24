@@ -19,7 +19,7 @@ class ProjectsTable extends React.Component {
 
     fun = () => {
         let i = 0;
-        fetch('https://sepezho.ru:7777/API/Commits', {
+        fetch('API/Commits', {
                 method: 'POST',
             })
             .then(response => { return response.json() })

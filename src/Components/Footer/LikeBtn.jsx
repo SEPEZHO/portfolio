@@ -15,7 +15,7 @@ class LikeBtn extends React.Component {
     Like = () => {
         if (!this.state.IsLikedServ) {
             if (!this.state.isLiked) {
-                fetch('https://sepezho.ru:7777/API/likes', {
+                fetch('API/likes', {
                     method: 'POST'
                 })
                 let Likes = this.state.Likes;
@@ -39,7 +39,7 @@ class LikeBtn extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://sepezho.ru:7777/API/likes/num', {
+        fetch('API/likes/num', {
                 method: 'POST'
             })
             .then(response => { return response.json() })
