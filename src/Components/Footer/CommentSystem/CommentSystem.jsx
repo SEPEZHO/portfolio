@@ -39,12 +39,8 @@ class Comments extends React.Component {
     }
     handleSubmitName(event) {
         if (this.state.valName !== '') {
-            fetch('/API/Chat', {
+            fetch('https://sepezho.ru:7777/API/Chat', {
                 method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json; charset=utf-8'
-                },
                 body: JSON.stringify({
                     valMessage: this.state.valMessage,
                     valName: this.state.valName

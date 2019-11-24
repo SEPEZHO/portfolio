@@ -21,7 +21,7 @@ const GetCon = (app) => {
                                 res.send({
                                     'Likes': incriment,
                                     'IsLiked': IsLiked,
-                                })
+                                });
                             }
                         })
                     }
