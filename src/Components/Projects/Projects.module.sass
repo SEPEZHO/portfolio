@@ -34,7 +34,7 @@
     top: -15vh
     filter: invert(1)
     @include size(XS)
-      @include center
+
   img
     position: relative
     top: 5vh
@@ -75,6 +75,15 @@ hr
   width: 100%
 
 .Reposit
+  @include size(XS)
+    font-size: 7px
+
+  @include size(X)
+    font-size: 10px
+  
+  @include size(XL)
+    font-size: 16px
+  
   padding: 30px
   display: -ms-grid
   display: grid
@@ -147,10 +156,19 @@ hr
   hr
     filter: invert(1)
     @include size(XS)
-      @include center
+    @include center
 
 .RepositProjects
   padding: 30px
+  @include size(XS)
+    font-size: 7px
+
+  @include size(X)
+    font-size: 10px
+  
+  @include size(XL)
+    font-size: 16px
+    
   padding-top: 8px
   padding-bottom: 8px
   display: -ms-grid

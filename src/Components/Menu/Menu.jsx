@@ -48,9 +48,9 @@ class Menu extends React.Component {
             <div>
                 <div style = {(this.state.location === '/') ? this.state.StyleForMenu : this.state.StyleForMenuForContact} className ={s.Menu}>
                     <div className={s.MenuMax}>
-                        <a href='/Contact'><div className={s.Contact}><div></div><span>Contact</span></div></a>
-                        <a href='/'><div className={s.Main}><div></div><span>Main</span></div></a>
-                        <a href='/Projects'><div className={s.Projects}><div></div><span>Projects</span></div></a>
+                        <a href='/Contact'><div className={s.Contact}><div></div><span>Контакт</span></div></a>
+                        <a href='/'><div className={s.Main}><div></div><span>Главная</span></div></a>
+                        <a href='/Projects'><div className={s.Projects}><div></div><span>Проекты</span></div></a>
                     </div>
                 </div>
             </div>

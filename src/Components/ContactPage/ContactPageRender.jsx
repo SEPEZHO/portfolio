@@ -7,7 +7,7 @@ import s from './ContactPage.module.sass'
 const ContactPage = () => {
   return (
     <div className={s.ContactPage}>
-        <h1>Contact Form</h1>
+        <h1>Форма контакта</h1>
 		<Form />
     </div>
   );

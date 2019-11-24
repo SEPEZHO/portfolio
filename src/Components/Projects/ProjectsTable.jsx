@@ -53,10 +53,10 @@ class ProjectsTable extends React.Component {
             <div className={s.ProjectsTable}>
               <div className={s.RepAll}> 
                 <div className={s.Top}>
-                  <div className={s.Project}>Project</div>
-                  <div className={s.Message}>Message</div>
-                  <div className={s.Date}>Date</div>
-                  <div className={s.Time}>Time</div>
+                  <div className={s.Project}>Репозиторий</div>
+                  <div className={s.Message}>Сообщение</div>
+                  <div className={s.Date}>Дата</div>
+                  <div className={s.Time}>Время</div>
                 </div>
                 {this.state.body}
               </div>

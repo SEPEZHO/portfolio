@@ -7,7 +7,7 @@ const Text = () => {
   return (
     <div className={s.Text}>
     	<div className={s.ProjectsReposMain}>
-				<h1>Repositories</h1>
+				<h1>Репозитории</h1>
     	</div>
 		<ProjectsRepos />
     </div>

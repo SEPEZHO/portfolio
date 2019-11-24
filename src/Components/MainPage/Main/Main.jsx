@@ -14,7 +14,7 @@ const Main = () => {
     	<MainProjects />
 
     	<div className={s.Table}>
-    		<h1>Last Activites</h1>
+    		<h1>Последняя активность</h1>
     		<div className={s.ProjectsTableMain}>
                 <ProjectsTable  times='5'/>
     		</div>

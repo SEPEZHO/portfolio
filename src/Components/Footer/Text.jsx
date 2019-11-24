@@ -5,12 +5,12 @@ import s from './Footer.module.sass';
 const Text = () => {
         return (
             <div className={s.Text}>
-            	<h1>Created by sepezho</h1>
+            	<h1>Создано sepezho</h1>
             	<div>
-            		Time to create: 
+            		Время создания: 
             		<nav>
-            			<li>from: 1.09.2019</li>
-            			<li>to: __.__.____</li>
+            			<li>С: 1.09.2019</li>
+            			<li>До: __.__.____</li>
             		</nav>
             	</div>
             </div>

@@ -47,7 +47,7 @@ class Projects extends React.Component {
   		return (
     		<div className={s.Projects}>
     			<div className={s.ProjectsTableMain}>
-        			<h1>Activites</h1>
+        			<h1>Активность</h1>
     				<ProjectsTable times={this.state.renderTimes}/>
    					<img className={s.ViewMore} src={ViewMore} style={this.state.styleForImg} alt='#' onClick={this.handleButtonClick}/>
     			</div>

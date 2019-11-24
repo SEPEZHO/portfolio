@@ -60,11 +60,11 @@ class LikeBtn extends React.Component {
     render() {
         return (
             <div>
-                <div className={s.LikeMess} style={{opacity: this.state.opacity}}>U already liked from this device.</div>
+                <div className={s.LikeMess} style={{opacity: this.state.opacity}}>Вы уже лайкали с этого устройства.</div>
             <div className={s.LikeBtn} style={{background: this.state.background}}onClick={this.Like}>
                 <span>
-                    Likes:{this.state.Likes}
-                </span>
+                    Лайки: {this.state.Likes}
+                </span> 
             </div>
             </div>
 

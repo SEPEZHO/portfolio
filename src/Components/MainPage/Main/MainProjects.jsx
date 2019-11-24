@@ -11,35 +11,35 @@ const MainProjects = () => {
 
     return (
         <div className={s.Projects}>
-        <h1>Good Projects</h1>
+        <h1>Лучшие проекты</h1>
         
         <div className={s.Proj}>
       <a href='https://github.com/SEPEZHO/Portfolio'>
-      <span className={s.Text} style={{'filter': 'invert(1)'}}>Portfolio</span>
-      <span className={s.TextDesc} style={{'filter': 'invert(1)'}}>Btw its this site project. I create my own portfolio about my projects.</span>
+      <span className={s.Text} style={{'filter': 'invert(1)'}}>Портфолио</span>
+      <span className={s.TextDesc} style={{'filter': 'invert(1)'}}>Это сайт, на котором вы сейчас находитесь. Использовал: react + node js + nginx.</span>
         <img alt='' src={Portfolio} className={s.ProjImg} />
 </a>    
     </div>
 
     <div className={s.Proj1}>
       <a href='https://github.com/SEPEZHO/Clicker'>
-      <span className={s.Text}>Clicker</span>
-      <span className={s.TextDesc}>Game clicker (with account sistem and chat on websockets). You need to click to take a NOC.</span>
+      <span className={s.Text}>Кликер</span>
+      <span className={s.TextDesc}>Игра кликер, с системой регистрации, входа, и ,соответственно, сохранением игровых данных на сервере. Имеется чат, построенный на защищенных вебсокетах (wss). Использовал: jQuery + php + mysql.</span>
         <img alt='' src={Clicker} className={s.ProjImg} />
 </a>    
     </div>
 
 <div className={s.Proj2}>
       <a href='https://github.com/SEPEZHO/Game-OF-life'>
-      <span className={s.Text} style={{'filter': 'invert(1)'}}>Game-OF-life</span>
-      <span className={s.TextDesc} style={{'filter': 'invert(1)'}}>Thats game of life on canvas. My first programm on JS.</span>
+      <span className={s.Text} style={{'filter': 'invert(1)'}}>Игра жизнь</span>
+      <span className={s.TextDesc} style={{'filter': 'invert(1)'}}>Стандартная игра жизнь, базируется на canvas. Использовал: jQuery.</span>
         <img alt='' src={Life} className={s.ProjImg}/>
 </a>    
     </div>
     <div className={s.Proj3}>
       <a href='https://github.com/SEPEZHO/ShortWay'>
-      <span className={s.Text}>ShortWay</span>
-      <span className={s.TextDesc}>Algoritm about finding the shortest way to finish poin.</span>
+      <span className={s.Text}>Путь</span>
+      <span className={s.TextDesc}>Самописный алгоритм нахождения пути от одной точки до другой, на canvas. Использовал: jQuery.</span>
         <img alt='' src={ShortWay} className={s.ProjImg}/>
 </a>    
     </div>

@@ -43,19 +43,19 @@
   background: white
   
   @include size(XS)
-    height: 4400px
+    height: 4600px
   
   @include size(S)
-    height: 4250px
+    height: 4450px
 
   @include size(M)
-    height: 4000px
+    height: 4200px
   
   @include size(L)
-    height: 3700px
+    height: 4000px
 
   @include size(XL)
-    height: 3100px
+    height: 3300px
   > *
     position: relative
     @include centerColumn
@@ -82,7 +82,7 @@
     height: 1200px
 
   @include size(XL)
-    height: 1200px
+    height: 1400px
 
   > div
       @include centerColumn
@@ -104,41 +104,29 @@
 .AboutMeTitle
   position: absolute
   top: -125px
-  font-size: 3.25rem
-  line-height: 100%
   
 .MeText
   top: 200px
+  span
+    @include size(XS)
+      font-size: 25px
+
+    @include size(S)
+      font-size: 22px
+
+    @include size(XL)
+      font-size: 20px
+
 
 .SepezhoTitle
   @include center
-  top: 55% !important
   width: 500px
 
-  @include size(XS)
-    top: 67% !important
-
-  @include size(S)
-    top: 65% !important
-   
-  @include size(M)
-    top: 55% !important
-
-
 .Sepezho
-  @include centerColumn
-  top: 55% !important
+  @include center
+  // top: 100px  !important
   width: 100%
   
-  @include size(XS)
-    top: 67% !important
-
-  @include size(S)
-    top: 65% !important
-
-  @include size(M)
-    top: 55% !important
-
   img
     position: absolute
     top: 100px
@@ -164,10 +152,10 @@
 .Rigth
 
   @include size(XS)
-    right: 0%
+    right: 5%
 
   @include size(S)
-    right: 0%
+    right: 5%
 
   @include size(M)
     right: 10%
@@ -181,8 +169,8 @@
 
 .Center
   left: 50%
-  -webkit-transform: translate(-55%)
-  transform: translate(-55%)
+  -webkit-transform: translate(-50%)
+  transform: translate(-50%)
 
 .LeftText, .CenterText, .RigthText
   font-size: .85em
@@ -215,22 +203,15 @@
     left: 0%
 
   @include size(M)
-    left: 10%
+    left: 5%
 
   @include size(XL)
-    left: 17%
+    left: 10%
 
 .CenterText
-  -webkit-transform: translate(-30%)
-  transform: translate(-30%)
-  @include size(XS)
-    left: 35%
-
-  @include size(S)
-    left: 35%
-
-  @include size(M)
-    left: 50%
+  -webkit-transform: translate(-50%)
+  transform: translate(-50%)
+  left: 50%
 
 .RigthText
   @include size(XS)
@@ -240,10 +221,7 @@
     right: 0%
   
   @include size(M)
-    right: 0%
-
-  @include size(L)
-    right: 0%
+    right: 5%
 
   @include size(XL)
     right: 10%
@@ -274,18 +252,18 @@
   display: grid
   grid-column-gap: 1%
   grid-row-gap: 2%
-  margin-bot100px: 8vh
+  margin-bottom: 100px
 
 
   @include size(XS)
     width: 90%
-    max-width: 500px
+    max-width: 600px
     grid-template-areas: 'main''sec''port''terd'
     grid-template-columns: 1fr
 
   @include size(S)
     width: 90%
-    max-width: 600px
+    max-width: 700px
     grid-template-areas: 'main''sec''port''terd'
     grid-template-columns: 1fr
 
@@ -348,7 +326,6 @@
 
 
 .Text
-  font-size: 1em
   top: 50%
   -webkit-transform: translate(0, -50%)
   transform: translate(0, -50%)
@@ -359,12 +336,15 @@
   background: rgba(0, 0, 0, 0.6)
 
   @include size(XS)
+    font-size: 22px
     left: 15%
   
   @include size(S)
+    font-size: 20px
     left: 15%
 
   @include size(XL)
+    font-size: 14px
     left: -150px
 
 .TextDesc
@@ -373,37 +353,40 @@
   padding: 2px
   border-radius: 3px
   background: rgba(0, 0, 0, 0.6)
-  font-size: .85em
   left: 50%
   transition: .5s
   -webkit-transform: translate(-50%)
   transform: translate(-50%)
   text-align: center
+
   @include size(XS)
+    font-size: 20px
     bottom: 15%
   
   @include size(S)
+    font-size: 18px
     bottom: 15%
 
   @include size(XL)
+    font-size: 12px
     bottom: -100%
 
   // TABLE LAST ACTIVITES
 
 .ProjectsTableMain
   position: relative
-  top: 100px
+  top: 150px
   width: 90%
   left: 50%
   transform: translate(-50%)
 
 .Table
-  top: 200px
+  top: 50px
 
   img
     position: relative
     left: 50%
-    top: 200px
+    top: 250px
     width: 40px
     transform: translate(-50%)
 
@@ -412,7 +395,7 @@
 
   > h1
     filter: invert(1)
-    width: 400px
+    width: 500px
 
     @include size(XS)
       position: absolute

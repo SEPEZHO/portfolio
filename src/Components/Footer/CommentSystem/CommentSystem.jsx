@@ -34,13 +34,16 @@ class Comments extends React.Component {
                 }
             })
         } else {
-            alert('Введите сообщение')
+            alert('Введите сообщение.')
         }
     }
     handleSubmitName(event) {
         if (this.state.valName !== '') {
             fetch('https://sepezho.ru:7777/API/Chat', {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json;charset=UTF-8',
+                },
                 body: JSON.stringify({
                     valMessage: this.state.valMessage,
                     valName: this.state.valName
@@ -53,18 +56,18 @@ class Comments extends React.Component {
                 }
             });
         } else {
-            alert('Введите имя')
+            alert('Введите имя.')
         }
     }
     render() {
         return (
             <div className={s.Comments}>
                 <div className={s.FormAreaName} style = {this.state.nameStyle}>
-                        <input className={s.InputName} type="text" value={this.state.valName} placeholder="Name" onChange={this.handleChangeName}/>
+                        <input className={s.InputName} type="text" value={this.state.valName} placeholder="Имя" onChange={this.handleChangeName}/>
                         <button onClick={this.handleSubmitName} className={s.InputSubmitName}>Send</button>
                 </div>
                 <div className={s.FormAreaMessage}>
-                        <input className={s.InputMessage} type="text" value={this.state.valMessage} placeholder="Ur message" onChange={this.handleChangeMessage} />
+                        <input className={s.InputMessage} type="text" value={this.state.valMessage} placeholder="Комментарий" onChange={this.handleChangeMessage} />
                         <button onClick={this.handleSubmitMessage} className={s.InputSubmitMessage}>Send</button>
                 </div>
                 <Catch/>

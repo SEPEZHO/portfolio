@@ -42,18 +42,21 @@ class FormArea extends React.Component {
           <input type="text" value={this.state.valueName} onChange={this.handleChangeName} />
         </label>
         <label>
-          Email:
+          Ваш email:
           <input type="text" value={this.state.valueEmail} onChange={this.handleChangeEmail} />
         </label>
         <label>
-          Subject:
+          Причина:
           <input type="text" value={this.state.valueSubject} onChange={this.handleChangeSubject} />
         </label>
         <label>
-          Message:
+          Сообщение:
           <textarea type="text" value={this.state.valueMessage} onChange={this.handleChangeMessage} />
         </label>
         <input type="submit" value="Отправить" />
+        <span>
+          sepezho@gmail.com
+        </span>
       </form>
     );
   }

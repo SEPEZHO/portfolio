@@ -5,9 +5,7 @@ import s from './CommentSystem.module.sass';
 class Catch extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-
-            }
+        this.state = {}
        }
        componentDidMount(){
         fetch('https://sepezho.ru:7777/API/Chat/Res', {
