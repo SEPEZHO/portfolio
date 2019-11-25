@@ -41,21 +41,8 @@
 .Main
   position: relative
   background: white
-  
-  @include size(XS)
-    height: 4600px
-  
-  @include size(S)
-    height: 4450px
+  margin-bottom: 400px
 
-  @include size(M)
-    height: 4200px
-  
-  @include size(L)
-    height: 4000px
-
-  @include size(XL)
-    height: 3300px
   > *
     position: relative
     @include centerColumn
@@ -70,7 +57,7 @@
   box-shadow: 0 0 10px black
 
   @include size(XS)
-    height: 2000px
+    height: 2500px
 
   @include size(S)
     height: 1750px
@@ -79,7 +66,7 @@
     height: 1450px
 
   @include size(L)
-    height: 1200px
+    height: 1400px
 
   @include size(XL)
     height: 1400px
@@ -89,16 +76,17 @@
       position: absolute
       text-align: justify
       width: 90%
+      line-height: 150%
+      letter-spacing: 3px
 
       @include size(XS)
-        font-size: 1.75em
-        line-height: 150%
+        font-size: 24px
+
       @include size(S)
-        font-size: 1.75em
-        line-height: 150%
+        font-size: 22px
+      
       @include size(M)
-        font-size: 1.50em
-        line-height: 150%
+        font-size: 20px
 
 
 .AboutMeTitle
@@ -107,26 +95,34 @@
   
 .MeText
   top: 200px
-  span
-    @include size(XS)
-      font-size: 25px
-
-    @include size(S)
-      font-size: 22px
-
-    @include size(XL)
-      font-size: 20px
-
 
 .SepezhoTitle
-  @include center
+  position: absolute
+  left: 50%
+  transform: translate(-50%)
   width: 500px
+  @include size(XS)
+    bottom: 1000px
+
+  @include size(S)
+    bottom: 750px
+
+  @include size(L)
+    bottom: 650px
 
 .Sepezho
-  @include center
-  // top: 100px  !important
+  position: absolute
+  bottom: 650px
   width: 100%
-  
+  @include size(XS)
+    bottom: 1000px
+
+  @include size(S)
+    bottom: 750px
+
+  @include size(L)
+    bottom: 650px
+
   img
     position: absolute
     top: 100px
@@ -138,13 +134,10 @@
     left: 0%
 
   @include size(S)
-    left: 0%
+    left: 5%
 
   @include size(M)
-    left: 10%
-
-  @include size(L)
-    left: 10%
+    left: 15%
 
   @include size(XL)
     left: 25%
@@ -152,16 +145,13 @@
 .Rigth
 
   @include size(XS)
-    right: 5%
+    right: 0%
 
   @include size(S)
     right: 5%
 
   @include size(M)
-    right: 10%
-
-  @include size(L)
-    right: 10%
+    right: 15%
 
   @include size(XL)
     right: 25%
@@ -173,27 +163,12 @@
   transform: translate(-50%)
 
 .LeftText, .CenterText, .RigthText
-  font-size: .85em
-  line-height: 100%
   position: absolute
+  font-size: .9em
   top: 250px
+  line-height: 150%
   width: 20%
 
-  @include size(XS)
-    font-size: .70em
-    line-height: 100%
-
-  @include size(S)
-    font-size: .75em
-    line-height: 100%
-
-  @include size(M)
-    font-size: .9em
-    line-height: 100%
-
-  @include size(XL)
-    font-size: 1em
-    line-height: 100%
 
 .LeftText
   @include size(XS)
@@ -203,10 +178,10 @@
     left: 0%
 
   @include size(M)
-    left: 5%
+    left: 10%
 
   @include size(XL)
-    left: 10%
+    left: 15%
 
 .CenterText
   -webkit-transform: translate(-50%)
@@ -221,7 +196,7 @@
     right: 0%
   
   @include size(M)
-    right: 5%
+    right: 3%
 
   @include size(XL)
     right: 10%
@@ -243,135 +218,130 @@
     left: 50%
     transform: translate(-50%)
 
-  @include size(XL)
+  @include size(L)
     left: 0%
     transform: translate(0)
 
-.Projects
-  display: -ms-grid
-  display: grid
-  grid-column-gap: 1%
-  grid-row-gap: 2%
+.Proj, .Proj1
+  position: relative
+  width: 100%
   margin-bottom: 100px
-
-
+  border-right: 1px solid black
+  
   @include size(XS)
-    width: 90%
-    max-width: 600px
-    grid-template-areas: 'main''sec''port''terd'
-    grid-template-columns: 1fr
+    height: 600px
 
   @include size(S)
-    width: 90%
-    max-width: 700px
-    grid-template-areas: 'main''sec''port''terd'
-    grid-template-columns: 1fr
+    height: 550px
 
-  @include size(XL)
-    max-width: 1200px 
-    width: 100%
-    grid-template-areas: 'main sec' 'port terd'
-    grid-template-columns: 1fr 1fr
+  @include size(L)
+    height: 315px
 
-  > *
-    position: relative
-    box-shadow: 0 0 10px black
-    border-radius: 5px
-    overflow: hidden
-
-.Proj
-  grid-area: port
+  &:hover
+    img
+      box-shadow: 0 0 15px black
+    h2
+      text-decoration: underline
 
 .Proj1
-  grid-area: main
+  border-right: none
+  border-left: 1px solid black
 
-.Proj2
-  grid-area: sec
-
-.Proj3
-  grid-area: terd
-
-.Projects
-  img
-    width: 100%
-    height: 100%
-    border-radius: 5px
-    
-    @include size(XS)
-      -webkit-filter: blur(0) brightness(1)
-      filter: blur(0) brightness(1)
-    
-    @include size(S)
-      -webkit-filter: blur(0) brightness(1)
-      filter: blur(0) brightness(1)
-    
-    @include size(XL)
-      -webkit-filter: blur(2px) brightness(50%)
-      filter: blur(2px) brightness(50%)
-  
-  div:hover
-    .ProjImg
-      -webkit-filter: blur(0) brightness(1)
-      filter: blur(0) brightness(1)
-
-    .Text
-      left: 15%
-
-    .TextDesc
-      bottom: 15%
-
-  a
-    text-decoration: none
-    color: white
-
-
-.Text
-  top: 50%
-  -webkit-transform: translate(0, -50%)
-  transform: translate(0, -50%)
+.Text, .Text1
   position: absolute
-  z-index: 1
-  padding: 5px
-  border-radius: 15px
-  background: rgba(0, 0, 0, 0.6)
 
   @include size(XS)
-    font-size: 22px
-    left: 15%
-  
+    right: 50%
+    transform: translate(50%)
+    text-align: center
+    width: 80%
+    top: none
+    top: 380px
+    margin-right: none
+    font-size: 23px
+
   @include size(S)
-    font-size: 20px
-    left: 15%
+    right: 50%
+    transform: translate(50%)
+    text-align: center
+    width: 80%
+    top: none
+    top: 380px
+    margin-right: none
+    font-size: 21px
 
-  @include size(XL)
-    font-size: 14px
-    left: -150px
-
-.TextDesc
-  position: absolute
-  z-index: 1
-  padding: 2px
-  border-radius: 3px
-  background: rgba(0, 0, 0, 0.6)
-  left: 50%
-  transition: .5s
-  -webkit-transform: translate(-50%)
-  transform: translate(-50%)
-  text-align: center
-
-  @include size(XS)
-    font-size: 20px
-    bottom: 15%
-  
-  @include size(S)
+  @include size(L)
+    left: none
+    text-align: right
+    width: 40%
+    margin-right: 20px
     font-size: 18px
-    bottom: 15%
+    right: 0
+    top: 50%
+    transform: translate(0, -50%)
 
   @include size(XL)
-    font-size: 12px
-    bottom: -100%
+    width: 50%
 
-  // TABLE LAST ACTIVITES
+.Text1
+  @include size(L)
+    text-align: left
+    margin-right: none 
+    left: 0
+    margin-left: 20px
+
+.Image, .Image1
+  position: absolute
+
+  @include size(XS)
+    top: -61px
+    width: 500px
+    left: 50% 
+    transform: translate(-50%)
+    height: 281.25px
+
+  @include size(S)
+    top: -61px
+    width: 560px
+    left: 50% 
+    transform: translate(-50%)
+    height: 315px
+
+  @include size(L)
+    left: 0 
+    transform: translate(0)
+    top: -61px
+    width: 560px
+    height: 315px
+
+  >
+    h2
+      font-family: 'h'
+      font-size: 40px
+      margin-bottom: 20px
+      letter-spacing: 10px
+      text-align: center
+      color: black
+
+    img
+      width: 100%
+      height: 100%
+      box-shadow: 0 0 10px black
+      border-radius: 5px
+
+.Image1
+  right: 0
+
+  @include size(XS)
+    left: 50% 
+
+  @include size(S)
+    left: 50% 
+
+  @include size(L)
+    left: auto 
+
+// TABLE LAST ACTIVITES
 
 .ProjectsTableMain
   position: relative
