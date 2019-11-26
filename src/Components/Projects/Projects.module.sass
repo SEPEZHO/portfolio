@@ -49,6 +49,7 @@
   position: relative
   box-shadow: 0 0 10px black
   border-radius: 5px
+  overflow-x: scroll
 
 hr
   position: relative
@@ -72,18 +73,9 @@ hr
 
 .RepAll
   position: relative
-  width: 100%
+  width: 1200px
 
 .Reposit
-  @include size(XS)
-    font-size: 7px
-
-  @include size(X)
-    font-size: 10px
-  
-  @include size(XL)
-    font-size: 16px
-  
   padding: 30px
   display: -ms-grid
   display: grid
@@ -93,6 +85,7 @@ hr
   padding-top: 8px
   grid-column-gap: 10px
   padding-bottom: 8px
+  font-size: medium
 
 .Top
   padding: 30px
@@ -103,6 +96,7 @@ hr
   grid-template-areas: ' Project Message Date Time  '
   -ms-grid-columns: 0.5fr 5fr 1fr 1fr
   grid-template-columns: 0.5fr 5fr 1fr 1fr
+  font-size: medium
 
 .Project, .Top > .Project
   -ms-grid-row: 1
@@ -143,32 +137,26 @@ hr
 
   h1
     position: absolute
-    top: 5vh
+    top: 70px
 
 .ProjectsRepos
+  overflow-x: scroll
   top: -50vh
   position: relative
   box-shadow: 0 0 10px white
   border-radius: 5px
   @include width
   @include center
-
   hr
     filter: invert(1)
     @include size(XS)
     @include center
 
+.AllProjects
+  width: 1200px
+
 .RepositProjects
   padding: 30px
-  @include size(XS)
-    font-size: 7px
-
-  @include size(X)
-    font-size: 10px
-  
-  @include size(XL)
-    font-size: 16px
-    
   padding-top: 8px
   padding-bottom: 8px
   display: -ms-grid
@@ -177,7 +165,7 @@ hr
   grid-template-areas: 'name descrip language create update size'
   -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 1fr
   grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr
-
+  font-size: medium
 
 .TopProjects
   padding: 30px
@@ -188,6 +176,7 @@ hr
   grid-template-areas: 'name descrip language create update size'
   -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 1fr
   grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr
+  font-size: medium
 
 .RepositProjects a
   text-decoration: none

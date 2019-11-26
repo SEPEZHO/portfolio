@@ -2,7 +2,7 @@ const mysql = require('mysql')
 // connect ot mysql data for PC
 const optionsMysql = {
     user: "root",
-    password: "password123",
+    password: "123",
     database: "DataBase"
 }
 
