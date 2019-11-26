@@ -64,11 +64,11 @@ class Comments extends React.Component {
             <div className={s.Comments}>
                 <div className={s.FormAreaName} style = {this.state.nameStyle}>
                         <input className={s.InputName} type="text" value={this.state.valName} placeholder="Имя" onChange={this.handleChangeName}/>
-                        <button onClick={this.handleSubmitName} className={s.InputSubmitName}>Send</button>
+                        <button onClick={this.handleSubmitName} className={s.InputSubmitName}>Отправить</button>
                 </div>
                 <div className={s.FormAreaMessage}>
                         <input className={s.InputMessage} type="text" value={this.state.valMessage} placeholder="Комментарий" onChange={this.handleChangeMessage} />
-                        <button onClick={this.handleSubmitMessage} className={s.InputSubmitMessage}>Send</button>
+                        <button onClick={this.handleSubmitMessage} className={s.InputSubmitMessage}>Отправить</button>
                 </div>
                 <Catch/>
             </div>
