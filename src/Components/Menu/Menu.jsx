@@ -5,6 +5,7 @@ import s from './Menu.module.sass';
 class Menu extends React.Component {
     constructor() {
         super();
+
         let StyleForMenu = {
             background: 'none',
             boxShadow: '0 0 10px black'
@@ -16,6 +17,7 @@ class Menu extends React.Component {
         this.state = {
             StyleForMenu: StyleForMenu,
             StyleForMenuForContact: StyleForMenuForContact,
+            location: '/Main'
         }
     }
 
@@ -37,20 +39,16 @@ class Menu extends React.Component {
                 })
             }
         })
-        let location = window.location.pathname;
-        this.setState({
-            location: location
-        })
     }
 
     render() {
         return (
             <div>
-                <div style = {(this.state.location === '/') ? this.state.StyleForMenu : this.state.StyleForMenuForContact} className ={s.Menu}>
+                <div style = {(this.state.location === '/Main') ? this.state.StyleForMenu : this.state.StyleForMenuForContact} className ={s.Menu}>
                     <div className={s.MenuMax}>
-                        <a href='/Contact'><div className={s.Contact}><div></div><span>Контакт</span></div></a>
-                        <a href='/'><div className={s.Main}><div></div><span>Главная</span></div></a>
-                        <a href='/Projects'><div className={s.Projects}><div></div><span>Проекты</span></div></a>
+                        <div className={s.Contact} onClick={() => {this.props.pathMain('/Contact'); this.setState({location: '/Contact'})}}><div></div><span>Контакт</span></div>
+                        <div className={s.Main} onClick={() => {this.props.pathMain('/Main'); this.setState({location: '/Main'})}}><div></div><span>Главная</span></div>
+                        <div className={s.Projects} onClick={() => {this.props.pathMain('/Projects'); this.setState({location: '/Projects'})}}><div></div><span>Проекты</span></div>
                     </div>
                 </div>
             </div>
