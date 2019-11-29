@@ -7,8 +7,8 @@ import TitleHeader from './Header/TitleHeader.jsx';
 
 import s from './Header/Header.module.sass';
 
-const MainPageRender = () => {
-  return (
+class MainPageRender extends React.Component {
+  render(){return (
     <div >
     	<div className={s.HeaderAll}>
 	    	<TitleHeader />
@@ -17,9 +17,10 @@ const MainPageRender = () => {
     		</div>
     	</div>
     	<HeaderImg />
-    	<Main />
+    	<Main pathMain={this.props.pathMain}/>
     </div>
-  );
+  )
+}
 }
 
 export default MainPageRender;

@@ -22,6 +22,7 @@
 
 // FOOTER BACK 100vw
 
+
 .FooterMain
   position: relative
   box-shadow: 0 0 10px black
@@ -45,27 +46,29 @@
   height: 100%
   width: 100%
   max-width: 1200px
+  ::selection 
+    background: white
+    color: black
 
-// DOWNMENU
+// LIKEBTN
 
-.Menu
+.LikeBtn
   position: absolute
-  bottom: 50px
-  
+  width: 125px
+  height: 40px
+  bottom: 10px
+  background: rgba(255, 255, 255, 0.2)
+  transform: translate(-50%)
+
   @include size(XS)
-    width: 400px
-    @include center
+    left: 50%
   
   @include size(S)
-    width: 500px
-    @include center
-  
+    left: 50%
+
   @include size(XL)
-    top: auto
-    left: 0
-    transform: translate(0)
-    width: 560px
-  
+    left: 25%
+
   span
     position: absolute
     top: 50%
@@ -73,44 +76,32 @@
     -webkit-transform: translate(-50%, -50%)
     transform: translate(-50%, -50%)
     text-decoration: none
-    color: white
+    color: white  
 
-.MenuDiv, .LikeBtn
-  position: absolute
-  width: 125px
-  height: 40px
-  background: rgba(255, 255, 255, 0.2)
-  
-  @include size(XS)
-    width: 100px
-
-.MenuDiv:hover, .LikeBtn:hover
+.LikeBtn:hover
   background: rgba(255, 255, 255, 0.4)
-
-.MenuDiv#MainMenu
-  left: 0
-
-.MenuDiv#ContactMenu
-  left: 25%
-
-.LikeBtn
-  right: 0
 
 .LikeMess
   position: absolute
-  bottom: 20px
+  bottom: 70px
+  transform: translate(-25%)
+  width: 256px
   box-shadow: 0 0 10px white
   border-radius: 5px
   padding: 3px
   
   @include size(XS)
-    right: -50px
+    left: 50%
+    transform: translate(-50%)
   
   @include size(S)
-    right: -50px
+    left: 50%
+    transform: translate(-50%)
   
   @include size(XL)
-    right: 0
+    left: 25%
+    transform: translate(-50%)
+    
 
 // SIDEBAR
 
@@ -153,6 +144,7 @@
   
   @include size(XL)
     top: 50%
+    transform: translate(0, -50%)
     left: 0
 
 .SideBarPic
@@ -177,39 +169,44 @@
 .Text
   div
     position: absolute
-    top: 170px
     
     @include size(XS)
       right: 30px
+      top: 110px
   
     @include size(S)
       right: 10%
+      top: 110px
     
     @include size(XL)
       transform: translate(0)
-      left: 120px 
+      left: 25%
+      width: 230px
+      transform: translate(-50%, -50%)
+      top: 50%
+      
   h1
     position: absolute
 
     @include size(XS)
-      top: 50px
+      top: 10px
       width: 400px
       right: 30px
       font-size: 35px
   
     @include size(S)
-      top: 50px
+      top: 10px
       font-size: 35px
       width: 400px
       right: 30px
     
     @include size(M)
-      top: 100px
+      top: 10px
       font-size: 40px
       width: 500px
       right: 10%
 
     @include size(XL)
       width: 500px
-      transform: translate(0)
-      left: 75px 
+      left: 25%
+      transform: translate(-50%)

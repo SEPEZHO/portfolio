@@ -12,6 +12,13 @@ const Text = () => {
             			<li>С: 1.09.2019</li>
             			<li>До: __.__.____</li>
             		</nav>
+                    <br />
+                    <br />
+                    Почта:
+                    <nav>
+                        <li>sepezho@gmail.com</li>
+                        <li>koko2kocit@gmail.com (резерв)</li>
+                    </nav>
             	</div>
             </div>
         )

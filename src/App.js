@@ -9,17 +9,19 @@ import s from './Style/App.sass';
 class App extends React.Component{
     constructor() {
         super();
-        this.state = {}
+        this.state = {
+            path: '/Main'
+        }
     }
     pathMain = (val) => {
-    	this.setState({ path: val })
+        this.setState({ path: val });
     }
    	render () {
     	return (
 	      <div className={s.App}>
 	      
-		      <Menu pathMain={this.pathMain}/>
-		      <Body path={this.state.path}/>
+		      <Menu path={this.state.path} pathMain={this.pathMain}/>
+		      <Body path={this.state.path} pathMain={this.pathMain}/>
 		      <Footer />
 	      
 	      </div>	

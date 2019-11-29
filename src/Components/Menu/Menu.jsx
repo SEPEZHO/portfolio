@@ -44,11 +44,11 @@ class Menu extends React.Component {
     render() {
         return (
             <div>
-                <div style = {(this.state.location === '/Main') ? this.state.StyleForMenu : this.state.StyleForMenuForContact} className ={s.Menu}>
+                <div style = {(this.props.path === '/Main') ? this.state.StyleForMenu : this.state.StyleForMenuForContact} className ={s.Menu}>
                     <div className={s.MenuMax}>
-                        <div className={s.Contact} onClick={() => {this.props.pathMain('/Contact'); this.setState({location: '/Contact'})}}><div></div><span>Контакт</span></div>
-                        <div className={s.Main} onClick={() => {this.props.pathMain('/Main'); this.setState({location: '/Main'})}}><div></div><span>Главная</span></div>
-                        <div className={s.Projects} onClick={() => {this.props.pathMain('/Projects'); this.setState({location: '/Projects'})}}><div></div><span>Проекты</span></div>
+                        <div className={s.Contact} onClick={() => {this.props.pathMain('/Contact')}}><div></div><span>Контакт</span></div>
+                        <div className={s.Main} onClick={() => {this.props.pathMain('/Main')}}><div></div><span>Главная</span></div>
+                        <div className={s.Projects} onClick={() => {this.props.pathMain('/Projects')}}><div></div><span>Проекты</span></div>
                     </div>
                 </div>
             </div>

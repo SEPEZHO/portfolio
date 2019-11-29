@@ -12,24 +12,26 @@ class Body extends React.Component{
     }
 
     renderMain = () =>{
-      if (this.props.path === '/Projects'){
+      document.documentElement.scrollTop = 0;
+
+      if (this.props.path === '/Main'){
+        return <MainPageRender pathMain={this.props.pathMain}/>
+
+      }else if (this.props.path === '/Projects'){
         return <Projects/>
 
       }else if (this.props.path === '/Contact'){
         return <ContactPageRender/>
 
-      }else if (this.props.path === '/Main'){
-        return <MainPageRender/>
-
       }else{
-        return <MainPageRender />
-
+        return <MainPageRender pathMain={this.props.pathMain}/>
       }
-      console.log(this.props.path)
     }
+
     render (){
       return (
        <div>{this.renderMain()}</div>
+
       )
     }
 }

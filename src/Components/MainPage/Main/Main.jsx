@@ -7,8 +7,9 @@ import ViewMore from '../../../Static/Images/Icons/ViewMore.png';
 import s from './Main.module.sass';
 
 
-const Main = () => {
-  return (
+class Main extends React.Component {
+  render(){
+    return (
     <div className ={s.Main}>
     	<MainAbout />
     	<MainProjects />
@@ -18,13 +19,12 @@ const Main = () => {
     		<div className={s.ProjectsTableMain}>
                 <ProjectsTable  times='5'/>
     		</div>
-            <a href='/Projects'>
-    			<img className={s.ViewMore} src={ViewMore} alt='#' />
-    		</a>
+    			<img className={s.ViewMore} src={ViewMore} onClick={() => {this.props.pathMain('/Projects')}} alt='#' />
     	</div>
         
     </div>
-  );
+  )
+}
 }
 
 export default Main;

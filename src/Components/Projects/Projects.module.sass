@@ -49,7 +49,15 @@
   position: relative
   box-shadow: 0 0 10px black
   border-radius: 5px
-  overflow-x: scroll
+  
+  @include size(XS)
+    overflow-x: scroll
+  
+  @include size(S)
+    overflow-x: scroll
+    
+  @include size(XL)
+    overflow-x: visible
 
 hr
   position: relative
@@ -127,6 +135,9 @@ hr
   width: 100%
   box-shadow: 0 0 10px black
   color: white
+  ::selection 
+    background: white
+    color: black
 
 .ProjectsReposMain
   padding-top: 20vh
@@ -140,13 +151,20 @@ hr
     top: 70px
 
 .ProjectsRepos
-  overflow-x: scroll
   top: -50vh
   position: relative
   box-shadow: 0 0 10px white
   border-radius: 5px
   @include width
   @include center
+  @include size(XS)
+    overflow-x: scroll
+  
+  @include size(S)
+    overflow-x: scroll
+    
+  @include size(XL)
+    overflow-x: visible
   hr
     filter: invert(1)
     @include size(XS)
