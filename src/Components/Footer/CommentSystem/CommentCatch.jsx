@@ -16,9 +16,10 @@ class Catch extends React.Component {
       })
       .then(data => {
         data.reverse();
+        let i=0;
         const body = data.map(repo => {
           return (
-            <div key={repo.Name}>
+            <div key={i++}>
               <hr />
               <div className={s.Message}>
                 <hr />

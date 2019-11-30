@@ -48,9 +48,10 @@ class Projects extends React.Component {
   }
 
   repos(data) {
+    let i=0;
     let repositories = data.map(repo => {
       return (
-        <div>
+        <div key={i++}>
           <hr />
           <div className={s.RepositProjects}>
             <div className={`${s.Name} ${s.Block}`}>
@@ -73,9 +74,10 @@ class Projects extends React.Component {
   }
 
   commits(data) {
+    let i =0;
     let commits = data.map(repo => {
       return (
-        <div>
+        <div key={i++}>
           <hr />
           <div className={s.Reposit}>
             <div className={s.Project}>
