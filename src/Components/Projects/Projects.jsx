@@ -28,7 +28,7 @@ class Projects extends React.Component {
       this.setState({
         styleForImg: styleForImg
       });
-      this.commits(this.state.dataComOld);
+      this.commits(this.props.dataRepCom.dataComOld);
     } else {
       let styleForImg = {
         transform: "translate(-50%, 25%) rotate(0deg)",
@@ -37,26 +37,14 @@ class Projects extends React.Component {
       this.setState({
         styleForImg: styleForImg
       });
-      this.commits(this.state.dataCom);
+      this.commits(this.props.dataRepCom.dataCom);
     }
     this.tableOpen = !this.tableOpen;
   };
 
   componentDidMount() {
-    fetch("https://sepezho.ru:7777/API/RepCom", {
-      method: "POST"
-    })
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        this.setState({ dataComOld: data.Com, dataCom: data.Com.slice(0, 11) });
-        this.commits(this.state.dataCom);
-        this.repos(data.Res);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    this.commits(this.props.dataRepCom.dataCom);
+    this.repos(this.props.dataRepCom.dataRes);
   }
 
   repos(data) {
@@ -83,6 +71,7 @@ class Projects extends React.Component {
     });
     this.setState({ rep: repositories });
   }
+
   commits(data) {
     let commits = data.map(repo => {
       return (
@@ -103,6 +92,7 @@ class Projects extends React.Component {
     });
     this.setState({ com: commits });
   }
+  
   render() {
     return (
       <div className={s.Projects}>

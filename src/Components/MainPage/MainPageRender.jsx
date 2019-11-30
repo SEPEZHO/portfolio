@@ -18,7 +18,7 @@ class MainPageRender extends React.Component {
           </div>
         </div>
         <HeaderImg />
-        <Main pathMain={this.props.pathMain} />
+        <Main pathMain={this.props.pathMain} dataCom={this.state.dataCom}/>
       </div>
     );
   }
