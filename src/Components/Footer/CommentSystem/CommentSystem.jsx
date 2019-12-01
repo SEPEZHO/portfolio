@@ -89,7 +89,7 @@ class Comments extends React.Component {
             Отправить
           </button>
         </div>
-        <Catch />
+        <Catch dataChat={this.props.dataChat}/>
       </div>
     );
   }

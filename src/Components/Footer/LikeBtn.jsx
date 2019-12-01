@@ -38,23 +38,15 @@ class LikeBtn extends React.Component {
   };
 
   componentDidMount() {
-    fetch("https://sepezho.ru:7777/API/likes/num", {
-      method: "POST"
-    })
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        this.setState({
-          Likes: data.Likes,
-          IsLikedServ: data.IsLiked
-        });
-        if (data.IsLiked) {
-          this.setState({
-            background: "#ff6b61"
-          });
-        }
+    this.setState({
+      Likes: this.props.likes,
+      IsLikedServ: this.props.dataIsLiked
+    });
+    if (this.props.dataIsLiked) {
+      this.setState({
+        background: "#ff6b61"
       });
+    }
   }
 
   render() {

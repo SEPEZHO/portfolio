@@ -2,48 +2,38 @@ import React from "react";
 
 import s from "./CommentSystem.module.sass";
 
-class Catch extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+class CommentCatch extends React.Component {
   componentDidMount() {
-    fetch("https://sepezho.ru:7777/API/Chat/Res", {
-      method: "POST"
-    })
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        data.reverse();
+        this.props.dataChat.reverse();
         let i=0;
-        const body = data.map(repo => {
+        const Comments = this.props.dataChat.map(message => {
           return (
             <div key={i++}>
               <hr />
               <div className={s.Message}>
                 <hr />
                 <div className={`${s.Name} ${s.Block}`}>
-                  <span>{repo.Name}</span>
+                  <span>{message.Name}</span>
                 </div>
                 <div className={`${s.Date} ${s.Block}`}>
-                  {repo.Date.substring(11).slice(0, -5)}/
-                  {repo.Date.substring(0, 10)}
+                  {message.Date.substring(11).slice(0, -5)}/
+                  {message.Date.substring(0, 10)}
                 </div>
                 <div className={`${s.MessageText} ${s.Block}`}>
-                  {repo.Message}
+                  {message.Message}
                 </div>
               </div>
             </div>
           );
         });
-        // присваиваем новое значение переменной `body`
-        this.setState({ body });
-      });
+        this.setState({ Comments });
   }
   render() {
-    return <div className={s.Catch}>{this.state.body}</div>;
+        if(this.state){
+        return <div className={s.Catch}>{this.state.Comments}</div>
+  }else{
+    return <p style={{ padding: "40px" }}>Loading...</p>
   }
 }
-
-export default Catch;
+}
+export default CommentCatch;
