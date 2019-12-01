@@ -14,6 +14,7 @@ class App extends React.Component {
     };
   }
   pathMain = val => {
+    document.documentElement.scrollTop = 0;
     this.setState({ path: val });
   };
   render() {
