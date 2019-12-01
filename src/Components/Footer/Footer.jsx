@@ -10,7 +10,8 @@ class Footer extends React.Component {
   componentDidMount() {
     fetch("https://sepezho.ru:7777/API/ChatLikes", {
       method: "POST"
-    }).then(response => {
+    })
+      .then(response => {
         return response.json();
       })
       .then(data => {
@@ -20,31 +21,36 @@ class Footer extends React.Component {
             dataLikes: data.Likes,
             dataIsLiked: data.IsLiked
           }
-        })
+        });
       })
       .catch(error => {
         console.log(error);
       });
   }
-  renderComLik(){
-    if(this.state){
+  renderComLik() {
+    if (this.state) {
+      return (
+        <div>
+          <LikeBtn
+            likes={this.state.dataChatLikes.dataLikes}
+            dataIsLiked={this.state.dataChatLikes.dataIsLiked}
+          />
+          <Comments dataChat={this.state.dataChatLikes.dataChat} />
+        </div>
+      );
+    }
+  }
+  render() {
     return (
-      <div><LikeBtn likes={this.state.dataChatLikes.dataLikes} dataIsLiked={this.state.dataChatLikes.dataIsLiked}/>
-      <Comments dataChat={this.state.dataChatLikes.dataChat}/></div>
-    )
+      <div className={s.FooterMain}>
+        <div className={s.Footer}>
+          <SideBar />
+          <Text />
+          {this.renderComLik()}
+        </div>
+      </div>
+    );
   }
 }
-  render(){
-  return (
-    <div className={s.FooterMain}>
-      <div className={s.Footer}>
-        <SideBar />
-        <Text />
-        {this.renderComLik()}
-      </div>
-    </div>
-  );
-}
-};
 
 export default Footer;
