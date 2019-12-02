@@ -20,6 +20,7 @@
   left: 50%
   transform: translate(-50%)
 
+
 // FOOTER BACK 100vw
 
 
@@ -109,10 +110,10 @@
   position: absolute
   transform: translate(0, -50%)
   @include size(XS)
-    width: 35px
-
+    width: 20px
+  
   @include size(S)
-    width: 30px
+    width: 24px
   
   @include size(XL)
     width: 28px
@@ -121,10 +122,10 @@
     position: relative
     margin: 20%
     @include size(XS)
-      width: 35px
-
+      width: 20px
+    
     @include size(S)
-      width: 30px
+      width: 24px
     
     @include size(XL)
       width: 28px
@@ -135,11 +136,11 @@
 
 .Footer > .SideBar
   @include size(XS)
-    top: 200px
+    top: 235px
     left: 30px
   
   @include size(S)
-    top: 200px
+    top: 235px
     left: 10%
   
   @include size(XL)
@@ -149,34 +150,43 @@
 
 .SideBarPic
   position: absolute
-
+  height: auto
   @include size(XS)
-    width: 100px
-    height: 320px
-    top: -32px
-    left: -25px
-
+    left: -15px
+    top: -22px
+    width: 60px
+  
   @include size(S)
-    top: -25px
-    left: -20px
+    left: -16px
+    top: -16px
+    width: 70px
   
   @include size(XL)
-    top: -28px
     left: -22px
-
+    top: -28px
+    width: 85px
 // TEXT WITH TITLE 
 
 .Text
   div
     position: absolute
-    
+    @include size(XS)
+      line-height: 100%
+      letter-spacing: 0.75pt
+      font-size: 10pt
+
+    @include size(S)
+      line-height: 125%
+      letter-spacing: 1pt
+      font-size: 12pt
+
     @include size(XS)
       right: 30px
-      top: 110px
+      top: 155px
   
     @include size(S)
       right: 10%
-      top: 110px
+      top: 155px
     
     @include size(XL)
       transform: translate(0)
@@ -190,21 +200,26 @@
 
     @include size(XS)
       top: 10px
-      width: 400px
+      max-width: 400px
+      width: 90%
       right: 30px
       font-size: 35px
-  
+      left: 50%
+      transform: translate(-50%)
+
     @include size(S)
       top: 10px
       font-size: 35px
       width: 400px
-      right: 30px
+      left: 50%
+      transform: translate(-50%)
     
     @include size(M)
       top: 10px
       font-size: 40px
       width: 500px
-      right: 10%
+      left: 50%
+      transform: translate(-50%)
 
     @include size(XL)
       width: 500px

@@ -41,7 +41,7 @@ class Body extends React.Component {
 loading(){
   if(this.state.dataRepCom){
       setTimeout(()=>{
-        document.documentElement.scrollTop = 0;
+        // document.documentElement.scrollTop = 0;
         this.setState({ styleLoad:{
           opacity: 0,
           visibility: 'hidden'

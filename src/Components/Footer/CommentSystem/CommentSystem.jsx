@@ -9,10 +9,6 @@ class Comments extends React.Component {
     this.state = {
       valMessage: "",
       valName: "",
-      nameStyle: {
-        opacity: 0,
-        top: 0
-      }
     };
     this.handleChangeMessage = this.handleChangeMessage.bind(this);
     this.handleChangeName = this.handleChangeName.bind(this);
@@ -27,12 +23,7 @@ class Comments extends React.Component {
   }
   handleSubmitMessage(event) {
     if (this.state.valMessage !== "") {
-      this.setState({
-        nameStyle: {
-          opacity: 1,
-          top: "42px"
-        }
-      });
+      this.handleSubmitName()
     } else {
       alert("Введите сообщение.");
     }
@@ -49,12 +40,6 @@ class Comments extends React.Component {
           valName: this.state.valName
         })
       });
-      this.setState({
-        nameStyle: {
-          opacity: 0,
-          top: 0
-        }
-      });
     } else {
       alert("Введите имя.");
     }
@@ -62,7 +47,7 @@ class Comments extends React.Component {
   render() {
     return (
       <div className={s.Comments}>
-        <div className={s.FormAreaName} style={this.state.nameStyle}>
+        <div className={s.FormAreaName}>
           <input
             className={s.InputName}
             type="text"
@@ -70,7 +55,7 @@ class Comments extends React.Component {
             placeholder="Имя"
             onChange={this.handleChangeName}
           />
-          <button onClick={this.handleSubmitName} className={s.InputSubmitName}>
+          <button onClick={this.handleSubmitMessage} className={s.InputSubmitName}>
             Отправить
           </button>
         </div>
@@ -82,12 +67,6 @@ class Comments extends React.Component {
             placeholder="Комментарий"
             onChange={this.handleChangeMessage}
           />
-          <button
-            onClick={this.handleSubmitMessage}
-            className={s.InputSubmitMessage}
-          >
-            Отправить
-          </button>
         </div>
         <Catch dataChat={this.props.dataChat} />
       </div>

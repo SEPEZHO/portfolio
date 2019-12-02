@@ -6,11 +6,25 @@
   @else if $size == S
     @media screen and (min-width: 600px)
       @content
-
+  
+  @else if $size == M
+    @media screen and (min-width: 768px)
+      @content
+  
   @else if $size == XS
     @media screen and (max-width: 600px)
       @content
 
+@mixin fontSize
+  @include size(XS)
+    line-height: 125%
+    letter-spacing: 1pt
+    font-size: 12pt
+
+  @include size(S)
+    line-height: 150%
+    letter-spacing: 2pt
+    font-size: 14pt
 .Menu
   position: fixed
   z-index: 2
@@ -31,7 +45,7 @@
 .MenuMax
   position: absolute
   height: 100%
-  font-size: 1.25em
+  @include fontSize()
 
   @include size(XS)
     width: 100%
@@ -45,7 +59,18 @@
   > *
     position: absolute
     overflow: hidden
-    width: 20%
+    @include size(XS)
+      width: 100px
+
+    @include size(S)
+      width: 150px
+    
+    @include size(M)
+      width: 200px
+
+    @include size(XL)
+      width: 225px
+      
     height: 100%
     > div
       > div
@@ -78,4 +103,14 @@
   left: 0
 
 .Projects
-  right: 21%
+  @include size(XS)
+    right: 105px
+
+  @include size(S)
+    right: 155px
+
+  @include size(M)
+    right: 205px
+
+  @include size(XL)
+    right: 230px
