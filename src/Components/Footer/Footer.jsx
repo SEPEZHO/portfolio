@@ -44,7 +44,7 @@ class Footer extends React.Component {
     return (
       <div className={s.FooterMain}>
         <div className={s.Footer}>
-          <SideBar />
+          <SideBar pathMain={this.props.pathMain} />
           <Text />
           {this.renderComLik()}
         </div>

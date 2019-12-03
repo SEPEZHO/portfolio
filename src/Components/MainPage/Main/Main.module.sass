@@ -52,7 +52,9 @@
 .Main
   position: relative
   background: white
-  margin-bottom: 400px
+  margin-bottom: 350px
+  @include size(XS)
+    margin-bottom: 50px
 
   > *
     position: relative
@@ -75,24 +77,29 @@
       position: relative
       text-align: justify
       width: 90%
-      @include fontSize()
+      @include fontSize
 
 
 .AboutMeTitle
   position: relative
-  top: -100px
+  top: -75px
   max-width: 400px
   width: 90%
   @include size(XS)
+    top: -50px
     left: 50%
     transform: translate(-50%)
 
-
 .MeText
-  top: 200px
+  top: 150px
+  @include size(XS)
+    top: 100px
 
 .SepezhoTitle
-  top: 300px
+  @include size(XS)
+    top: 150px
+  
+  top: 250px
   position: relative
   left: 50%
   transform: translate(-50%)
@@ -101,12 +108,14 @@
 
 .Sepezho
   position: relative
-  top: 300px
   @include size(XS)
-    padding-bottom: 400px
+    top: 150px  
+  top: 250px
+  @include size(XS)
+    padding-bottom: 200px
 
   @include size(S)
-    padding-bottom: 400px
+    padding-bottom: 300px
 
   @include size(M)
     padding-bottom: 0
@@ -125,27 +134,20 @@
       visibility: visible
 
 .Left
-  @include size(XS)
-    left: 0%
-
-  @include size(S)
-    left: 5%
-
   @include size(M)
+    left: 10%
+  
+  @media screen and (min-width: 820px)
     left: 15%
 
   @include size(XL)
     left: 25%
 
 .Rigth
-
-  @include size(XS)
-    right: 0%
-
-  @include size(S)
-    right: 5%
-
   @include size(M)
+    right: 10%
+  
+  @media screen and (min-width: 820px)
     right: 15%
 
   @include size(XL)
@@ -224,7 +226,7 @@
 
 // PROJECTS 4 BLOCKS
 
-.Projects > h1
+.Projects>h1
   filter: invert(100%)
   max-width: 400px
   width: 90%
@@ -232,6 +234,7 @@
   top: -200px
 
   @include size(XS)
+    top: -250px
     left: 50%
     transform: translate(-50%)
 
@@ -243,18 +246,27 @@
     left: 0%
     transform: translate(0)
 
+
+    
+
 .Proj, .Proj1
   position: relative
   width: 100%
   margin-bottom: 100px
   
+  a
+    text-decoration: none
+
+  @include size(XS)
+    margin-bottom: 50px
+
   @include size(S)
     border: none
 
   @include size(L)
     border-right: 1px solid black
     height: 315px
-  
+
   &:hover
     img
       box-shadow: 0 0 15px black
@@ -271,22 +283,21 @@
     border-left: 1px solid black
 
 .Text, .Text1
-  @include fontSize()
+  @include fontSize
   
   @include size(XS)
     position: relative
     text-align: center
+    top: -140px
 
   @include size(S)
     position: relative
-    margin-top: 50px
     text-align: center
 
   @include size(L)
     position: absolute
     text-align: right
     margin-right: 20px
-    margin-top: 0
     width: 40%
     right: 0
     top: 50%
@@ -303,7 +314,7 @@
 
   @include size(XS)
     position: relative
-    top: -61px
+    top: -161px
     max-width: 500px
     width: 90%
     left: 50% 
@@ -334,12 +345,12 @@
       margin-bottom: 20px
       text-align: center
       color: black
-      text-decoration: none
 
       @include size(XS)
         line-height: 100%
         letter-spacing: 1pt
         font-size: 20pt
+
       @include size(S)
         line-height: 150%
         letter-spacing: 2pt
@@ -368,6 +379,8 @@
 .ProjectsTableMain
   position: relative
   top: 150px
+  @include size(XS)
+    top: 100px
   width: 90vw
   max-width: 1200px
   left: 50%
@@ -375,15 +388,26 @@
 
 .Table
   top: 50px
+  @include size(XS)
+    line-height: 100%
+    letter-spacing: 1pt
+    top: -150px
+    font-size: 10pt
+
+  @include size(S)
+    line-height: 125%
+    letter-spacing: 1pt
+    font-size: 12pt
 
   img
     position: relative
     left: 50%
-    top: 250px
+    top: 225px
     width: 40px
     transform: translate(-50%)
     @include size(XS)
       width: 30px
+      top: 150px
     
     @include size(S)
       width: 30px
@@ -410,4 +434,3 @@
     @include size(XL)
       left: 0
       transform: translate(0)
-    

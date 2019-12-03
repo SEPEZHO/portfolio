@@ -14,7 +14,7 @@ class MainPageRender extends React.Component {
         <div className={s.HeaderAll}>
           <TitleHeader />
           <div className={s.SideBar}>
-            <SideBar />
+            <SideBar pathMain={this.props.pathMain}/>
           </div>
         </div>
         <HeaderImg />

@@ -31,9 +31,7 @@
     letter-spacing: 1pt
     font-size: 12pt
 
-
 // FOOTER BACK 100vw
-
 
 .FooterMain
   position: relative
@@ -42,7 +40,7 @@
   background: black
   width: 100%
   @include size(XS)
-    height: 1400px
+    height: 1300px
 
   @include size(S)
     height: 1400px
@@ -50,8 +48,8 @@
   @include size(XL)
     height: 600px
 
-  
 // FOOTER FRONT 1200px
+
 .Footer
   position: relative
   margin: auto
@@ -66,11 +64,12 @@
 
 .LikeBtn
   position: absolute
-  width: 125px
   height: 40px
   bottom: 10px
   background: rgba(255, 255, 255, 0.2)
   transform: translate(-50%)
+  padding-left: 80px
+  padding-right: 80px
 
   @include size(XS)
     left: 50%
@@ -89,7 +88,7 @@
     transform: translate(-50%, -50%)
     text-decoration: none
     color: white  
-    @include fontSize()
+    @include fontSize
     font-size: 8pt
 
 .LikeBtn:hover
@@ -99,11 +98,12 @@
   position: absolute
   bottom: 70px
   transform: translate(-25%)
-  width: 256px
   box-shadow: 0 0 10px white
   border-radius: 5px
   padding: 3px
-  @include fontSize()
+  padding-left: 10px
+  padding-right: 10px
+  @include fontSize
   
   @include size(XS)
     left: 50%
@@ -116,12 +116,11 @@
   @include size(XL)
     left: 25%
     transform: translate(-50%)
-    
 
 // SIDEBAR
 
 .SideBar
-  position: absolute
+  position: relative
   transform: translate(0, -50%)
 
   @include size(XS)
@@ -133,7 +132,7 @@
   @include size(XL)
     width: 28px
 
-  a > img
+  a > img, div > img
     position: relative
     margin: 20%
     @include size(XS)
@@ -151,11 +150,11 @@
 
 .Footer > .SideBar
   @include size(XS)
-    top: 235px
-    left: 30px
+    top: 230px
+    left: 5vw
   
   @include size(S)
-    top: 235px
+    top: 230px
     left: 10%
   
   @include size(XL)
@@ -184,11 +183,11 @@
 .Text
   div
     position: absolute
-    @include fontSize()
+    @include fontSize
 
     @include size(XS)
-      right: 30px
-      top: 155px
+      right: 5vw
+      top: 150px
   
     @include size(S)
       right: 10%
@@ -205,7 +204,7 @@
     position: absolute
 
     @include size(XS)
-      top: 10px
+      top: 50px
       max-width: 400px
       width: 90%
       right: 30px

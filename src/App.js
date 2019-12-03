@@ -22,7 +22,7 @@ class App extends React.Component {
       <div className={s.App}>
         <Menu path={this.state.path} pathMain={this.pathMain} />
         <Body path={this.state.path} pathMain={this.pathMain} />
-        <Footer />
+        <Footer pathMain={this.pathMain}/>
       </div>
     );
   }

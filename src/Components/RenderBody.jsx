@@ -5,7 +5,7 @@ import ContactPageRender from "./ContactPage/ContactPageRender.jsx";
 import Projects from "./Projects/Projects.jsx";
 
 import loadGif from "../Static/Images/Loading.gif";
-import s from "./style.module.sass";
+import s from "./Style.module.sass";
 
 class Body extends React.Component {
   constructor() {
@@ -41,7 +41,7 @@ class Body extends React.Component {
 loading(){
   if(this.state.dataRepCom){
       setTimeout(()=>{
-        // document.documentElement.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
         this.setState({ styleLoad:{
           opacity: 0,
           visibility: 'hidden'

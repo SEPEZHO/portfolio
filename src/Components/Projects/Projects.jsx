@@ -22,7 +22,7 @@ class Projects extends React.Component {
   handleButtonClick = () => {
     if (!this.tableOpen) {
       let styleForImg = {
-        transform: "translate(-50%, 50%) rotate(180deg)",
+        transform: "translate(-50%, -25%) rotate(180deg)",
         transformOrigin: "50% 50%"
       };
       this.setState({

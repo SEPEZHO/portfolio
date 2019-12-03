@@ -36,10 +36,10 @@
   box-shadow: 0 0 10px white
   border-radius: 5px
   position: absolute
-  @include fontSize()
+  @include fontSize
   
   @include size(XS)
-    top: 400px
+    top: 350px
     max-width: 500px
     width: 90%
     height: 800px
@@ -71,16 +71,13 @@
 .InputMessage, .InputName
   outline: none
   border: none
-  width: 94%
+  width: 92%
   border-radius: 5px
+  padding-left: 3%
+  padding-right: 3%
   padding-top: 4px
   padding-bottom: 4px
-  @include size(XS)
-    width: 98%
-    padding: none
-  @include size(S)
-    padding-left: 12px
-    padding-right: 12px
+
 .InputMessage:hover, .InputName:hover
   box-shadow: 0 0 15px white
 

@@ -6,7 +6,7 @@ const TitleHeader = () => {
   return (
     <div className="TitleHeader">
       <div className={s.Name}>
-        <h1>VLADISLAVBLIZNYUK</h1>
+        <h1>VLADISLAV BLIZNYUK</h1>
         Программирование - мое хобби, пишу сайты о всяком (в основном
         веб-приложения (в основном игры)). Сижу на самообучении и балдею.
       </div>

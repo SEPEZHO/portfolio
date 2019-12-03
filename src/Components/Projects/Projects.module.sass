@@ -20,6 +20,17 @@
   width: 90%
   max-width: 1200px
 
+@mixin fontSize
+  @include size(XS)
+    line-height: 100%
+    letter-spacing: 1pt
+    font-size: 10pt
+
+  @include size(S)
+    line-height: 125%
+    letter-spacing: 1pt
+    font-size: 12pt
+
 // PROJECTS TABLE "ACTIVITES"
 
 .ProjectsTableMain
@@ -27,20 +38,25 @@
   top: 25vh
   @include center
   @include width
-
+  @include fontSize
 
   h1
     position: absolute
-    top: -15vh
+    top: -100px
     filter: invert(1)
+    max-width: 400px
+    width: 90%
+    @media screen and (max-width: 450px)
+      top: -67px
     @include size(XS)
-
+      @include center
   img
     position: relative
-    top: 5vh
+    top: 50px
     width: 40px
+    @include size(XS)
+      width: 30px
     @include center
-    
 
     &:hover
       transform: translate(-50%, 25%)
@@ -88,12 +104,11 @@ hr
   display: -ms-grid
   display: grid
   grid-template-areas: 'Project Message Date Time  '
-  -ms-grid-columns: 0.5fr 5fr 1fr 1fr
-  grid-template-columns: 0.5fr 5fr 1fr 1fr
+  -ms-grid-columns: 0.75fr 5fr 1fr 0.5fr
+  grid-template-columns: 0.75fr 5fr 1fr 0.5fr
   padding-top: 8px
   grid-column-gap: 10px
   padding-bottom: 8px
-  font-size: medium
 
 .Top
   padding: 30px
@@ -102,9 +117,8 @@ hr
   display: grid
   grid-column-gap: 10px
   grid-template-areas: ' Project Message Date Time  '
-  -ms-grid-columns: 0.5fr 5fr 1fr 1fr
-  grid-template-columns: 0.5fr 5fr 1fr 1fr
-  font-size: medium
+  -ms-grid-columns: 0.75fr 5fr 1fr 0.5fr
+  grid-template-columns: 0.75fr 5fr 1fr 0.5fr
 
 .Project, .Top > .Project
   -ms-grid-row: 1
@@ -114,6 +128,7 @@ hr
 .Message, .Top > .Message
   -ms-grid-row: 1
   -ms-grid-column: 2
+  @include fontSize
   grid-area: Message
 
 .Date, .Top > .Date
@@ -148,7 +163,14 @@ hr
 
   h1
     position: absolute
-    top: 70px
+    top: 50px
+    max-width: 400px
+    width: 90%
+    
+    @media screen and (max-width: 450px)
+      top: 25px
+    @include size(XS)
+      @include center
 
 .ProjectsRepos
   top: -50vh
@@ -157,6 +179,7 @@ hr
   border-radius: 5px
   @include width
   @include center
+  @include fontSize
   @include size(XS)
     overflow-x: scroll
   
@@ -181,9 +204,8 @@ hr
   grid-column-gap: 10px
   display: grid
   grid-template-areas: 'name descrip language create update size'
-  -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 1fr
-  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr
-  font-size: medium
+  -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 0.5fr
+  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 0.5fr
 
 .TopProjects
   padding: 30px
@@ -192,9 +214,8 @@ hr
   display: grid
   grid-column-gap: 10px
   grid-template-areas: 'name descrip language create update size'
-  -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 1fr
-  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr
-  font-size: medium
+  -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 0.5fr
+  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 0.5fr
 
 .RepositProjects a
   text-decoration: none
@@ -208,6 +229,7 @@ hr
 .Descrip, .TopProjects > .Descrip
   -ms-grid-row: 1
   -ms-grid-column: 2
+  @include fontSize
   grid-area: descrip
 
 .Language, .TopProjects > .Language

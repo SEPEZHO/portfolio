@@ -73,7 +73,6 @@ class FormArea extends React.Component {
           />
         </label>
         <input type="submit" value="Отправить" />
-        <span>sepezho@gmail.com</span>
       </form>
     );
   }
@@ -83,6 +82,7 @@ const Form = () => {
   return (
     <div className={s.Form}>
       <FormArea />
+      <span>sepezho@gmail.com</span>
     </div>
   );
 };
