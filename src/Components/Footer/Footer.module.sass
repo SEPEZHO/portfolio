@@ -20,6 +20,17 @@
   left: 50%
   transform: translate(-50%)
 
+@mixin fontSize
+  @include size(XS)
+    line-height: 125%
+    letter-spacing: 0.75pt
+    font-size: 10pt
+    
+  @include size(S)
+    line-height: 150%
+    letter-spacing: 1pt
+    font-size: 12pt
+
 
 // FOOTER BACK 100vw
 
@@ -78,6 +89,8 @@
     transform: translate(-50%, -50%)
     text-decoration: none
     color: white  
+    @include fontSize()
+    font-size: 8pt
 
 .LikeBtn:hover
   background: rgba(255, 255, 255, 0.4)
@@ -90,6 +103,7 @@
   box-shadow: 0 0 10px white
   border-radius: 5px
   padding: 3px
+  @include fontSize()
   
   @include size(XS)
     left: 50%
@@ -109,6 +123,7 @@
 .SideBar
   position: absolute
   transform: translate(0, -50%)
+
   @include size(XS)
     width: 20px
   
@@ -152,9 +167,7 @@
   position: absolute
   height: auto
   @include size(XS)
-    left: -15px
-    top: -22px
-    width: 60px
+    visibility: hidden
   
   @include size(S)
     left: -16px
@@ -165,20 +178,13 @@
     left: -22px
     top: -28px
     width: 85px
+
 // TEXT WITH TITLE 
 
 .Text
   div
     position: absolute
-    @include size(XS)
-      line-height: 100%
-      letter-spacing: 0.75pt
-      font-size: 10pt
-
-    @include size(S)
-      line-height: 125%
-      letter-spacing: 1pt
-      font-size: 12pt
+    @include fontSize()
 
     @include size(XS)
       right: 30px
@@ -203,20 +209,17 @@
       max-width: 400px
       width: 90%
       right: 30px
-      font-size: 35px
       left: 50%
       transform: translate(-50%)
 
     @include size(S)
       top: 10px
-      font-size: 35px
       width: 400px
       left: 50%
       transform: translate(-50%)
     
     @include size(M)
       top: 10px
-      font-size: 40px
       width: 500px
       left: 50%
       transform: translate(-50%)

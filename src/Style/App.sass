@@ -15,14 +15,19 @@
 
 h1
   font-family: 'h'
-  font-size:  22pt
   padding-top: 10pt
-  padding-left: 10pt
-  letter-spacing: 10pt
   text-align: center
   color: black
   border-radius: 5px
   background: rgba(255, 255, 255, 0.8)
+  letter-spacing: 10pt
+  line-height: 115%
+  
+  @media screen and (max-width: 600px)
+    font-size: 18pt
+    
+  @media screen and (min-width: 600px)
+    font-size: 22pt
 
   &:hover
     box-shadow: 0 0 10px white !important
