@@ -12,15 +12,15 @@ class Menu extends React.Component {
       boxShadow: "0 0 10px black"
     };
     let styleForBut1 = {
-      top: "10px",
+      top: "6.25px",
       transform: "rotate(0deg)"
     };
     let styleForBut2 = {
-      top: "22.5px",
+      top: "17.25px",
       transform: "rotate(0deg)"
     };
     let styleForBut3 = {
-      bottom: "10px",
+      bottom: "6.25px",
       transform: "rotate(0deg)"
     };
     let StyleForMenu = {
@@ -76,15 +76,15 @@ class Menu extends React.Component {
         boxShadow: "none"
       };
       let styleForBut1 = {
-        top: "22.5px",
+        top: "17.25px",
         transform: "rotate(-45deg)"
       };
       let styleForBut2 = {
-        top: "22.5px",
+        top: "17.25px",
         transform: "rotate(45deg)"
       };
       let styleForBut3 = {
-        bottom: "22.5px",
+        top: "17.25px",
         transform: "rotate(45deg)"
       };
       this.setState({
@@ -106,15 +106,15 @@ class Menu extends React.Component {
       boxShadow: "0 0 10px black"
     };
     let styleForBut1 = {
-      top: "10px",
+      top: "6.25px",
       transform: "rotate(0deg)"
     };
     let styleForBut2 = {
-      top: "22.5px",
+      top: "17.25px",
       transform: "rotate(0deg)"
     };
     let styleForBut3 = {
-      bottom: "10px",
+      bottom: "6.25px",
       transform: "rotate(0deg)"
     };
     this.setState({
@@ -169,15 +169,7 @@ class Menu extends React.Component {
         </div>
 
         <div className={s.MenuForPhone} style={this.state.styleForOpenMen}>
-          <div
-            className={s.ContactPhone}
-            onClick={() => {
-              this.props.pathMain("/Contact");
-              this.menuClose();
-            }}
-          >
-            <span>Контакт</span>
-          </div>
+
 
           <div
             className={s.MainPhone}
@@ -198,7 +190,15 @@ class Menu extends React.Component {
           >
             <span>Проекты</span>
           </div>
-        </div>
+                  <div
+            className={s.ContactPhone}
+            onClick={() => {
+              this.props.pathMain("/Contact");
+              this.menuClose();
+            }}
+          >
+            <span>Контакт</span>
+          </div></div>
         <div
           className={s.ButtonOpen}
           style={this.state.styleForBut}
