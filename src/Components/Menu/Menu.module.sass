@@ -25,13 +25,21 @@
     line-height: 150%
     letter-spacing: 2pt
     font-size: 14pt
-.Menu
+
+.MenuForPc
   position: fixed
   z-index: 2
   width: 100%
-  height: 60px
+  height: 50px
   display: flex
   justify-content: center
+
+  @include size(XS)
+    visibility: hidden
+  @include size(S)
+    visibility: hidden
+  @include size(M)
+    visibility: visible
 
   span
     position: absolute
@@ -41,36 +49,17 @@
     transform: translate(-50%, -50%)
     text-decoration: none
     color: black
-  
+
 .MenuMax
   position: absolute
   height: 100%
   @include fontSize
-
-  @include size(XS)
-    width: 100%
-
-  @include size(S)
-    width: 100%
-
-  @include size(XL)
-    width: 1200px
-
+  max-width: 1200px
+  width: 100%
   > *
     position: absolute
     overflow: hidden
-    @include size(XS)
-      width: 100px
-
-    @include size(S)
-      width: 150px
-    
-    @include size(M)
-      width: 200px
-
-    @include size(XL)
-      width: 225px
-      
+    width: 225px
     height: 100%
     > div
       > div
@@ -78,19 +67,7 @@
       width: 100%
       height: 7%
       background: black
-      
-      @include size(XS)
-        bottom: 0%
-        width: 100%  
-      
-      @include size(S)
-        bottom: 0%
-        width: 100%
-
-      @include size(XL)
-        bottom: -7%
-        width: 1200px
-        
+      bottom: -7%
     &:hover
       background: rgba(255, 255, 255, 0.15)
       > div
@@ -103,14 +80,68 @@
   left: 0
 
 .Projects
+  right: 230px
+
+
+.MenuForPhone
+  position: fixed
+  width: 100%
+  z-index: 2
+  overflow: hidden
+  background: white
+  box-shadow: 0 0 10px black
+  transition: .5s
+
   @include size(XS)
-    right: 105px
-
+    visibility: visible
   @include size(S)
-    right: 155px
-
+    visibility: visible
   @include size(M)
-    right: 205px
+    visibility: hidden
 
-  @include size(XL)
-    right: 230px
+.ContactPhone, .MainPhone, .ProjectsPhone
+  @include fontSize
+  position: relative
+  width: 90%
+  height: 50px
+  background: black
+  left: 50%
+  color: white
+  top: 55px
+  margin-bottom: 10px
+  border-radius: 5px
+  transform: translate(-50%)
+  > span
+    font-size: 12pt
+    top: 50%
+    position: absolute
+    left: 50%
+    transform: translate(-50%, -50%)
+  &:hover
+    span
+      font-size: 14pt
+
+.ButtonOpen
+  position: fixed
+  width: 50px
+  height: 50px
+  background: white
+  top: 0
+  right: 0
+  z-index: 2
+  border-bottom-left-radius: 10px
+
+  @include size(XS)
+    visibility: visible
+  @include size(S)
+    visibility: visible
+  @include size(M)
+    visibility: hidden
+
+.Button1, .Button2, .Button3
+  width: 40px
+  height: 5px
+  left: 7px
+  position: absolute
+  background: black
+  border-radius: 10px
