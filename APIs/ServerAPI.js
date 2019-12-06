@@ -7,7 +7,6 @@ const port = 7777;
 
 const LikesCatch = require("./FooterApi/LikesCatch.js");
 const GitHubResponse = require("./GitHubAPI/GitHubResponse.js");
-const LastCommitResponse = require("./GitHubAPI/LastCommit/LastCommitResponse.js");
 const ChatAPI = require("./FooterApi/ChatAPI.js");
 const FooterApiRes = require("./FooterApi/FooterApiRes.js");
 
@@ -46,6 +45,5 @@ httpsServer.listen(port, err => {
 
 GitHubResponse(app);
 LikesCatch(app);
-LastCommitResponse(app);
 FooterApiRes(app);
 ChatAPI(app);

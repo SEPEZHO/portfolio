@@ -6,7 +6,7 @@ const GetCon = app => {
       con.query("SELECT * FROM Info", (error, resultsInf) => {
         result = new Object();
         result.Res = resultsInf;
-        con.query("SELECT * FROM Commits", (error, resultsCom) => {
+        con.query("SELECT * FROM `Commits` ORDER BY `Date` DESC ", (error, resultsCom) => {
           result.Com = resultsCom;
           res.send(result);
         });

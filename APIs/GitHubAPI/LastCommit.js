@@ -1,5 +1,5 @@
 const https = require("https");
-const pool = require("../../MysqlCon.js").pool;
+const pool = require("../MysqlCon.js").pool;
 
 const sendReq = () => {
   pool.getConnection((erra, con) => {
@@ -63,3 +63,4 @@ const sendReq = () => {
 
 // setInterval every 10 minutes
 setInterval(sendReq, 600000);
+
