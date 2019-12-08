@@ -1,8 +1,7 @@
 const https = require("https");
 const pool = require("../MysqlCon.js").pool;
 
-// request to gitHub options
-const optionsHttp = {
+const optionsHttps = {
   host: "api.github.com",
   path: "/users/sepezho/repos",
   method: "GET",
@@ -14,76 +13,87 @@ const optionsHttp = {
 let bodyOld = "";
 
 const sendReq = () => {
-  // send request to gitHub
-  const request = https.request(optionsHttp, res => {
-    // get all request data from git and put it in 'body'
+  const request = https.request(optionsHttps, res => {
     let body = "";
     res.on("data", chunk => {
       body += chunk;
     });
 
-    // if we have new data ( != data from DB )
     if (bodyOld != JSON.stringify(body)) {
       bodyOld = JSON.stringify(body);
 
-      // connect to mysql
       pool.getConnection((err, con) => {
-        if (err) {
-          console.log("Error " + err);
-        } else {
-          // dell all old data in DB
-          con.query("DELETE FROM Info", err => {
-            err
-              ? console.log("Error " + err)
-              : console.log("All old data was deleted.");
-          });
+        con.query("DELETE FROM Info");
 
-          // parce data and put in DB
-          res.on("end", () => {
-            body = JSON.parse(body);
-            body.forEach(repo => {
-              let sql =
-                "INSERT INTO Info (Name, Url, Description, Language, CreateAt, LastUpdate, Size) VALUES ('" +
-                repo.name +
-                "', '" +
-                repo.html_url +
-                "', '" +
-                repo.description +
-                "', '" +
-                repo.language +
-                "', '" +
-                repo.created_at.substring(0, 10) +
-                " " +
-                repo.created_at.substring(11).slice(0, -1) +
-                "', '" +
-                repo.updated_at.substring(0, 10) +
-                " " +
-                repo.updated_at.substring(11).slice(0, -1) +
-                "', '" +
-                repo.size +
-                "')";
+        res.on("end", () => {
+          body = JSON.parse(body);
+          body.forEach(repo => {
+            const optionsHttpsBranch = {
+              host: "api.github.com",
+              path: "/repos/sepezho/" + repo.name + "/branches",
+              method: "GET",
+              headers: {
+                "user-agent":
+                  "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)"
+              }
+            };
 
-              con.query(sql, (err, result) => {
-                err
-                  ? console.log("Error " + err)
-                  : console.log("One new record.");
-              });
+            const requestBranch = https.request(
+              optionsHttpsBranch,
+              responseBranch => {
+                let bodyBranch = "";
+                responseBranch.on("data", chunka => {
+                  bodyBranch += chunka;
+                });
+                responseBranch.on("end", () => {
+                  bodyBranch = JSON.parse(bodyBranch);
+
+                  branchesArr = new Array();
+
+                  bodyBranch.forEach(repoa => {
+                    branchesArr.push(repoa.name);
+                  });
+                  let sql =
+                    "INSERT INTO Info (Name, Branches, Url, Description, Language, CreateAt, LastUpdate, Size) VALUES ('" +
+                    repo.name +
+                    "', '" +
+                    JSON.stringify(branchesArr) +
+                    "', '" +
+                    repo.html_url +
+                    "', '" +
+                    repo.description +
+                    "', '" +
+                    repo.language +
+                    "', '" +
+                    repo.created_at.substring(0, 10) +
+                    " " +
+                    repo.created_at.substring(11).slice(0, -1) +
+                    "', '" +
+                    repo.updated_at.substring(0, 10) +
+                    " " +
+                    repo.updated_at.substring(11).slice(0, -1) +
+                    "', '" +
+                    repo.size +
+                    "')";
+
+                  con.query(sql);
+                });
+              }
+            );
+
+            requestBranch.on("error", e => {
+              console.error("Error is: " + e);
             });
+            requestBranch.end();
           });
-        }
+        });
       });
-    } else {
-      console.log("It alreadey update.");
-      return;
     }
   });
-
-  // check err
   request.on("error", e => {
     console.error("Error is: " + e);
   });
   request.end();
 };
 
-// setInterval every 10 minutes
 setInterval(sendReq, 600000);
