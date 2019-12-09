@@ -8,44 +8,71 @@ const sendReq = () => {
       (err, result) => {
         JSON.parse(result[0].Branches).forEach(branch => {
           con.query(
-            "SELECT Date FROM Commits where Date=(SELECT MAX(Date) from Commits)",
+            "SELECT * FROM Commits where Date=(SELECT MAX(Date) from Commits)",
             (erro, results) => {
               let branchOld = branch;
-              let commiterDate = "9999-12-28 00:00:00";
 
-              let interval = setInterval(() => {
-                if (new Date(commiterDate) > new Date("2019-09-08 00:00:00")) {
-                  let optionsHttp = {
-                    host: "api.github.com",
-                    path:
-                      "/repos/sepezho/" + result[0].Name + "/commits/" + branch,
-                    method: "GET",
-                    headers: {
-                      "user-agent":
-                        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)"
-                    }
-                  };
-
-                  let request = https.request(optionsHttp, res => {
-                    let body = "";
-                    res.on("data", chunk => {
-                      body += chunk;
-                    });
-                    res.on("end", () => {
-                      sql(JSON.parse(body), result[0].Name, con, branchOld);
-                      branch = JSON.parse(body).parents[0].sha;
-                      commiterDate = JSON.parse(body).committer.author.date;
-                      console.log("Path = " + JSON.parse(body).parents[0].sha);
-                    });
-                  });
-                  request.on("error", e => {
-                    console.error("Request error: " + e);
-                  });
-                  request.end();
-                } else {
-                  clearInterval(interval);
+              let optionsHttp = {
+                host: "api.github.com",
+                path:
+                  "/repos/sepezho/" + result[0].Name + "/commits/" + branch,
+                method: "GET",
+                headers: {
+                  "user-agent":
+                    "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)"
                 }
-              }, 10000);
+              };
+
+              // results[0].Date = '2019-10-02 00:00:00'
+              let rese = '2019-10-02 00:00:00'
+              let requestBegin = https.request(optionsHttp, resBegin => {
+
+                let bodyBegin = "";
+                
+                resBegin.on("data", chunk => {
+                  bodyBegin += chunk;
+                });
+
+                resBegin.on("end", () => {
+
+                  let commiterDate = JSON.parse(bodyBegin).commit.author.date;
+                  branch = JSON.parse(bodyBegin).parents[0].sha;
+                  
+                  let interval = setInterval(() => {
+                    if (new Date(commiterDate) > new Date(rese)) {
+                    // if (new Date(commiterDate) > new Date(results[0].Date)) {
+                      sql(
+                        JSON.parse(bodyBegin),
+                        result[0].Name,
+                        con,
+                        branchOld
+                      );
+                      let request = https.request(optionsHttp, res => {
+                        let body = "";
+                        res.on("data", chunk => {
+                          body += chunk;
+                        });
+                        res.on("end", () => {
+                          bodyBegin = body;
+                          branch = JSON.parse(body).parents[0].sha;
+                          commiterDate = JSON.parse(body).commit.author.date;
+                        });
+                      });
+                      request.on("error", e => {
+                        console.error("Request error: " + e);
+                      });
+                      request.end();
+                    } else {
+                      clearInterval(interval);
+                      return;
+                    }
+                  }, 1000);
+                });
+              });
+              requestBegin.on("error", e => {
+                console.error("Request error: " + e);
+              });
+              requestBegin.end();
             }
           );
         });
@@ -55,15 +82,16 @@ const sendReq = () => {
 };
 
 const sql = (body, name, con, branchOld) => {
+  console.log('Path: ' + body.parents[0].sha)
   let sql =
     "INSERT INTO Commits (Project, Branch, Date, Message, UrlProj, UrlCommit) VALUES ('" +
     name +
     "', '" +
     branchOld +
     "', '" +
-    body.committer.author.date.substring(0, 10) +
+    body.commit.author.date.substring(0, 10) +
     " " +
-    body.committer.author.date.substring(11).slice(0, -1) +
+    body.commit.author.date.substring(11).slice(0, -1) +
     "', '" +
     body.commit.message +
     "', 'https://github.com/SEPEZHO/" +
@@ -71,8 +99,11 @@ const sql = (body, name, con, branchOld) => {
     "', '" +
     body.html_url +
     "')";
+  // let sqlDel =
+  // "DELETE FROM Commits WHERE Date IN ( SELECT Date FROM ( SELECT Date FROM Commits ORDER BY `Date` ASC LIMIT 1 ) a )";
 
   con.query(sql);
+  // con.query(sqlDel);
 };
 
 // setInterval(sendReq, 600000);
