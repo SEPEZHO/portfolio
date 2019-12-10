@@ -16,8 +16,3 @@ const GetCon = app => {
 };
 
 module.exports = GetCon;
-
-// DELETE FROM Commits WHERE ORDER BY date DESC LIMIT -1 OFFSET 10
-// DELETE FROM Commits LIMIT 10 ORDER BY `Date` DESC
-// DELETE FROM Commits WHERE date = (ORDER BY `Commits`.`Date` ASC LIMIT -1 OFFSET 10)
-// DELETE FROM Commits WHERE date = (SELECT * FROM Commits WHERE ORDER BY `Commits`.`Date` ASC LIMIT -1 OFFSET 10)

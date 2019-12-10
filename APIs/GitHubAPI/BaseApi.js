@@ -19,15 +19,15 @@ const sendReq = () => {
       body += chunk;
     });
 
-    if (bodyOld != JSON.stringify(body)) {
-      bodyOld = JSON.stringify(body);
+    res.on("end", () => {
+      if (bodyOld != body) {
+        bodyOld = body;
 
-      pool.getConnection((err, con) => {
-        con.query("DELETE FROM Info");
+        pool.getConnection((err, con) => {
+          con.query("DELETE FROM Info", ()=>{
 
-        res.on("end", () => {
-          body = JSON.parse(body);
-          body.forEach(repo => {
+          JSON.parse(body).forEach(repo => {
+
             const optionsHttpsBranch = {
               host: "api.github.com",
               path: "/repos/sepezho/" + repo.name + "/branches",
@@ -46,11 +46,9 @@ const sendReq = () => {
                   bodyBranch += chunka;
                 });
                 responseBranch.on("end", () => {
-                  bodyBranch = JSON.parse(bodyBranch);
-
                   branchesArr = new Array();
 
-                  bodyBranch.forEach(repoa => {
+                  JSON.parse(bodyBranch).forEach(repoa => {
                     branchesArr.push(repoa.name);
                   });
                   let sql =
@@ -87,8 +85,10 @@ const sendReq = () => {
             requestBranch.end();
           });
         });
-      });
-    }
+          });
+      }
+      
+    });
   });
   request.on("error", e => {
     console.error("Error is: " + e);

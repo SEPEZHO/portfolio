@@ -23,8 +23,6 @@ const sendReq = () => {
                 }
               };
 
-              // results[0].Date = '2019-10-02 00:00:00'
-              let rese = '2019-10-02 00:00:00'
               let requestBegin = https.request(optionsHttp, resBegin => {
 
                 let bodyBegin = "";
@@ -36,11 +34,10 @@ const sendReq = () => {
                 resBegin.on("end", () => {
 
                   let commiterDate = JSON.parse(bodyBegin).commit.author.date;
-                  branch = JSON.parse(bodyBegin).parents[0].sha;
+                  optionsHttp.path = "/repos/sepezho/" + result[0].Name + "/commits/" + JSON.parse(bodyBegin).parents[0].sha;
                   
                   let interval = setInterval(() => {
-                    if (new Date(commiterDate) > new Date(rese)) {
-                    // if (new Date(commiterDate) > new Date(results[0].Date)) {
+                    if (new Date(commiterDate) > new Date(results[0].Date)) {
                       sql(
                         JSON.parse(bodyBegin),
                         result[0].Name,
@@ -54,7 +51,7 @@ const sendReq = () => {
                         });
                         res.on("end", () => {
                           bodyBegin = body;
-                          branch = JSON.parse(body).parents[0].sha;
+                          optionsHttp.path = "/repos/sepezho/" + result[0].Name + "/commits/" + JSON.parse(body).parents[0].sha;
                           commiterDate = JSON.parse(body).commit.author.date;
                         });
                       });
@@ -82,7 +79,6 @@ const sendReq = () => {
 };
 
 const sql = (body, name, con, branchOld) => {
-  console.log('Path: ' + body.parents[0].sha)
   let sql =
     "INSERT INTO Commits (Project, Branch, Date, Message, UrlProj, UrlCommit) VALUES ('" +
     name +
@@ -99,12 +95,11 @@ const sql = (body, name, con, branchOld) => {
     "', '" +
     body.html_url +
     "')";
-  // let sqlDel =
-  // "DELETE FROM Commits WHERE Date IN ( SELECT Date FROM ( SELECT Date FROM Commits ORDER BY `Date` ASC LIMIT 1 ) a )";
+  let sqlDel =
+  "DELETE FROM Commits WHERE Date IN ( SELECT Date FROM ( SELECT Date FROM Commits ORDER BY `Date` ASC LIMIT 1 ) a )";
 
   con.query(sql);
-  // con.query(sqlDel);
+  con.query(sqlDel);
 };
 
-// setInterval(sendReq, 600000);
-sendReq();
+setInterval(sendReq, 600000);

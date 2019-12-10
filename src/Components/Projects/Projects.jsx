@@ -46,7 +46,14 @@ class Projects extends React.Component {
     this.commits(this.props.dataRepCom.dataCom);
     this.repos(this.props.dataRepCom.dataRes);
   }
-
+  branchesParse = (repo) =>{
+    let branches = '';
+    JSON.parse(repo.Branches).forEach(branch =>{
+      branches += '<p>'+branch+'</p>'
+    })
+    let bro = {__html: branches}
+    return <div dangerouslySetInnerHTML = {bro}></div>
+  }
   repos(data) {
     let i=0;
     let repositories = data.map(repo => {
@@ -54,18 +61,19 @@ class Projects extends React.Component {
         <div key={i++}>
           <hr />
           <div className={s.RepositProjects}>
-            <div className={`${s.Name} ${s.Block}`}>
+            <div className={s.Name}>
               <a href={repo.Url}>{repo.Name}</a>
             </div>
-            <div className={`${s.Descrip} ${s.Block}`}>{repo.Description}</div>
-            <div className={`${s.Language} ${s.Block}`}>{repo.Language}</div>
-            <div className={`${s.Create} ${s.Block}`}>
+            <div className={s.Branch1}>{this.branchesParse(repo)}</div>
+            <div className={s.Descrip}>{repo.Description}</div>
+            <div className={s.Language}>{repo.Language}</div>
+            <div className={s.Create}>
               {repo.CreateAt.substring(0, 10)}
             </div>
             <div className={`${s.Update} ${s.Block}`}>
               {repo.LastUpdate.substring(0, 10)}
             </div>
-            <div className={`${s.Size} ${s.Block}`}>{repo.Size}</div>
+            <div className={s.Size}>{repo.Size}</div>
           </div>
         </div>
       );
@@ -80,6 +88,7 @@ class Projects extends React.Component {
         <div key={i++}>
           <hr />
           <div className={s.Reposit}>
+            <div className={s.Branch}>{repo.Branch}</div>
             <div className={s.Project}>
               <a href={repo.UrlProj}>{repo.Project}</a>
             </div>

@@ -8,12 +8,13 @@ class ProjectsRepos extends React.Component {
       <div className={s.ProjectsRepos}>
         <div className={s.AllProjects}>
           <div className={s.TopProjects}>
-            <div className={`${s.Name} ${s.Block}`}>Репозиторий</div>
-            <div className={`${s.Descrip} ${s.Block}`}>Описание</div>
-            <div className={`${s.Language} ${s.Block}`}>Язык</div>
-            <div className={`${s.Create} ${s.Block}`}>Создан</div>
-            <div className={`${s.Update} ${s.Block}`}>Последнее обновление</div>
-            <div className={`${s.Size} ${s.Block}`}>Размер (Кб)</div>
+            <div className={s.Name}>Репозиторий</div>
+            <div className={s.Branch1}>Ветки</div>
+            <div className={s.Descrip}>Описание</div>
+            <div className={s.Language}>Язык</div>
+            <div className={s.Create}>Создан</div>
+            <div className={s.Update}>Последнее обновление</div>
+            <div className={s.Size}>Размер (Кб)</div>
           </div>
           {this.props.data}
         </div>
