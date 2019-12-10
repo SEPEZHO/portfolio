@@ -27,6 +27,7 @@ class Main extends React.Component {
             <div className={sP.Project}>
               <a href={repo.UrlProj}>{repo.Project}</a>
             </div>
+            <div className={sP.Branch}>{repo.Branch}</div>
             <div className={sP.Message}>
               <a href={repo.UrlCommit}>{repo.Message}</a>
             </div>
