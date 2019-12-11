@@ -63,7 +63,7 @@ const MainAbout = () => {
         </div>
         <img alt="" src={Rigth} className={s.Rigth} />
         <div className={s.RigthText}>
-          Дургое:
+          Другое:
           <br />
           <br />
           <ul>

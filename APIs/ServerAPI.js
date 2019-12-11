@@ -9,6 +9,7 @@ const LikesCatch = require("./FooterApi/LikesCatch.js");
 const GitHubResponse = require("./GitHubAPI/GitHubResponse.js");
 const ChatAPI = require("./FooterApi/ChatAPI.js");
 const FooterApiRes = require("./FooterApi/FooterApiRes.js");
+const MailSnd = require("./MailSnd.js");
 
 const privateKey = fs.readFileSync(
   "/home/admin/web/sepezho.ru/public_html/APIs/sslcert/key.key",
@@ -47,3 +48,4 @@ GitHubResponse(app);
 LikesCatch(app);
 FooterApiRes(app);
 ChatAPI(app);
+MailSnd(app);
