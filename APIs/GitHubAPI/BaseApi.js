@@ -24,70 +24,67 @@ const sendReq = () => {
         bodyOld = body;
 
         pool.getConnection((err, con) => {
-          con.query("DELETE FROM Info", ()=>{
+          con.query("DELETE FROM Info", () => {
+            JSON.parse(body).forEach(repo => {
+              const optionsHttpsBranch = {
+                host: "api.github.com",
+                path: "/repos/sepezho/" + repo.name + "/branches",
+                method: "GET",
+                headers: {
+                  "user-agent":
+                    "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)"
+                }
+              };
 
-          JSON.parse(body).forEach(repo => {
-
-            const optionsHttpsBranch = {
-              host: "api.github.com",
-              path: "/repos/sepezho/" + repo.name + "/branches",
-              method: "GET",
-              headers: {
-                "user-agent":
-                  "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)"
-              }
-            };
-
-            const requestBranch = https.request(
-              optionsHttpsBranch,
-              responseBranch => {
-                let bodyBranch = "";
-                responseBranch.on("data", chunka => {
-                  bodyBranch += chunka;
-                });
-                responseBranch.on("end", () => {
-                  branchesArr = new Array();
-
-                  JSON.parse(bodyBranch).forEach(repoa => {
-                    branchesArr.push(repoa.name);
+              const requestBranch = https.request(
+                optionsHttpsBranch,
+                responseBranch => {
+                  let bodyBranch = "";
+                  responseBranch.on("data", chunka => {
+                    bodyBranch += chunka;
                   });
-                  let sql =
-                    "INSERT INTO Info (Name, Branches, Url, Description, Language, CreateAt, LastUpdate, Size) VALUES ('" +
-                    repo.name +
-                    "', '" +
-                    JSON.stringify(branchesArr) +
-                    "', '" +
-                    repo.html_url +
-                    "', '" +
-                    repo.description +
-                    "', '" +
-                    repo.language +
-                    "', '" +
-                    repo.created_at.substring(0, 10) +
-                    " " +
-                    repo.created_at.substring(11).slice(0, -1) +
-                    "', '" +
-                    repo.updated_at.substring(0, 10) +
-                    " " +
-                    repo.updated_at.substring(11).slice(0, -1) +
-                    "', '" +
-                    repo.size +
-                    "')";
+                  responseBranch.on("end", () => {
+                    branchesArr = new Array();
 
-                  con.query(sql);
-                });
-              }
-            );
+                    JSON.parse(bodyBranch).forEach(repoa => {
+                      branchesArr.push(repoa.name);
+                    });
+                    let sql =
+                      "INSERT INTO Info (Name, Branches, Url, Description, Language, CreateAt, LastUpdate, Size) VALUES ('" +
+                      repo.name +
+                      "', '" +
+                      JSON.stringify(branchesArr) +
+                      "', '" +
+                      repo.html_url +
+                      "', '" +
+                      repo.description +
+                      "', '" +
+                      repo.language +
+                      "', '" +
+                      repo.created_at.substring(0, 10) +
+                      " " +
+                      repo.created_at.substring(11).slice(0, -1) +
+                      "', '" +
+                      repo.updated_at.substring(0, 10) +
+                      " " +
+                      repo.updated_at.substring(11).slice(0, -1) +
+                      "', '" +
+                      repo.size +
+                      "')";
 
-            requestBranch.on("error", e => {
-              console.error("Error is: " + e);
+                    con.query(sql);
+                  });
+                }
+              );
+
+              requestBranch.on("error", e => {
+                console.error("Error is: " + e);
+              });
+              requestBranch.end();
             });
-            requestBranch.end();
           });
         });
-          });
       }
-      
     });
   });
   request.on("error", e => {

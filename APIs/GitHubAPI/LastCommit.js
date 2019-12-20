@@ -14,8 +14,7 @@ const sendReq = () => {
 
               let optionsHttp = {
                 host: "api.github.com",
-                path:
-                  "/repos/sepezho/" + result[0].Name + "/commits/" + branch,
+                path: "/repos/sepezho/" + result[0].Name + "/commits/" + branch,
                 method: "GET",
                 headers: {
                   "user-agent":
@@ -24,18 +23,20 @@ const sendReq = () => {
               };
 
               let requestBegin = https.request(optionsHttp, resBegin => {
-
                 let bodyBegin = "";
-                
+
                 resBegin.on("data", chunk => {
                   bodyBegin += chunk;
                 });
 
                 resBegin.on("end", () => {
-
                   let commiterDate = JSON.parse(bodyBegin).commit.author.date;
-                  optionsHttp.path = "/repos/sepezho/" + result[0].Name + "/commits/" + JSON.parse(bodyBegin).parents[0].sha;
-                  
+                  optionsHttp.path =
+                    "/repos/sepezho/" +
+                    result[0].Name +
+                    "/commits/" +
+                    JSON.parse(bodyBegin).parents[0].sha;
+
                   let interval = setInterval(() => {
                     if (new Date(commiterDate) > new Date(results[0].Date)) {
                       sql(
@@ -51,7 +52,11 @@ const sendReq = () => {
                         });
                         res.on("end", () => {
                           bodyBegin = body;
-                          optionsHttp.path = "/repos/sepezho/" + result[0].Name + "/commits/" + JSON.parse(body).parents[0].sha;
+                          optionsHttp.path =
+                            "/repos/sepezho/" +
+                            result[0].Name +
+                            "/commits/" +
+                            JSON.parse(body).parents[0].sha;
                           commiterDate = JSON.parse(body).commit.author.date;
                         });
                       });
@@ -96,7 +101,7 @@ const sql = (body, name, con, branchOld) => {
     body.html_url +
     "')";
   let sqlDel =
-  "DELETE FROM Commits WHERE Date IN ( SELECT Date FROM ( SELECT Date FROM Commits ORDER BY `Date` ASC LIMIT 1 ) a )";
+    "DELETE FROM Commits WHERE Date IN ( SELECT Date FROM ( SELECT Date FROM Commits ORDER BY `Date` ASC LIMIT 1 ) a )";
 
   con.query(sql);
   con.query(sqlDel);

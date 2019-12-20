@@ -10,7 +10,7 @@ import SrcMail from "../../Static/Images/Icons/Mail.png";
 import SideBarPic from "../../Static/Images/SideBar.png";
 
 class SideBar extends React.Component {
-  render(){
+  render() {
     return (
       <div className={s.SideBar}>
         <img src={SideBarPic} className={s.SideBarPic} alt="" />
@@ -26,12 +26,16 @@ class SideBar extends React.Component {
         <a href="https://vk.com/vlad_ascetic">
           <img src={SrcVk} alt="" />
         </a>
-        <div onClick={() => {this.props.pathMain("/Contact")}}>
+        <div
+          onClick={() => {
+            this.props.pathMain("/Contact");
+          }}
+        >
           <img src={SrcMail} alt="" />
         </div>
       </div>
-    )
+    );
   }
-};
+}
 
 export default SideBar;

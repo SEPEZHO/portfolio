@@ -58,7 +58,7 @@ class FormArea extends React.Component {
     if (this.state.valueEmail === "") {
       this.setState({ errorEmail: "Введите почту." });
       error = true;
-    } else if (!(~this.state.valueEmail.indexOf('@'))) {
+    } else if (!~this.state.valueEmail.indexOf("@")) {
       this.setState({ errorEmail: 'Вы забыли знак "@".' });
       error = true;
     } else {
@@ -89,13 +89,13 @@ class FormArea extends React.Component {
         subject: this.state.valueSubject,
         message: this.state.valueMessage
       };
-      console.log(data)
+      console.log(data);
       fetch("https://sepezho.ru:7777/API/MailSnd", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=UTF-8"
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data)
       })
         .then(response => {
           alert("Почта отправлена, наверное.");

@@ -46,16 +46,16 @@ class Projects extends React.Component {
     this.commits(this.props.dataRepCom.dataCom);
     this.repos(this.props.dataRepCom.dataRes);
   }
-  branchesParse = (repo) =>{
-    let branches = '';
-    JSON.parse(repo.Branches).forEach(branch =>{
-      branches += '<p>'+branch+'</p>'
-    })
-    let bro = {__html: branches}
-    return <div dangerouslySetInnerHTML = {bro}></div>
-  }
+  branchesParse = repo => {
+    let branches = "";
+    JSON.parse(repo.Branches).forEach(branch => {
+      branches += "<p>" + branch + "</p>";
+    });
+    let bro = { __html: branches };
+    return <div dangerouslySetInnerHTML={bro}></div>;
+  };
   repos(data) {
-    let i=0;
+    let i = 0;
     let repositories = data.map(repo => {
       return (
         <div key={i++}>
@@ -67,9 +67,7 @@ class Projects extends React.Component {
             <div className={s.Branch1}>{this.branchesParse(repo)}</div>
             <div className={s.Descrip}>{repo.Description}</div>
             <div className={s.Language}>{repo.Language}</div>
-            <div className={s.Create}>
-              {repo.CreateAt.substring(0, 10)}
-            </div>
+            <div className={s.Create}>{repo.CreateAt.substring(0, 10)}</div>
             <div className={`${s.Update} ${s.Block}`}>
               {repo.LastUpdate.substring(0, 10)}
             </div>
@@ -82,7 +80,7 @@ class Projects extends React.Component {
   }
 
   commits(data) {
-    let i =0;
+    let i = 0;
     let commits = data.map(repo => {
       return (
         <div key={i++}>
@@ -103,7 +101,7 @@ class Projects extends React.Component {
     });
     this.setState({ com: commits });
   }
-  
+
   render() {
     return (
       <div className={s.Projects}>

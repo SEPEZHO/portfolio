@@ -18,7 +18,7 @@ class Main extends React.Component {
     this.commits(this.props.dataCom);
   }
   commits(data) {
-    let i = 0 ;
+    let i = 0;
     let commits = data.map(repo => {
       return (
         <div key={i++}>
@@ -32,7 +32,9 @@ class Main extends React.Component {
               <a href={repo.UrlCommit}>{repo.Message}</a>
             </div>
             <div className={sP.Date}>{repo.Date.substring(0, 10)}</div>
-            <div className={sP.Time}>{repo.Date.substring(11).slice(0, -5)}</div>
+            <div className={sP.Time}>
+              {repo.Date.substring(11).slice(0, -5)}
+            </div>
           </div>
         </div>
       );

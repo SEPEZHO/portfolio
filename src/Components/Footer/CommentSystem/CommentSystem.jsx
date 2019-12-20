@@ -8,7 +8,7 @@ class Comments extends React.Component {
     super(props);
     this.state = {
       valMessage: "",
-      valName: "",
+      valName: ""
     };
     this.handleChangeMessage = this.handleChangeMessage.bind(this);
     this.handleChangeName = this.handleChangeName.bind(this);
@@ -23,7 +23,7 @@ class Comments extends React.Component {
   }
   handleSubmitMessage(event) {
     if (this.state.valMessage !== "") {
-      this.handleSubmitName()
+      this.handleSubmitName();
     } else {
       alert("Введите сообщение.");
     }
@@ -55,7 +55,10 @@ class Comments extends React.Component {
             placeholder="Имя"
             onChange={this.handleChangeName}
           />
-          <button onClick={this.handleSubmitMessage} className={s.InputSubmitName}>
+          <button
+            onClick={this.handleSubmitMessage}
+            className={s.InputSubmitName}
+          >
             Отправить
           </button>
         </div>

@@ -26,7 +26,6 @@ const MainProjects = () => {
       </div>
 
       <div className={s.Proj1}>
-
         <a href="https://github.com/SEPEZHO/Clicker">
           <div className={s.Image1}>
             <h2>Кликер</h2>

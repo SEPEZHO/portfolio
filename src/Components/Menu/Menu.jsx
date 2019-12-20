@@ -137,40 +137,38 @@ class Menu extends React.Component {
           }
           className={s.MenuForPc}
         >
-        <div className={s.MenuMax}>
-          <div
-            className={s.Main}
-            onClick={() => {
-              this.props.pathMain("/Main");
-            }}
-          >
-            <div></div>
-            <span>Главная</span>
-          </div>
-          <div
-            className={s.Projects}
-            onClick={() => {
-              this.props.pathMain("/Projects");
-            }}
-          >
-            <div></div>
-            <span>Проекты</span>
-          </div>
+          <div className={s.MenuMax}>
+            <div
+              className={s.Main}
+              onClick={() => {
+                this.props.pathMain("/Main");
+              }}
+            >
+              <div></div>
+              <span>Главная</span>
+            </div>
+            <div
+              className={s.Projects}
+              onClick={() => {
+                this.props.pathMain("/Projects");
+              }}
+            >
+              <div></div>
+              <span>Проекты</span>
+            </div>
             <div
               className={s.Contact}
               onClick={() => {
                 this.props.pathMain("/Contact");
               }}
             >
-            <div></div>
+              <div></div>
               <span>Контакт</span>
+            </div>
           </div>
-        </div>
         </div>
 
         <div className={s.MenuForPhone} style={this.state.styleForOpenMen}>
-
-
           <div
             className={s.MainPhone}
             onClick={() => {
@@ -190,7 +188,7 @@ class Menu extends React.Component {
           >
             <span>Проекты</span>
           </div>
-                  <div
+          <div
             className={s.ContactPhone}
             onClick={() => {
               this.props.pathMain("/Contact");
@@ -198,7 +196,8 @@ class Menu extends React.Component {
             }}
           >
             <span>Контакт</span>
-          </div></div>
+          </div>
+        </div>
         <div
           className={s.ButtonOpen}
           style={this.state.styleForBut}
