@@ -16,7 +16,7 @@ class Body extends React.Component {
     };
   }
   componentDidMount() {
-    fetch("https://sepezho.ru:7777/API/RepCom", {
+    fetch("https://sepezho.ru:7777/API/RepComViews", {
       method: "POST"
     })
       .then(response => {
@@ -27,6 +27,7 @@ class Body extends React.Component {
           dataRepCom: {
             dataComOld: data.Com,
             dataRes: data.Res,
+            dataViews: data.Views,
             dataCom: data.Com.slice(0, 11)
           }
         })
@@ -46,6 +47,7 @@ loading(){
           opacity: 0,
           visibility: 'hidden'
         }});
+        console.log()
        }, 1000)
   }
 }
@@ -53,7 +55,7 @@ loading(){
   renderMain() {
     if(this.state.dataRepCom){
       if (this.props.path === "/Main") {
-        return <MainPageRender pathMain={this.props.pathMain} dataCom={this.state.dataRepCom.dataCom.slice(0, 6)}/>
+        return <MainPageRender pathMain={this.props.pathMain} dataCom={this.state.dataRepCom.dataCom.slice(0, 6)} dataViews={this.state.dataRepCom.dataViews}/>
       } else if (this.props.path === "/Projects") {
         return <Projects dataRepCom={this.state.dataRepCom}/>;
       } else if (this.props.path === "/Contact") {

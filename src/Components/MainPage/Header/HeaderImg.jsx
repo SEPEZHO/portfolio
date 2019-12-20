@@ -1,5 +1,6 @@
 import React from "react";
 import HeaderImg from "../../../Static/Images/Me.jpg";
+import ViewsImg from "../../../Static/Images/Icons/Views.png";
 
 import s from "./Header.module.sass";
 
@@ -36,6 +37,10 @@ class Header extends React.Component {
     return (
       <div className={s.Header}>
         <img alt="" style={this.state.Style} src={HeaderImg} />
+        <div className={s.Views}>
+          <img alt="" src={ViewsImg} />
+          {this.props.dataViews}
+        </div>
       </div>
     );
   }
