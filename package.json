@@ -1,11 +1,20 @@
 {
+<<<<<<< HEAD
   "name": "Portfolio",
   "version": "1.1.1",
+=======
+  "name": "portfolio",
+  "version": "1.0.1",
+>>>>>>> master
   "private": true,
   "dependencies": {
     "concurrently": "^4.1.2",
     "express": "^4.17.1",
+<<<<<<< HEAD
     "https": "^1.0.0",
+=======
+    "concurrently": "^4.1.2",
+>>>>>>> master
     "mysql": "^2.17.1",
     "node-sass": "^4.13.0",
     "nodemailer": "^6.4.2",
@@ -37,7 +46,11 @@
       "last 1 safari version"
     ]
   },
+<<<<<<< HEAD
   "description": "Portfolio just about me. Vlad Blizniuk.",
+=======
+  "description": "This project just about me.",
+>>>>>>> master
   "main": "index.js",
   "devDependencies": {},
   "repository": {

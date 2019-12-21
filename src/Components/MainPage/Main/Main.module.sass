@@ -54,8 +54,24 @@
   background: white
   margin-bottom: 350px
   @include size(XS)
+<<<<<<< HEAD
     margin-bottom: 50px
 
+=======
+    height: 4600px
+  
+  @include size(S)
+    height: 4450px
+
+  @include size(M)
+    height: 4200px
+  
+  @include size(L)
+    height: 4000px
+
+  @include size(XL)
+    height: 3100px
+>>>>>>> master
   > *
     position: relative
     @include centerColumn
@@ -81,6 +97,7 @@
 
 
 .AboutMeTitle
+<<<<<<< HEAD
   position: relative
   top: -75px
   max-width: 400px
@@ -94,6 +111,23 @@
   top: 150px
   @include size(XS)
     top: 100px
+=======
+  position: absolute
+  top: -125px
+  
+.MeText
+  top: 200px
+  span
+    @include size(XS)
+      font-size: 25px
+
+    @include size(S)
+      font-size: 22px
+
+    @include size(XL)
+      font-size: 20px
+
+>>>>>>> master
 
 .SepezhoTitle
   @include size(XS)
@@ -144,6 +178,16 @@
     left: 25%
 
 .Rigth
+<<<<<<< HEAD
+=======
+
+  @include size(XS)
+    right: 5%
+
+  @include size(S)
+    right: 5%
+
+>>>>>>> master
   @include size(M)
     right: 10%
   
@@ -212,6 +256,7 @@
     -webkit-transform: translate(-50%)
     transform: translate(-50%)
   @include size(S)
+<<<<<<< HEAD
     -webkit-transform: translate(-50%)
     transform: translate(-50%)
   
@@ -220,6 +265,10 @@
     left: auto
     -webkit-transform: translate(0)
     transform: translate(0)
+=======
+    right: 0%
+
+>>>>>>> master
   @include size(XL)
     right: 10%
 
@@ -246,6 +295,15 @@
     left: 0%
     transform: translate(0)
 
+<<<<<<< HEAD
+=======
+.Projects
+  display: -ms-grid
+  display: grid
+  grid-column-gap: 1%
+  grid-row-gap: 2%
+  margin-bottom: 100px
+>>>>>>> master
 
     
 
@@ -258,10 +316,23 @@
     text-decoration: none
 
   @include size(XS)
+<<<<<<< HEAD
     margin-bottom: 50px
 
   @include size(S)
     border: none
+=======
+    width: 90%
+    max-width: 600px
+    grid-template-areas: 'main''sec''port''terd'
+    grid-template-columns: 1fr
+
+  @include size(S)
+    width: 90%
+    max-width: 700px
+    grid-template-areas: 'main''sec''port''terd'
+    grid-template-columns: 1fr
+>>>>>>> master
 
   @include size(L)
     border-right: 1px solid black
@@ -362,6 +433,7 @@
       box-shadow: 0 0 10px black
       border-radius: 5px
 
+<<<<<<< HEAD
 .Image1
   right: 0
 
@@ -373,6 +445,53 @@
 
   @include size(L)
     left: auto 
+=======
+.Text
+  top: 50%
+  -webkit-transform: translate(0, -50%)
+  transform: translate(0, -50%)
+  position: absolute
+  z-index: 1
+  padding: 5px
+  border-radius: 15px
+  background: rgba(0, 0, 0, 0.6)
+
+  @include size(XS)
+    font-size: 22px
+    left: 15%
+  
+  @include size(S)
+    font-size: 20px
+    left: 15%
+
+  @include size(XL)
+    font-size: 14px
+    left: -150px
+
+.TextDesc
+  position: absolute
+  z-index: 1
+  padding: 2px
+  border-radius: 3px
+  background: rgba(0, 0, 0, 0.6)
+  left: 50%
+  transition: .5s
+  -webkit-transform: translate(-50%)
+  transform: translate(-50%)
+  text-align: center
+
+  @include size(XS)
+    font-size: 20px
+    bottom: 15%
+  
+  @include size(S)
+    font-size: 18px
+    bottom: 15%
+
+  @include size(XL)
+    font-size: 12px
+    bottom: -100%
+>>>>>>> master
 
 // TABLE LAST ACTIVITES
 
