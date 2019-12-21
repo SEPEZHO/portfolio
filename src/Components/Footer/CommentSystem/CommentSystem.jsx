@@ -40,6 +40,11 @@ class Comments extends React.Component {
           valName: this.state.valName
         })
       });
+      this.setState({
+        valMessage: "",
+        valName: ""
+      })
+      alert("Вы оставили комментарий.");
     } else {
       alert("Введите имя.");
     }

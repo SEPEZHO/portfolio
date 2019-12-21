@@ -19,7 +19,6 @@ const MailSnd = app => {
         // pass: "MYPASS"
       }
     });
-
     const mailOptions = {
       from: req.body.email,
       to: "sepezho@gmail.com",

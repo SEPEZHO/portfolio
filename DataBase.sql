@@ -2,10 +2,10 @@
 -- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Хост: localhost
--- Время создания: Ноя 03 2019 г., 21:58
--- Версия сервера: 5.7.27-0ubuntu0.19.04.1
--- Версия PHP: 7.2.24-0ubuntu0.19.04.1
+-- Host: localhost:3306
+-- Generation Time: Dec 21, 2019 at 01:52 PM
+-- Server version: 5.7.28-0ubuntu0.18.04.4
+-- PHP Version: 7.2.24-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `DataBase`
+-- Database: `DataBase`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Comment`
+-- Table structure for table `Comment`
 --
 
 CREATE TABLE `Comment` (
@@ -34,27 +34,21 @@ CREATE TABLE `Comment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `Comment`
+-- Dumping data for table `Comment`
 --
 
 INSERT INTO `Comment` (`Id`, `Date`, `Message`, `Name`) VALUES
-(1, '2019-10-30 17:18:45', 'фыв', 'фывфыв'),
-(2, '2019-10-30 17:18:55', 'asd', 'asd'),
-(3, '2019-10-30 17:27:48', 'sdfa', 'asdf'),
-(4, '2019-10-30 17:27:50', 'sdfaasdf', 'asdf'),
-(5, '2019-10-30 17:28:19', 'zxcv', 'zxcv'),
-(6, '2019-10-30 17:28:22', 'zxcv', 'zxcv'),
-(7, '2019-10-30 17:28:23', 'zxcv', 'zxcv'),
-(8, '2019-10-30 17:45:32', 'asdfasdfasdfalhsdfblahsbflahsvflausgfausyvfkawehvolawhveofyiagspdigapsiyebvpHWVEPYVSEPYFGWepiyfPWIEVFPAHVWEIAYVPAIYGWEPUEGPuigPUIgpiusgepugpifugsepubaprhgbahrvg', 'NAME');
+(1, '2019-12-21 13:04:01', 'Дарова. Это первый коммент. Я закончил делать сайт, мб будет еще пару правок, но в целом это все.', 'Влад');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Commits`
+-- Table structure for table `Commits`
 --
 
 CREATE TABLE `Commits` (
   `Project` text NOT NULL,
+  `Branch` text NOT NULL,
   `Date` datetime NOT NULL,
   `Message` mediumtext NOT NULL,
   `UrlProj` text NOT NULL,
@@ -62,49 +56,58 @@ CREATE TABLE `Commits` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `Commits`
+-- Dumping data for table `Commits`
 --
 
-INSERT INTO `Commits` (`Project`, `Date`, `Message`, `UrlProj`, `UrlCommit`) VALUES
-('Portfolio', '2019-10-30 14:57:46', 'Доделал систему комментов через бд и пост запросы. Осталось по мелочи сделать. =)', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/525ba0def4ecd8ce3f284feb9959136ad593e8c8'),
-('Portfolio', '2019-10-29 17:57:14', 'Начал делать систему комментариев (сделал сервер для заноса данных о сообщении в таблицу и сделал клиент для отправки этих данных). Переделал proxy, но проблему с багом не исправил.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/e83b550370e7a9fcb1a4562ad08c27401a16e1f5'),
-('Portfolio', '2019-10-28 19:18:09', 'Доработал стили по мелочи там да сям. Сделал TableRepos в блоке text.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/ab5b28575d59d0e6092de17c280d3ed9281d0ee6'),
-('Portfolio', '2019-10-27 17:09:25', 'Сделал h1 для каждого значимого блока. Изменил таблицу с git hub на главной странице, сделала стрелку \"узнать больше\".', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/0089c9cde3a3f6687045b326897a8855a5f29c43'),
-('Portfolio', '2019-10-23 19:56:29', 'Сделал страницу Projects с таблицей, которая запрашивается через node сервер с mysql.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/7b7e78e3338ae2d69a7cade7d64ff979b702bfdf'),
-('Portfolio', '2019-10-22 13:19:49', 'Доделал api сервер, который собирает все коммиты с проекта, который позже всех редактировался.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/7413c5e3ebfeb7f0be2f443658737d9d1a4897ae'),
-('Portfolio', '2019-10-21 18:24:38', 'Сделал норм запрос на github api и начал строить api сервер для обработки запроса.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/31038feca4f19215dc0e169f7fd31f2a982ca320'),
-('Portfolio', '2019-10-20 19:09:41', 'Сделал тень при наведении на каждый h1 / Сделал в меню (и нижнем тоже) ссылку на блок, а не на текст.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/96a4f318bb7d2ee8d1121bb098acdd09bc259256'),
-('Portfolio', '2019-10-19 17:08:51', 'Сделал изменение меню в зависимости от страницы переименовал БД', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/56a0137038416c73cc28eab837e00201f3b85c5c'),
-('Portfolio', '2019-10-18 19:08:54', 'Поправил sidebar в header-е', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/3952ce1c31acde49fa00f79e425976d364f839bb'),
-('Portfolio', '2019-10-18 17:36:46', 'Допилил кнопку лайка и подправил стили.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/a01d88c4b732ea79b5e110bb95619224652105f8'),
-('Portfolio', '2019-10-17 18:40:26', 'Сделал проверку на ip и запись в бд при лайке. Чуть-чуть поменял стили и структуру папок.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/d8c202d8b69883e226ad5961cc43985b15a5dc26'),
-('Portfolio', '2019-10-16 18:01:54', 'Сдела�� стили для contact для main по мелочи', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/2084e7b10d72cb01ad2618e71b0380c21f8cb323'),
-('Portfolio', '2019-10-15 15:50:28', 'Сделал переход по ссылке для Contact. Сделал рабочую форму контакт.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/142c3c91a690c709f936a9a5b97f4e71cbe2822e'),
-('Portfolio', '2019-10-14 17:57:53', 'Поправил стили допилил футер поправил обо мне', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/9a3e38ac141e2eff412d268952415558c3d6db7f'),
-('Portfolio', '2019-10-14 10:56:23', 'Попытался сделать sideBar в header.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/a4d0b58b32a5975b803565b6a58234ea7d9862b4'),
-('Portfolio', '2019-10-14 09:50:53', 'Сделал SideBar поправил все css файлы', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/6ec0b4ae2ea6ea2ce2e6166513d85d52d8c329a2'),
-('Portfolio', '2019-10-13 09:13:31', 'Сделал более правильную структуру проекта.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/e054499b58828bd2777ab4e9253a2a1e9a64a0ef'),
-('Portfolio', '2019-10-12 13:50:19', 'Try to create like btn work.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/16d7cedcb5760fd5ee8fc831ae01a2ad3ebb315c'),
-('Portfolio', '2019-10-12 13:11:50', 'create wotk like btn', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/762c9344e0f1104941a9d63ba33b993ceb0a6ac1'),
-('Portfolio', '2019-10-12 11:54:18', 'Create read/write/remove file serv.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/383939375cbb59ffe57eab2796ea544a9a5285a9'),
-('Portfolio', '2019-10-08 15:26:01', 'Try to read file. Create another api serv', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/726927b3be54eb0c1d728860c9584b18930be18e'),
-('Portfolio', '2019-10-07 19:10:59', 'Remake for new OS (ubuntu).', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/f89c6cbc5d4dd685e07035093986c8a631959ed0'),
-('Portfolio', '2019-10-04 17:55:57', 'Делаю пост запрос при нажатии на like', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/341c41676dfc4699b1462b49beae2697c714faff'),
-('Portfolio', '2019-10-03 19:21:04', 'Добавил кнопку на верх и занялся футером', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/bb4cb9494170d5e2265e5556151d93e763d11003'),
-('Portfolio', '2019-10-02 18:45:32', 'Добавил умения в About', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/4eb98cb6500647a7606be7cfd466690f8b727230'),
-('Portfolio', '2019-10-02 13:35:27', 'Переименовал переменные всякие', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/8f466ad56b51d65596d7c6ac9af7d4227922175f'),
-('Portfolio', '2019-09-29 18:39:41', 'try to copy Devon)))', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/fb4fb07eb41cb55d161be8fa9736b283d1c59d52'),
-('Portfolio', '2019-09-28 17:59:26', 'doing menu.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/9ec4ae7cf22473f58e6df5593670f7b3b035c1b3'),
-('Portfolio', '2019-09-28 07:15:25', 'Create menu.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/5d46b279127e33b08b1d88e25c48399a53cb9bb7');
+INSERT INTO `Commits` (`Project`, `Branch`, `Date`, `Message`, `UrlProj`, `UrlCommit`) VALUES
+('Portfolio', 'server', '2019-12-09 19:29:52', 'Пытаюсь допилить API для gitHub commits cath.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/d87f9a2caff91faa6c61c5d1e0741a34012b38ca'),
+('Portfolio', 'master', '2019-11-24 11:30:32', 'Сделал нормальный размер шрифта, сделал норм размер для sidebar.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/d42a1f1aa5e56de452edd203136d5ca25877858b'),
+('Portfolio', 'server', '2019-12-08 14:12:53', 'Полностью переделал систему добавления комитов в таблицу на сервере.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/55eacfdef6bd92baa424bd1b6f0826e137ab2bf5'),
+('Portfolio', 'master', '2019-11-24 08:55:34', 'Проверочка.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/58b33a834d21870cdb92fb5e2f62318a23e7a959'),
+('Portfolio', 'server', '2019-12-06 18:48:24', 'Доделываю структуру API.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/e4421d249e48c1341484f35f6e6d929b46ca2d5c'),
+('Portfolio', 'master', '2019-11-24 08:53:55', 'Вернул все как было для пк.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/060caa77dd53a7dbc36d55e03a7ada0182f53d0b'),
+('Portfolio', 'server', '2019-12-06 16:06:01', 'Переделал API gitHubCommits.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/3f2e9ce1f93c3f3868925bdb15db34c3e575e56b'),
+('Portfolio', 'master', '2019-11-24 08:41:06', 'Перенес сайт на сервер.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/8975b21ed3c2c215db441535f0397db85e2dddc2'),
+('Portfolio', 'server', '2019-12-04 18:58:41', 'Поменял стили для меню на телефоне чутка.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/27c3a6c4a42ab07a6218e990d2e5a7ec4f1b630c'),
+('Portfolio', 'master', '2019-11-16 16:09:11', 'Seve', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/e8fb02b351f8b4739bb9e08cfae045c8b24ffd2c'),
+('Portfolio', 'server', '2019-12-04 16:28:16', 'Сделал меню для телефонов.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/2ab55f5136f2babc77f2a4acdb8e932b1c7c890b'),
+('Portfolio', 'master', '2019-11-16 15:53:55', 'Поменял структуру проекта чутка.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/8e1bf2e645ce5e47ebe1c1849597b316c799de63'),
+('Portfolio', 'server', '2019-12-03 16:59:56', 'Переверстал стили для всего (в основном в медиа запросах). Очень много мелких фиксов.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/cabfc90ce2d252df0cb3aa8ac289c85d782be58b'),
+('Portfolio', 'server', '2019-12-03 12:08:27', 'Переделал стили для всего /main + /footer.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/123ff6832602c6e7306334f8e071815d6fd78734'),
+('Portfolio', 'server', '2019-12-02 17:20:21', 'Переверстал стили для страницы /main.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/69689e73ba0a537242fedfd13b4161dec04a3f2a'),
+('Portfolio', 'server', '2019-12-01 14:41:18', 'Сделал балдежную анимацию при загрузке страницы.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/0ed27789cf67913139ae9efd950ce1e73caa9cce'),
+('Portfolio', 'server', '2019-12-01 11:15:41', 'Поменял API бэк для оптимизированных запросов. Форматнул код кое-где.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/38185e1a76e9d0c241da4e28ad36f9c23a81cb34'),
+('Portfolio', 'server', '2019-12-01 11:12:42', 'Оптемизировал все post запросы с сайта на api. Теперь их всего 2, при загрузке стр.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/54e4e2640f96b31405e592c6b6f760b1c59d949f'),
+('Portfolio', 'server', '2019-11-30 18:57:29', 'Склеил все запросы для таблиц с проектамиактивностью в один. И сделал норм обработку на клиенте для них.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/2428a444a0d89e19c5702192f8cc0ccb5c9bc6af'),
+('Portfolio', 'server', '2019-11-30 10:21:30', 'Ничего не работает +-+', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/d6fc9481e293675c17f4cf12661e4b88b0b6f03f'),
+('Portfolio', 'server', '2019-11-29 17:40:41', 'Отворматировал все .jsx файлы. Переверстатл стили футера (чутка поменял стили). Убрал overflow: scroll.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/0c55a572d2f9063e5a85a3bbc62cc7b60589c255'),
+('Portfolio', 'server', '2019-11-29 13:30:06', 'Переделал стили для Footer, доделал систему SPA, поменял стили для выделеных текстов.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/e5a1420fdb54a66f28fd87e87ce3b5eda6095a84'),
+('Portfolio', 'server', '2019-11-27 18:33:25', 'Merge pull request #2 from SEPEZHO/spa\n\nПеревел весь сайт на SPA. Это было быстро =)', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/f6267f3802996ac4d36d3397cbc804153687ab87'),
+('Portfolio', 'server', '2019-11-26 18:16:24', 'Что-то подправил. И таблицы попытался сделать.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/6e15bb5ff12a616e4c8b2a5df939bb3c5e2b10e3'),
+('Portfolio', 'server', '2019-11-26 12:46:29', 'Чутка подправил стили.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/8006ee72ee8877de2921fa0010af69e614d38e4d'),
+('Portfolio', 'server', '2019-11-25 18:42:28', 'Сделал нормальный бок Лучшие Проекты. Поменял чутка стили для About.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/6af2df0f175a6ba0ae1baf613fb0740f8c3887c9'),
+('Portfolio', 'server', '2019-11-24 17:06:46', 'Поменял весь англ текст на русский. Переделал некоторые размеры шрифтов.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/0a806e0d61ab4df7827f8c80ea91647a74bf7173'),
+('Portfolio', 'server', '2019-11-24 08:41:06', 'Перенес сайт на сервер.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/8975b21ed3c2c215db441535f0397db85e2dddc2'),
+('Portfolio', 'server', '2019-11-16 16:09:11', 'Seve', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/e8fb02b351f8b4739bb9e08cfae045c8b24ffd2c'),
+('Portfolio', 'server', '2019-11-16 15:53:55', 'Поменял структуру проекта чутка.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/8e1bf2e645ce5e47ebe1c1849597b316c799de63'),
+('Portfolio', 'server', '2019-12-10 18:35:56', 'Допилил по мелочи. Теперь точно все с переделкой таблиц.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/0193376a26dd57fd902bd6f3e102ce93b49d8552'),
+('Portfolio', 'server', '2019-12-10 18:14:18', 'Добавил ветки в таблицы.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/83bca454ebfe7295986c01676e1f97a009b518f3'),
+('Portfolio', 'server', '2019-12-11 17:55:11', 'Начал делать API для contact fotm. Сделал показ ошибок. И fetch запрос на сервер.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/a51ddb252102d1ca372231adbc73ff06f156fd04'),
+('Portfolio', 'server', '2019-12-20 16:03:33', 'Сделал просмотры. Пару фиксов. Можно закругляться с этим.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/aef99ff01ba7b575eafa5fff82620dc84560917f'),
+('Portfolio', 'server', '2019-12-20 17:35:52', 'Форматнул код.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/61339ec4642050b7bf8bd74c3cbd90f8203e8e05'),
+('Portfolio', 'server', '2019-12-21 12:42:03', 'Доработки по мелочи отправки почты.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/cfabf350246628f89923c34a0203d972418f403e'),
+('Portfolio', 'server', '2019-12-21 12:59:38', 'try to merge.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/0c116a039aa6f1b4b70a3ecf68c2e8ceee4856c0'),
+('Portfolio', 'master', '2019-12-21 13:29:28', 'Finish merge.', 'https://github.com/SEPEZHO/Portfolio', 'https://github.com/SEPEZHO/Portfolio/commit/4a93fcfdeb90dc1882bf425d2cea545c7f3feaac');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Info`
+-- Table structure for table `Info`
 --
 
 CREATE TABLE `Info` (
   `Name` text NOT NULL,
+  `Branches` text NOT NULL,
   `Url` text NOT NULL,
   `Description` mediumtext NOT NULL,
   `Language` text NOT NULL,
@@ -114,21 +117,21 @@ CREATE TABLE `Info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `Info`
+-- Dumping data for table `Info`
 --
 
-INSERT INTO `Info` (`Name`, `Url`, `Description`, `Language`, `CreateAt`, `LastUpdate`, `Size`) VALUES
-('Clicker', 'https://github.com/SEPEZHO/Clicker', 'Game clicker (with account sistem and chat on websockets). You need to click to take a NOC. ', 'JavaScript', '2019-05-17 18:05:35', '2019-09-12 14:09:54', 18240),
-('Game-OF-life', 'https://github.com/SEPEZHO/Game-OF-life', 'Thats game of life on canvas. My first programm on JS.', 'JavaScript', '2019-03-29 08:48:17', '2019-09-12 14:19:56', 20),
-('Portfolio', 'https://github.com/SEPEZHO/Portfolio', 'Portfolio about my projects. Or just about me.', 'JavaScript', '2019-04-25 17:07:32', '2019-10-30 14:59:14', 28827),
-('ShortWay', 'https://github.com/SEPEZHO/ShortWay', 'Algoritm about finding the shortest way to finish poin. Buggy thing.', 'JavaScript', '2019-04-12 18:06:00', '2019-09-12 14:12:35', 28),
-('Site-23-February', 'https://github.com/SEPEZHO/Site-23-February', ' My second site that doesn’t look like shit', 'HTML', '2019-03-31 17:07:01', '2019-09-12 14:18:48', 6301),
-('sitePHP', 'https://github.com/SEPEZHO/sitePHP', ' My first site that doesn’t look like shit.', 'HTML', '2019-03-31 17:06:14', '2019-09-12 14:19:28', 90);
+INSERT INTO `Info` (`Name`, `Branches`, `Url`, `Description`, `Language`, `CreateAt`, `LastUpdate`, `Size`) VALUES
+('ShortWay', '[\"New\",\"master\"]', 'https://github.com/SEPEZHO/ShortWay', 'Algoritm about finding the shortest way to finish poin. Buggy thing.', 'JavaScript', '2019-04-12 18:06:00', '2019-09-12 14:12:35', 28),
+('Clicker', '[\"2.1\",\"Try-to-create-a-wss-connection\",\"master\"]', 'https://github.com/SEPEZHO/Clicker', 'Game clicker (with account sistem and chat on websockets). You need to click to take a NOC. ', 'JavaScript', '2019-05-17 18:05:35', '2019-09-12 14:09:54', 18240),
+('Game-OF-life', '[\"Size\",\"master\"]', 'https://github.com/SEPEZHO/Game-OF-life', 'Thats game of life on canvas. My first programm on JS.', 'JavaScript', '2019-03-29 08:48:17', '2019-09-12 14:19:56', 20),
+('Site-23-February', '[\"master\"]', 'https://github.com/SEPEZHO/Site-23-February', ' My second site that doesn’t look like shit', 'HTML', '2019-03-31 17:07:01', '2019-09-12 14:18:48', 6301),
+('sitePHP', '[\"master\"]', 'https://github.com/SEPEZHO/sitePHP', ' My first site that doesn’t look like shit.', 'HTML', '2019-03-31 17:06:14', '2019-09-12 14:19:28', 90),
+('Portfolio', '[\"master\",\"server\"]', 'https://github.com/SEPEZHO/Portfolio', 'Portfolio about my projects. Or just about me.', 'JavaScript', '2019-04-25 17:07:32', '2019-12-21 13:29:51', 29105);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Likes`
+-- Table structure for table `Likes`
 --
 
 CREATE TABLE `Likes` (
@@ -137,42 +140,68 @@ CREATE TABLE `Likes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Likes and ip for BAN';
 
 --
--- Дамп данных таблицы `Likes`
+-- Dumping data for table `Likes`
 --
 
 INSERT INTO `Likes` (`Likes`, `Ip`) VALUES
-(1, '::ffff:127.0.0.1');
+(1, '::ffff:127.0.0.1'),
+(2, '::ffff:128.70.116.38'),
+(3, '::ffff:128.71.116.20'),
+(4, '::ffff:37.147.68.164'),
+(5, '::ffff:95.30.56.112'),
+(6, '::ffff:37.146.61.63'),
+(7, '::ffff:188.191.90.136'),
+(8, '::ffff:217.118.81.46'),
+(9, '::ffff:95.153.131.5'),
+(10, '::ffff:128.71.250.186');
+
+-- --------------------------------------------------------
 
 --
--- Индексы сохранённых таблиц
+-- Table structure for table `Views`
+--
+
+CREATE TABLE `Views` (
+  `Views` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Views`
+--
+
+INSERT INTO `Views` (`Views`) VALUES
+(162);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Индексы таблицы `Comment`
+-- Indexes for table `Comment`
 --
 ALTER TABLE `Comment`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Индексы таблицы `Likes`
+-- Indexes for table `Likes`
 --
 ALTER TABLE `Likes`
   ADD PRIMARY KEY (`Likes`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблицы `Comment`
+-- AUTO_INCREMENT for table `Comment`
 --
 ALTER TABLE `Comment`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT для таблицы `Likes`
+-- AUTO_INCREMENT for table `Likes`
 --
 ALTER TABLE `Likes`
-  MODIFY `Likes` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Likes` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
