@@ -1,48 +1,43 @@
-const nodemailer = require("nodemailer"); // отлично работает и с Яндекс
-
+const nodemailer = require("nodemailer");
 const MailSnd = app => {
   app.post("/API/MailSnd", function(req, res) {
     const output = `
-<ul>  
-  <li>Name: <br />${req.body.name}</li>
-  <li>Email: <br />${req.body.email}</li>
-  <li>subject: <br />${req.body.subject}</li>
-  <li>message: <br />${req.body.message}</li>
-</ul>
-  <li>IP: <br />${req.connection.remoteAddress}</li>
-</ul>
-  `;
+      <ul>  
+        <li>Name: <br />${req.body.name}</li>
+        <li>Email: <br />${req.body.email}</li>
+        <li>subject: <br />${req.body.subject}</li>
+        <li>message: <br />${req.body.message}</li>
+      </ul>
+        <li>IP: <br />${req.connection.remoteAddress}</li>
+      </ul>
+      `;
 
     let smtpTransport = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: "sepezho@gmail.com",
-        pass: "FeE6ZW6MC$pT"
+        // pass: "MYPASS"
       }
     });
 
     const mailOptions = {
-      from: req.body.email, // sender address
-      to: "sepezho@gmail.com", // list of receivers
-      subject: req.body.subject, // Subject line
-      html: output // plain text body
+      from: req.body.email,
+      to: "sepezho@gmail.com",
+      subject: req.body.subject,
+      html: output
     };
 
     smtpTransport.sendMail(mailOptions, (error, info) => {
       if (error) {
-        console.log(error);
+        res.send({
+          status: false
+        });
       } else {
-        console.log(info);
+        res.send({
+          status: true
+        });
       }
     });
-
-    console.log("\n--------------------------------");
-    console.log("\nMail try to send.");
-    console.log("\nName: " + req.body.name);
-    console.log("\nMail: " + req.body.email);
-    console.log("\nSubject: " + req.body.subject);
-    console.log("\nMessage: " + req.body.message);
-    console.log("\n--------------------------------");
   });
 };
 

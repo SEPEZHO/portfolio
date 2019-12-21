@@ -11,7 +11,7 @@ class Body extends React.Component {
   constructor() {
     super();
     this.state = {
-      i: 0,
+      i: 1,
       styleLoad: {}
     };
   }
@@ -49,8 +49,9 @@ class Body extends React.Component {
   loading() {
     setTimeout(() => {
       if (this.state.i < 5) {
-        this.state.i++;
-        console.log(this.state.i);
+        this.setState({
+          i: this.state.i + 1
+        })
         if (this.state.dataRepCom) {
           document.documentElement.scrollTop = 0;
           this.setState({
@@ -59,14 +60,13 @@ class Body extends React.Component {
               visibility: "hidden"
             }
           });
-          console.log();
         } else {
           this.fetchLoad(true);
         }
       } else {
         alert("Возможны проблемы с сервером. Перезайдите позже.");
       }
-    }, 5000);
+    }, 1000*this.state.i);
   }
 
   renderMain() {

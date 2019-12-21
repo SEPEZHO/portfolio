@@ -89,7 +89,6 @@ class FormArea extends React.Component {
         subject: this.state.valueSubject,
         message: this.state.valueMessage
       };
-      console.log(data);
       fetch("https://sepezho.ru:7777/API/MailSnd", {
         method: "POST",
         headers: {
@@ -97,8 +96,21 @@ class FormArea extends React.Component {
         },
         body: JSON.stringify(data)
       })
-        .then(response => {
-          alert("Почта отправлена, наверное.");
+      .then(response => {
+          return response.json();
+        })
+        .then(dataRes => {
+          if (dataRes.status) {
+            alert("Почта отправлена");
+            this.setState({
+              valueName: "",
+              valueEmail: "",
+              valueSubject: "",
+              valueMessage: ""
+            })
+          } else {
+            alert("Произошла ошибка");
+          }
         })
         .catch(error => {
           console.log(error);
