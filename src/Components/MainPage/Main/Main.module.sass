@@ -38,11 +38,26 @@
   -webkit-transform: translate(-50%, -50%)
   transform: translate(-50%, -50%)
 
+@mixin fontSize
+  @include size(XS)
+    line-height: 125%
+    letter-spacing: 1pt
+    font-size: 11pt
+
+  @include size(S)
+    line-height: 150%
+    letter-spacing: 2pt
+    font-size: 14pt
+
 .Main
   position: relative
   background: white
-  
+  margin-bottom: 350px
   @include size(XS)
+<<<<<<< HEAD
+    margin-bottom: 50px
+
+=======
     height: 4600px
   
   @include size(S)
@@ -56,6 +71,7 @@
 
   @include size(XL)
     height: 3100px
+>>>>>>> master
   > *
     position: relative
     @include centerColumn
@@ -68,40 +84,34 @@
   color: white
   background: black
   box-shadow: 0 0 10px black
-
-  @include size(XS)
-    height: 2000px
-
-  @include size(S)
-    height: 1750px
-
-  @include size(M)
-    height: 1450px
-
-  @include size(L)
-    height: 1200px
-
-  @include size(XL)
-    height: 1200px
+  ::selection 
+      background: white
+      color: black
 
   > div
       @include centerColumn
-      position: absolute
+      position: relative
       text-align: justify
       width: 90%
-
-      @include size(XS)
-        font-size: 1.75em
-        line-height: 150%
-      @include size(S)
-        font-size: 1.75em
-        line-height: 150%
-      @include size(M)
-        font-size: 1.50em
-        line-height: 150%
+      @include fontSize
 
 
 .AboutMeTitle
+<<<<<<< HEAD
+  position: relative
+  top: -75px
+  max-width: 400px
+  width: 90%
+  @include size(XS)
+    top: -50px
+    left: 50%
+    transform: translate(-50%)
+
+.MeText
+  top: 150px
+  @include size(XS)
+    top: 100px
+=======
   position: absolute
   top: -125px
   
@@ -117,59 +127,59 @@
     @include size(XL)
       font-size: 20px
 
+>>>>>>> master
 
 .SepezhoTitle
-  @include center
-  top: 55% !important
-  width: 500px
-
   @include size(XS)
-    top: 67% !important
-
-  @include size(S)
-    top: 65% !important
-   
-  @include size(M)
-    top: 55% !important
-
+    top: 150px
+  
+  top: 250px
+  position: relative
+  left: 50%
+  transform: translate(-50%)
+  max-width: 400px
+  width: 90%
 
 .Sepezho
-  @include centerColumn
-  top: 55% !important
-  width: 100%
-  
+  position: relative
   @include size(XS)
-    top: 67% !important
+    top: 150px  
+  top: 250px
+  @include size(XS)
+    padding-bottom: 200px
 
   @include size(S)
-    top: 65% !important
+    padding-bottom: 300px
 
   @include size(M)
-    top: 55% !important
+    padding-bottom: 0
 
   img
     position: absolute
     top: 100px
     height: 100px
+    @include size(XS)
+      visibility: hidden
+    
+    @include size(S)
+      visibility: hidden
+
+    @include size(M)
+      visibility: visible
 
 .Left
-
-  @include size(XS)
-    left: 0%
-
-  @include size(S)
-    left: 0%
-
   @include size(M)
     left: 10%
-
-  @include size(L)
-    left: 10%
+  
+  @media screen and (min-width: 820px)
+    left: 15%
 
   @include size(XL)
     left: 25%
 
 .Rigth
+<<<<<<< HEAD
+=======
 
   @include size(XS)
     right: 5%
@@ -177,11 +187,12 @@
   @include size(S)
     right: 5%
 
+>>>>>>> master
   @include size(M)
     right: 10%
-
-  @include size(L)
-    right: 10%
+  
+  @media screen and (min-width: 820px)
+    right: 15%
 
   @include size(XL)
     right: 25%
@@ -189,77 +200,90 @@
 
 .Center
   left: 50%
-  -webkit-transform: translate(-55%)
-  transform: translate(-55%)
+  -webkit-transform: translate(-50%)
+  transform: translate(-50%)
 
 .LeftText, .CenterText, .RigthText
-  font-size: .85em
-  line-height: 100%
-  position: absolute
-  top: 250px
-  width: 20%
+  position: relative
+  font-size: .9em
 
   @include size(XS)
-    font-size: .70em
-    line-height: 100%
+    position: relative
+    width: 90%
+    margin-bottom: 50px
+    top: 50px
+    left: 50%
 
   @include size(S)
-    font-size: .75em
-    line-height: 100%
+    position: relative
+    width: 90%
+    margin-bottom: 50px
+    top: 50px
+    left: 50%
 
   @include size(M)
-    font-size: .9em
-    line-height: 100%
-
-  @include size(XL)
-    font-size: 1em
-    line-height: 100%
+    position: absolute
+    padding-bottom: 750px
+    width: 20%
+    top: 250px
+    left: auto
+    -webkit-transform: translate(0)
+    transform: translate(0)
 
 .LeftText
   @include size(XS)
-    left: 0%
-
+    -webkit-transform: translate(-50%)
+    transform: translate(-50%)
   @include size(S)
-    left: 0%
-
+    -webkit-transform: translate(-50%)
+    transform: translate(-50%)
   @include size(M)
+    transform: translate(0)
+    -webkit-transform: translate(0)
     left: 10%
+    position: relative
 
   @include size(XL)
-    left: 17%
+    left: 15%
 
 .CenterText
-  -webkit-transform: translate(-30%)
-  transform: translate(-30%)
-  @include size(XS)
-    left: 35%
-
-  @include size(S)
-    left: 35%
-
-  @include size(M)
-    left: 50%
+  -webkit-transform: translate(-50%)
+  transform: translate(-50%)
+  left: 50%
 
 .RigthText
   @include size(XS)
-    right: 0%
-
+    -webkit-transform: translate(-50%)
+    transform: translate(-50%)
   @include size(S)
+<<<<<<< HEAD
+    -webkit-transform: translate(-50%)
+    transform: translate(-50%)
+  
+  @include size(M)
+    right: 3%
+    left: auto
+    -webkit-transform: translate(0)
+    transform: translate(0)
+=======
     right: 0%
 
+>>>>>>> master
   @include size(XL)
     right: 10%
 
 
 // PROJECTS 4 BLOCKS
 
-.Projects > h1
+.Projects>h1
   filter: invert(100%)
-  width: 400px
+  max-width: 400px
+  width: 90%
   position: absolute
   top: -200px
 
   @include size(XS)
+    top: -250px
     left: 50%
     transform: translate(-50%)
 
@@ -267,19 +291,37 @@
     left: 50%
     transform: translate(-50%)
 
-  @include size(XL)
+  @include size(L)
     left: 0%
     transform: translate(0)
 
+<<<<<<< HEAD
+=======
 .Projects
   display: -ms-grid
   display: grid
   grid-column-gap: 1%
   grid-row-gap: 2%
   margin-bottom: 100px
+>>>>>>> master
 
+    
+
+.Proj, .Proj1
+  position: relative
+  width: 100%
+  margin-bottom: 100px
+  
+  a
+    text-decoration: none
 
   @include size(XS)
+<<<<<<< HEAD
+    margin-bottom: 50px
+
+  @include size(S)
+    border: none
+=======
     width: 90%
     max-width: 600px
     grid-template-areas: 'main''sec''port''terd'
@@ -290,65 +332,120 @@
     max-width: 700px
     grid-template-areas: 'main''sec''port''terd'
     grid-template-columns: 1fr
+>>>>>>> master
 
-  @include size(XL)
-    max-width: 1200px 
-    width: 100%
-    grid-template-areas: 'main sec' 'port terd'
-    grid-template-columns: 1fr 1fr
+  @include size(L)
+    border-right: 1px solid black
+    height: 315px
 
-  > *
-    position: relative
-    box-shadow: 0 0 10px black
-    border-radius: 5px
-    overflow: hidden
-
-.Proj
-  grid-area: port
-
+  &:hover
+    img
+      box-shadow: 0 0 15px black
+    h2
+      color: #8D41D6
+      text-decoration: underline
+      
 .Proj1
-  grid-area: main
+  border-right: none
+  @include size(S)
+    border: none
 
-.Proj2
-  grid-area: sec
+  @include size(L)
+    border-left: 1px solid black
 
-.Proj3
-  grid-area: terd
-
-.Projects
-  img
-    width: 100%
-    height: 100%
-    border-radius: 5px
-    
-    @include size(XS)
-      -webkit-filter: blur(0) brightness(1)
-      filter: blur(0) brightness(1)
-    
-    @include size(S)
-      -webkit-filter: blur(0) brightness(1)
-      filter: blur(0) brightness(1)
-    
-    @include size(XL)
-      -webkit-filter: blur(2px) brightness(50%)
-      filter: blur(2px) brightness(50%)
+.Text, .Text1
+  @include fontSize
   
-  div:hover
-    .ProjImg
-      -webkit-filter: blur(0) brightness(1)
-      filter: blur(0) brightness(1)
+  @include size(XS)
+    position: relative
+    text-align: center
+    top: -140px
 
-    .Text
-      left: 15%
+  @include size(S)
+    position: relative
+    text-align: center
 
-    .TextDesc
-      bottom: 15%
+  @include size(L)
+    position: absolute
+    text-align: right
+    margin-right: 20px
+    width: 40%
+    right: 0
+    top: 50%
+    transform: translate(0, -50%)
 
-  a
-    text-decoration: none
-    color: white
+.Text1
+  @include size(L)
+    text-align: left
+    margin-right: none 
+    left: 0
+    margin-left: 20px
 
+.Image, .Image1
 
+  @include size(XS)
+    position: relative
+    top: -161px
+    max-width: 500px
+    width: 90%
+    left: 50% 
+    transform: translate(-50%)
+    height: auto
+
+  @include size(S)
+    position: relative
+    top: -61px
+    max-width: 560px
+    width: 90%
+    left: 50% 
+    transform: translate(-50%)
+    height: auto
+
+  @include size(L)
+    position: absolute
+    left: 0
+    transform: translate(0)
+    top: -61px
+    max-width: 560px
+    width: 90%
+    height: 315px
+
+  >
+    h2
+      font-family: 'h'
+      margin-bottom: 20px
+      text-align: center
+      color: black
+
+      @include size(XS)
+        line-height: 100%
+        letter-spacing: 1pt
+        font-size: 20pt
+
+      @include size(S)
+        line-height: 150%
+        letter-spacing: 2pt
+        font-size: 22pt
+    
+    img
+      width: 100%
+      height: 100%
+      box-shadow: 0 0 10px black
+      border-radius: 5px
+
+<<<<<<< HEAD
+.Image1
+  right: 0
+
+  @include size(XS)
+    left: 50% 
+
+  @include size(S)
+    left: 50% 
+
+  @include size(L)
+    left: auto 
+=======
 .Text
   top: 50%
   -webkit-transform: translate(0, -50%)
@@ -394,33 +491,55 @@
   @include size(XL)
     font-size: 12px
     bottom: -100%
+>>>>>>> master
 
-  // TABLE LAST ACTIVITES
+// TABLE LAST ACTIVITES
 
 .ProjectsTableMain
   position: relative
-  top: 100px
-  width: 90%
+  top: 150px
+  @include size(XS)
+    top: 100px
+  width: 90vw
+  max-width: 1350px
   left: 50%
   transform: translate(-50%)
 
 .Table
-  top: 200px
+  top: 50px
+  @include size(XS)
+    line-height: 100%
+    letter-spacing: 1pt
+    top: -150px
+    font-size: 10pt
+
+  @include size(S)
+    line-height: 125%
+    letter-spacing: 1pt
+    font-size: 12pt
 
   img
     position: relative
     left: 50%
-    top: 200px
+    top: 225px
     width: 40px
     transform: translate(-50%)
-
+    @include size(XS)
+      width: 30px
+      top: 150px
+    
+    @include size(S)
+      width: 30px
+    
+    @include size(XL)
+      width: 40px
     &:hover
       transform: translate(-50%, 25%)
 
   > h1
     filter: invert(1)
-    width: 400px
-
+    max-width: 500px
+    width: 90%
     @include size(XS)
       position: absolute
       left: 50%
@@ -434,4 +553,3 @@
     @include size(XL)
       left: 0
       transform: translate(0)
-    

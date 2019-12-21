@@ -20,6 +20,17 @@
   width: 90%
   max-width: 1200px
 
+@mixin fontSize
+  @include size(XS)
+    line-height: 100%
+    letter-spacing: 1pt
+    font-size: 10pt
+
+  @include size(S)
+    line-height: 125%
+    letter-spacing: 1pt
+    font-size: 12pt
+
 // PROJECTS TABLE "ACTIVITES"
 
 .ProjectsTableMain
@@ -27,28 +38,44 @@
   top: 25vh
   @include center
   @include width
-
+  @include fontSize
+  max-width: 1350px
 
   h1
     position: absolute
-    top: -15vh
+    top: -100px
     filter: invert(1)
+    max-width: 400px
+    width: 90%
+    @media screen and (max-width: 450px)
+      top: -67px
     @include size(XS)
       @include center
+    left: 75px
   img
     position: relative
-    top: 5vh
+    top: 50px
     width: 40px
+    @include size(XS)
+      width: 30px
     @include center
-    
 
     &:hover
       transform: translate(-50%, 25%)
 
-.ProjectsTable
+.Activities
   position: relative
   box-shadow: 0 0 10px black
   border-radius: 5px
+  
+  @include size(XS)
+    overflow-x: scroll
+  
+  @include size(S)
+    overflow-x: scroll
+    
+  @media screen and (min-width: 1500px)
+    overflow-x: visible
 
 hr
   position: relative
@@ -72,15 +99,15 @@ hr
 
 .RepAll
   position: relative
-  width: 100%
+  width: 1350px
 
 .Reposit
   padding: 30px
   display: -ms-grid
   display: grid
-  grid-template-areas: 'Project Message Date Time  '
-  -ms-grid-columns: 0.5fr 5fr 1fr 1fr
-  grid-template-columns: 0.5fr 5fr 1fr 1fr
+  grid-template-areas: 'Project Branch Message Date Time  '
+  -ms-grid-columns: 0.75fr 0.5fr 5fr 1fr 0.5fr
+  grid-template-columns: 0.75fr 0.5fr 5fr 1fr 0.5fr
   padding-top: 8px
   grid-column-gap: 10px
   padding-bottom: 8px
@@ -91,28 +118,34 @@ hr
   display: -ms-grid
   display: grid
   grid-column-gap: 10px
-  grid-template-areas: ' Project Message Date Time  '
-  -ms-grid-columns: 0.5fr 5fr 1fr 1fr
-  grid-template-columns: 0.5fr 5fr 1fr 1fr
+  grid-template-areas: ' Project Branch Message Date Time  '
+  -ms-grid-columns: 0.75fr 0.5fr 5fr 1fr 0.5fr
+  grid-template-columns: 0.75fr 0.5fr 5fr 1fr 0.5fr
 
 .Project, .Top > .Project
   -ms-grid-row: 1
   -ms-grid-column: 1
   grid-area: Project
 
-.Message, .Top > .Message
+.Branch, .Top > .Branch
   -ms-grid-row: 1
   -ms-grid-column: 2
+  grid-area: Branch
+
+.Message, .Top > .Message
+  -ms-grid-row: 1
+  -ms-grid-column: 3
+  @include fontSize
   grid-area: Message
 
 .Date, .Top > .Date
   -ms-grid-row: 1
-  -ms-grid-column: 3
+  -ms-grid-column: 4
   grid-area: Date
 
 .Time, .Top > .Time
   -ms-grid-row: 1
-  -ms-grid-column: 4
+  -ms-grid-column: 5
   grid-area: Time
 
 // REPOSITORIES TABLE BLOCK
@@ -124,6 +157,9 @@ hr
   width: 100%
   box-shadow: 0 0 10px black
   color: white
+  ::selection 
+    background: white
+    color: black
 
 .ProjectsReposMain
   padding-top: 20vh
@@ -134,7 +170,14 @@ hr
 
   h1
     position: absolute
-    top: 5vh
+    top: 50px
+    max-width: 400px
+    width: 90%
+    
+    @media screen and (max-width: 450px)
+      top: 25px
+    @include size(XS)
+      @include center
 
 .ProjectsRepos
   top: -50vh
@@ -143,11 +186,24 @@ hr
   border-radius: 5px
   @include width
   @include center
+  @include fontSize
+  max-width: 1350px
+  @include size(XS)
+    overflow-x: scroll
+  
+  @include size(S)
+    overflow-x: scroll
+    
+  @media screen and (min-width: 1500px)
+    overflow-x: visible
 
   hr
     filter: invert(1)
     @include size(XS)
-      @include center
+    @include center
+
+.AllProjects
+  width: 1350px
 
 .RepositProjects
   padding: 30px
@@ -156,10 +212,9 @@ hr
   display: -ms-grid
   grid-column-gap: 10px
   display: grid
-  grid-template-areas: 'name descrip language create update size'
-  -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 1fr
-  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr
-
+  grid-template-areas: 'name Branch1 descrip language create update size'
+  -ms-grid-columns: 1fr 0.5fr 5fr 1fr 1fr 1fr 0.5fr
+  grid-template-columns: 1fr 0.5fr 5fr 1fr 1fr 1fr 0.5fr
 
 .TopProjects
   padding: 30px
@@ -167,9 +222,9 @@ hr
   display: -ms-grid
   display: grid
   grid-column-gap: 10px
-  grid-template-areas: 'name descrip language create update size'
-  -ms-grid-columns: 1fr 5fr 1fr 1fr 1fr 1fr
-  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr
+  grid-template-areas: 'name Branch1 descrip language create update size'
+  -ms-grid-columns: 1fr 0.5fr 5fr 1fr 1fr 1fr 0.5fr
+  grid-template-columns: 1fr 0.5fr 5fr 1fr 1fr 1fr 0.5fr
 
 .RepositProjects a
   text-decoration: none
@@ -180,27 +235,33 @@ hr
   -ms-grid-column: 1
   grid-area: name
 
-.Descrip, .TopProjects > .Descrip
+.Branch1, .TopProjects > .Branch1
   -ms-grid-row: 1
   -ms-grid-column: 2
+  grid-area: Branch1
+
+.Descrip, .TopProjects > .Descrip
+  -ms-grid-row: 1
+  -ms-grid-column: 3
+  @include fontSize
   grid-area: descrip
 
 .Language, .TopProjects > .Language
   -ms-grid-row: 1
-  -ms-grid-column: 3
+  -ms-grid-column: 4
   grid-area: language
 
 .Create, .TopProjects > .Create
   -ms-grid-row: 1
-  -ms-grid-column: 4
+  -ms-grid-column: 5
   grid-area: create
 
 .Update, .TopProjects > .Update
   -ms-grid-row: 1
-  -ms-grid-column: 5
+  -ms-grid-column: 6
   grid-area: update
 
 .Size, .TopProjects > .Size
   -ms-grid-row: 1
-  -ms-grid-column: 6
+  -ms-grid-column: 7
   grid-area: size

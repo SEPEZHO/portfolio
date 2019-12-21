@@ -23,7 +23,8 @@
   > h1
     position: absolute
     top: 120px 
-    width: 400px
+    max-width: 400px
+    width: 90vw
     filter: invert(1)
     @include size(XS)
       left: 50%
@@ -41,51 +42,70 @@
   box-shadow: 0 0 10px black
 
   @include size(XS)
-    width: 400px
-  
+    max-width: 400px
+    width: 90vw
   @include size(S)
-    width: 550px
-
+    max-width: 600px
+    width: 90vw
   @include size(XL)
     width: 700px
 
+  span
+    position: absolute 
+    top: 125px
+    left: 50%
+    transform: translate(-50%)
+    top: 750px
+    background: rgba(0, 0, 0, 0.7)
+    color: white
+    padding-top: 5px
+    padding-bottom: 5px
+    padding-left: 10px
+    padding-right: 10px
+    border-radius: 5px
+  span:hover
+    box-shadow: 0 0 10px black
+
 .FormArea
   position: absolute
-  top: 50%
+  top: 40%
   left: 50%
   transform: translate(-50%, -50%)
+  width: 60%
+  @include size(XS)
+    width: 90%
 
   input
-    outline: none
     border: 1px solid black
-    width: 300px
-    padding-top: 4px
-    padding-bottom: 4px
-    padding-left: 12px
-    padding-right: 12px
-    border-radius: 5px
     margin-bottom: 30px
     margin-top: 5px
+    outline: none
+    border-radius: 5px
+    padding-top: 4px
+    padding-bottom: 4px
+    width: 92%
+    padding-left: 3%
+    padding-right: 3%
 
 textarea
   resize: none
-  width: 300px
   height: 120px
   outline: none
   border: 1px solid black
-  padding-top: 4px
-  padding-bottom: 4px
-  padding-left: 12px
-  padding-right: 12px
-  border-radius: 5px
   margin-bottom: 30px
   margin-top: 5px
+  border-radius: 5px
+  padding-top: 4px
+  padding-bottom: 4px
+  padding-left: 3%
+  padding-right: 3%
+  width: 92%
 
 .FormArea input
   &[type=submit]
     position: relative
-    top: 3vh
-    width: 324px
+    top: 50px
+    width: 98%
     background: white
     color: black
     border: 1px solid black
@@ -102,3 +122,17 @@ textarea:hover
 
 .FormArea input:focus, textarea:focus
   box-shadow: 0 0 5px black
+
+
+.errors
+  position: relative
+  left: 50%
+  top: -20px
+  transform: translate(-50%)
+  background: rgba(0, 0, 0, 0.7)
+  color: white
+  width: 200px
+  border-radius: 5px
+  text-align: center
+.errors:hover
+  box-shadow: 0 0 10px black

@@ -1,25 +1,27 @@
-import React from 'react';
+import React from "react";
 
-import SideBar from '../Footer/SideBar.jsx';
-import HeaderImg from './Header/HeaderImg.jsx';
-import Main from './Main/Main.jsx';
-import TitleHeader from './Header/TitleHeader.jsx';
+import SideBar from "../Footer/SideBar.jsx";
+import HeaderImg from "./Header/HeaderImg.jsx";
+import Main from "./Main/Main.jsx";
+import TitleHeader from "./Header/TitleHeader.jsx";
 
-import s from './Header/Header.module.sass';
+import s from "./Header/Header.module.sass";
 
-const MainPageRender = () => {
-  return (
-    <div >
-    	<div className={s.HeaderAll}>
-	    	<TitleHeader />
-    		<div className={s.SideBar}>
-    			<SideBar />
-    		</div>
-    	</div>
-    	<HeaderImg />
-    	<Main />
-    </div>
-  );
+class MainPageRender extends React.Component {
+  render() {
+    return (
+      <div>
+        <div className={s.HeaderAll}>
+          <TitleHeader />
+          <div className={s.SideBar}>
+            <SideBar pathMain={this.props.pathMain} />
+          </div>
+        </div>
+        <HeaderImg dataViews={this.props.dataViews} />
+        <Main pathMain={this.props.pathMain} dataCom={this.props.dataCom} />
+      </div>
+    );
+  }
 }
 
 export default MainPageRender;

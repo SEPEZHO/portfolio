@@ -1,38 +1,31 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React from "react";
 
-import Menu from './Components/Menu/Menu.jsx';
+import Menu from "./Components/Menu/Menu.jsx";
+import Body from "./Components/RenderBody.jsx";
+import Footer from "./Components/Footer/Footer.jsx";
 
-import MainPageRender from './Components/MainPage/MainPageRender.jsx';
-import ContactPageRender from './Components/ContactPage/ContactPageRender.jsx';
-import Projects from './Components/Projects/Projects.jsx';
+import s from "./Style/App.sass";
 
-import Footer from './Components/Footer/Footer.jsx';
-
-import s from './Style/App.sass';
-
-const App = () => {
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      path: "/Main"
+    };
+  }
+  pathMain = val => {
+    document.documentElement.scrollTop = 0;
+    this.setState({ path: val });
+  };
+  render() {
     return (
       <div className={s.App}>
-      
-      <Menu />
-      
-      <div className={s.Content}>
-      	<BrowserRouter>
-      		<Switch>
- 
-      			<Route exact path='/' component={MainPageRender}/>
-      			<Route path='/Contact' component={ContactPageRender}/>
-            <Route path='/Projects' component={Projects}/>
-
-	  		   </Switch>
- 		     </BrowserRouter>
-	     </div>
-
-      <Footer />
-      
-    </div>
+        <Menu path={this.state.path} pathMain={this.pathMain} />
+        <Body path={this.state.path} pathMain={this.pathMain} />
+        <Footer pathMain={this.pathMain}/>
+      </div>
     );
+  }
 }
 
 export default App;

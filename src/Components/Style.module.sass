@@ -1,0 +1,34 @@
+@mixin size($size)
+    @if $size == XL
+        @media screen and (min-width: 1300px)
+            @content
+  
+    @else if $size == S
+        @media screen and (min-width: 600px)
+            @content
+
+    @else if $size == XS
+        @media screen and (max-width: 600px)
+            @content
+
+.Loading
+    position: fixed
+    width: 100vw
+    height: 100vh
+    background: white
+    z-index: 3
+    transition: .5s
+    
+    img
+        position: relative
+        height: auto
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+        @include size(XS)
+            width: 50%
+        @include size(S)
+            width: 20%
+        @include size(XL)
+            width: 10%
