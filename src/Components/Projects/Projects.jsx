@@ -49,7 +49,7 @@ class Projects extends React.Component {
   branchesParse = repo => {
     let branches = "";
     JSON.parse(repo.Branches).forEach(branch => {
-      branches += "<p>" + branch + "</p>";
+      branches += "<p>" + branch + ";</p>";
     });
     let bro = { __html: branches };
     return <div dangerouslySetInnerHTML={bro}></div>;
