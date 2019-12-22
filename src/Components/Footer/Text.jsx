@@ -5,7 +5,7 @@ import s from "./Footer.module.sass";
 const Text = () => {
   return (
     <div className={s.Text}>
-      <h1>Создан sepezho</h1>
+      <h1>Created by sepezho</h1>
       <div>
         Время создания:
         <nav>

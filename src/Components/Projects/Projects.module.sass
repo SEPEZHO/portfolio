@@ -52,12 +52,13 @@
     @include size(XS)
       @include center
     left: 75px
+
   img
     position: relative
     top: 50px
     width: 40px
     @include size(XS)
-      top: 40px
+      top: 30px
       width: 30px
     @include center
 
@@ -100,6 +101,7 @@ hr
 
 .RepAll
   position: relative
+  @mixin fontSize
   width: 1350px
 
 .Reposit
@@ -204,6 +206,7 @@ hr
     @include center
 
 .AllProjects
+  @mixin fontSize
   width: 1350px
 
 .RepositProjects

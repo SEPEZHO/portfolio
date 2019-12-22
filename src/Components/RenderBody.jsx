@@ -53,6 +53,7 @@ class Body extends React.Component {
           i: this.state.i + 1
         })
         if (this.state.dataRepCom) {
+          document.body.scrollTop = 0;
           document.documentElement.scrollTop = 0;
           this.setState({
             styleLoad: {
