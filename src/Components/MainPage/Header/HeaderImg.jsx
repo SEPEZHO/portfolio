@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderImg from "../../../Static/Images/Me.jpg";
+import HeaderImg from "../../../Static/Images/Me.webp";
 import ViewsImg from "../../../Static/Images/Icons/Views.png";
 
 import s from "./Header.module.sass";
