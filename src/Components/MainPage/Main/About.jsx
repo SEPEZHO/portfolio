@@ -57,9 +57,12 @@ const MainAbout = () => {
             <li>SMTP Gmail;</li>
             <li>Gihub Api;</li>
             <li>Node js;</li>
+            <li>Pyhton3;</li>
+            <li>Telebot;</li>
             <li>MYSQL;</li>
             <li>Nginx;</li>
             <li>LAMP;</li>
+            <li>GPG;</li>
             <li>PHP;</li>
           </ul>
         </div>

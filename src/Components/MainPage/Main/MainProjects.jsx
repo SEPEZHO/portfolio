@@ -13,15 +13,15 @@ const MainProjects = () => {
       <h1>Лучшие проекты</h1>
 
       <div className={s.Proj}>
-        <a href="https://github.com/SEPEZHO/Portfolio">
+        <a href="https://github.com/SEPEZHO/Seppass_bot">
           <div className={s.Image}>
-            <h2>Портфолио</h2>
+            <h2>Бот</h2>
             <img alt="" src={Portfolio} className={s.ProjImg} />
           </div>
         </a>
         <div className={s.Text}>
-          Это сайт, на котором вы сейчас находитесь. Тут все понятно.
-          <br /> Использовал: react + node js + nginx + mysql.
+          Телеграм бот, предназначенный для упрощения хранения паролей. Полностю бэкенд код (на Python3), с использованием библиотеки Telebot. Каждую запись шифрует индивидуальным gpg ключем.
+          <br /> Использовал: Python3 + Telebot + gpg + sqlite.
         </div>
       </div>
 

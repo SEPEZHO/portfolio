@@ -31,6 +31,7 @@ const sendReq = () => {
 
                 resBegin.on("end", () => {
                   let commiterDate = JSON.parse(bodyBegin).commit.author.date;
+                  if (JSON.parse(bodyBegin).parents[0].sha){
                   optionsHttp.path =
                     "/repos/sepezho/" +
                     result[0].Name +
@@ -69,6 +70,7 @@ const sendReq = () => {
                       return;
                     }
                   }, 1000);
+                }
                 });
               });
               requestBegin.on("error", e => {
