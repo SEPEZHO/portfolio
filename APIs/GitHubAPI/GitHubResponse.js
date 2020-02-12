@@ -3,7 +3,7 @@ const pool = require("../MysqlCon.js").pool;
 const GetCon = app => {
   app.post("/API/RepComViews", function(req, res) {
     pool.getConnection((err, con) => {
-      con.query("SELECT * FROM Info", (errora, resultsInf) => {
+      con.query("SELECT * FROM `Info` ORDER BY `LastUpdate` DESC", (errora, resultsInf) => {
         result = new Object();
         result.Res = resultsInf;
         con.query(
