@@ -4,10 +4,10 @@ import s from "./Footer.module.sass";
 
 import SrcGithub from "../../Static/Images/Icons/GitHub.png";
 import SrcStackOverflow from "../../Static/Images/Icons/StackOverflow.png";
-import SrcYouTube from "../../Static/Images/Icons/YouTube.png";
+import SrcTelegram from "../../Static/Images/Icons/Telegram.png";
 import SrcVk from "../../Static/Images/Icons/Vk.png";
-import SrcMail from "../../Static/Images/Icons/Mail.png";
 import SideBarPic from "../../Static/Images/SideBar.png";
+import SrcInst from "../../Static/Images/Icons/Inst.png";
 
 class SideBar extends React.Component {
   render() {
@@ -20,18 +20,20 @@ class SideBar extends React.Component {
         <a href="https://stackoverflow.com/users/12073046/sepezho">
           <img src={SrcStackOverflow} alt="" />
         </a>
-        <a href="https://www.youtube.com/channel/UC4nIyTlfA6DKuF_xKtefutQ/featured?view_as=subscriber">
-          <img src={SrcYouTube} alt="" />
+        <a href="https://t.me/sepezho">
+          <img src={SrcTelegram} alt="" />
         </a>
         <a href="https://vk.com/vlad_ascetic">
           <img src={SrcVk} alt="" />
+        </a>
+        <a href="https://www.instagram.com/sepezho">
+          <img src={SrcInst} alt="" />
         </a>
         <div
           onClick={() => {
             this.props.pathMain("/Contact");
           }}
         >
-          <img src={SrcMail} alt="" />
         </div>
       </div>
     );
