@@ -24,7 +24,7 @@ const MainAbout = () => {
           (примерно с ноября 2018). Сейчас пишу бота для телеграм на питоне. Бот, 
           который будет шифровать записи gpg ключами. Это уже полностью бэкенд 
           программирование, и мне это нравиться. Посмотреть на то чем я занят, подробней, 
-          чем просто репозиторий на гите, можно в моем <a href="https://www.instagram.com/sepezho">instagram</a>.
+          чем просто репозиторий на гите, можно в моем <a href="https://www.instagram.com/sepezho">instagram</a> или на <a href="https://www.youtube.com/channel/UC4nIyTlfA6DKuF_xKtefutQ">youtube</a>.
           <br />
           <br />
           Думаю на этом можно закончить.
