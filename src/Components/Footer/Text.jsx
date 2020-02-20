@@ -19,6 +19,12 @@ const Text = () => {
           <li>sepezho@gmail.com</li>
           <li>koko2kocit@gmail.com (резерв)</li>
         </nav>
+        <br />
+        <br />
+        Телеграм:
+        <nav>
+          <li>@sepezho</li>
+        </nav>
       </div>
     </div>
   );
