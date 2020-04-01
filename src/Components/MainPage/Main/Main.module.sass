@@ -233,7 +233,7 @@
     right: 10%
 
 
-// PROJECTS 4 BLOCKS
+// PROJECTS 5 BLOCKS
 
 .Projects>h1
   filter: invert(100%)
@@ -255,10 +255,10 @@
     left: 0%
     transform: translate(0)
 
-.Proj, .Proj1
+.ProjLeft, .ProjRigth
   position: relative
   width: 100%
-  margin-bottom: 100px
+  margin-bottom: 125px
   
   a
     text-decoration: none
@@ -268,10 +268,12 @@
 
   @include size(S)
     border: none
+    top: -100px
 
   @include size(L)
-    border-right: 1px solid black
-    height: 315px
+    border-left: 1px solid black
+    top: 50px
+    height: 500px
 
   &:hover
     img
@@ -280,15 +282,15 @@
       color: #8D41D6
       text-decoration: underline
       
-.Proj1
-  border-right: none
+.ProjLeft
+  border-left: none
   @include size(S)
     border: none
 
   @include size(L)
-    border-left: 1px solid black
+    border-right: 1px solid black
 
-.Text, .Text1
+.TextLeft, .TextRigth
   @include fontSize
   
   @include size(XS)
@@ -302,6 +304,7 @@
     position: relative
     text-align: center
     width: 90%
+    top: 60px
     right: -5vw
 
   @include size(L)
@@ -313,15 +316,14 @@
     top: 50%
     transform: translate(0, -50%)
 
-.Text1
+.TextRigth
   @include size(L)
     text-align: left
     margin-right: none 
     left: 0
     margin-left: 20px
 
-.Image, .Image1
-
+.ImageLeft, .ImageRigth
   @include size(XS)
     position: relative
     top: -161px
@@ -333,7 +335,7 @@
 
   @include size(S)
     position: relative
-    top: -61px
+    top: 30px
     max-width: 560px
     width: 90%
     left: 50% 
@@ -344,7 +346,7 @@
     position: absolute
     left: 0
     transform: translate(0)
-    top: -61px
+    top: 30px
     max-width: 560px
     width: 90%
     height: 315px
@@ -352,17 +354,18 @@
   >
     h2
       font-family: 'h'
-      margin-bottom: 20px
       text-align: center
       color: black
 
       @include size(XS)
         line-height: 100%
+        margin-bottom: 20px
         letter-spacing: 1pt
         font-size: 20pt
 
       @include size(S)
         line-height: 150%
+        margin-bottom: 40px
         letter-spacing: 2pt
         font-size: 22pt
     
@@ -372,7 +375,7 @@
       box-shadow: 0 0 10px black
       border-radius: 5px
 
-.Image1
+.ImageRigth
   right: 0
 
   @include size(XS)
