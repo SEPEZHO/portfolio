@@ -16,7 +16,7 @@ const MailSnd = app => {
       service: "gmail",
       auth: {
         user: "sepezho@gmail.com",
-        // pass: "MYPASS"
+        pass: "PASS"
       }
     });
     const mailOptions = {
