@@ -4,6 +4,9 @@ import Menu from "./Components/Menu/Menu.jsx";
 import Body from "./Components/RenderBody.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
 
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
+
 import s from "./Style/App.sass";
 
 class App extends React.Component {
