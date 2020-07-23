@@ -1,0 +1,85 @@
+import React from "react";
+
+import Catch from "./CommentCatch.jsx";
+import s from "./CommentSystem.module.sass";
+
+class Comments extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      valMessage: "",
+      valName: ""
+    };
+    this.handleChangeMessage = this.handleChangeMessage.bind(this);
+    this.handleChangeName = this.handleChangeName.bind(this);
+    this.handleSubmitMessage = this.handleSubmitMessage.bind(this);
+    this.handleSubmitName = this.handleSubmitName.bind(this);
+  }
+  handleChangeMessage(event) {
+    this.setState({ valMessage: event.target.value });
+  }
+  handleChangeName(event) {
+    this.setState({ valName: event.target.value });
+  }
+  handleSubmitMessage(event) {
+    if (this.state.valMessage !== "") {
+      this.handleSubmitName();
+    } else {
+      alert("Введите сообщение.");
+    }
+  }
+  handleSubmitName(event) {
+    if (this.state.valName !== "") {
+      fetch("https://sepezho.com:7777/API/Chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        body: JSON.stringify({
+          valMessage: this.state.valMessage,
+          valName: this.state.valName
+        })
+      });
+      this.setState({
+        valMessage: "",
+        valName: ""
+      })
+      alert("Вы оставили комментарий.");
+    } else {
+      alert("Введите имя.");
+    }
+  }
+  render() {
+    return (
+      <div className={s.Comments}>
+        <div className={s.FormAreaName}>
+          <input
+            className={s.InputName}
+            type="text"
+            value={this.state.valName}
+            placeholder="Имя"
+            onChange={this.handleChangeName}
+          />
+          <button
+            onClick={this.handleSubmitMessage}
+            className={s.InputSubmitName}
+          >
+            Отправить
+          </button>
+        </div>
+        <div className={s.FormAreaMessage}>
+          <input
+            className={s.InputMessage}
+            type="text"
+            value={this.state.valMessage}
+            placeholder="Комментарий"
+            onChange={this.handleChangeMessage}
+          />
+        </div>
+        <Catch dataChat={this.props.dataChat} />
+      </div>
+    );
+  }
+}
+
+export default Comments;

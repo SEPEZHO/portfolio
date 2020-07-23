@@ -1,0 +1,33 @@
+{
+  "name": "portfolio_front",
+  "version": "1.1.2",
+  "dependencies": {
+    "node-sass": "^4.14.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "ie 11",
+      "last 2 chrome version",
+      "last 2 firefox version",
+      "last 2 safari version"
+    ]
+  },
+  "homepage": "https://sepezho.com",
+  "description": "Portfolio just about me. Vlad Bliznyuk.",
+  "main": "index.js",
+  "author": "SEPEZHO",
+  "license": "ISC"
+}

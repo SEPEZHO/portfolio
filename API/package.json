@@ -1,0 +1,31 @@
+{
+  "name": "portfolio_api",
+  "version": "1.1.2",
+  "dependencies": {
+    "concurrently": "^4.1.2",
+    "express": "^4.17.1",
+    "https": "^1.0.0",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.4.6"
+  },
+  "scripts": {
+    "server": "concurrently \"node ServerAPI.js\" \"node GitHubAPI/BaseApi.js\" \"node GitHubAPI/LastCommit.js\""
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "ie 11",
+      "last 2 chrome version",
+      "last 2 firefox version",
+      "last 2 safari version"
+    ]
+  },
+  "homepage": "https://sepezho.com",
+  "description": "Portfolio just about me. Vlad Bliznyuk.",
+  "author": "SEPEZHO",
+  "license": "ISC"
+}

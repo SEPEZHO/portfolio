@@ -1,0 +1,126 @@
+@mixin size($size)
+  
+  @if $size == XL
+    @media screen and (min-width: 1300px)
+      @content
+  
+  @else if $size == M
+    @media screen and (min-width: 768px)
+      @content
+   
+  @else if $size == S
+    @media screen and (min-width: 600px)
+      @content
+
+  @else if $size == XS
+    @media screen and (max-width: 600px)
+      @content
+
+@mixin fontSize
+  @include size(XS)
+    line-height: 125%
+    letter-spacing: 1pt
+    font-size: 12pt
+    
+  @include size(S)
+    line-height: 150%
+    letter-spacing: 2pt
+    font-size: 14pt
+
+.Header
+  position: relative
+  z-index: -1
+  height: 100vh
+
+  > img
+    position: fixed
+    margin: auto
+    height: 100vh
+    width: auto
+    left: 50%
+    -webkit-transform: translate(-50%)
+    transform: translate(-50%)
+    
+    @media screen and (min-width: 177.777vh)
+      width: 100vw
+      height: auto
+
+.TitleHeader
+  @include fontSize
+  position: absolute
+  color: white
+  text-align: justify
+  top: 50%
+
+  @include size(XS)
+    position: relative
+    max-width: 500px
+    top: 150px
+    width: 80%
+    left: 50%
+    transform: translate(-50%)
+
+  @include size(S)
+    right: 10vw
+    max-width: 425px
+    width: 100%
+    transform: translate(0,-50%)
+
+  @include size(M)
+    right: 10vw
+    max-width: 550px
+
+  @include size(XL)
+    right: 0
+    max-width: 600px
+
+  h1
+
+    @include size(XS)
+      letter-spacing: 7pt
+
+    @include size(S)
+      letter-spacing: 9pt
+    
+    @include size(M)
+      letter-spacing: 15pt
+
+.SideBar
+  position: absolute
+  top: 50%
+  @include size(XS)
+    top: 500px
+    left: 50%
+    transform: translate(-60%)
+  @include size(S)
+    left: 10vw
+  @include size(L)
+    left: 22px
+
+.HeaderAll
+  position: absolute
+  left: 50%
+  width: 100%
+  max-width: 1200px
+  transform: translate(-50%, -50%)
+  @include size(S)
+    top: 50%
+    
+.Views
+  position: absolute
+  bottom: 20px
+  left: 50%
+  transform: translate(-50%, -50%)
+  background: rgba(255, 255, 255, 0.8)
+  padding: 7px
+  box-shadow: 0 0 5px white
+  border-radius: 5px
+  @include size(XS)
+    bottom: -5px
+  
+  img
+    position: relative
+    transform: translate(0,15%)
+    margin-right: 10px
+
+
