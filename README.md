@@ -1,2 +1,5 @@
-Я школьник десятого класса. Моим хобби является веб-программирование. Оно появилось у меня на курсах по программированию, но вскоре я "перерос" эти курсы и меня перестала интересовать та программа (она была легкой для меня). Учитывая цену этих курсов, на которые я не доходил всего год до получения "корочки", я решил уйти в самообучение. С тех пор (почти год) каждый день (по 2-7 часов) пишу сайты для себя, тем самым учась. Все прошлое лето я потратил на свой проект-кликер, который был для меня чем-то вроде: "а что если я выложусь на полную".  Процесс создания его для меня был исполинским трудом. Сейчас я занимаюсь написанием своего портфолио, параллельно пытаясь собрать материал для старта канала на ютуб, чтобы вести подобие дневника своих проектов.
-    
+Portfolio is my second largest project. Back end based on Nodejs, front end powered by React and sass. Every 10 minutes back end request my gitHub about new commits, repositories and etc. He write all in DB (MYSQL). Also he catch and store some info from front. And in the end backend can send mails thrue google smtp. Front end works only with API and touch nothing else. He based on SPA principle, how you can see.
+
+Used: React; Sass; NodeJs; Nginx; MYSQL.
+
+Approximate volumes: 3.7k lines of code.
