@@ -30,48 +30,48 @@
 .Header
   position: relative
   z-index: -1
-  height: 100vh
-
   > img
     position: fixed
+    top: 0
+    left: 50%
+    transform: translate(-50%)
     margin: auto
     height: 100vh
     width: auto
-    left: 50%
-    -webkit-transform: translate(-50%)
-    transform: translate(-50%)
-    
     @media screen and (min-width: 177.777vh)
       width: 100vw
       height: auto
 
+.HeaderAll
+  padding-top: 350px
+  padding-bottom: 350px
+  display: flex
+  @include size(XS)
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    padding-top: 200px
+    padding-bottom: 200px
+  @include size(S)
+    flex-direction: row-reverse
+    justify-content: space-around
+
 .TitleHeader
   @include fontSize
-  position: absolute
   color: white
   text-align: justify
-  top: 50%
-
   @include size(XS)
-    position: relative
     max-width: 500px
-    top: 150px
     width: 80%
-    left: 50%
-    transform: translate(-50%)
-
+    margin-bottom: 40px
   @include size(S)
-    right: 10vw
     max-width: 425px
     width: 100%
-    transform: translate(0,-50%)
 
   @include size(M)
-    right: 10vw
     max-width: 550px
 
   @include size(XL)
-    right: 0
     max-width: 600px
 
   h1
@@ -86,26 +86,11 @@
       letter-spacing: 15pt
 
 .SideBar
-  position: absolute
-  top: 50%
-  @include size(XS)
-    top: 500px
-    left: 50%
-    transform: translate(-60%)
-  @include size(S)
-    left: 10vw
-  @include size(L)
-    left: 22px
-
-.HeaderAll
-  position: absolute
-  left: 50%
-  width: 100%
-  max-width: 1200px
-  transform: translate(-50%, -50%)
-  @include size(S)
-    top: 50%
-    
+  width: 30px
+  > *
+    transform: translate(0, 0)
+  
+  
 .Views
   position: absolute
   bottom: 20px
@@ -122,5 +107,3 @@
     position: relative
     transform: translate(0,15%)
     margin-right: 10px
-
-

@@ -16,7 +16,7 @@ class CommentCatch extends React.Component {
               <span>{message.Name}</span>
             </div>
             <div className={`${s.Date} ${s.Block}`}>
-              {message.Date.substring(11).slice(0, -5)}/
+              {Number(message.Date.substring(11).slice(0, -5).split(':')[0]) + 3 + ':' + message.Date.substring(11).slice(0, -5).split(':')[1]  + ':' +  message.Date.substring(11).slice(0, -5).split(':')[2]}/
               {message.Date.substring(0, 10)}
             </div>
             <div className={`${s.MessageText} ${s.Block}`}>

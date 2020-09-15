@@ -4,6 +4,7 @@ import s from "./Footer.module.sass";
 
 import SrcGithub from "../../Static/Images/Icons/GitHub.png";
 import SrcStackOverflow from "../../Static/Images/Icons/StackOverflow.png";
+import Codewars from "../../Static/Images/Icons/Codewars.png";
 import SrcTelegram from "../../Static/Images/Icons/Telegram.png";
 import SrcVk from "../../Static/Images/Icons/Vk.png";
 import SrcInst from "../../Static/Images/Icons/Inst.png";
@@ -19,7 +20,10 @@ class SideBar extends React.Component {
         <a href="https://stackoverflow.com/users/12073046/sepezho">
           <img src={SrcStackOverflow} alt="" />
         </a>
-        <a href="https://t.me/sepezho">
+        <a href="https://www.codewars.com/users/sepezho">
+          <img src={Codewars} alt="" />
+        </a>
+        <a href="https://t.me/sepezho_log">
           <img src={SrcTelegram} alt="" />
         </a>
         <a href="https://vk.com/sepezho">

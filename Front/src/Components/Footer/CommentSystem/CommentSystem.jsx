@@ -25,7 +25,7 @@ class Comments extends React.Component {
     if (this.state.valMessage !== "") {
       this.handleSubmitName();
     } else {
-      alert("Введите сообщение.");
+      alert(this.props.language ? 'Введите сообщение.' : 'Insert message.');
     }
   }
   handleSubmitName(event) {
@@ -44,9 +44,9 @@ class Comments extends React.Component {
         valMessage: "",
         valName: ""
       })
-      alert("Вы оставили комментарий.");
+      alert(this.props.language ? 'Вы оставили комментарий.' : 'You left a comment.');
     } else {
-      alert("Введите имя.");
+      alert(this.props.language ? 'Введите имя.' : 'Insert your name.');
     }
   }
   render() {
@@ -57,14 +57,14 @@ class Comments extends React.Component {
             className={s.InputName}
             type="text"
             value={this.state.valName}
-            placeholder="Имя"
+            placeholder= {this.props.language ? 'Имя' : 'Name'}
             onChange={this.handleChangeName}
           />
           <button
             onClick={this.handleSubmitMessage}
             className={s.InputSubmitName}
           >
-            Отправить
+          {this.props.language ? 'Отправить' : 'Sent'}
           </button>
         </div>
         <div className={s.FormAreaMessage}>
@@ -72,7 +72,7 @@ class Comments extends React.Component {
             className={s.InputMessage}
             type="text"
             value={this.state.valMessage}
-            placeholder="Комментарий"
+            placeholder={this.props.language ? 'Комментарий' : 'Comment'}
             onChange={this.handleChangeMessage}
           />
         </div>

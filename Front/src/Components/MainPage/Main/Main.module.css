@@ -1,0 +1,657 @@
+.Main {
+  position: relative;
+  background: white;
+  margin-bottom: 350px;
+}
+
+@media screen and (max-width: 600px) {
+  .Main {
+    margin-bottom: 50px;
+  }
+}
+
+.Main > * {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+}
+
+.About {
+  max-width: 100% !important;
+  margin-bottom: 300px;
+  color: white;
+  background: black;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+}
+
+.About ::-moz-selection {
+  background: #fffffffc;
+  color: black;
+}
+
+.About ::selection {
+  background: #fffffffc;
+  color: black;
+}
+
+.About > div {
+  width: 100%;
+  max-width: 1200px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  position: relative;
+  text-align: justify;
+  width: 90%;
+}
+
+@media screen and (max-width: 600px) {
+  .About > div {
+    line-height: 125%;
+    letter-spacing: 1pt;
+    font-size: 11pt;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .About > div {
+    line-height: 150%;
+    letter-spacing: 2pt;
+    font-size: 14pt;
+  }
+}
+
+.AboutMeTitle {
+  position: relative;
+  top: -75px;
+  max-width: 400px;
+  width: 90%;
+}
+
+@media screen and (max-width: 600px) {
+  .AboutMeTitle {
+    top: -50px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+.MeText {
+  top: 150px;
+}
+
+@media screen and (max-width: 600px) {
+  .MeText {
+    top: 100px;
+  }
+}
+
+.MeText p {
+  position: absolute;
+  right: 0;
+}
+
+.MeText a {
+  color: white;
+}
+
+.MeText a:hover {
+  text-decoration: none;
+  color: #8D41D6;
+}
+
+.SepezhoTitle {
+  top: 250px;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  max-width: 400px;
+  width: 90%;
+}
+
+@media screen and (max-width: 600px) {
+  .SepezhoTitle {
+    top: 150px;
+  }
+}
+
+.Sepezho {
+  position: relative;
+  top: 250px;
+}
+
+@media screen and (max-width: 600px) {
+  .Sepezho {
+    top: 150px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Sepezho {
+    padding-bottom: 200px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Sepezho {
+    padding-bottom: 300px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Sepezho {
+    padding-bottom: 0;
+  }
+}
+
+.Sepezho img {
+  position: absolute;
+  top: 100px;
+  height: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  .Sepezho img {
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Sepezho img {
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Sepezho img {
+    visibility: visible;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Left {
+    left: 10%;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .Left {
+    left: 15%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .Left {
+    left: 25%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Rigth {
+    right: 10%;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .Rigth {
+    right: 15%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .Rigth {
+    right: 25%;
+  }
+}
+
+.Center {
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+}
+
+.LeftText, .CenterText, .RigthText {
+  position: relative;
+  font-size: .9em;
+}
+
+@media screen and (max-width: 600px) {
+  .LeftText, .CenterText, .RigthText {
+    position: relative;
+    width: 90%;
+    margin-bottom: 50px;
+    top: 50px;
+    left: 50%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .LeftText, .CenterText, .RigthText {
+    position: relative;
+    width: 90%;
+    margin-bottom: 50px;
+    top: 50px;
+    left: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .LeftText, .CenterText, .RigthText {
+    position: absolute;
+    padding-bottom: 750px;
+    width: 200px;
+    top: 250px;
+    left: auto;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .LeftText {
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .LeftText {
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .LeftText {
+    transform: translate(0);
+    -webkit-transform: translate(0);
+    left: 14%;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .LeftText {
+    left: 17%;
+  }
+}
+
+.CenterText {
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  left: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .CenterText {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .RigthText {
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .RigthText {
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .RigthText {
+    right: 3%;
+    left: auto;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .RigthText {
+    right: 10%;
+  }
+}
+
+.Projects > h1 {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  max-width: 400px;
+  width: 90%;
+  position: absolute;
+  top: -200px;
+}
+
+@media screen and (max-width: 600px) {
+  .Projects > h1 {
+    top: -250px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Projects > h1 {
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .Projects > h1 {
+    left: 0%;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+.ProjLeft, .ProjRigth {
+  position: relative;
+  width: 100%;
+  margin-bottom: 125px;
+}
+
+.ProjLeft a, .ProjRigth a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  .ProjLeft, .ProjRigth {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .ProjLeft, .ProjRigth {
+    border: none;
+    top: -100px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .ProjLeft, .ProjRigth {
+    border-left: 1px solid black;
+    top: 50px;
+    height: 500px;
+  }
+}
+
+.ProjLeft:hover h2, .ProjRigth:hover h2 {
+  color: #8D41D6;
+  text-decoration: underline;
+}
+
+.ProjLeft {
+  border-left: none;
+}
+
+@media screen and (min-width: 600px) {
+  .ProjLeft {
+    border: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .ProjLeft {
+    border-right: 1px solid black;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .TextLeft, .TextRigth {
+    line-height: 125%;
+    letter-spacing: 1pt;
+    font-size: 11pt;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .TextLeft, .TextRigth {
+    line-height: 150%;
+    letter-spacing: 2pt;
+    font-size: 14pt;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .TextLeft, .TextRigth {
+    position: relative;
+    text-align: center;
+    width: 90%;
+    right: -5vw;
+    top: -140px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .TextLeft, .TextRigth {
+    position: relative;
+    text-align: center;
+    width: 90%;
+    top: 60px;
+    right: -5vw;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .TextLeft, .TextRigth {
+    position: absolute;
+    text-align: right;
+    margin-right: 20px;
+    width: 40%;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .TextRigth {
+    text-align: left;
+    margin-right: none;
+    left: 0;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ImageLeft, .ImageRigth {
+    position: relative;
+    top: -161px;
+    max-width: 500px;
+    width: 90%;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .ImageLeft, .ImageRigth {
+    position: relative;
+    top: 30px;
+    max-width: 560px;
+    width: 90%;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .ImageLeft, .ImageRigth {
+    position: absolute;
+    left: 0;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    top: 30px;
+    max-width: 560px;
+    width: 90%;
+    height: 315px;
+  }
+}
+
+.ImageLeft > h2, .ImageRigth > h2 {
+  font-family: 'h';
+  text-align: center;
+  color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .ImageLeft > h2, .ImageRigth > h2 {
+    line-height: 100%;
+    margin-bottom: 20px;
+    letter-spacing: 1pt;
+    font-size: 20pt;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .ImageLeft > h2, .ImageRigth > h2 {
+    line-height: 150%;
+    margin-bottom: 40px;
+    letter-spacing: 2pt;
+    font-size: 22pt;
+  }
+}
+
+.ImageRigth {
+  right: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .ImageRigth {
+    left: 50%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .ImageRigth {
+    left: 50%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .ImageRigth {
+    left: auto;
+  }
+}
+
+.ProjectsTableMain {
+  position: relative;
+  top: 150px;
+  width: 90vw;
+  max-width: 1350px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+@media screen and (max-width: 600px) {
+  .ProjectsTableMain {
+    top: 100px;
+  }
+}
+
+.Table {
+  top: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .Table {
+    line-height: 100%;
+    letter-spacing: 1pt;
+    top: -150px;
+    font-size: 10pt;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Table {
+    line-height: 125%;
+    letter-spacing: 1pt;
+    font-size: 12pt;
+  }
+}
+
+.Table img {
+  position: relative;
+  left: 50%;
+  top: 225px;
+  width: 40px;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+@media screen and (max-width: 600px) {
+  .Table img {
+    width: 30px;
+    top: 150px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Table img {
+    width: 30px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .Table img {
+    width: 40px;
+  }
+}
+
+.Table img:hover {
+  -webkit-transform: translate(-50%, 25%);
+          transform: translate(-50%, 25%);
+}
+
+.Table > h1 {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  max-width: 500px;
+  width: 90%;
+}
+
+@media screen and (max-width: 600px) {
+  .Table > h1 {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Table > h1 {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .Table > h1 {
+    left: 0;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+/*# sourceMappingURL=Main.module.css.map */

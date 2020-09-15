@@ -1,0 +1,180 @@
+.Comments {
+  -webkit-box-shadow: 0 0 10px white;
+          box-shadow: 0 0 10px white;
+  border-radius: 5px;
+  position: absolute;
+}
+
+@media screen and (max-width: 600px) {
+  .Comments {
+    line-height: 100%;
+    letter-spacing: 0.75pt;
+    font-size: 10pt;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Comments {
+    line-height: 125%;
+    letter-spacing: 1pt;
+    font-size: 12pt;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Comments {
+    top: 450px;
+    max-width: 500px;
+    width: 90%;
+    height: 800px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Comments {
+    top: 500px;
+    width: 550px;
+    height: 800px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Comments {
+    width: 500px;
+    right: 120px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .Comments {
+    height: 600px;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    right: 0;
+    top: 0;
+  }
+}
+
+.FormAreaMessage, .FormAreaName {
+  position: absolute;
+  margin: 1%;
+  width: 100%;
+}
+
+.InputMessage, .InputName {
+  outline: none;
+  border: none;
+  width: 92%;
+  border-radius: 5px;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.InputMessage:hover, .InputName:hover {
+  -webkit-box-shadow: 0 0 15px white;
+          box-shadow: 0 0 15px white;
+}
+
+.InputMessage:focus, .InputName:focus {
+  -webkit-box-shadow: 0 0 10px white;
+          box-shadow: 0 0 10px white;
+}
+
+.InputSubmitName {
+  background: black;
+  width: 98%;
+  top: 80px;
+  left: 0;
+  position: absolute;
+  color: white;
+  border: 1px solid white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 5px;
+}
+
+.InputSubmitName:hover {
+  background: white;
+  color: black;
+}
+
+.InputMessage {
+  position: absolute;
+  top: 42px;
+}
+
+.Catch {
+  position: absolute;
+  top: 130px;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .Catch {
+    height: 670px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Catch {
+    height: 670px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .Catch {
+    height: 470px;
+  }
+}
+
+.Message {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.Message hr {
+  position: relative;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  width: 100%;
+  left: 0;
+}
+
+.Name {
+  width: 100%;
+  padding: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.Name > span {
+  position: relative;
+  left: 10px;
+}
+
+.Date {
+  position: absolute;
+  right: 20px;
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+}
+
+.MessageText {
+  position: relative;
+  border-radius: 2.5px;
+  word-wrap: break-word;
+  padding: 10px;
+}
+/*# sourceMappingURL=CommentSystem.module.css.map */

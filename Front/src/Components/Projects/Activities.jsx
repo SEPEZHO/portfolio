@@ -8,11 +8,11 @@ class Activities extends React.Component {
       <div className={s.Activities}>
         <div className={s.RepAll}>
           <div className={s.Top}>
-            <div className={s.Project}>Репозиторий</div>
-            <div className={s.Branch}>Веткa</div>
-            <div className={s.Message}>Сообщение</div>
-            <div className={s.Date}>Дата</div>
-            <div className={s.Time}>Время</div>
+            <div className={s.Project}>{this.props.language ? 'Репозиторий' : 'Repository'}</div>
+            <div className={s.Branch}>{this.props.language ? 'Веткa' : 'Branch'}</div>
+            <div className={s.Message}>{this.props.language ? 'Сообщение' : 'Message'}</div>
+            <div className={s.Date}>{this.props.language ? 'Дата' : 'Date'}</div>
+            <div className={s.Time}>{this.props.language ? 'Время (UTC +3)' : 'Time (UTC +3)'}</div>
           </div>
           {this.props.data}
         </div>

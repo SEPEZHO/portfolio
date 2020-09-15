@@ -65,7 +65,7 @@ class Body extends React.Component {
           this.fetchLoad(true);
         }
       } else {
-        alert("Возможны проблемы с сервером. Перезайдите позже.");
+        alert("There may be problems with the server. Please come back later :/");
       }
     }, 1000*this.state.i);
   }
@@ -76,16 +76,17 @@ class Body extends React.Component {
         return (
           <MainPageRender
             pathMain={this.props.pathMain}
+            language={this.props.language}
             dataCom={this.state.dataRepCom.dataCom.slice(0, 6)}
             dataViews={this.state.dataRepCom.dataViews}
           />
         );
       } else if (this.props.path === "/Projects") {
-        return <Projects dataRepCom={this.state.dataRepCom} />;
+        return <Projects language={this.props.language} dataRepCom={this.state.dataRepCom} />;
       } else if (this.props.path === "/Contact") {
-        return <ContactPageRender />;
+        return <ContactPageRender language={this.props.language} />;
       } else {
-        return <MainPageRender pathMain={this.props.pathMain} />;
+        return <MainPageRender language={this.props.language} pathMain={this.props.pathMain} />;
       }
     }
   }

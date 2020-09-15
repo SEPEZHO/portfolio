@@ -145,7 +145,7 @@ class Menu extends React.Component {
               }}
             >
               <div></div>
-              <span>Главная</span>
+              <span>{this.props.language ? 'Главная' : 'Main'}</span>
             </div>
             <div
               className={s.Projects}
@@ -154,7 +154,7 @@ class Menu extends React.Component {
               }}
             >
               <div></div>
-              <span>Проекты</span>
+              <span>{this.props.language ? 'Проекты' : 'Projects'}</span>
             </div>
             <div
               className={s.Contact}
@@ -163,7 +163,7 @@ class Menu extends React.Component {
               }}
             >
               <div></div>
-              <span>Контакт</span>
+              <span>{this.props.language ? 'Контакты' : 'Contacts'}</span>
             </div>
           </div>
         </div>

@@ -8,9 +8,9 @@ class Text extends React.Component {
     return (
       <div className={s.Text}>
         <div className={s.ProjectsReposMain}>
-          <h1>Репозитории</h1>
+          <h1>{this.props.language ? 'Репозитории' : 'Repositoryes'}</h1>
         </div>
-        <ProjectsRepos data={this.props.data} />
+        <ProjectsRepos language={this.props.language} data={this.props.data} />
       </div>
     );
   }

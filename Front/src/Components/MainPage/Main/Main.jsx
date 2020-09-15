@@ -44,11 +44,11 @@ class Main extends React.Component {
   render() {
     return (
       <div className={s.Main}>
-        <MainAbout />
-        <MainProjects />
+        <MainAbout language={this.props.language} />
+        <MainProjects language={this.props.language} />
 
         <div className={s.Table}>
-          <h1>Последняя активность</h1>
+          <h1>{this.props.language ? 'Последняя активность' : 'Last activity'}</h1>
           <div className={s.ProjectsTableMain}>
             <ProjectsTable data={this.state.com} />
           </div>

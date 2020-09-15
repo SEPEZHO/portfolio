@@ -108,7 +108,7 @@ class Projects extends React.Component {
               <a href={repo.UrlCommit}>{repo.Message}</a>
             </div>
             <div className={s.Date}>{repo.Date.substring(0, 10)}</div>
-            <div className={s.Time}>{repo.Date.substring(11).slice(0, -5)}</div>
+            <div className={s.Time}>{Number(repo.Date.substring(11).slice(0, -5).split(':')[0]) + 3 + ':' + repo.Date.substring(11).slice(0, -5).split(':')[1]  + ':' +  repo.Date.substring(11).slice(0, -5).split(':')[2]}</div>
           </div>
         </div>
       );
@@ -120,8 +120,8 @@ class Projects extends React.Component {
     return (
       <div className={s.Projects}>
         <div className={s.ProjectsTableMain}>
-          <h1>Активность</h1>
-          <Activities data={this.state.com} />
+          <h1>{this.props.language ? 'Активность' : 'Activity'}</h1>
+          <Activities language={this.props.language} data={this.state.com} />
           <img
             className={s.ViewMore}
             src={ViewMore}
@@ -130,7 +130,7 @@ class Projects extends React.Component {
             onClick={this.handleButtonClick}
           />
         </div>
-        <ProjectsText data={this.state.rep} />
+        <ProjectsText language={this.props.language} data={this.state.rep} />
       </div>
     );
   }

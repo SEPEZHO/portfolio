@@ -1,0 +1,327 @@
+.FooterMain {
+  position: relative;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+  color: white;
+  background: black;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .FooterMain {
+    height: 1400px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .FooterMain {
+    height: 1450px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .FooterMain {
+    height: 600px;
+  }
+}
+
+.Footer {
+  position: relative;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.Footer ::-moz-selection {
+  background: white;
+  color: black;
+}
+
+.Footer ::selection {
+  background: white;
+  color: black;
+}
+
+.LikeBtn {
+  position: absolute;
+  height: 40px;
+  bottom: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  width: 200px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .LikeBtn {
+    left: 50%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .LikeBtn {
+    left: 50%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .LikeBtn {
+    left: 25%;
+  }
+}
+
+.LikeBtn span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  color: white;
+  font-size: 8pt;
+}
+
+@media screen and (max-width: 600px) {
+  .LikeBtn span {
+    line-height: 125%;
+    letter-spacing: 0.75pt;
+    font-size: 10pt;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .LikeBtn span {
+    line-height: 150%;
+    letter-spacing: 1pt;
+    font-size: 12pt;
+  }
+}
+
+.LikeBtn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0 0 10px #ff6b61 !important;
+          box-shadow: 0 0 10px #ff6b61 !important;
+}
+
+.LikeMess {
+  position: absolute;
+  bottom: 70px;
+  -webkit-transform: translate(-25%);
+          transform: translate(-25%);
+  -webkit-box-shadow: 0 0 10px white;
+          box-shadow: 0 0 10px white;
+  border-radius: 5px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .LikeMess {
+    line-height: 125%;
+    letter-spacing: 0.75pt;
+    font-size: 10pt;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .LikeMess {
+    line-height: 150%;
+    letter-spacing: 1pt;
+    font-size: 12pt;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .LikeMess {
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .LikeMess {
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .LikeMess {
+    left: 25%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+.SideBar {
+  position: relative;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+@media screen and (max-width: 600px) {
+  .SideBar {
+    width: 20px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .SideBar {
+    width: 24px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .SideBar {
+    width: 28px;
+  }
+}
+
+.SideBar a > img, .SideBar div > img {
+  position: relative;
+  margin: 20%;
+}
+
+@media screen and (max-width: 600px) {
+  .SideBar a > img, .SideBar div > img {
+    width: 20px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .SideBar a > img, .SideBar div > img {
+    width: 24px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .SideBar a > img, .SideBar div > img {
+    width: 28px;
+  }
+}
+
+.SideBar a > img:hover, .SideBar div > img:hover {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  left: 3.84px;
+}
+
+@media screen and (max-width: 600px) {
+  .Footer > .SideBar {
+    top: 260px;
+    left: 5vw;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Footer > .SideBar {
+    top: 300px;
+    left: 10%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .Footer > .SideBar {
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    left: 0;
+  }
+}
+
+.Text div {
+  position: absolute;
+}
+
+@media screen and (max-width: 600px) {
+  .Text div {
+    line-height: 125%;
+    letter-spacing: 0.75pt;
+    font-size: 10pt;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Text div {
+    line-height: 150%;
+    letter-spacing: 1pt;
+    font-size: 12pt;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Text div {
+    right: 5vw;
+    top: 150px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Text div {
+    right: 10%;
+    top: 155px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .Text div {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    left: 25%;
+    width: 230px;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    top: 50%;
+  }
+}
+
+.Text h1 {
+  position: absolute;
+}
+
+@media screen and (max-width: 600px) {
+  .Text h1 {
+    top: 50px;
+    max-width: 400px;
+    width: 90%;
+    right: 30px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Text h1 {
+    top: 10px;
+    width: 400px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Text h1 {
+    top: 10px;
+    width: 500px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .Text h1 {
+    width: 500px;
+    left: 25%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+/*# sourceMappingURL=Footer.module.css.map */

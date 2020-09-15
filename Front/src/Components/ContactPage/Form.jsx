@@ -48,7 +48,7 @@ class FormArea extends React.Component {
     event.preventDefault();
     let error = false;
     if (this.state.valueName === "") {
-      this.setState({ errorName: "Введите имя." });
+      this.setState({ errorName: this.props.language ? 'Введите имя.' : 'Insert your name.' });
       error = true;
     } else {
       this.setState({
@@ -56,10 +56,10 @@ class FormArea extends React.Component {
       });
     }
     if (this.state.valueEmail === "") {
-      this.setState({ errorEmail: "Введите почту." });
+      this.setState({ errorEmail: this.props.language ? 'Введите почту.' : 'Insert your mail.' });
       error = true;
     } else if (!~this.state.valueEmail.indexOf("@")) {
-      this.setState({ errorEmail: 'Вы забыли знак "@".' });
+      this.setState({ errorEmail: this.props.language ? 'Вы забыли знак "@".' : 'You forgot "@".' });
       error = true;
     } else {
       this.setState({
@@ -67,7 +67,7 @@ class FormArea extends React.Component {
       });
     }
     if (this.state.valueSubject === "") {
-      this.setState({ errorSubject: "Введите тему." });
+      this.setState({ errorSubject: this.props.language ? 'Введите тему.' : 'Insert your theme.' });
       error = true;
     } else {
       this.setState({
@@ -75,7 +75,7 @@ class FormArea extends React.Component {
       });
     }
     if (this.state.valueMessage === "") {
-      this.setState({ errorMessage: "Введите coобщение." });
+      this.setState({ errorMessage: this.props.language ? 'Введите coобщение.' : 'Insert your message.' });
       error = true;
     } else {
       this.setState({
@@ -101,7 +101,7 @@ class FormArea extends React.Component {
         })
         .then(dataRes => {
           if (dataRes.status) {
-            alert("Почта отправлена");
+            alert(this.props.language ? 'Почта отправлена.' : 'Your message has been sent.');
             this.setState({
               valueName: "",
               valueEmail: "",
@@ -109,7 +109,7 @@ class FormArea extends React.Component {
               valueMessage: ""
             })
           } else {
-            alert("Произошла ошибка");
+            alert(this.props.language ? 'Произошла ошибка.' : 'Some error here.');
           }
         })
         .catch(error => {
@@ -120,92 +120,86 @@ class FormArea extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className={s.FormArea}>
-        <label>
-          <p>Имя:</p>
-          <input
-            type="text"
-            value={this.state.valueName}
-            onChange={this.handleChangeName}
-          />
-        </label>
-        <div
-          className={s.errors}
-          style={
-            this.state.errorName === ""
-              ? this.state.paddingClose
-              : this.state.paddingOpen
-          }
-        >
-          {this.state.errorName}
-        </div>
-        <label>
-          <p>Ваш email:</p>
-          <input
-            type="text"
-            value={this.state.valueEmail}
-            onChange={this.handleChangeEmail}
-          />
-        </label>
-        <div
-          className={s.errors}
-          style={
-            this.state.errorEmail === ""
-              ? this.state.paddingClose
-              : this.state.paddingOpen
-          }
-        >
-          {this.state.errorEmail}
-        </div>
-        <label>
-          <p>Тема:</p>
-          <input
-            type="text"
-            value={this.state.valueSubject}
-            onChange={this.handleChangeSubject}
-          />
-        </label>
-        <div
-          className={s.errors}
-          style={
-            this.state.errorSubject === ""
-              ? this.state.paddingClose
-              : this.state.paddingOpen
-          }
-        >
-          {this.state.errorSubject}
-        </div>
-        <label>
-          <p>Сообщение:</p>
-          <textarea
-            type="text"
-            value={this.state.valueMessage}
-            onChange={this.handleChangeMessage}
-          />
-        </label>
-        <div
-          className={s.errors}
-          style={
-            this.state.errorMessage === ""
-              ? this.state.paddingClose
-              : this.state.paddingOpen
-          }
-        >
-          {this.state.errorMessage}
-        </div>
-        <input type="submit" value="Отправить" />
-      </form>
+      <div className={s.Form}>
+        <form onSubmit={this.handleSubmit} className={s.FormArea}>
+          <label>
+            <p>{this.props.language ? 'Имя' : 'Name'}:</p>
+            <input
+              type="text"
+              value={this.state.valueName}
+              onChange={this.handleChangeName}
+            />
+          </label>
+          <div
+            className={s.errors}
+            style={
+              this.state.errorName === ""
+                ? this.state.paddingClose
+                : this.state.paddingOpen
+            }
+          >
+            {this.state.errorName}
+          </div>
+          <label>
+            <p>{this.props.language ? 'Ваш' : 'Your'} email:</p>
+            <input
+              type="text"
+              value={this.state.valueEmail}
+              onChange={this.handleChangeEmail}
+            />
+          </label>
+          <div
+            className={s.errors}
+            style={
+              this.state.errorEmail === ""
+                ? this.state.paddingClose
+                : this.state.paddingOpen
+            }
+          >
+            {this.state.errorEmail}
+          </div>
+          <label>
+            <p>{this.props.language ? 'Тема' : 'Theme'}:</p>
+            <input
+              type="text"
+              value={this.state.valueSubject}
+              onChange={this.handleChangeSubject}
+            />
+          </label>
+          <div
+            className={s.errors}
+            style={
+              this.state.errorSubject === ""
+                ? this.state.paddingClose
+                : this.state.paddingOpen
+            }
+          >
+            {this.state.errorSubject}
+          </div>
+          <label>
+            <p>{this.props.language ? 'Сообщение' : 'Message'}:</p>
+            <textarea
+              type="text"
+              value={this.state.valueMessage}
+              onChange={this.handleChangeMessage}
+            />
+          </label>
+          <div
+            className={s.errors}
+            style={
+              this.state.errorMessage === ""
+                ? this.state.paddingClose
+                : this.state.paddingOpen
+            }
+          >
+            {this.state.errorMessage}
+          </div>
+          <input type="submit" value={this.props.language ? 'Отправить' : 'Send'} />
+        </form>
+        <span>sepezho@gmail.com</span>
+    </div>
     );
   }
 }
 
-const Form = () => {
-  return (
-    <div className={s.Form}>
-      <FormArea />
-      <span>sepezho@gmail.com</span>
-    </div>
-  );
-};
-
-export default Form;
+export default FormArea

@@ -34,8 +34,9 @@ class Footer extends React.Component {
           <LikeBtn
             likes={this.state.dataChatLikes.dataLikes}
             dataIsLiked={this.state.dataChatLikes.dataIsLiked}
+            language={this.props.language}
           />
-          <Comments dataChat={this.state.dataChatLikes.dataChat} />
+          <Comments dataChat={this.state.dataChatLikes.dataChat} language={this.props.language} />
         </div>
       );
     }
@@ -45,7 +46,7 @@ class Footer extends React.Component {
       <div className={s.FooterMain}>
         <div className={s.Footer}>
           <SideBar pathMain={this.props.pathMain} />
-          <Text />
+          <Text language={this.props.language}/>
           {this.renderComLik()}
         </div>
       </div>

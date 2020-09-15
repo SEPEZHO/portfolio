@@ -53,14 +53,14 @@ class LikeBtn extends React.Component {
     return (
       <div>
         <div className={s.LikeMess} style={{ opacity: this.state.opacity }}>
-          Вы уже лайкали с этого устройства.
+        {this.props.language ? 'Вы уже лайкали с этого устройства.' : 'You already liked from this device.'}
         </div>
         <div
           className={s.LikeBtn}
           style={{ background: this.state.background }}
           onClick={this.Like}
         >
-          <span>Лайки: {this.state.Likes}</span>
+          <span>{this.props.language ? 'Лайки' : 'Likes'}: {this.state.Likes}</span>
         </div>
       </div>
     );

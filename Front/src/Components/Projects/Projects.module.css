@@ -1,0 +1,365 @@
+.ProjectsTableMain {
+  position: relative;
+  top: 25vh;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  width: 90%;
+  max-width: 1200px;
+  max-width: 1350px;
+}
+
+@media screen and (min-width: 600px) {
+  .ProjectsTableMain {
+    line-height: 125%;
+    letter-spacing: 1pt;
+    font-size: 12pt;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ProjectsTableMain {
+    line-height: 100%;
+    letter-spacing: 1pt;
+    font-size: 10pt;
+    -webkit-text-size-adjust: none;
+  }
+}
+
+.ProjectsTableMain h1 {
+  position: absolute;
+  top: -100px;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  max-width: 400px;
+  width: 90%;
+  left: 75px;
+}
+
+@media screen and (max-width: 450px) {
+  .ProjectsTableMain h1 {
+    top: -67px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ProjectsTableMain h1 {
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+.ProjectsTableMain img {
+  position: relative;
+  top: 50px;
+  width: 40px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+@media screen and (max-width: 600px) {
+  .ProjectsTableMain img {
+    top: 30px;
+    width: 30px;
+  }
+}
+
+.ProjectsTableMain img:hover {
+  -webkit-transform: translate(-50%, 25%);
+          transform: translate(-50%, 25%);
+}
+
+.Activities {
+  position: relative;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .Activities {
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Activities {
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .Activities {
+    overflow-x: visible;
+  }
+}
+
+hr {
+  position: relative;
+  width: 80%;
+  height: 1px;
+  left: 10%;
+  border: 0;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0.75)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.Reposit a {
+  text-decoration: none;
+  color: black;
+}
+
+.Reposit a:hover {
+  text-decoration: underline;
+  color: #8D41D6;
+}
+
+.RepositProjects a:hover {
+  text-decoration: underline;
+  color: #8D41D6;
+}
+
+.RepAll {
+  position: relative;
+  width: 1350px;
+}
+
+.Reposit {
+  padding: 30px;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'Project Branch Message Date Time  ';
+  -ms-grid-columns: 0.75fr 0.5fr 5fr 1fr 0.5fr;
+  grid-template-columns: 0.75fr 0.5fr 5fr 1fr 0.5fr;
+  padding-top: 8px;
+  grid-column-gap: 10px;
+  padding-bottom: 8px;
+}
+
+.Top {
+  padding: 30px;
+  padding-bottom: 32px;
+  display: -ms-grid;
+  display: grid;
+  grid-column-gap: 10px;
+      grid-template-areas: ' Project Branch Message Date Time  ';
+  -ms-grid-columns: 0.75fr 0.5fr 5fr 1fr 0.5fr;
+  grid-template-columns: 0.75fr 0.5fr 5fr 1fr 0.5fr;
+}
+
+.Project, .Top > .Project {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: Project;
+}
+
+.Branch, .Top > .Branch {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: Branch;
+}
+
+.Message, .Top > .Message {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: Message;
+  -webkit-text-size-adjust: none;
+}
+
+.Date, .Top > .Date {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: Date;
+}
+
+.Time, .Top > .Time {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: Time;
+}
+
+.Text {
+  position: relative;
+  background: black;
+  top: 35vh;
+  width: 100%;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+  color: white;
+}
+
+.Text ::-moz-selection {
+  background: #fffffffc;
+  color: black;
+}
+
+.Text ::selection {
+  background: #fffffffc;
+  color: black;
+}
+
+.ProjectsReposMain {
+  padding-top: 20vh;
+  padding-bottom: 50vh;
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.ProjectsReposMain h1 {
+  position: absolute;
+  top: 50px;
+  max-width: 400px;
+  width: 90%;
+}
+
+@media screen and (max-width: 450px) {
+  .ProjectsReposMain h1 {
+    top: 25px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ProjectsReposMain h1 {
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+
+.ProjectsRepos {
+  top: -50vh;
+  position: relative;
+  -webkit-box-shadow: 0 0 10px white;
+          box-shadow: 0 0 10px white;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 1200px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  max-width: 1350px;
+}
+
+@media screen and (min-width: 600px) {
+  .ProjectsRepos {
+    line-height: 125%;
+    letter-spacing: 1pt;
+    font-size: 12pt;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ProjectsRepos {
+    line-height: 100%;
+    letter-spacing: 1pt;
+    font-size: 10pt;
+    -webkit-text-size-adjust: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ProjectsRepos {
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .ProjectsRepos {
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .ProjectsRepos {
+    overflow-x: visible;
+  }
+}
+
+.ProjectsRepos hr {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.AllProjects {
+  width: 1350px;
+}
+
+.RepositProjects {
+  padding: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: -ms-grid;
+  grid-column-gap: 10px;
+  display: grid;
+      grid-template-areas: 'name Branch1 descrip language create update size';
+  -ms-grid-columns: 1fr 0.5fr 5fr 1fr 1fr 1fr 0.5fr;
+  grid-template-columns: 1fr 0.5fr 5fr 1fr 1fr 1fr 0.5fr;
+}
+
+.TopProjects {
+  padding: 30px;
+  padding-bottom: 32px;
+  display: -ms-grid;
+  display: grid;
+  grid-column-gap: 10px;
+      grid-template-areas: 'name Branch1 descrip language create update size';
+  -ms-grid-columns: 1fr 0.5fr 5fr 1fr 1fr 1fr 0.5fr;
+  grid-template-columns: 1fr 0.5fr 5fr 1fr 1fr 1fr 0.5fr;
+}
+
+.RepositProjects a {
+  text-decoration: none;
+  color: white;
+}
+
+.Name, .TopProjects > .Name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: name;
+}
+
+.Branch1, .TopProjects > .Branch1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: Branch1;
+}
+
+.Descrip, .TopProjects > .Descrip {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: descrip;
+}
+
+.Language, .TopProjects > .Language {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: language;
+}
+
+.Create, .TopProjects > .Create {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: create;
+}
+
+.Update, .TopProjects > .Update {
+  -ms-grid-row: 1;
+  -ms-grid-column: 6;
+  grid-area: update;
+}
+
+.Size, .TopProjects > .Size {
+  -ms-grid-row: 1;
+  -ms-grid-column: 7;
+  grid-area: size;
+}
+/*# sourceMappingURL=Projects.module.css.map */

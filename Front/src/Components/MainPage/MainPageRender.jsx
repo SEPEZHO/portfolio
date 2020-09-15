@@ -12,13 +12,13 @@ class MainPageRender extends React.Component {
     return (
       <div>
         <div className={s.HeaderAll}>
-          <TitleHeader />
+          <TitleHeader language={this.props.language}/>
           <div className={s.SideBar}>
             <SideBar pathMain={this.props.pathMain} />
           </div>
         </div>
         <HeaderImg dataViews={this.props.dataViews} />
-        <Main pathMain={this.props.pathMain} dataCom={this.props.dataCom} />
+        <Main language={this.props.language} pathMain={this.props.pathMain} dataCom={this.props.dataCom} />
       </div>
     );
   }
