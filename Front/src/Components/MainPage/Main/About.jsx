@@ -122,7 +122,7 @@ class MainAbout extends React.Component {
           <br/>
           <ul>
             <li>Hardware dev</li>
-            <li>Primere pro</li>
+            <li>Premiere pro</li>
             <li>Photoshop</li>
             <li>Arduino</li>
             <li>YouTube</li>
