@@ -31,9 +31,8 @@ class Main extends React.Component {
             <div className={sP.Message}>
               <a href={repo.UrlCommit}>{repo.Message}</a>
             </div>
-            <div className={sP.Date}>{repo.Date.substring(0, 10)}</div>
             <div className={sP.Time}>
-              {repo.Date.substring(11).slice(0, -5)}
+              {repo.Date.substring(0, 10).replaceAll('-', '.') + ' ' + (Number(repo.Date.substring(11).slice(0, -5).split(':')[0]) + 3 + ':' + repo.Date.substring(11).slice(0, -5).split(':')[1])}
             </div>
           </div>
         </div>

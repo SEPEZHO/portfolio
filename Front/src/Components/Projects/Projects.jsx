@@ -107,7 +107,9 @@ class Projects extends React.Component {
             <div className={s.Message}>
               <a href={repo.UrlCommit}>{repo.Message}</a>
             </div>
-            <div className={s.Time}>{repo.Date.substring(0, 10).replaceAll('-', '.')} {Number(repo.Date.substring(11).slice(0, -5).split(':')[0]) + 3 + ':' + repo.Date.substring(11).slice(0, -5).split(':')[1]}</div>
+            <div className={s.Time}>
+              {repo.Date.substring(0, 10).replaceAll('-', '.') + ' ' + (Number(repo.Date.substring(11).slice(0, -5).split(':')[0]) + 3 + ':' + repo.Date.substring(11).slice(0, -5).split(':')[1])}
+            </div>
           </div>
         </div>
       );
