@@ -138,7 +138,7 @@ class FormArea extends React.Component {
         <div className={s.Alert} style={this.state.alertStyle}>
           {this.state.alertMessage}
         </div>
-        <form onSubmit={this.handleSubmit} className={s.FormArea}>
+        <form className={s.FormArea}>
           <label>
             <p>{this.props.language ? 'Имя' : 'Name'}:</p>
             <input
@@ -211,7 +211,12 @@ class FormArea extends React.Component {
           >
             {this.state.errorMessage}
           </div>
-          <input type="submit" value={this.props.language ? 'Отправить' : 'Send'} />
+          <button
+            onClick={this.handleSubmit}
+            className={s.InputSubmit}
+          >
+            {this.props.language ? 'Отправить' : 'Sent'}
+          </button>
         </form>
         <span>sepezho@gmail.com</span>
     </div>
