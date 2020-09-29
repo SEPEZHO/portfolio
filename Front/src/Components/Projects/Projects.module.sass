@@ -109,9 +109,9 @@ hr
   padding: 30px
   display: -ms-grid
   display: grid
-  grid-template-areas: 'Project Branch Message Date Time  '
-  -ms-grid-columns: 0.75fr 0.5fr 5fr 1fr 0.5fr
-  grid-template-columns: 0.75fr 0.5fr 5fr 1fr 0.5fr
+  grid-template-areas: 'Project Branch Message Time  '
+  -ms-grid-columns: 120px 120px 960px 150px
+  grid-template-columns: 120px 120px 960px 150px
   padding-top: 8px
   grid-column-gap: 10px
   padding-bottom: 8px
@@ -122,9 +122,9 @@ hr
   display: -ms-grid
   display: grid
   grid-column-gap: 10px
-  grid-template-areas: ' Project Branch Message Date Time  '
-  -ms-grid-columns: 0.75fr 0.5fr 5fr 1fr 0.5fr
-  grid-template-columns: 0.75fr 0.5fr 5fr 1fr 0.5fr
+  grid-template-areas: ' Project Branch Message Time  '
+  -ms-grid-columns: 120px 120px 960px 150px
+  grid-template-columns: 120px 120px 960px 150px
 
 .Project, .Top > .Project
   -ms-grid-row: 1
@@ -142,14 +142,9 @@ hr
   grid-area: Message
   -webkit-text-size-adjust: none
 
-.Date, .Top > .Date
-  -ms-grid-row: 1
-  -ms-grid-column: 4
-  grid-area: Date
-
 .Time, .Top > .Time
   -ms-grid-row: 1
-  -ms-grid-column: 5
+  -ms-grid-column: 4
   grid-area: Time
 
 // REPOSITORIES TABLE BLOCK
@@ -218,8 +213,8 @@ hr
   grid-column-gap: 10px
   display: grid
   grid-template-areas: 'name Branch1 descrip language create update size'
-  -ms-grid-columns: 1fr 0.5fr 5fr 1fr 1fr 1fr 0.5fr
-  grid-template-columns: 1fr 0.5fr 5fr 1fr 1fr 1fr 0.5fr
+  -ms-grid-columns: 140px 120px 815px 100px 100px 100px 75px
+  grid-template-columns: 140px 120px 815px 100px 100px 100px 75px
 
 .TopProjects
   padding: 30px
@@ -228,8 +223,8 @@ hr
   display: grid
   grid-column-gap: 10px
   grid-template-areas: 'name Branch1 descrip language create update size'
-  -ms-grid-columns: 1fr 0.5fr 5fr 1fr 1fr 1fr 0.5fr
-  grid-template-columns: 1fr 0.5fr 5fr 1fr 1fr 1fr 0.5fr
+  -ms-grid-columns: 140px 120px 815px 100px 100px 100px 75px
+  grid-template-columns: 140px 120px 815px 100px 100px 100px 75px
 
 .RepositProjects a
   text-decoration: none

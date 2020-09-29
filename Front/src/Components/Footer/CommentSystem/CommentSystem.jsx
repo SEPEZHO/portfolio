@@ -8,7 +8,11 @@ class Comments extends React.Component {
     super(props);
     this.state = {
       valMessage: "",
-      valName: ""
+      valName: "",
+      alertMessage: "",
+      alertStyle: {
+        opacity: 0
+      }
     };
     this.handleChangeMessage = this.handleChangeMessage.bind(this);
     this.handleChangeName = this.handleChangeName.bind(this);
@@ -25,7 +29,12 @@ class Comments extends React.Component {
     if (this.state.valMessage !== "") {
       this.handleSubmitName();
     } else {
-      alert(this.props.language ? 'Введите сообщение.' : 'Insert message.');
+      let m = this.props.language ? 'Введите сообщение.' : 'Insert message.'
+      this.setState({alertMessage: m});
+      this.setState({alertStyle: {opacity: 1}});
+      setTimeout(()=>{
+        this.setState({alertStyle: {opacity: 0}});
+      }, 5000)
     }
   }
   handleSubmitName(event) {
@@ -40,18 +49,41 @@ class Comments extends React.Component {
           valName: this.state.valName
         })
       });
+
+      this.props.dataChat.unshift({
+        Date: new Date().toISOString(),
+        Id: this.props.dataChat.length + 1,
+        Message: this.state.valMessage,
+        Name: this.state.valName
+      });
+
       this.setState({
         valMessage: "",
         valName: ""
       })
-      alert(this.props.language ? 'Вы оставили комментарий.' : 'You left a comment.');
+
+      let m = this.props.language ? 'Вы оставили комментарий.' : 'You left a comment.';
+      this.setState({alertMessage: m})
+      this.setState({alertStyle: {opacity: 1}});
+      setTimeout(()=>{
+        this.setState({alertStyle: {opacity: 0}});
+      }, 5000)
+
     } else {
-      alert(this.props.language ? 'Введите имя.' : 'Insert your name.');
+      let m = this.props.language ? 'Введите имя.' : 'Insert your name.';
+      this.setState({alertMessage: m});
+      this.setState({alertStyle: {opacity: 1}});
+      setTimeout(()=>{
+        this.setState({alertStyle: {opacity: 0}});
+      }, 5000)
     }
   }
   render() {
-    return (
+  return (
       <div className={s.Comments}>
+        <div className={s.Alert} style={this.state.alertStyle}>
+          {this.state.alertMessage}
+        </div>
         <div className={s.FormAreaName}>
           <input
             className={s.InputName}
@@ -76,7 +108,7 @@ class Comments extends React.Component {
             onChange={this.handleChangeMessage}
           />
         </div>
-        <Catch dataChat={this.props.dataChat} />
+        <Catch dataChat={this.props.dataChat} message={this.state.valMessage} name={this.state.name} />
       </div>
     );
   }

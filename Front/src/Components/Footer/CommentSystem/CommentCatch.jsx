@@ -4,7 +4,14 @@ import s from "./CommentSystem.module.sass";
 
 class CommentCatch extends React.Component {
   componentDidMount() {
-    this.props.dataChat.reverse();
+    this.handleMessage()
+  }
+
+  componentWillReceiveProps(){
+    this.handleMessage()
+  }
+
+  handleMessage() {
     let i = 0;
     const Comments = this.props.dataChat.map(message => {
       return (
@@ -16,8 +23,7 @@ class CommentCatch extends React.Component {
               <span>{message.Name}</span>
             </div>
             <div className={`${s.Date} ${s.Block}`}>
-              {Number(message.Date.substring(11).slice(0, -5).split(':')[0]) + 3 + ':' + message.Date.substring(11).slice(0, -5).split(':')[1]  + ':' +  message.Date.substring(11).slice(0, -5).split(':')[2]}/
-              {message.Date.substring(0, 10)}
+              {Number(message.Date.substring(11).slice(0, -5).split(':')[0]) + 3 + ':' + message.Date.substring(11).slice(0, -5).split(':')[1]} {(message.Date.substring(0, 10)+'').replaceAll('-', '.')}
             </div>
             <div className={`${s.MessageText} ${s.Block}`}>
               {message.Message}

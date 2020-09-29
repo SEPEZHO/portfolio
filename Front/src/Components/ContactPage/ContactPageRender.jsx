@@ -7,7 +7,7 @@ class ContactPage extends React.Component {
   render() {
     return (
       <div className={s.ContactPage}>
-        <h1>{this.props.language ? 'Форма контакта' : 'Contact form'}</h1>
+        <h1>{this.props.language ? 'Сообщение' : 'Message'}</h1>
         <Form language={this.props.language} />
       </div>
     );

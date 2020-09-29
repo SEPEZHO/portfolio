@@ -20,6 +20,10 @@ class FormArea extends React.Component {
         paddingBottom: "2.5px",
         paddingLeft: "5px",
         paddingRight: "5px"
+      },
+      alertMessage: "",
+      alertStyle: {
+        opacity: 0
       }
     };
 
@@ -101,7 +105,12 @@ class FormArea extends React.Component {
         })
         .then(dataRes => {
           if (dataRes.status) {
-            alert(this.props.language ? 'Почта отправлена.' : 'Your message has been sent.');
+            let m = this.props.language ? 'Почта отправлена.' : 'Your message has been sent.';
+            this.setState({alertMessage: m});
+            this.setState({alertStyle: {opacity: 1}});
+            setTimeout(()=>{
+              this.setState({alertStyle: {opacity: 0}});
+            }, 5000)
             this.setState({
               valueName: "",
               valueEmail: "",
@@ -109,7 +118,12 @@ class FormArea extends React.Component {
               valueMessage: ""
             })
           } else {
-            alert(this.props.language ? 'Произошла ошибка.' : 'Some error here.');
+            let m = this.props.language ? 'Произошла ошибка.' : 'Some error here.';
+            this.setState({alertMessage: m});
+            this.setState({alertStyle: {opacity: 1}});
+            setTimeout(()=>{
+              this.setState({alertStyle: {opacity: 0}});
+            }, 5000)
           }
         })
         .catch(error => {
@@ -121,6 +135,9 @@ class FormArea extends React.Component {
   render() {
     return (
       <div className={s.Form}>
+        <div className={s.Alert} style={this.state.alertStyle}>
+          {this.state.alertMessage}
+        </div>
         <form onSubmit={this.handleSubmit} className={s.FormArea}>
           <label>
             <p>{this.props.language ? 'Имя' : 'Name'}:</p>

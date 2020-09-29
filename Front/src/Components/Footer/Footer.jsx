@@ -17,7 +17,7 @@ class Footer extends React.Component {
       .then(data => {
         this.setState({
           dataChatLikes: {
-            dataChat: data.Chat,
+            dataChat: data.Chat.reverse(),
             dataLikes: data.Likes,
             dataIsLiked: data.IsLiked
           }
