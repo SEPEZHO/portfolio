@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, useLocation } from 'react-router-dom'
+import { Switch, Route, useLocation, useHistory } from 'react-router-dom'
 
 import MainPageRender from "./MainPage/MainPageRender.jsx";
 import ContactPageRender from "./ContactPage/ContactPageRender.jsx";
@@ -114,6 +114,10 @@ class Body extends React.Component {
 
 export default (props) => {
   const location = useLocation();
+  const hystory = useHistory();
+  if (location.pathname !== '/Contact' && location.pathname !== '/Projects' && location.pathname !== '/') {
+    hystory.push('/')
+  }
   return (
       <Body location={location} language={props.language} />
   )
