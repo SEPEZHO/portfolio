@@ -11,7 +11,7 @@ class Activities extends React.Component {
             <div className={s.Project}>{this.props.language ? 'Репозиторий' : 'Repository'}</div>
             <div className={s.Branch}>{this.props.language ? 'Веткa' : 'Branch'}</div>
             <div className={s.Message}>{this.props.language ? 'Сообщение' : 'Message'}</div>
-            <div className={s.Time}>{this.props.language ? 'Время (UTC +3)' : 'Time (UTC +3)'}</div>
+            <div className={s.Time}>{this.props.language ? 'Время' : 'Time'}</div>
           </div>
           {this.props.data}
         </div>

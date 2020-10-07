@@ -1,7 +1,7 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom"
 
 import s from "./Menu.module.sass";
-
 class Menu extends React.Component {
   constructor() {
     super();
@@ -34,7 +34,6 @@ class Menu extends React.Component {
     this.state = {
       StyleForMenu: StyleForMenu,
       StyleForMenuForContact: StyleForMenuForContact,
-      location: "/Main",
       isOpen: false,
       styleForOpenMen: styleForOpenMen,
       styleForBut: styleForBut,
@@ -131,72 +130,72 @@ class Menu extends React.Component {
       <div>
         <div
           style={
-            this.props.path === "/Main"
+            this.props.location.pathname === "/"
               ? this.state.StyleForMenu
               : this.state.StyleForMenuForContact
           }
           className={s.MenuForPc}
         >
           <div className={s.MenuMax}>
-            <div
-              className={s.Main}
-              onClick={() => {
-                this.props.pathMain("/Main");
-              }}
-            >
-              <div></div>
-              <span>{this.props.language ? 'Главная' : 'Main'}</span>
-            </div>
-            <div
-              className={s.Projects}
-              onClick={() => {
-                this.props.pathMain("/Projects");
-              }}
-            >
-              <div></div>
-              <span>{this.props.language ? 'Проекты' : 'Projects'}</span>
-            </div>
-            <div
-              className={s.Contact}
-              onClick={() => {
-                this.props.pathMain("/Contact");
-              }}
-            >
-              <div></div>
-              <span>{this.props.language ? 'Контакты' : 'Contacts'}</span>
-            </div>
+
+            <Link to="/">
+              <div className={s.Main}>
+                <div></div>
+                <span>{this.props.language ? 'Главная' : 'Main'}</span>
+              </div>
+            </Link>
+
+            <Link to="/Projects">
+              <div className={s.Projects}>
+                <div></div>
+                <span>{this.props.language ? 'Проекты' : 'Projects'}</span>
+              </div>
+            </Link>
+
+            <Link to="/Contact">
+              <div className={s.Contact}>
+                <div></div>
+                <span>{this.props.language ? 'Контакты' : 'Contacts'}</span>
+              </div>
+            </Link>
           </div>
         </div>
 
         <div className={s.MenuForPhone} style={this.state.styleForOpenMen}>
-          <div
-            className={s.MainPhone}
-            onClick={() => {
-              this.props.pathMain("/Main");
-              this.menuClose();
-            }}
-          >
-            <span>Главная</span>
-          </div>
+          
+          <Link to="/">
+            <div
+              className={s.MainPhone}
+              onClick={() => {
+                this.menuClose();
+              }}
+            >
+              <span>Главная</span>
+            </div>
+          </Link>
+          
+          <Link to="/Projects">
+            <div
+              className={s.ProjectsPhone}
+              onClick={() => {
+                this.menuClose();
+              }}
+            >
+              <span>Проекты</span>
+            </div>
+          </Link>
 
-          <div
-            className={s.ProjectsPhone}
-            onClick={() => {
-              this.props.pathMain("/Projects");
-              this.menuClose();
-            }}
-          >
-            <span>Проекты</span>
-          </div>
-          <div
-            className={s.ContactPhone}
-            onClick={() => {
-              this.props.pathMain("/Contact");
-              this.menuClose();
-            }}
-          >
-            <span>Контакт</span>
-          </div>
+          <Link to="/Contact">
+            <div
+              className={s.ContactPhone}
+              onClick={() => {
+                this.menuClose();
+              }}
+            >
+              <span>Контакт</span>
+            </div>
+          </Link>
+
         </div>
         <div
           className={s.ButtonOpen}
@@ -212,4 +211,9 @@ class Menu extends React.Component {
   }
 }
 
-export default Menu;
+export default () => {
+  const location = useLocation();
+  return (
+      <Menu location={location} />
+  )
+}

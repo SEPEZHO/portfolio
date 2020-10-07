@@ -35,12 +35,6 @@ class SideBar extends React.Component {
         <a href="https://www.youtube.com/channel/UC4nIyTlfA6DKuF_xKtefutQ">
           <img src={SrcYouTube} alt="" />
         </a>
-        <div
-          onClick={() => {
-            this.props.pathMain("/Contact");
-          }}
-        >
-        </div>
       </div>
     );
   }

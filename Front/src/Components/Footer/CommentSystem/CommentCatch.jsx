@@ -1,4 +1,5 @@
 import React from "react";
+import dayjs from "dayjs";
 
 import s from "./CommentSystem.module.sass";
 
@@ -23,7 +24,7 @@ class CommentCatch extends React.Component {
               <span>{message.Name}</span>
             </div>
             <div className={`${s.Date} ${s.Block}`}>
-              {Number(message.Date.substring(11).slice(0, -5).split(':')[0]) + 3 + ':' + message.Date.substring(11).slice(0, -5).split(':')[1]} {(message.Date.substring(0, 10)+'').replaceAll('-', '.')}
+              {dayjs(message.Date).format('MMM DD, YYYY h:mm A')}
             </div>
             <div className={`${s.MessageText} ${s.Block}`}>
               {message.Message}

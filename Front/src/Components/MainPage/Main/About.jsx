@@ -89,8 +89,6 @@ class MainAbout extends React.Component {
             <li>GraphQL</li>
             <li>SASS</li>
             <li>Antd</li>
-            <li>HTML 5</li>
-            <li>CSS 3</li>
             <li>jQuery</li>
           </ul>
         </div>
@@ -100,7 +98,7 @@ class MainAbout extends React.Component {
           <br/>
           <br/>
           <ul>
-            <li>Pyhton3</li>
+            <li>Python 3</li>
             <li>Telebot</li>
             <li>Node js</li>
             <li>SQLite</li>
@@ -109,8 +107,6 @@ class MainAbout extends React.Component {
             <li>Nginx</li>
             <li>GPG</li>
             <li>WSS</li>
-            <li>SMTP Gmail</li>
-            <li>LAMP</li>
             <li>SSL</li>
             <li>PHP</li>
           </ul>

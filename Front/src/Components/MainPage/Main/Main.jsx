@@ -1,4 +1,7 @@
 import React from "react";
+import dayjs from "dayjs";
+import { Link } from "react-router-dom"
+
 import MainProjects from "./MainProjects.jsx";
 import ProjectsTable from "../../Projects/Activities.jsx";
 import MainAbout from "./About.jsx";
@@ -32,7 +35,7 @@ class Main extends React.Component {
               <a href={repo.UrlCommit}>{repo.Message}</a>
             </div>
             <div className={sP.Time}>
-              {repo.Date.substring(0, 10).replaceAll('-', '.') + ' ' + (Number(repo.Date.substring(11).slice(0, -5).split(':')[0]) + 3 + ':' + repo.Date.substring(11).slice(0, -5).split(':')[1])}
+              {dayjs(repo.Date).format('MMM DD, YYYY h:mm A')}
             </div>
           </div>
         </div>
@@ -51,14 +54,13 @@ class Main extends React.Component {
           <div className={s.ProjectsTableMain}>
             <ProjectsTable data={this.state.com} />
           </div>
-          <img
-            className={s.ViewMore}
-            src={ViewMore}
-            onClick={() => {
-              this.props.pathMain("/Projects");
-            }}
-            alt="#"
-          />
+          <Link to="Projects">
+            <img
+              className={s.ViewMore}
+              src={ViewMore}
+              alt="#"
+            />
+          </Link>
         </div>
       </div>
     );

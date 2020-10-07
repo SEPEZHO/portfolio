@@ -1,4 +1,5 @@
 import React from "react";
+import { Switch, Route, useLocation } from 'react-router-dom'
 
 import MainPageRender from "./MainPage/MainPageRender.jsx";
 import ContactPageRender from "./ContactPage/ContactPageRender.jsx";
@@ -17,6 +18,13 @@ class Body extends React.Component {
   }
   componentDidMount() {
     this.fetchLoad(false);
+  }
+  componentDidUpdate(prevProps) {
+    if (
+      this.props.location.pathname !== prevProps.location.pathname
+    ) {
+      window.scrollTo(0, 0);
+    }
   }
   fetchLoad(retry) {
     fetch("https://sepezho.com:7777/API/RepComViews", {
@@ -69,39 +77,44 @@ class Body extends React.Component {
       }
     }, 1000*this.state.i);
   }
-
-  renderMain() {
+  routeBody() {
     if (this.state.dataRepCom) {
-      if (this.props.path === "/Main") {
-        return (
-          <MainPageRender
-            pathMain={this.props.pathMain}
-            language={this.props.language}
-            dataCom={this.state.dataRepCom.dataCom.slice(0, 6)}
-            dataViews={this.state.dataRepCom.dataViews}
-          />
-        );
-      } else if (this.props.path === "/Projects") {
-        return <Projects language={this.props.language} dataRepCom={this.state.dataRepCom} />;
-      } else if (this.props.path === "/Contact") {
-        return <ContactPageRender language={this.props.language} />;
-      } else {
-        return <MainPageRender language={this.props.language} pathMain={this.props.pathMain} />;
-      }
+      return(
+        <Switch>
+          <Route path="/Projects">
+            <Projects language={this.props.language} dataRepCom={this.state.dataRepCom}/>
+          </Route>
+          
+          <Route path="/Contact">
+            <ContactPageRender language={this.props.language} />
+          </Route>
+
+          <Route path="/">
+            <MainPageRender
+              language={this.props.language}
+              dataCom={this.state.dataRepCom.dataCom.slice(0, 6)}
+              dataViews={this.state.dataRepCom.dataViews}
+            />
+          </Route>
+        </Switch>
+      )
     }
   }
-
   render() {
     return (
       <div>
         <div style={this.state.styleLoad} className={s.Loading}>
           <img alt="" src={loadGif} />
         </div>
-
-        {this.renderMain()}
+        {this.routeBody()}
       </div>
     );
   }
 }
 
-export default Body;
+export default () => {
+  const location = useLocation();
+  return (
+      <Body location={location} />
+  )
+}

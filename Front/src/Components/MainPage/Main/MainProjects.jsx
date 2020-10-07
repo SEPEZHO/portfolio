@@ -34,7 +34,7 @@ class MainProjects extends React.Component {
           <a href="https://booster.games/">
             <div className={s.ImageRigth}>
               <h2>Booster.games</h2>
-              <div class='Project_img_div'>
+              <div className='Project_img_div'>
                 <img alt="" src={BoosterGames} className='Project_img'/>
               </div>
             </div>
@@ -70,7 +70,7 @@ class MainProjects extends React.Component {
           <a href="https://github.com/SEPEZHO/Tests">
             <div className={s.ImageLeft}>
               <h2>Tests</h2>
-              <div class='Project_img_div'>
+              <div className='Project_img_div'>
                 <img alt="" src={Tests} className='Project_img'/>
               </div>
             </div>
@@ -104,7 +104,7 @@ class MainProjects extends React.Component {
           <a href="https://seppass.sepezho.com">
             <div className={s.ImageRigth}>
               <h2>Seppass</h2>
-              <div class='Project_img_div'>
+              <div className='Project_img_div'>
                 <img alt="" src={Seppass} className='Project_img'/>
               </div>
             </div>
@@ -149,7 +149,7 @@ class MainProjects extends React.Component {
           <a href="https://github.com/SEPEZHO/Portfolio">
             <div className={s.ImageLeft}>
               <h2>Portfolio</h2>
-              <div class='Project_img_div'>
+              <div className='Project_img_div'>
                 <img alt="" src={Portfolio} className='Project_img'/>
               </div>
             </div>
@@ -189,7 +189,7 @@ class MainProjects extends React.Component {
           <a href="https://github.com/SEPEZHO/Clicker">
             <div className={s.ImageRigth}>
               <h2>Clicker</h2>
-              <div class='Project_img_div'>
+              <div className='Project_img_div'>
                 <img alt="" src={Clicker} className='Project_img'/>
               </div>
             </div>
@@ -227,7 +227,7 @@ class MainProjects extends React.Component {
           <a href="https://github.com/SEPEZHO/Game-OF-life">
             <div className={s.ImageLeft}>
               <h2>Game of life</h2>
-              <div class='Project_img_div'>
+              <div className='Project_img_div'>
                 <img alt="" src={Life} className='Project_img'/>
               </div>
             </div>
@@ -261,7 +261,7 @@ class MainProjects extends React.Component {
           <a href="https://github.com/SEPEZHO/Way">
             <div className={s.ImageRigth}>
               <h2>Way</h2>
-              <div class='Project_img_div'>
+              <div className='Project_img_div'>
                 <img alt="" src={ShortWay} className='Project_img'/>
               </div>
             </div>

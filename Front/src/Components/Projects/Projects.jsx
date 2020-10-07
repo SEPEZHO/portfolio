@@ -1,4 +1,5 @@
 import React from "react";
+import dayjs from "dayjs";
 
 import Activities from "./Activities.jsx";
 import ProjectsText from "./ProjectsText.jsx";
@@ -81,9 +82,11 @@ class Projects extends React.Component {
             <div className={s.Branch1}>{this.branchesParse(repo)}</div>
             <div className={s.Descrip}>{repo.Description}</div>
             <div className={s.Language}>{repo.Language}</div>
-            <div className={s.Create}>{repo.CreateAt.substring(0, 10).replaceAll('-', '.')}</div>
+            <div className={s.Create}>
+              {dayjs(repo.CreateAt).format('MMM D, YYYY')}
+            </div>
             <div className={`${s.Update} ${s.Block}`}>
-              {repo.LastUpdate.substring(0, 10).replaceAll('-', '.')}
+              {dayjs(repo.LastUpdate).format('MMM D, YYYY')}
             </div>
             <div className={s.Size}>{repo.Size}</div>
           </div>
@@ -108,7 +111,8 @@ class Projects extends React.Component {
               <a href={repo.UrlCommit}>{repo.Message}</a>
             </div>
             <div className={s.Time}>
-              {repo.Date.substring(0, 10).replaceAll('-', '.') + ' ' + (Number(repo.Date.substring(11).slice(0, -5).split(':')[0]) + 3 + ':' + repo.Date.substring(11).slice(0, -5).split(':')[1])}
+              {dayjs(repo.Date).format('MMM DD, YYYY h:mm A')}
+              {/*repo.Date.substring(0, 10).replaceAll('-', '.') + ' ' + (Number(repo.Date.substring(11).slice(0, -5).split(':')[0]) + 3 + ':' + repo.Date.substring(11).slice(0, -5).split(':')[1])*/}
             </div>
           </div>
         </div>
