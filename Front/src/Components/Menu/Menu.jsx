@@ -211,9 +211,9 @@ class Menu extends React.Component {
   }
 }
 
-export default () => {
+export default (props) => {
   const location = useLocation();
   return (
-      <Menu location={location} />
+      <Menu location={location} language={props.language} />
   )
 }

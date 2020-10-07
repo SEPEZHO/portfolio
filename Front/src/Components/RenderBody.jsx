@@ -112,9 +112,9 @@ class Body extends React.Component {
   }
 }
 
-export default () => {
+export default (props) => {
   const location = useLocation();
   return (
-      <Body location={location} />
+      <Body location={location} language={props.language} />
   )
 }
