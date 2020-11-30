@@ -17,7 +17,7 @@ class Header extends React.Component {
 
   componentDidMount = () => {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > document.documentElement.clientHeight + 200) {
+      if (window.scrollY > document.documentElement.clientHeight + 500) {
         this.setState({
           Style: {
             display: "none"

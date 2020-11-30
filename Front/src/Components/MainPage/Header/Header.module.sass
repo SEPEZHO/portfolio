@@ -1,13 +1,13 @@
 @mixin size($size)
-  
+
   @if $size == XL
     @media screen and (min-width: 1300px)
       @content
-  
+
   @else if $size == M
     @media screen and (min-width: 768px)
       @content
-   
+
   @else if $size == S
     @media screen and (min-width: 600px)
       @content
@@ -21,7 +21,7 @@
     line-height: 125%
     letter-spacing: 1pt
     font-size: 12pt
-    
+
   @include size(S)
     line-height: 150%
     letter-spacing: 2pt
@@ -55,6 +55,38 @@
   @include size(S)
     flex-direction: row-reverse
     justify-content: space-around
+  >
+    a
+      position: absolute
+      text-decoration: none
+      right: 100px
+      bottom: -100px
+      display: flex
+      align-items: center
+      justify-content: center
+      @include size(XS)
+        position: relative
+        right: 0
+        bottom: 0
+      @include size(S)
+        bottom: -100px
+      span
+        font-family: 'toggle'
+        font-size: 40px
+        color: white
+        position: absolute
+        z-index: 1
+      img
+        border-radius: 5px
+        filter: blur(1px) brightness(0.75)
+        box-shadow: 0 0 15px white
+        height: 100px
+      &:hover
+        img
+          filter: blur(0px) brightness(1)
+          box-shadow: 0 0 25px white
+        span
+          color: black
 
 .TitleHeader
   @include fontSize
@@ -76,22 +108,31 @@
 
   h1
     margin-bottom: 25px
-    
+
     @include size(XS)
       letter-spacing: 7pt
 
     @include size(S)
       letter-spacing: 9pt
-    
+
     @include size(M)
       letter-spacing: 15pt
 
 .SideBar
-  width: 30px
-  > *
-    transform: translate(0, 0)
-  
-  
+  @include size(XS)
+    > *
+      transform: translate(0, 0) rotate(90deg)
+      img
+        transform: rotate(-90deg)
+
+  @include size(S)
+    width: 30px
+    height: 260px
+    > *
+      transform: translate(0, 0) rotate(0)
+      img
+        transform: rotate(0)
+
 .Views
   position: absolute
   bottom: 20px
@@ -103,7 +144,7 @@
   border-radius: 5px
   @include size(XS)
     bottom: -5px
-  
+
   img
     position: relative
     transform: translate(0,15%)

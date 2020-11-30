@@ -6,6 +6,8 @@ import Main from "./Main/Main.jsx";
 import TitleHeader from "./Header/TitleHeader.jsx";
 
 import s from "./Header/Header.module.sass";
+import CV from "../../Static/Images/CV.png";
+import CVLOW from "../../Static/Images/CVLOW.png";
 
 class MainPageRender extends React.Component {
   render() {
@@ -16,6 +18,10 @@ class MainPageRender extends React.Component {
           <div className={s.SideBar}>
             <SideBar/>
           </div>
+          <a href={CV} download>
+            <span>CV</span>
+            <img src={CVLOW} />
+          </a>
         </div>
         <HeaderImg dataViews={this.props.dataViews} />
         <Main language={this.props.language} dataCom={this.props.dataCom} />

@@ -14,21 +14,21 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      lg: "en",
+      lg: "ru",
       lgToggleStyle: {left: '0'},
-      toggle: false
+      toggle: true
     };
   }
   lgChange = () => {
     if (this.state.toggle){
       this.setState({lg: "en"})
       this.setState({lgToggleStyle: {
-        left: '0',
+        left: '50%',
       }})
     }else{
       this.setState({lg: "ru"})
       this.setState({lgToggleStyle: {
-        left: '50%',
+        left: '0',
       }})
     }
     this.setState({toggle: !this.state.toggle})
