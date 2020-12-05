@@ -7,24 +7,25 @@ import Portfolio from "../../../Static/Images/Projects/Portfolio.png";
 import Clicker from "../../../Static/Images/Projects/Clicker.png";
 import Life from "../../../Static/Images/Projects/Life.png";
 import ShortWay from "../../../Static/Images/Projects/ShortWay.png";
-import Card from "../../Paralax_module.js";
+import useResponsive from '../../../Logics/Responsive';
+import Tilt from '../../../Logics/Tilt';
 
 import s from "./Main.module.sass";
 
+
+const ResponsiveCheck = (props) => {
+  return props.useResponsive('(min-width: 992px)', true) ? <div className={s.Project_img_div}><Tilt children={<img alt="" src={props.imgName} className={s.Project_img}/>} /></div> : <div className={s.Project_img_div}><img alt="" src={props.imgName} className={s.Project_img}/></div>
+}
+
 class MainProjects extends React.Component {
-
-  componentDidMount() {
-    let card = new Card();
-    card.run();
-  }
-
   langSelector = (ru, eng) => {
     if (this.props.language){
       return ru
     }else{
       return eng 
     }
-        }
+  }
+
   render() {
     return (
       <div className={s.Projects}>
@@ -34,9 +35,7 @@ class MainProjects extends React.Component {
           <a href="https://booster.games/">
             <div className={s.ImageRigth}>
               <h2>Booster.games</h2>
-              <div className='Project_img_div'>
-                <img alt="" src={BoosterGames} className='Project_img'/>
-              </div>
+                <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={BoosterGames} />
             </div>
           </a>
           {
@@ -65,13 +64,12 @@ class MainProjects extends React.Component {
 
         <div className={s.Title}><h1>{this.props.language ? 'Собственные проекты' : 'Own projects'}</h1></div>
 
-
         <div className={s.ProjLeft}>
           <a href="https://github.com/SEPEZHO/Tests">
             <div className={s.ImageLeft}>
               <h2>Tests</h2>
               <div className='Project_img_div'>
-                <img alt="" src={Tests} className='Project_img'/>
+                <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={Tests} />
               </div>
             </div>
           </a>
@@ -105,7 +103,7 @@ class MainProjects extends React.Component {
             <div className={s.ImageRigth}>
               <h2>Seppass</h2>
               <div className='Project_img_div'>
-                <img alt="" src={Seppass} className='Project_img'/>
+                <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={Seppass} />
               </div>
             </div>
           </a>
@@ -150,7 +148,7 @@ class MainProjects extends React.Component {
             <div className={s.ImageLeft}>
               <h2>Portfolio</h2>
               <div className='Project_img_div'>
-                <img alt="" src={Portfolio} className='Project_img'/>
+                <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={Portfolio} />
               </div>
             </div>
           </a>
@@ -190,7 +188,7 @@ class MainProjects extends React.Component {
             <div className={s.ImageRigth}>
               <h2>Clicker</h2>
               <div className='Project_img_div'>
-                <img alt="" src={Clicker} className='Project_img'/>
+                <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={Clicker} />
               </div>
             </div>
           </a>
@@ -228,7 +226,7 @@ class MainProjects extends React.Component {
             <div className={s.ImageLeft}>
               <h2>Game of life</h2>
               <div className='Project_img_div'>
-                <img alt="" src={Life} className='Project_img'/>
+                <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={Life} />
               </div>
             </div>
           </a>
@@ -262,7 +260,7 @@ class MainProjects extends React.Component {
             <div className={s.ImageRigth}>
               <h2>Way</h2>
               <div className='Project_img_div'>
-                <img alt="" src={ShortWay} className='Project_img'/>
+                <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={ShortWay} />
               </div>
             </div>
           </a>
@@ -295,4 +293,4 @@ class MainProjects extends React.Component {
   }
 };
 
-export default MainProjects;
+export default (props) => <MainProjects {...props} useResponsive={useResponsive} />;

@@ -48,6 +48,7 @@ class Body extends React.Component {
             dataCom: data.Com.slice(0, 11)
           }
         });
+
       })
       .catch(error => {
         console.log(error);
