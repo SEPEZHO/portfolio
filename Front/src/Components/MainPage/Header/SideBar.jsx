@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 
-import SrcGithub from "../../Static/Images/Icons/GitHub.png";
-import SrcStackOverflow from "../../Static/Images/Icons/StackOverflow.png";
-import Codewars from "../../Static/Images/Icons/Codewars.png";
-import SrcTelegram from "../../Static/Images/Icons/Telegram.png";
-import SrcVk from "../../Static/Images/Icons/Vk.png";
-import SrcInst from "../../Static/Images/Icons/Inst.png";
-import SrcYouTube from "../../Static/Images/Icons/YouTube.png";
+import SrcGithub from "../../../Static/Images/Icons/GitHub.png";
+import SrcStackOverflow from "../../../Static/Images/Icons/StackOverflow.png";
+import Codewars from "../../../Static/Images/Icons/Codewars.png";
+import SrcTelegram from "../../../Static/Images/Icons/Telegram.png";
+import SrcVk from "../../../Static/Images/Icons/Vk.png";
+import SrcInst from "../../../Static/Images/Icons/Inst.png";
+import SrcYouTube from "../../../Static/Images/Icons/YouTube.png";
 
 import s from './SideBarStyle/SideBar.module.sass';
 

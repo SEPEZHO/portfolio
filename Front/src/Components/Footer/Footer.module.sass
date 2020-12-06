@@ -3,6 +3,10 @@
   @if $size == XL
     @media screen and (min-width: 1300px)
       @content
+
+  @else if $size == L
+    @media screen and (min-width: 992px)
+      @content
   
   @else if $size == M
     @media screen and (min-width: 768px)
@@ -120,47 +124,26 @@
 
 // SIDEBAR
 
-.SideBar
+.FooterSideBar
   position: relative
-  transform: translate(0, -50%)
 
   @include size(XS)
-    width: 20px
-  
-  @include size(S)
-    width: 24px
-  
-  @include size(XL)
-    width: 28px
-
-  a > img, div > img
-    position: relative
-    margin: 20%
-    @include size(XS)
-      width: 20px
-    
-    @include size(S)
-      width: 24px
-    
-    @include size(XL)
-      width: 28px
-
-    &:hover
-      filter: invert(1)
-      left: 3.84px
-
-.Footer > .SideBar
-  @include size(XS)
-    top: 260px
+    top: 150px
     left: 5vw
   
   @include size(S)
-    top: 300px
-    left: 10%
+    top: 200px
+    left: 20%
   
+  @media screen and (max-width: 992px)
+    > div
+      flex-direction: column !important
+      transform: rotate(0) !important
+      > a > img
+        transform: rotate(0) !important
+
   @include size(XL)
-    top: 50%
-    transform: translate(0, -50%)
+    top: 175px
     left: 0
 
 // TEXT WITH TITLE 

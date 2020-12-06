@@ -1,0 +1,45 @@
+.LinksContainer
+  float: left
+  display: flex
+  flex-direction: column
+  width: 45px
+  margin-right: 40px
+  a
+    margin-bottom: 4px
+  img
+    filter: invert(0)
+    transition: .2s
+    &:hover
+      margin-left: 5px
+
+    @media screen and (max-width: 600px)
+      width: 20px
+      height: 20px
+    
+    @media screen and (min-width: 600px)
+      width: 30px
+      height: 30px
+
+.activeImg
+  transition: 0s
+  @media screen and (min-width: 992px)
+    animation: rotate3d 5s linear
+
+@keyframes rotate3d
+  from
+    transform: rotate3d(0, 1, 0, 0)
+
+  50%
+    transform: rotate3d(0, 1, 0, 180deg)
+
+  to
+    transform: rotate3d(0, 1, 0, 360deg)
+
+@media screen and (max-width: 992px)
+  .LinksContainer
+    width: 34px
+    margin: 0 0 -100px 0
+    flex-direction: column-reverse
+    transform: rotate(90deg)
+    img
+      transform: rotate(-90deg)

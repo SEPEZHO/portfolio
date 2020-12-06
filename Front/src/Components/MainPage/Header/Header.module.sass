@@ -122,6 +122,7 @@
 
 .SideBar
   @include size(XS)
+    margin-bottom: 120px
     > *
       transform: translate(0, 0) rotate(90deg)
       img
@@ -129,11 +130,13 @@
 
   @include size(S)
     width: 30px
-    height: 260px
+    height: 218px
     > *
       transform: translate(0, 0) rotate(0)
       img
         transform: rotate(0)
+  @include size(M)
+    height: 260px
 
 .Views
   position: absolute
