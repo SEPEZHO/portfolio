@@ -3,6 +3,8 @@ import HeaderImg from "../../../Static/Images/Me.png";
 import ViewsImg from "../../../Static/Images/Icons/Views.png";
 
 import s from "./Header.module.sass";
+import CV from "../../../Static/Images/CV.png";
+import CVLOW from "../../../Static/Images/CVLOW.png";
 
 class Header extends React.Component {
   constructor() {
@@ -41,6 +43,10 @@ class Header extends React.Component {
           <img alt="" src={ViewsImg} />
           {this.props.dataViews}
         </div>
+        <a href={CV} download>
+          <span>CV</span>
+          <img src={CVLOW} />
+        </a>
       </div>
     );
   }

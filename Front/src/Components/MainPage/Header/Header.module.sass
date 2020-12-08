@@ -32,30 +32,15 @@
   z-index: -1
   > img
     position: fixed
-    top: 0
+    top: -70px
     left: 50%
-    transform: translate(-50%)
+    transform: translate(-50%) translateY(70px)
     margin: auto
     height: 100vh
     width: auto
     @media screen and (min-width: 177.777vh)
       width: 100vw
       height: auto
-
-.HeaderAll
-  padding-top: 350px
-  padding-bottom: 350px
-  display: flex
-  heigth: 100%
-  @include size(XS)
-    flex-direction: column
-    justify-content: space-around
-    align-items: center
-    padding-top: 200px
-    padding-bottom: 200px
-  @include size(S)
-    flex-direction: row-reverse
-    justify-content: space-around
   >
     a
       text-decoration: none
@@ -65,13 +50,13 @@
       @include size(XS)
         position: relative
         right: 0
-        bottom: 0
+        bottom: 100px
       @include size(S)
         position: absolute
-        bottom: 20px
+        bottom: 40px
         right: 100px
       @include size(M)
-        bottom: 75px
+        bottom: 40px
       span
         font-family: 'toggle'
         font-size: 40px
@@ -89,6 +74,20 @@
           box-shadow: 0 0 25px white
         span
           color: black
+.HeaderAll
+  padding-top: 350px
+  padding-bottom: 350px
+  display: flex
+  heigth: 100%
+  @include size(XS)
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    padding-top: 200px
+    padding-bottom: 200px
+  @include size(S)
+    flex-direction: row-reverse
+    justify-content: space-around
 
 .TitleHeader
   @include fontSize
