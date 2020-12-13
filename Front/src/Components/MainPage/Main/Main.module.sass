@@ -338,7 +338,16 @@
 .Project_img
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.75)
     transform-style: preserve-3d
-    border-radius: 15px
+    @include size(XS)
+      border-radius: 3px
+
+    @include size(S)
+      border-radius: 8px
+
+    @include size(M)
+      border-radius: 15px
+
+
     width: 100%
     height: 100%
     &:hover
@@ -437,15 +446,9 @@
     @include size(XS)
       width: 30px
       top: 150px
-
-    @include size(S)
-      width: 30px
-
-    @include size(XL)
-      width: 40px
     &:hover
-      transform: translate(-50%, 25%)
-
+      padding-top: 10px
+      margin-bottom: -10px  
   > h1
     filter: invert(1)
     max-width: 500px
@@ -463,3 +466,27 @@
     @include size(XL)
       left: 0
       transform: translate(0)
+
+.ViewMoreProj
+  position: relative
+  left: 50%
+  width: 40px
+
+  @include size(XS)
+    width: 30px
+    margin: -100px 0 200px 0
+    &:hover
+      padding-top: 20px
+      margin-bottom: 180px
+  @include size(S)
+    margin: -30px 0 20px 0
+    &:hover
+      padding-top: 20px
+      margin-bottom: 0px
+  @include size(M)
+    margin: 70px 0 70px 0
+    &:hover
+      padding-top: 20px
+      margin-bottom: 50px
+  -webkit-transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%)

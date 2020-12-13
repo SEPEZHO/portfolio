@@ -1,5 +1,7 @@
 import React from "react";
 
+import WebStap from "../../../Static/Images/Projects/WebStap.png";
+import GitHubDocs from "../../../Static/Images/Projects/GitHubDocs.png";
 import BoosterGames from "../../../Static/Images/Projects/BoosterGames.png";
 import Tests from "../../../Static/Images/Projects/Tests.png";
 import Seppass from "../../../Static/Images/Projects/Seppass.png";
@@ -9,6 +11,7 @@ import Life from "../../../Static/Images/Projects/Life.png";
 import ShortWay from "../../../Static/Images/Projects/ShortWay.png";
 import useResponsive from '../../../Logics/Responsive';
 import Tilt from '../../../Logics/Tilt';
+import ViewMore from "../../../Static/Images/Icons/ViewMore.png";
 
 import s from "./Main.module.sass";
 
@@ -25,11 +28,109 @@ class MainProjects extends React.Component {
       return eng 
     }
   }
+  constructor() {
+    super();
+    let styleForImg = {};
+    this.state = {
+      styleForImg: styleForImg,
+      idOpen: false,
+    };
+    this.handleButtonClick = this.handleButtonClick.bind(this);
+  }
+
+  handleButtonClick = () => {
+    if (!this.isOpen) {
+      let styleForImg = {
+        transform: "translate(-50%, -25%) rotate(180deg)",
+        transformOrigin: "50% 50%"
+      };
+      this.setState({
+        styleForImg: styleForImg
+      });
+    } else {
+      let styleForImg = {
+        transform: "translate(-50%, 25%) rotate(0deg)",
+        transformOrigin: "50% 50%"
+      };
+      this.setState({
+        styleForImg: styleForImg
+      });
+    }
+    this.isOpen = !this.isOpen;
+  };
 
   render() {
     return (
       <div className={s.Projects}>
         <div className={s.Title}><h1>{this.props.language ? 'Работал над' : 'Worked on'}</h1></div>
+        <div className={s.ProjRigth}>
+          <a href="https://booster.games/">
+            <div className={s.ImageRigth}>
+              <h2>Web Stap</h2>
+                <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={WebStap} />
+            </div>
+          </a>
+          {
+            this.langSelector(
+              <div className={s.TextRigth}>
+                Это сайт, который является посредником между бустерами и обычными пользователями.
+                Я был intern frontend разработчиком, постигал основы Next TypeScript Eslint GraphQl+Apollo и уйму других для меня (на тот момент) новых технологий.
+                Научился создавать грамотный, эластичный фронт. Работая с этими ребятами, я занимался созданием персональных страниц (с использованием вышеперечисленных технологий)
+                по макетам с Figma, которые отображаются только в профиле пользователя, так что просто перейдя на сайт, мох трудов не увидеть :/
+                <br/>
+                <br/>
+                Использовал: Next; TypeScript; Eslint; GraphQl; Apollo; Figma.
+              </div>,
+              <div className={s.TextRigth}>
+                This site was made for the cooperation between boosters and regular users. I was an intern frontend developer when I've done it.
+                I learnt the basics of Next TypeScript Eslint GraphQl+Apollo and other unknown tecnologies.
+                I also learned how to create readable and clear frontend code. I was creating the personal pages with a design taken from Figma Layouts.
+                Those pages were only used only for users' profiles. Unfortunately, you can`t see the personal pages if you try to go to that site  :/ 
+                <br/>
+                <br/>
+                Used: Next; TypeScript; Eslint; GraphQl; Apollo; Figma.
+              </div>
+            )
+          }
+        </div>
+
+        <div className={s.ProjLeft}>
+          <a href="https://booster.games/">
+            <div className={s.ImageLeft}>
+              <h2>GitHub Docs</h2>
+                <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={GitHubDocs} />
+            </div>
+          </a>
+          {
+            this.langSelector(
+              <div className={s.TextLeft}>
+                Open Source проект, в котором я принял участие.
+                Занимался решением конкретных тасков, за
+                обговоренную плату. Сам проект представляет
+                из себя web-приложение, для просмотра и
+                редактирования файлов в репозитории юзера
+                на GitHub. Проект построен на React + TS +
+                Webpack и Pcss и уйме обвязки к этому стэку.
+                В нем я работал над стилями,
+                а так же написал логику commit changes через
+                API GitHub, при сохранении изменений файла.
+                <br/>
+                <br/>
+                Использовал: React; TypeScript; Webpack; Pcss.
+              </div>,
+              <div className={s.TextLeft}>
+                Open Source project where I took part.
+                Worked on solving specific issues, for stable paid.
+                This project is a web application for view and edit repository files from user GitHub.
+                This web app was built on React + TS + Webpack and Scss (and huge stack of secondary technologies).
+                Also I worked with some styles. And writed commit changes (thrue GitHub API) when file has been saved logicks.
+                <br/>
+                <br/>
+                Used: React; TypeScript; Webpack; Pcss.
+              </div>
+            )
+          }
+        </div>
 
         <div className={s.ProjRigth}>
           <a href="https://booster.games/">
@@ -143,151 +244,164 @@ class MainProjects extends React.Component {
           }
         </div>
 
-        <div className={s.ProjLeft}>
-          <a href="https://github.com/SEPEZHO/Portfolio">
-            <div className={s.ImageLeft}>
-              <h2>Portfolio</h2>
-              <div className='Project_img_div'>
-                <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={Portfolio} />
-              </div>
-            </div>
-          </a>
-          {
-            this.langSelector(
-              <div className={s.TextLeft}>
-                Сайт, на котором вы сейчас находитесь, второй по масштабам проект.
-                Бэк на NodeJs, фронт на React + sass. Бэкенд каждые 10 минут спрашивает мой gitHub о новых коммитах,
-                репозитроиях и т.д. Запоминает все это в БД (MYSQL). Так же ловит и хранит информацию,
-                которую принимает с фронта. В добавок может отправлять письма через google smtp.
-                Фронт же, работает только с API и ничего больше не трогает. Как вы уже могли заметить, он построен по принципу SPA.
-                <br/>
-                <br/>
-                Использовал: React; Sass; NodeJs; Nginx; MYSQL.
-                <br/>
-                <br/>
-                Примерные объемы: 3.7к строчек кода.
-              </div>,
-              <div className={s.TextLeft}>
-                The site you are currently on is my second largest project. The backend is based on NodeJS, frontend is  powered by React and SASS.
-                Every 10 minutes the backend checks my gitHub if there're any new commits, repositories, etc. If there're new elements, it saves everything in DB (MYSQL).
-                It also saves some info which it gets from the frontend. The backend can also send the  mails through the Google SMTP.
-                Frontend works only with the API. As you can see, It's based on SPA.
-                <br/>
-                <br/>
-                Used: React; Sass; NodeJs; Nginx; MYSQL.
-                <br/>
-                <br/>
-                Approximate volumes: 3.7k lines of code.
-              </div>
-            )
-          }
-        </div>
+        <div
+          className={s.DisplayProjects}
+          style={this.isOpen ? {overflow: 'visible', height: 'auto'} : {overflow: 'hidden', height: '0'}}
+        >
 
-        <div className={s.ProjRigth}>
-          <a href="https://github.com/SEPEZHO/Clicker">
-            <div className={s.ImageRigth}>
-              <h2>Clicker</h2>
-              <div className='Project_img_div'>
-                <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={Clicker} />
+          <div className={s.ProjLeft}>
+            <a href="https://github.com/SEPEZHO/Portfolio">
+              <div className={s.ImageLeft}>
+                <h2>Portfolio</h2>
+                <div className='Project_img_div'>
+                  <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={Portfolio} />
+                </div>
               </div>
-            </div>
-          </a>
-            {
-              this.langSelector(
-              <div className={s.TextRigth}>
-                  Веб-игра кликер, с системой регистрации (при помощи проверки почты), входа
-                  и, соответственно, сохранением игровых данных на сервере в базе данных.
-                  Прикрутил чат, построенный на защищенных вебсокетах (wss), подвязывал при
-                  помощи workerman. Использовал composer для php. Проект закинул на полпути,
-                  т.к. он становился слишком громоздким. У него был потенциал, но я был слишком
-                  "зелен" для таких обьемов работы...
-                  <br/>
-                  <br/>Использовал: jQuery; PHP; MYSQL.
-                  <br/>
-                  <br/>Примерные объемы: 2.37к строчек кода.
-              </div>,
-              <div className={s.TextRigth}>
-                  This is a web-clicker game with a registration-system using mail to confirm the actions and an option to save a game data on the server in DB.
-                  I attached a chat in-game built on the secure web sockets (wss) by using the WorkerMan. I also used a composer for PHP.
-                  I've done only half of this project, because it's way too difficult for me. The Clicker had potential, but I was too young for it.
-                  <br/>
-                  <br/>
-                  Used: jQuery; PHP; MYSQL.
-                  <br/>
-                  <br/>
-                  Approximate volumes: 2.37k lines of code.
-              </div>
-              )
-            }
-        </div>
-
-        <div className={s.ProjLeft}>
-          <a href="https://github.com/SEPEZHO/Game-OF-life">
-            <div className={s.ImageLeft}>
-              <h2>Game of life</h2>
-              <div className='Project_img_div'>
-                <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={Life} />
-              </div>
-            </div>
-          </a>
+            </a>
             {
               this.langSelector(
                 <div className={s.TextLeft}>
-                  Стандартная игра жизнь, базируется на canvas. Является одним
-                  из первых веб-приложений. Тогдя я начинал постигать js (и jQuery). Без серверной части.
+                  Сайт, на котором вы сейчас находитесь, второй по масштабам проект.
+                  Бэк на NodeJs, фронт на React + sass. Бэкенд каждые 10 минут спрашивает мой gitHub о новых коммитах,
+                  репозитроиях и т.д. Запоминает все это в БД (MYSQL). Так же ловит и хранит информацию,
+                  которую принимает с фронта. В добавок может отправлять письма через google smtp.
+                  Фронт же, работает только с API и ничего больше не трогает. Как вы уже могли заметить, он построен по принципу SPA.
+                  <br/>
+                  <br/>
+                  Использовал: React; Sass; NodeJs; Nginx; MYSQL.
+                  <br/>
+                  <br/>
+                  Примерные объемы: 3.7к строчек кода.
+                </div>,
+                <div className={s.TextLeft}>
+                  The site you are currently on is my second largest project. The backend is based on NodeJS, frontend is  powered by React and SASS.
+                  Every 10 minutes the backend checks my gitHub if there're any new commits, repositories, etc. If there're new elements, it saves everything in DB (MYSQL).
+                  It also saves some info which it gets from the frontend. The backend can also send the  mails through the Google SMTP.
+                  Frontend works only with the API. As you can see, It's based on SPA.
+                  <br/>
+                  <br/>
+                  Used: React; Sass; NodeJs; Nginx; MYSQL.
+                  <br/>
+                  <br/>
+                  Approximate volumes: 3.7k lines of code.
+                </div>
+              )
+            }
+          </div>
+
+          <div className={s.ProjRigth}>
+            <a href="https://github.com/SEPEZHO/Clicker">
+              <div className={s.ImageRigth}>
+                <h2>Clicker</h2>
+                <div className='Project_img_div'>
+                  <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={Clicker} />
+                </div>
+              </div>
+            </a>
+              {
+                this.langSelector(
+                <div className={s.TextRigth}>
+                    Веб-игра кликер, с системой регистрации (при помощи проверки почты), входа
+                    и, соответственно, сохранением игровых данных на сервере в базе данных.
+                    Прикрутил чат, построенный на защищенных вебсокетах (wss), подвязывал при
+                    помощи workerman. Использовал composer для php. Проект закинул на полпути,
+                    т.к. он становился слишком громоздким. У него был потенциал, но я был слишком
+                    "зелен" для таких обьемов работы...
+                    <br/>
+                    <br/>Использовал: jQuery; PHP; MYSQL.
+                    <br/>
+                    <br/>Примерные объемы: 2.37к строчек кода.
+                </div>,
+                <div className={s.TextRigth}>
+                    This is a web-clicker game with a registration-system using mail to confirm the actions and an option to save a game data on the server in DB.
+                    I attached a chat in-game built on the secure web sockets (wss) by using the WorkerMan. I also used a composer for PHP.
+                    I've done only half of this project, because it's way too difficult for me. The Clicker had potential, but I was too young for it.
+                    <br/>
+                    <br/>
+                    Used: jQuery; PHP; MYSQL.
+                    <br/>
+                    <br/>
+                    Approximate volumes: 2.37k lines of code.
+                </div>
+                )
+              }
+          </div>
+
+          <div className={s.ProjLeft}>
+            <a href="https://github.com/SEPEZHO/Game-OF-life">
+              <div className={s.ImageLeft}>
+                <h2>Game of life</h2>
+                <div className='Project_img_div'>
+                  <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={Life} />
+                </div>
+              </div>
+            </a>
+              {
+                this.langSelector(
+                  <div className={s.TextLeft}>
+                    Стандартная игра жизнь, базируется на canvas. Является одним
+                    из первых веб-приложений. Тогдя я начинал постигать js (и jQuery). Без серверной части.
+                    <br/>
+                    <br/>
+                    Использовал: jQuery.
+                    <br/>
+                    <br/>
+                    Примерные объемы: 0.25к строчек кода.
+                  </div>,
+                  <div className={s.TextLeft}>
+                    This is Game of Life built using Canvas. It was one of the first projects. Those times, I started to learn js (and jQuery). This one was created without using backend.
+                    <br/>
+                    <br/>
+                    Used: jQuery.
+                    <br/>
+                    <br/>
+                    Approximate volumes: 0.25k lines of code.
+                  </div>
+                )
+              }
+          </div>
+
+          <div className={s.ProjRigth}>
+            <a href="https://github.com/SEPEZHO/Way">
+              <div className={s.ImageRigth}>
+                <h2>Way</h2>
+                <div className='Project_img_div'>
+                  <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={ShortWay} />
+                </div>
+              </div>
+            </a>
+            {
+              this.langSelector(
+                <div className={s.TextRigth}>
+                  Самописный алгоритм нахождения пути от одной точки до другой, обходя
+                  препятствия, написан на canvas. Без серверной части.
                   <br/>
                   <br/>
                   Использовал: jQuery.
                   <br/>
                   <br/>
-                  Примерные объемы: 0.25к строчек кода.
+                  Примерные объемы: 0.26к строчек кода.
                 </div>,
-                <div className={s.TextLeft}>
-                  This is Game of Life built using Canvas. It was one of the first projects. Those times, I started to learn js (and jQuery). This one was created without using backend.
+                <div className={s.TextRigth}>
+                  It's self-written algorithm which finds a proper way between two dots. It bypasses the obstacles. Written on canvas. The backend wasn't used.
                   <br/>
                   <br/>
                   Used: jQuery.
                   <br/>
                   <br/>
-                  Approximate volumes: 0.25k lines of code.
+                  Approximate volumes: 0.26k lines of code.
                 </div>
               )
             }
+          </div>
         </div>
-
-        <div className={s.ProjRigth}>
-          <a href="https://github.com/SEPEZHO/Way">
-            <div className={s.ImageRigth}>
-              <h2>Way</h2>
-              <div className='Project_img_div'>
-                <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={ShortWay} />
-              </div>
-            </div>
-          </a>
-          {
-            this.langSelector(
-              <div className={s.TextRigth}>
-                Самописный алгоритм нахождения пути от одной точки до другой, обходя
-                препятствия, написан на canvas. Без серверной части.
-                <br/>
-                <br/>
-                Использовал: jQuery.
-                <br/>
-                <br/>
-                Примерные объемы: 0.26к строчек кода.
-              </div>,
-              <div className={s.TextRigth}>
-                It's self-written algorithm which finds a proper way between two dots. It bypasses the obstacles. Written on canvas. The backend wasn't used.
-                <br/>
-                <br/>
-                Used: jQuery.
-                <br/>
-                <br/>
-                Approximate volumes: 0.26k lines of code.
-              </div>
-            )
-          }
-        </div>
+        <img
+            className={s.ViewMoreProj}
+            src={ViewMore}
+            style={this.state.styleForImg}
+            alt="#"
+            onClick={this.handleButtonClick}
+        />
       </div>
     );
   }
