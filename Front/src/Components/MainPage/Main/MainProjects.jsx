@@ -73,22 +73,28 @@ class MainProjects extends React.Component {
           {
             this.langSelector(
               <div className={s.TextRigth}>
-                Это сайт, который является посредником между бустерами и обычными пользователями.
-                Я был intern frontend разработчиком, постигал основы Next TypeScript Eslint GraphQl+Apollo и уйму других для меня (на тот момент) новых технологий.
-                Научился создавать грамотный, эластичный фронт. Работая с этими ребятами, я занимался созданием персональных страниц (с использованием вышеперечисленных технологий)
-                по макетам с Figma, которые отображаются только в профиле пользователя, так что просто перейдя на сайт, мох трудов не увидеть :/
+                Это сайт-визитка для одной команды разработчиков. Сам сайт (хоть и является одностраничником) достаточно сложен по части логики.
+                В этом проекте реализовано много логики для анимаций / переходов между слайдами / разного рода интерактивных элементов. Занимался
+                этим проектом порядка 2х месяцев, за это время втянулся в проект, решил уйму возникших на тот момент проблем, после чего начал
+                вносить новую логику. Сайдбар/кнопки, переписал логику переключения слайдов, переписал множество стилей, занимался мобильной версией сайта.
                 <br/>
                 <br/>
-                Использовал: Next; TypeScript; Eslint; GraphQl; Apollo; Figma.
+                Использовал: Gatsby; TypeScript; GraphQl; Styled-components; Figma.
               </div>,
               <div className={s.TextRigth}>
-                This site was made for the cooperation between boosters and regular users. I was an intern frontend developer when I've done it.
-                I learnt the basics of Next TypeScript Eslint GraphQl+Apollo and other unknown tecnologies.
-                I also learned how to create readable and clear frontend code. I was creating the personal pages with a design taken from Figma Layouts.
-                Those pages were only used only for users' profiles. Unfortunately, you can`t see the personal pages if you try to go to that site  :/ 
+                This is a business card site for a development team.
+                The site itself, although it is a one-page landing, is quite
+                complex in terms of logic. This project has implemented a lot of
+                logic for:  animations , transitions between slides,
+                various kinds of interactive elements. I was engaged in this
+                project for about 2 months, during this time I got involved
+                in the project, solved a lot of problems that arose at that time,
+                and then started embedding new logic. Among them: sidebar, buttons,
+                new logic for switching slides, many new styles and also began
+                to work on the mobile version of the website.
                 <br/>
                 <br/>
-                Used: Next; TypeScript; Eslint; GraphQl; Apollo; Figma.
+                Used: Gatsby; TypeScript; GraphQl; Styled-components; Figma.
               </div>
             )
           }
@@ -119,11 +125,13 @@ class MainProjects extends React.Component {
                 Использовал: React; TypeScript; Webpack; Pcss.
               </div>,
               <div className={s.TextLeft}>
-                Open Source project where I took part.
-                Worked on solving specific issues, for stable paid.
-                This project is a web application for view and edit repository files from user GitHub.
-                This web app was built on React + TS + Webpack and Scss (and huge stack of secondary technologies).
-                Also I worked with some styles. And writed commit changes (thrue GitHub API) when file has been saved logicks.
+                This is an Open Source project that I took part in.
+                I was engaged in solving specific tasks, for a negotiated fee.
+                The project itself is a web application for viewing and editing
+                files in the user's repository on GitHub. The project is built on
+                React + TS + Webpack and Pcss (and huge stack of secondary technologies).
+                In it, I worked on styles, and also wrote the commit changes logic
+                through the GitHub API with saving file changes.
                 <br/>
                 <br/>
                 Used: React; TypeScript; Webpack; Pcss.
