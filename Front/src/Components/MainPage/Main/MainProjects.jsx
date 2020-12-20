@@ -64,7 +64,7 @@ class MainProjects extends React.Component {
       <div className={s.Projects}>
         <div className={s.Title}><h1>{this.props.language ? 'Работал над' : 'Worked on'}</h1></div>
         <div className={s.ProjRigth}>
-          <a href="https://booster.games/">
+          <a href="https://gtosss.github.io">
             <div className={s.ImageRigth}>
               <h2>Web Stap</h2>
                 <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={WebStap} />
@@ -101,7 +101,7 @@ class MainProjects extends React.Component {
         </div>
 
         <div className={s.ProjLeft}>
-          <a href="https://booster.games/">
+          <a href="https://github.com/StaroKep/github-docs">
             <div className={s.ImageLeft}>
               <h2>GitHub Docs</h2>
                 <ResponsiveCheck useResponsive={this.props.useResponsive} imgName={GitHubDocs} />
