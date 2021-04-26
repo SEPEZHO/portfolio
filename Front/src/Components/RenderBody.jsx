@@ -82,11 +82,11 @@ class Body extends React.Component {
     if (this.state.dataRepCom) {
       return(
         <Switch>
-          <Route path="/Projects">
+          <Route path="/projects" exact>
             <Projects language={this.props.language} dataRepCom={this.state.dataRepCom}/>
           </Route>
           
-          <Route path="/Contact">
+          <Route path="/contact" exact>
             <ContactPageRender language={this.props.language} />
           </Route>
 
